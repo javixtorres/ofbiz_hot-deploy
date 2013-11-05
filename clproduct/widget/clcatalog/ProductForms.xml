@@ -923,7 +923,11 @@ under the License.
 <!--             </drop-down> -->
 <!--         </field> -->
 
-        <field name="supplierProductName" title="${uiLabelMap.ProductSupplierProductName}" use-when="supplierProduct==null">
+<!--        <field name="supplierProductName" title="${uiLabelMap.ProductSupplierProductName}" use-when="supplierProduct==null">
+           <text default-value="" size="30"/> 
+        </field>
+-->
+        <field name="supplierProductId" title="${uiLabelMap.ProductSupplierProductId}" use-when="supplierProduct==null">
            <text default-value="" size="30"/> 
         </field>
 
