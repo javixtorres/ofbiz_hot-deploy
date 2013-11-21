@@ -43,7 +43,7 @@ under the License.
                 <!-- <set field="layoutSettings.headerRightBackgroundUrl" value="" global="true"/> -->
                 <set field="activeApp" value="ordermgr" global="true"/>
                 <set field="applicationMenuName" value="OrderAppBar" global="true"/>
-                <set field="applicationMenuLocation" value="component://order/widget/ordermgr/OrderMenus.xml" global="true"/>
+                <set field="applicationMenuLocation" value="component://clorder/widget/clordermgr/OrderMenus.xml" global="true"/>
                 <set field="applicationTitle" value="${uiLabelMap.OrderManagerApplication}" global="true"/>
                 <!-- globally parameterize the link to a customer's detail information, to help with cases when such details are accessed via external application. -->
                 <set field="customerDetailLink" value="/partymgr/control/viewprofile?partyId=" global="true"/>
@@ -68,12 +68,12 @@ under the License.
                                 <not><if-empty field="custRequest"/></not>
                             </condition>
                             <widgets>
-                                <include-menu name="RequestTabBar" location="component://order/widget/ordermgr/OrderMenus.xml"/>
+                                <include-menu name="RequestTabBar" location="component://clorder/widget/clordermgr/OrderMenus.xml"/>
                             </widgets>
                         </section>
                     </decorator-section>
                     <decorator-section name="body">
-                        <include-menu name="RequestSubTabBar" location="component://order/widget/ordermgr/OrderMenus.xml"/>
+                        <include-menu name="RequestSubTabBar" location="component://clorder/widget/clordermgr/OrderMenus.xml"/>
                         <container>
                             <section>
                                 <condition>
