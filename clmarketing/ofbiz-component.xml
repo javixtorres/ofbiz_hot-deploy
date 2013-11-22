@@ -39,9 +39,9 @@ under the License.
     <test-suite loader="main" location="testdef/MarketingTests.xml"/>
 
     <webapp name="clmarketing"
-        title="Marketing"
+        title="CL Marketing"
         server="default-server"
-        location="webappcl/marketing"
+        location="webapp/clmarketing"
         base-permission="OFBTOOLS,MARKETING"
         mount-point="/clmarketing"/>
     <webapp name="clSalesForceAutomation"

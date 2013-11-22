@@ -55,13 +55,13 @@ under the License.
            <#assign partyName = delegator.findOne("PartyNameView", {"partyId" : payment.partyIdTo}, true)>
            <tr>
              <#if security.hasEntityPermission("PAY_INFO", "_VIEW", session) || security.hasEntityPermission("ACCOUNTING", "_VIEW", session)>
-               <td><a href="/accounting/control/paymentOverview?paymentId=${payment.paymentId}">${payment.paymentId}</a></td>
+               <td><a href="/claccounting/control/paymentOverview?paymentId=${payment.paymentId}">${payment.paymentId}</a></td>
              <#else>
                <td>${payment.paymentId}</td>
              </#if>
              <td>${partyName.groupName?if_exists}${partyName.lastName?if_exists} ${partyName.firstName?if_exists} ${partyName.middleName?if_exists}
              <#if security.hasPermission("PARTYMGR_VIEW", session) || security.hasPermission("PARTYMGR_ADMIN", session)>
-               [<a href="/partymgr/control/viewprofile?partyId=${partyId}">${partyId}</a>]
+               [<a href="/clpartymgr/control/viewprofile?partyId=${partyId}">${partyId}</a>]
              <#else>
                [${partyId}]
              </#if>
@@ -79,8 +79,8 @@ under the License.
            <td width="1%">&nbsp;</td>
            <td valign="top" width="60%">
              <#list invoices as invoice>
-               <div>${uiLabelMap.CommonNbr}<a href="/accounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
-               (<a target="_BLANK" href="/accounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
+               <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
+               (<a target="_BLANK" href="/claccounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
              </#list>
            </td>
            <td width="10%">&nbsp;</td>
@@ -144,7 +144,7 @@ under the License.
                         <table class="basic-table" cellspacing='0'>
                             <tr>
                                 <td valign="top">
-                                    ${uiLabelMap.CommonNbr}<a href="/accounting/control/EditBillingAccount?billingAccountId=${billingAccount.billingAccountId}${externalKeyParam}" class="buttontext">${billingAccount.billingAccountId}</a>  - ${billingAccount.description?if_exists}
+                                    ${uiLabelMap.CommonNbr}<a href="/claccounting/control/EditBillingAccount?billingAccountId=${billingAccount.billingAccountId}${externalKeyParam}" class="buttontext">${billingAccount.billingAccountId}</a>  - ${billingAccount.description?if_exists}
                                 </td>
                                 <td valign="top" align="right">
                                     <#if orderPaymentPreference.statusId != "PAYMENT_SETTLED" && orderPaymentPreference.statusId != "PAYMENT_RECEIVED">
@@ -191,7 +191,7 @@ under the License.
                       <#if (finAccountType?has_content)>
                         ${finAccountType.description?default(finAccountType.finAccountTypeId)}&nbsp;
                       </#if>
-                      #${finAccount.finAccountCode?default(finAccount.finAccountId)} (<a href="/accounting/control/EditFinAccount?finAccountId=${finAccount.finAccountId}${externalKeyParam}" class="buttontext">${finAccount.finAccountId}</a>)
+                      #${finAccount.finAccountCode?default(finAccount.finAccountId)} (<a href="/claccounting/control/EditFinAccount?finAccountId=${finAccount.finAccountId}${externalKeyParam}" class="buttontext">${finAccount.finAccountId}</a>)
                       <br />
                       ${finAccount.finAccountName?if_exists}
                       <br />
@@ -199,10 +199,10 @@ under the License.
                       <#-- Authorize and Capture transactions -->
                       <div>
                         <#if orderPaymentPreference.statusId != "PAYMENT_SETTLED">
-                          <a href="/accounting/control/AuthorizeTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingAuthorize}</a>
+                          <a href="/claccounting/control/AuthorizeTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingAuthorize}</a>
                         </#if>
                         <#if orderPaymentPreference.statusId == "PAYMENT_AUTHORIZED">
-                          <a href="/accounting/control/CaptureTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingCapture}</a>
+                          <a href="/claccounting/control/CaptureTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingCapture}</a>
                         </#if>
                       </div>
                     </div>
@@ -217,7 +217,7 @@ under the License.
                           (<span class="label">${uiLabelMap.OrderReference}</span>&nbsp;${gatewayResponse.referenceNum?if_exists}
                           <span class="label">${uiLabelMap.OrderAvs}</span>&nbsp;${gatewayResponse.gatewayAvsResult?default("N/A")}
                           <span class="label">${uiLabelMap.OrderScore}</span>&nbsp;${gatewayResponse.gatewayScoreResult?default("N/A")})
-                          <a href="/accounting/control/ViewGatewayResponse?paymentGatewayResponseId=${gatewayResponse.paymentGatewayResponseId}${externalKeyParam}" class="buttontext">${uiLabelMap.CommonDetails}</a>
+                          <a href="/claccounting/control/ViewGatewayResponse?paymentGatewayResponseId=${gatewayResponse.paymentGatewayResponseId}${externalKeyParam}" class="buttontext">${uiLabelMap.CommonDetails}</a>
                           <#if gatewayResponse_has_next><hr /></#if>
                         </#list>
                       </div>
@@ -248,7 +248,7 @@ under the License.
                       <td width="60%">
                         <div>
                             <#list paymentList as paymentMap>
-                                <a href="/accounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
+                                <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
                             </#list>
                         </div>
                       </td>
@@ -308,7 +308,7 @@ under the License.
                       <td width="60%">
                         <div>
                             <#list paymentList as paymentMap>
-                                <a href="/accounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
+                                <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
                             </#list>
                         </div>
                       </td>
@@ -356,10 +356,10 @@ under the License.
                       <#-- Authorize and Capture transactions -->
                       <div>
                         <#if orderPaymentPreference.statusId != "PAYMENT_SETTLED">
-                          <a href="/accounting/control/AuthorizeTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingAuthorize}</a>
+                          <a href="/claccounting/control/AuthorizeTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingAuthorize}</a>
                         </#if>
                         <#if orderPaymentPreference.statusId == "PAYMENT_AUTHORIZED">
-                          <a href="/accounting/control/CaptureTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingCapture}</a>
+                          <a href="/claccounting/control/CaptureTransaction?orderId=${orderId?if_exists}&amp;orderPaymentPreferenceId=${orderPaymentPreference.orderPaymentPreferenceId}${externalKeyParam}" class="buttontext">${uiLabelMap.AccountingCapture}</a>
                         </#if>
                       </div>
                     <#else>
@@ -377,7 +377,7 @@ under the License.
                         (<span class="label">${uiLabelMap.OrderReference}</span>&nbsp;${gatewayResponse.referenceNum?if_exists}
                         <span class="label">${uiLabelMap.OrderAvs}</span>&nbsp;${gatewayResponse.gatewayAvsResult?default("N/A")}
                         <span class="label">${uiLabelMap.OrderScore}</span>&nbsp;${gatewayResponse.gatewayScoreResult?default("N/A")})
-                        <a href="/accounting/control/ViewGatewayResponse?paymentGatewayResponseId=${gatewayResponse.paymentGatewayResponseId}${externalKeyParam}" class="buttontext">${uiLabelMap.CommonDetails}</a>
+                        <a href="/claccounting/control/ViewGatewayResponse?paymentGatewayResponseId=${gatewayResponse.paymentGatewayResponseId}${externalKeyParam}" class="buttontext">${uiLabelMap.CommonDetails}</a>
                         <#if gatewayResponse_has_next><hr /></#if>
                       </#list>
                     </div>
@@ -446,7 +446,7 @@ under the License.
                   <td width="60%">
                     <div>
                         <#list paymentList as paymentMap>
-                            <a href="/accounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
+                            <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
                         </#list>
                     </div>
                   </td>
@@ -505,7 +505,7 @@ under the License.
                   <td width="60%">
                     <div>
                         <#list paymentList as paymentMap>
-                            <a href="/accounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
+                            <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
                         </#list>
                     </div>
                   </td>
@@ -540,7 +540,7 @@ under the License.
               <td width="60%">
                 <div>
                     <#list paymentList as paymentMap>
-                        <a href="/accounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
+                        <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a><#if paymentMap_has_next><br /></#if>
                     </#list>
                 </div>
               </td>
@@ -567,8 +567,8 @@ under the License.
             <td width="1%">&nbsp;</td>
             <td valign="top" width="60%">
               <#list invoices as invoice>
-                <div>${uiLabelMap.CommonNbr}<a href="/accounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
-                (<a target="_BLANK" href="/accounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
+                <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
+                (<a target="_BLANK" href="/claccounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
               </#list>
             </td>
             <td width="10%">&nbsp;</td>

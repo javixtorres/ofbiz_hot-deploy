@@ -67,7 +67,7 @@ under the License.
     <test-suite loader="main" location="testdef/lucenetests.xml"/>
 
     <webapp name="clcontent"
-        title="Content"
+        title="CL Content"
         server="default-server"
         location="webapp/clcontent"
         base-permission="CONTENTMGR"
