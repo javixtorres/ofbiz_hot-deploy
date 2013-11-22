@@ -22,7 +22,7 @@ under the License.
         <section>
             <actions>
                 <set field="headerItem" value="orderentry"/>
-                <script location="component://order/webapp/ordermgr/WEB-INF/actions/entry/SetShoppingCart.groovy"/>
+                <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/entry/SetShoppingCart.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -33,7 +33,7 @@ under the License.
                         <section>
                             <widgets>
                                 <platform-specific>
-                                    <html><html-template location="component://order/webapp/ordermgr/entry/OrderEntryTabBar.ftl"/></html>
+                                    <html><html-template location="component://clorder/webapp/clordermgr/entry/OrderEntryTabBar.ftl"/></html>
                                 </platform-specific>
                                 <decorator-section-include name="body"/>
                             </widgets>
@@ -47,7 +47,7 @@ under the License.
         <section>
             <actions>
                 <set field="headerItem" value="orderentry"/>
-                <script location="component://order/webapp/ordermgr/WEB-INF/actions/entry/SetShoppingCart.groovy"/>
+                <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/entry/SetShoppingCart.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
@@ -59,7 +59,7 @@ under the License.
                             <widgets>
                                 <container style="screenlet">
                                     <platform-specific>
-                                        <html><html-template location="component://order/webapp/ordermgr/entry/OrderEntryCatalogTabBar.ftl"/></html>
+                                        <html><html-template location="component://clorder/webapp/clordermgr/entry/OrderEntryCatalogTabBar.ftl"/></html>
                                     </platform-specific>
                                     <container style="screenlet-body">
                                         <decorator-section-include name="body"/>
@@ -76,22 +76,22 @@ under the License.
     <screen name="leftbar">
         <section>
             <widgets>
-                <include-screen name="orderHeaderInfo" location="component://order/widget/ordermgr/OrderEntryCartScreens.xml"/>
-                <include-screen name="orderShortcuts" location="component://order/widget/ordermgr/OrderEntryCartScreens.xml"/>
-                <include-screen name="choosecatalog" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
-                <include-screen name="keywordsearchbox" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
-                <include-screen name="sidedeepcategory" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
-                <include-screen name="compareproductslist" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="orderHeaderInfo" location="component://clorder/widget/clordermgr/OrderEntryCartScreens.xml"/>
+                <include-screen name="orderShortcuts" location="component://clorder/widget/clordermgr/OrderEntryCartScreens.xml"/>
+                <include-screen name="choosecatalog" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="keywordsearchbox" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="sidedeepcategory" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="compareproductslist" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
             </widgets>
         </section>
     </screen>
     <screen name="leftbarCatalog">
         <section>
             <widgets>
-                <include-screen name="orderHeaderInfo" location="component://order/widget/ordermgr/OrderEntryCartScreens.xml"/>
-                <include-screen name="minicart" location="component://order/widget/ordermgr/OrderEntryCartScreens.xml"/>
-                <include-screen name="sidedeepcategory" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
-                <include-screen name="compareproductslist" location="component://order/widget/ordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="orderHeaderInfo" location="component://clorder/widget/clordermgr/OrderEntryCartScreens.xml"/>
+                <include-screen name="minicart" location="component://clorder/widget/clordermgr/OrderEntryCartScreens.xml"/>
+                <include-screen name="sidedeepcategory" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
+                <include-screen name="compareproductslist" location="component://clorder/widget/clordermgr/OrderEntryCatalogScreens.xml"/>
             </widgets>
         </section>
     </screen>

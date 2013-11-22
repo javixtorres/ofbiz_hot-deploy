@@ -1002,8 +1002,9 @@ public class CheckOutEvents {
         if (cart.getOrderType().equals("PURCHASE_ORDER")) {
             // Force checks for the following
             requireCustomer = true; requireShipping = true; requireOptions = true;
-            processOrder = new String[] {"customer", "term", "shipping", "shipGroups", "options", "payment",
-                                         "addparty", "paysplit"};
+//            processOrder = new String[] {"customer", "term", "shipping", "shipGroups", "options", "payment",
+//                                         "addparty", "paysplit"};
+            processOrder = new String[] {"customer", "shipping", "shipGroups", "options", "payment","paysplit"};
         }
 
         for (int i = 0; i < processOrder.length; i++) {
