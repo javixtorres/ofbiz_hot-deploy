@@ -2381,6 +2381,7 @@
     <property key="InvoiceItemType.description.COMM_INV_ITEM">
         <value xml:lang="de">Provisions-Rechnungsposten</value>
         <value xml:lang="en">Commission Invoice Line Item</value>
+        <value xml:lang="es">Comisión de Item Línea de Factura</value>
         <value xml:lang="fr">Ajustement sur ligne de commission</value>
         <value xml:lang="hi_IN">दलाली चालान लाइन आइटम</value>
         <value xml:lang="it">Riga fattura provvigioni</value>
@@ -2393,6 +2394,7 @@
     <property key="InvoiceItemType.description.CRT_ADD_FEATURE_ADJ">
         <value xml:lang="de">Retoure zusätzlicher Bestandteile</value>
         <value xml:lang="en">Return Additional Feature</value>
+        <value xml:lang="es">Característica adicional de retorno</value>
         <value xml:lang="fr">Retour d'option supplémentaire</value>
         <value xml:lang="hi_IN">रिटर्न अडिशनल फ़ीचर</value>
         <value xml:lang="it">Reso Caratteristica Addizionale</value>
@@ -2408,6 +2410,7 @@
     <property key="InvoiceItemType.description.CRT_DISCOUNT_ADJ">
         <value xml:lang="de">Retourennachlass</value>
         <value xml:lang="en">Return Discount</value>
+        <value xml:lang="es">Descuento de Retorno</value>
         <value xml:lang="fr">Remise sur retour</value>
         <value xml:lang="hi_IN">रिटर्न डिस्काउंट</value>
         <value xml:lang="it">Reso Sconto</value>
@@ -2422,6 +2425,7 @@
     <property key="InvoiceItemType.description.CRT_DPROD_ITEM">
         <value xml:lang="de">Retoure Digitales Produkt</value>
         <value xml:lang="en">Return Digital Good Item</value>
+        <value xml:lang="es">Retorno de Item Producto Digital</value>
         <value xml:lang="fr">Retour de produit digital</value>
         <value xml:lang="hi_IN">रिटर्न डिजिटल सामग्री मद </value>
         <value xml:lang="it">Reso Riga Bene Digitale</value>
@@ -2437,6 +2441,7 @@
     <property key="InvoiceItemType.description.CRT_FDPROD_ITEM">
         <value xml:lang="de">Retoure Fertigprodukt/Digitales Produkt</value>
         <value xml:lang="en">Return Finished/Digital Good Item</value>
+        <value xml:lang="es">Retorno de Item Producto Terminado/Digital</value>
         <value xml:lang="fr">Retour de produit fini/ digital</value>
         <value xml:lang="hi_IN">रिटर्न संपूर्ण/डिजिटल सामग्री मद </value>
         <value xml:lang="it">Reso Riga Bene Finito/Digitale</value>
@@ -2452,6 +2457,7 @@
     <property key="InvoiceItemType.description.CRT_FEE_ADJ">
         <value xml:lang="de">Retourengebühr</value>
         <value xml:lang="en">Return Fee</value>
+        <value xml:lang="es">Tasa de Retorno</value>
         <value xml:lang="fr">Frais de retour</value>
         <value xml:lang="hi_IN">रिटर्न शुल्क</value>
         <value xml:lang="it">Reso Onorario</value>
@@ -2467,6 +2473,7 @@
     <property key="InvoiceItemType.description.CRT_FPROD_ITEM">
         <value xml:lang="de">Retoure Fertigprodukt</value>
         <value xml:lang="en">Return Finished Good Item</value>
+        <value xml:lang="es">Retorno de Item Producto Terminado</value>
         <value xml:lang="fr">Retour de produit fini</value>
         <value xml:lang="hi_IN">रिटर्न संपूर्ण माल मद</value>
         <value xml:lang="it">Reso Riga Bene Finito</value>
@@ -2482,6 +2489,7 @@
     <property key="InvoiceItemType.description.CRT_MAN_ADJ">
         <value xml:lang="de">Retoure manueller Anpassung</value>
         <value xml:lang="en">Return Manual Adjustment</value>
+        <value xml:lang="es">Ajuste Manual de Retorno</value>
         <value xml:lang="fr">Ajustement manuel sur retour</value>
         <value xml:lang="hi_IN">रिटर्न मैनुअल समायोजन</value>
         <value xml:lang="it">Reso Aggiustamento Manuale</value>
@@ -2497,6 +2505,7 @@
     <property key="InvoiceItemType.description.CRT_MISC_ADJ">
         <value xml:lang="de">Retoure sonstige Gebühren</value>
         <value xml:lang="en">Return Miscellaneous Charges</value>
+        <value xml:lang="es">Retono de Gastos Varios</value>
         <value xml:lang="fr">Frais divers sur retour</value>
         <value xml:lang="hi_IN">रिटर्न विविध प्रभार</value>
         <value xml:lang="it">Reso Commissioni Varie</value>
@@ -2512,6 +2521,7 @@
     <property key="InvoiceItemType.description.CRT_MKTG_PKG_ADJ">
         <value xml:lang="de">Retoure Marketingpaket Anpassung</value>
         <value xml:lang="en">Return Marketing Package Adjustment</value>
+        <value xml:lang="es">Ajuste por Retorno Marketing Package</value>
         <value xml:lang="fr">Ajustement sur retour de package</value>
         <value xml:lang="hi_IN">रिटर्न विपणन पैकेज समायोजन</value>
         <value xml:lang="it">Reso Aggiustamento Pacco Vendita</value>
@@ -2527,6 +2537,7 @@
     <property key="InvoiceItemType.description.CRT_PROD_FEATR_ITEM">
         <value xml:lang="de">Retoure Produkterweiterung</value>
         <value xml:lang="en">Return Product-Feature Item</value>
+        <value xml:lang="es">Retorno de Item Producto-Caracteristica</value>
         <value xml:lang="fr">Retour d'option de produit</value>
         <value xml:lang="hi_IN">रिटर्न उत्पाद फ़ीचर मद</value>
         <value xml:lang="it">Reso Riga Prodotto-Caratteristica</value>
@@ -2542,6 +2553,7 @@
     <property key="InvoiceItemType.description.CRT_PROD_ITEM">
         <value xml:lang="de">Retoure Produktartikel</value>
         <value xml:lang="en">Return Product Item</value>
+        <value xml:lang="es">Retorno de Item Producto</value>
         <value xml:lang="fr">Retour de produit</value>
         <value xml:lang="hi_IN">रिटर्न उत्पाद मद</value>
         <value xml:lang="it">Reso Riga Prodotto</value>
@@ -2557,6 +2569,7 @@
     <property key="InvoiceItemType.description.CRT_PROMOTION_ADJ">
         <value xml:lang="de">Retoure Werbeartikel</value>
         <value xml:lang="en">Return Promotion</value>
+        <value xml:lang="es">Retorno de Promoción</value>
         <value xml:lang="fr">Retour de promotion</value>
         <value xml:lang="hi_IN">रिटर्न संवर्धन</value>
         <value xml:lang="it">Reso Promozione</value>
@@ -2572,6 +2585,7 @@
     <property key="InvoiceItemType.description.CRT_REPLACE_ADJ">
         <value xml:lang="de">Retoure Ersatz</value>
         <value xml:lang="en">Return Replacement</value>
+        <value xml:lang="es">Retorno de Sustitución</value>        
         <value xml:lang="fr">Retour de produit de remplacement</value>
         <value xml:lang="hi_IN">रिटर्न प्रतिस्थापन</value>
         <value xml:lang="it">Reso Sostituzione</value>
@@ -2587,6 +2601,7 @@
     <property key="InvoiceItemType.description.CRT_SALES_TAX_ADJ">
         <value xml:lang="de">Retoure MwSt.</value>
         <value xml:lang="en">Return Sales Tax</value>
+        <value xml:lang="es">Retorno Iterés por Venta</value>
         <value xml:lang="fr">Remboursement de TVA</value>
         <value xml:lang="hi_IN">रिटर्न बिक्री टैक्स</value>
         <value xml:lang="it">Reso Tasse Vendita</value>
@@ -2602,6 +2617,7 @@
     <property key="InvoiceItemType.description.CRT_SHIPPING_ADJ">
         <value xml:lang="de">Retoure Versandkosten</value>
         <value xml:lang="en">Return Shipping and Handling</value>
+        <value xml:lang="es">Retorno de Envio y Manejo</value>
         <value xml:lang="fr">Retour de frais d'expédition</value>
         <value xml:lang="hi_IN">रिटर्न शिपिंग और हैंडलिंग</value>
         <value xml:lang="it">Reso Spese di Spedizione e Imballaggio</value>
@@ -2617,6 +2633,7 @@
     <property key="InvoiceItemType.description.CRT_SPROD_ITEM">
         <value xml:lang="de">Retoure Service-Produkt</value>
         <value xml:lang="en">Return Service Product Item</value>
+        <value xml:lang="es">Retorno de Item Servicio</value>
         <value xml:lang="fr">Retour de service</value>
         <value xml:lang="hi_IN">रिटर्न सेवा उत्पाद मद</value>
         <value xml:lang="it">Reso Riga Prodotto Servizio</value>
@@ -2632,6 +2649,7 @@
     <property key="InvoiceItemType.description.CRT_SURCHARGE_ADJ">
         <value xml:lang="de">Retoure Zuschlag</value>
         <value xml:lang="en">Return Surcharge</value>
+        <value xml:lang="es">Retorno por Recargo</value>
         <value xml:lang="fr">Retour de surcoût exceptionnel</value>
         <value xml:lang="hi_IN">रिटर्न अधिभार</value>
         <value xml:lang="it">Reso Supplementare</value>
@@ -2647,6 +2665,7 @@
     <property key="InvoiceItemType.description.CRT_TE_ITEM">
         <value xml:lang="de">Retoure Zeiteintrag</value>
         <value xml:lang="en">Return Time-Entry Item</value>
+        <value xml:lang="es">Retorno Item Honorario Prestados</value>
         <value xml:lang="fr">Retour de prestation horaire</value>
         <value xml:lang="hi_IN">रिटर्न समय-प्रवेश मद</value>
         <value xml:lang="it">Reso Riga Voce-Tempo</value>
@@ -2662,6 +2681,7 @@
     <property key="InvoiceItemType.description.CRT_WARRANTY_ADJ">
         <value xml:lang="de">Retoure Garantie</value>
         <value xml:lang="en">Return Warranty</value>
+        <value xml:lang="es">Retorno por Garantia</value>
         <value xml:lang="fr">Retour de garantie</value>
         <value xml:lang="hi_IN">रिटर्न वारंटी</value>
         <value xml:lang="it">Reso Garanzia</value>
@@ -2692,6 +2712,7 @@
     <property key="InvoiceItemType.description.FEE">
         <value xml:lang="de">Gebühr</value>
         <value xml:lang="en">Invoice Fee (Sales)</value>
+        <value xml:lang="es">Factura Honorario (Ventas)</value>
         <value xml:lang="fr">Frais de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान शुल्क</value>
         <value xml:lang="it">Fattura Onorario</value>
@@ -2707,6 +2728,7 @@
     <property key="InvoiceItemType.description.INVOICE_ADJ">
         <value xml:lang="de">Rechnungsanpassung</value>
         <value xml:lang="en">Invoice Adjustment</value>
+        <value xml:lang="es">Ajuste de Factura</value>
         <value xml:lang="fr">Régularisation de facture</value>
         <value xml:lang="hi_IN">चालान समायोजन</value>
         <value xml:lang="it">Fattura </value>
@@ -2722,6 +2744,7 @@
     <property key="InvoiceItemType.description.INVOICE_ITM_ADJ">
         <value xml:lang="de">Positionsanpassung</value>
         <value xml:lang="en">Invoice Item Adjustment</value>
+        <value xml:lang="es">Ajuste de Item de Factura</value>
         <value xml:lang="fr">Régularisation de ligne de facturation</value>
         <value xml:lang="hi_IN">चालान मद समायोजन</value>
         <value xml:lang="it">Fattura Riga Aggiustamento</value>
@@ -2737,6 +2760,7 @@
     <property key="InvoiceItemType.description.INV_ADD_FEATURE">
         <value xml:lang="de">Sonderanpassung</value>
         <value xml:lang="en">Invoice Additional Feature (Sales)</value>
+        <value xml:lang="es">Factura de caracteristicas adicionales (Ventas)</value>
         <value xml:lang="fr">Facturation d'option supplémentaire (ventes)</value>
         <value xml:lang="hi_IN">चालान अतिरिक्त सुविधा</value>
         <value xml:lang="it">Fattura Caratteristica Addizionale</value>
@@ -4202,6 +4226,7 @@
     <property key="InvoiceType.description.COMMISSION_INVOICE">
         <value xml:lang="de">Kommission</value>
         <value xml:lang="en">Commission</value>
+        <value xml:lang="es">Comisión</value>
         <value xml:lang="fr">Commission</value>
         <value xml:lang="hi_IN">दलाली</value>
         <value xml:lang="it">Provvigioni</value>
@@ -4217,6 +4242,7 @@
     <property key="InvoiceType.description.CUST_RTN_INVOICE">
         <value xml:lang="de">Kundenrücksendung</value>
         <value xml:lang="en">Customer Return</value>
+        <value xml:lang="es">Retorno de Cliente</value>
         <value xml:lang="fr">Articles retournés</value>
         <value xml:lang="hi_IN">ग्राहक रिटर्न</value>
         <value xml:lang="it">Resi Cliente</value>
@@ -4233,6 +4259,7 @@
     <property key="InvoiceType.description.INTEREST_INVOICE">
         <value xml:lang="de">Zinsen</value>
         <value xml:lang="en">Interest</value>
+        <value xml:lang="es">Interés</value>
         <value xml:lang="fr">Intérêt</value>
         <value xml:lang="hi_IN">ब्याज</value>
         <value xml:lang="it">Interessi</value>
@@ -4247,6 +4274,7 @@
     <property key="InvoiceType.description.PAYROL_INVOICE">
         <value xml:lang="de">Gehalt</value>
         <value xml:lang="en">Payrol</value>
+        <value xml:lang="es">Salario</value>
         <value xml:lang="fr">Salaire</value>
         <value xml:lang="hi_IN">वेतन</value>
         <value xml:lang="it">Paghe</value>
@@ -4259,6 +4287,7 @@
     <property key="InvoiceType.description.PURCHASE_INVOICE">
         <value xml:lang="de">Einkaufsrechnung</value>
         <value xml:lang="en">Purchase Invoice</value>
+        <value xml:lang="es">Factura Compra</value>
         <value xml:lang="fr">Facture d'achat</value>
         <value xml:lang="hi_IN">खरीद चालान</value>
         <value xml:lang="it">Fattura di Acquisto</value>
@@ -4275,6 +4304,7 @@
     <property key="InvoiceType.description.PURC_RTN_INVOICE">
         <value xml:lang="de">Einkaufs-Retoure</value>
         <value xml:lang="en">Purchase Return</value>
+        <value xml:lang="es">Retorno Compra</value>
         <value xml:lang="fr">Avoir fournisseur</value>
         <value xml:lang="it">Reso acquisto</value>
         <value xml:lang="ja">購入返品</value>
@@ -4286,6 +4316,7 @@
     <property key="InvoiceType.description.PUR_INV_TEMPLATE">
         <value xml:lang="de">Vorlage Einkaufsrechnung</value>
         <value xml:lang="en">Purchase Invoice Template</value>
+        <value xml:lang="es">Plantilla Factura Compra</value>
         <value xml:lang="fr">Modèle de facture d'achat</value>
         <value xml:lang="hi_IN">खरीद चालान खाका</value>
         <value xml:lang="it">Reso template fattura d'acquisto</value>
@@ -4298,6 +4329,7 @@
     <property key="InvoiceType.description.SALES_INVOICE">
         <value xml:lang="de">Verkaufsrechnung</value>
         <value xml:lang="en">Sales Invoice</value>
+        <value xml:lang="es">Factura Venta</value>
         <value xml:lang="fr">Facture de vente</value>
         <value xml:lang="hi_IN">बिक्री चालान</value>
         <value xml:lang="it">Fattura di Vendita</value>
@@ -4314,6 +4346,7 @@
     <property key="InvoiceType.description.SALES_INV_TEMPLATE">
         <value xml:lang="de">Vorlage Verkaufsrechnung</value>
         <value xml:lang="en">Sales Invoice Template</value>
+        <value xml:lang="es">Plantilla Factura Venta</value>
         <value xml:lang="fr">Modèle de facture de vente</value>
         <value xml:lang="hi_IN">बिक्री चालान खाका</value>
         <value xml:lang="it">Template fattura di vendita</value>
@@ -4338,6 +4371,7 @@
     <property key="PaymentMethodType.description.CASH">
         <value xml:lang="de">Bargeld</value>
         <value xml:lang="en">Cash</value>
+        <value xml:lang="es">Efectivo</value>
         <value xml:lang="fr">Espèces</value>
         <value xml:lang="hi_IN">नकद</value>
         <value xml:lang="it">Contanti</value>
@@ -4353,6 +4387,7 @@
     <property key="PaymentMethodType.description.CERTIFIED_CHECK">
         <value xml:lang="de">Geprüfter Scheck</value>
         <value xml:lang="en">Certified Check</value>
+        <value xml:lang="es">Cheque Certificado</value>
         <value xml:lang="fr">Chèque certifié</value>
         <value xml:lang="hi_IN">प्रमाणित चेक</value>
         <value xml:lang="it">Assegno Certificato</value>
@@ -4369,6 +4404,7 @@
     <property key="PaymentMethodType.description.COMPANY_ACCOUNT">
         <value xml:lang="de">Firmenkonto</value>
         <value xml:lang="en">Company Account</value>
+        <value xml:lang="es">Cuenta Empresarial</value>
         <value xml:lang="fr">Compte de société</value>
         <value xml:lang="hi_IN">कंपनी खाता</value>
         <value xml:lang="it">Conto Aziendale</value>
@@ -4385,6 +4421,7 @@
     <property key="PaymentMethodType.description.COMPANY_CHECK">
         <value xml:lang="de">Firmenscheck</value>
         <value xml:lang="en">Company Check</value>
+        <value xml:lang="es">Cheque Empresarial</value>
         <value xml:lang="fr">Chèque de société</value>
         <value xml:lang="hi_IN">कंपनी चेक</value>
         <value xml:lang="it">Assegno Aziendale</value>
@@ -4401,6 +4438,7 @@
     <property key="PaymentMethodType.description.CREDIT_CARD">
         <value xml:lang="de">Kreditkarte</value>
         <value xml:lang="en">Credit Card</value>
+        <value xml:lang="en">Tarjeta de Credito</value>
         <value xml:lang="fr">Carte de crédit</value>
         <value xml:lang="hi_IN">क्रेडिट कार्ड</value>
         <value xml:lang="it">Carta Credito</value>
@@ -4417,6 +4455,7 @@
     <property key="PaymentMethodType.description.EFT_ACCOUNT">
         <value xml:lang="de">Elektronische Bezahlung</value>
         <value xml:lang="en">Electronic Funds Transfer</value>
+        <value xml:lang="es">Transferencia Electronica</value>
         <value xml:lang="fr">Transfert de fonds électronique</value>
         <value xml:lang="hi_IN">इलेक्ट्रॉनिक निधि अंतरण(EFT)</value>
         <value xml:lang="it">Bonifico (EFT)</value>
@@ -4433,6 +4472,7 @@
     <property key="PaymentMethodType.description.EXT_BILLACT">
         <value xml:lang="de">Rechnungskonto</value>
         <value xml:lang="en">Billing Account</value>
+        <value xml:lang="es">Cuenta de Facturacion</value>
         <value xml:lang="fr">Compte de facturation</value>
         <value xml:lang="hi_IN">देयकांकन(बिलिंग) खाता</value>
         <value xml:lang="it">Conto Fatturazione</value>
@@ -4449,6 +4489,7 @@
     <property key="PaymentMethodType.description.EXT_COD">
         <value xml:lang="de">Per Nachnahme</value>
         <value xml:lang="en">Cash On Delivery</value>
+        <value xml:lang="es">Efectivo en Delivery</value>
         <value xml:lang="fr">Paiement à la livraison</value>
         <value xml:lang="hi_IN">सुपुर्दगी पर नकद</value>
         <value xml:lang="it">Contrassegno</value>
@@ -4477,6 +4518,7 @@
     <property key="PaymentMethodType.description.EXT_OFFLINE">
         <value xml:lang="de">Offline Zahlung</value>
         <value xml:lang="en">Offline Payment</value>
+        <value xml:lang="es">Pago Offline</value>
         <value xml:lang="fr">Paiement différé</value>
         <value xml:lang="hi_IN">ऑफ़लाइन भुगतान</value>
         <value xml:lang="it">Pagamento Offline</value>

@@ -510,7 +510,7 @@ under the License.
     </entity>
     <entity entity-name="FinAccountTransType"
             package-name="org.ofbiz.accounting.finaccount"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="Financial Account Transaction Type Entity">
         <field name="finAccountTransTypeId" type="id-ne"></field>
         <field name="parentTypeId" type="id-ne"></field>
@@ -538,7 +538,7 @@ under the License.
     </entity>
     <entity entity-name="FinAccountType"
             package-name="org.ofbiz.accounting.finaccount"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="Financial Account Type Entity">
         <field name="finAccountTypeId" type="id-ne"></field>
         <field name="parentTypeId" type="id-ne"></field>
@@ -774,7 +774,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetIdentType"
         package-name="org.ofbiz.accounting.fixedasset"
-        default-resource-name="AccountingEntityLabels"
+        default-resource-name="CLAccountingEntityLabels"
         title="Fixed Asset Identification Type Entity">
         <field name="fixedAssetIdentTypeId" type="id-ne"></field>
         <field name="description" type="description"></field>
@@ -888,7 +888,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetProductType"
             package-name="org.ofbiz.accounting.fixedasset"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="Fixed Asset Product Type Entity">
       <field name="fixedAssetProductTypeId" type="id-ne"></field>
       <field name="description" type="description"></field>
@@ -973,7 +973,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetStdCostType"
         package-name="org.ofbiz.accounting.fixedasset"
-        default-resource-name="AccountingEntityLabels"
+        default-resource-name="CLAccountingEntityLabels"
         title="Fixed Asset Standard Cost Type Entity">
         <field name="fixedAssetStdCostTypeId" type="id-ne"></field>
         <field name="parentTypeId" type="id-ne"></field>
@@ -986,7 +986,7 @@ under the License.
     </entity>
     <entity entity-name="FixedAssetType"
             package-name="org.ofbiz.accounting.fixedasset"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="Fixed Asset Type Entity">
       <field name="fixedAssetTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -1408,7 +1408,7 @@ under the License.
     </entity>
     <entity entity-name="InvoiceItemType"
             package-name="org.ofbiz.accounting.invoice"
-            title="Invoice Item Type Entity" default-resource-name="AccountingEntityLabels">
+            title="Invoice Item Type Entity" default-resource-name="CLAccountingEntityLabels">
       <field name="invoiceItemTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -1557,7 +1557,7 @@ under the License.
     </entity>
     <entity entity-name="InvoiceType"
             package-name="org.ofbiz.accounting.invoice"
-            title="Invoice Type Entity" default-resource-name="AccountingEntityLabels">
+            title="Invoice Type Entity" default-resource-name="CLAccountingEntityLabels">
       <field name="invoiceTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -1992,7 +1992,7 @@ under the License.
     </entity>
     <entity entity-name="AcctgTransType"
             package-name="org.ofbiz.accounting.ledger"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="Accounting Transaction Type Entity">
       <field name="acctgTransTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -2058,7 +2058,7 @@ under the License.
     </entity>
     <entity entity-name="GlAccountClass"
             package-name="org.ofbiz.accounting.ledger"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="General Ledger Account Class Entity">
       <field name="glAccountClassId" type="id-ne"></field>
       <field name="parentClassId" type="id-ne"></field>
@@ -2250,7 +2250,7 @@ under the License.
     </entity>
     <entity entity-name="GlAccountType"
             package-name="org.ofbiz.accounting.ledger"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="General Ledger Account Type Entity">
       <field name="glAccountTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -2299,7 +2299,7 @@ under the License.
     </entity>
     <entity entity-name="GlFiscalType"
             package-name="org.ofbiz.accounting.ledger"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="General Ledger Fiscal Entity">
       <field name="glFiscalTypeId" type="id-ne"></field>
       <field name="description" type="description"></field>
@@ -2368,7 +2368,7 @@ under the License.
     </entity>
     <entity entity-name="GlResourceType"
             package-name="org.ofbiz.accounting.ledger"
-            default-resource-name="AccountingEntityLabels"
+            default-resource-name="CLAccountingEntityLabels"
             title="General Ledger Resource Entity">
       <field name="glResourceTypeId" type="id-ne"></field>
       <field name="description" type="description"></field>
@@ -2482,7 +2482,7 @@ under the License.
     </entity>
     <entity entity-name="ProductAverageCostType"
             package-name="org.ofbiz.accounting.ledger"
-            title="Product average cost type" default-resource-name="AccountingEntityLabels">
+            title="Product average cost type" default-resource-name="CLAccountingEntityLabels">
         <field name="productAverageCostTypeId" type="id-ne"/>
         <field name="parentTypeId" type="id-ne"/>
         <field name="hasTable" type="indicator"/>
@@ -3207,7 +3207,7 @@ under the License.
     </view-entity>
     <entity entity-name="PaymentMethodType"
             package-name="org.ofbiz.accounting.payment"
-            title="PaymentMethodType Entity" default-resource-name="AccountingEntityLabels">
+            title="PaymentMethodType Entity" default-resource-name="CLAccountingEntityLabels">
       <field name="paymentMethodTypeId" type="id-ne"></field>
       <field name="description" type="description"></field>
       <field name="defaultGlAccountId" type="id"></field>
@@ -3236,7 +3236,7 @@ under the License.
     </entity>
     <entity entity-name="PaymentType"
             package-name="org.ofbiz.accounting.payment"
-            title="Payment Type Entity" default-resource-name="AccountingEntityLabels">
+            title="Payment Type Entity" default-resource-name="CLAccountingEntityLabels">
       <field name="paymentTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -3787,7 +3787,7 @@ under the License.
     </entity>
     <entity entity-name="TaxAuthorityAssocType"
         package-name="org.ofbiz.accounting.tax"
-        default-resource-name="AccountingEntityLabels"
+        default-resource-name="CLAccountingEntityLabels"
         title="Tax Authority Assoc Type Entity">
         <field name="taxAuthorityAssocTypeId" type="id-ne"></field>
         <field name="description" type="description"></field>
@@ -3886,7 +3886,7 @@ under the License.
     </entity>
     <entity entity-name="TaxAuthorityRateType"
         package-name="org.ofbiz.accounting.tax"
-        default-resource-name="AccountingEntityLabels"
+        default-resource-name="CLAccountingEntityLabels"
         title="Tax Authority Rate Type Entity">
         <field name="taxAuthorityRateTypeId" type="id-ne"></field>
         <field name="description" type="description"></field>
@@ -3991,7 +3991,7 @@ under the License.
     </view-entity>
 
   <entity entity-name="RateType" package-name="org.ofbiz.accounting.rate"
-    title="Rate Type Entity" default-resource-name="AccountingEntityLabels">
+    title="Rate Type Entity" default-resource-name="CLAccountingEntityLabels">
     <field name="rateTypeId" type="id-ne"></field>
     <field name="description" type="description"></field>
     <prim-key field="rateTypeId"/>

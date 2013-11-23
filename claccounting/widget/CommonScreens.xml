@@ -23,7 +23,7 @@ under the License.
     <screen name="main-decorator">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
@@ -38,7 +38,7 @@ under the License.
                 <!--<set field="layoutSettings.headerImageUrl" value="/images/ofbiz_logo.gif" global="true"/>-->
                 <set field="activeApp" value="accounting" global="true"/>
                 <set field="applicationMenuName" value="AccountingAppBar" global="true"/>
-                <set field="applicationMenuLocation" value="component://accounting/widget/AccountingMenus.xml" global="true"/>
+                <set field="applicationMenuLocation" value="component://claccounting/widget/AccountingMenus.xml" global="true"/>
                 <set field="applicationTitle" value="${uiLabelMap.AccountingManagerApplication}" global="true"/>
             </actions>
             <widgets>
@@ -60,7 +60,7 @@ under the License.
                                 <if-service-permission service-name="acctgBasePermissionCheck" main-action="VIEW"/>
                             </condition>
                             <widgets>
-                                <include-menu name="PaymentTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                                <include-menu name="PaymentTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                             </widgets>
                         </section>
                     </decorator-section>
@@ -71,7 +71,7 @@ under the License.
                                 <if-service-permission service-name="acctgBasePermissionCheck" main-action="VIEW"/>
                             </condition>
                             <widgets>
-                                <include-menu name="PaymentSubTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                                <include-menu name="PaymentSubTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                                 <container style="leftclear">
                                     <section>
                                         <condition>
@@ -115,7 +115,7 @@ under the License.
                                 </and>
                             </condition>
                             <widgets>
-                                <include-menu name="PaymentGroupTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                                <include-menu name="PaymentGroupTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                             </widgets>
                         </section>
                     </decorator-section>
@@ -131,7 +131,7 @@ under the License.
                                         <not><if-empty field="paymentGroup"/></not>
                                     </condition>
                                     <widgets>
-                                        <include-menu name="PaymentGroupSubTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                                        <include-menu name="PaymentGroupSubTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                                         <label style="h1">${uiLabelMap[titleProperty]} ${uiLabelMap.CommonFor} ${paymenGroup.paymentGroupName} [${paymentGroupId}]</label>
                                     </widgets>
                                     <fail-widgets>
@@ -164,7 +164,7 @@ under the License.
                                 <not><if-empty field="organizationPartyId"/></not>
                             </condition>
                             <widgets>
-                                <include-menu name="PartyTopTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                                <include-menu name="PartyTopTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                             </widgets>
                         </section>
                     </decorator-section>
@@ -194,8 +194,8 @@ under the License.
             <widgets>
                 <decorator-screen name="CommonPartyDecorator" location="${parameters.partyDecoratorLocation}">
                     <decorator-section name="body">
-                        <include-menu name="OrganizationAccountingTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
-                        <include-menu name="OrganizationAccountingReportsTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                        <include-menu name="OrganizationAccountingTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
+                        <include-menu name="OrganizationAccountingReportsTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                         <label style="h1">${uiLabelMap[labelTitleProperty]} ${uiLabelMap.CommonFor}: ${currentOrganization.groupName} [${organizationPartyId}]</label>
                         <decorator-section-include name="body"/>
                     </decorator-section>
@@ -215,8 +215,8 @@ under the License.
             <widgets>
                 <decorator-screen name="CommonPartyDecorator" location="${parameters.partyDecoratorLocation}">
                     <decorator-section name="body">
-                        <include-menu name="OrganizationAccountingTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
-                        <include-menu name="PartyAccountingChecksTabBar" location="component://accounting/widget/AccountingMenus.xml"/>
+                        <include-menu name="OrganizationAccountingTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
+                        <include-menu name="PartyAccountingChecksTabBar" location="component://claccounting/widget/AccountingMenus.xml"/>
                         <label style="h1">${uiLabelMap.CommonFor}: ${currentOrganization.groupName} [${organizationPartyId}]</label>
                         <decorator-section-include name="checks-body"/>
                     </decorator-section>
@@ -251,7 +251,7 @@ under the License.
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.AccountingMainPage}">
-                            <platform-specific><html><html-template location="component://accounting/webapp/accounting/main.ftl"/></html></platform-specific>
+                            <platform-specific><html><html-template location="component://claccounting/webapp/claccounting/main.ftl"/></html></platform-specific>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -262,7 +262,7 @@ under the License.
     <screen name="creditCardFields">
         <section>
             <widgets>
-                <platform-specific><html><html-template location="component://accounting/webapp/accounting/common/creditcardfields.ftl"/></html></platform-specific>
+                <platform-specific><html><html-template location="component://claccounting/webapp/claccounting/common/creditcardfields.ftl"/></html></platform-specific>
             </widgets>
         </section>
     </screen>
@@ -275,7 +275,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="pre-body">
-                        <include-menu name="GlobalGLSettingMenus" location="component://accounting/widget/AccountingMenus.xml"/>
+                        <include-menu name="GlobalGLSettingMenus" location="component://claccounting/widget/AccountingMenus.xml"/>
                     </decorator-section>
                     <decorator-section name="body">
                         <decorator-section-include name="body"/>
@@ -288,7 +288,7 @@ under the License.
     <screen name="CommonInvoiceDecorator"><!-- used for invoice commission runs -->
         <section>
             <widgets>
-                <include-screen name="CommonInvoiceDecorator" location="component://accounting/widget/InvoiceScreens.xml"/>
+                <include-screen name="CommonInvoiceDecorator" location="component://claccounting/widget/InvoiceScreens.xml"/>
             </widgets>
         </section>
     </screen>
