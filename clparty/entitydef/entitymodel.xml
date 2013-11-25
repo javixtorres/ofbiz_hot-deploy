@@ -188,7 +188,7 @@ under the License.
     </entity>
     <entity entity-name="AgreementItemType"
             package-name="org.ofbiz.party.agreement"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Agreement Item Type Entity">
       <field name="agreementItemTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -369,7 +369,7 @@ under the License.
     </entity>
     <entity entity-name="AgreementType"
             package-name="org.ofbiz.party.agreement"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Agreement Type Entity">
       <field name="agreementTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -419,7 +419,7 @@ under the License.
     </entity>
     <entity entity-name="TermType"
             package-name="org.ofbiz.party.agreement"
-            title="Term Type Entity" default-resource-name="PartyEntityLabels">
+            title="Term Type Entity" default-resource-name="CLPartyEntityLabels">
       <field name="termTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -852,7 +852,7 @@ under the License.
     </entity>
     <entity entity-name="CommunicationEventPrpTyp"
             package-name="org.ofbiz.party.communication"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Communication Event Purpose Type Entity">
       <field name="communicationEventPrpTypId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
@@ -911,7 +911,7 @@ under the License.
     </entity>
     <entity entity-name="CommunicationEventType"
             package-name="org.ofbiz.party.communication"
-            title="Communication Event Type Entity" default-resource-name="PartyEntityLabels">
+            title="Communication Event Type Entity" default-resource-name="CLPartyEntityLabels">
       <field name="communicationEventTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -986,7 +986,7 @@ under the License.
     </entity>
     <entity entity-name="ContactMechPurposeType"
             package-name="org.ofbiz.party.contact"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Contact Mechanism Purpose Type Entity">
       <field name="contactMechPurposeTypeId" type="id-ne"></field>
       <field name="description" type="description"></field>
@@ -994,7 +994,7 @@ under the License.
     </entity>
     <entity entity-name="ContactMechType"
             package-name="org.ofbiz.party.contact"
-            title="Contact Mechanism Type Entity" default-resource-name="PartyEntityLabels">
+            title="Contact Mechanism Type Entity" default-resource-name="CLPartyEntityLabels">
       <field name="contactMechTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id-ne"></field>
       <field name="hasTable" type="indicator"></field>
@@ -1720,7 +1720,7 @@ under the License.
     </view-entity>
     <entity entity-name="PartyIdentificationType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Party Identification Type Entity">
       <field name="partyIdentificationTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id"></field>
@@ -1880,7 +1880,7 @@ under the License.
     </entity>
     <entity entity-name="PartyClassificationType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Party Classification Type Entity">
       <field name="partyClassificationTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id"></field>
@@ -1977,7 +1977,7 @@ under the License.
     </view-entity>
     <entity entity-name="PartyContentType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Party Content Type Entity">
         <field name="partyContentTypeId" type="id-ne"></field>
         <field name="parentTypeId" type="id"></field>
@@ -2327,7 +2327,7 @@ under the License.
     </view-entity>
     <entity entity-name="PartyRelationshipType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Party Relationship Type Entity">
       <field name="partyRelationshipTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id"></field>
@@ -2678,7 +2678,7 @@ under the License.
     </entity>
     <entity entity-name="PartyType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Party Type Entity">
       <field name="partyTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id"></field>
@@ -2773,7 +2773,7 @@ under the License.
     </entity>
     <entity entity-name="RoleType"
             package-name="org.ofbiz.party.party"
-            default-resource-name="PartyEntityLabels"
+            default-resource-name="CLPartyEntityLabels"
             title="Role Type Entity">
       <field name="roleTypeId" type="id-ne"></field>
       <field name="parentTypeId" type="id"></field>
