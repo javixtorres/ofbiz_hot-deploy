@@ -410,11 +410,11 @@ public class TaxAuthorityServices {
 
                 // taxRate is in percentage, so needs to be divided by 100
                 //BigDecimal taxAmount = (taxable.multiply(taxRate)).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
-                BigDecimal varAux = 1;
+                BigDecimal varAux = new BigDecimal(1);
                 
-                varAux = varAux.multiply(taxRate)).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
+                varAux = varAux.multiply(taxRate).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
                 
-                BigDecimal taxAmount = taxable.sub(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
+                BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
 
                 String taxAuthGeoId = taxAuthorityRateProduct.getString("taxAuthGeoId");
                 String taxAuthPartyId = taxAuthorityRateProduct.getString("taxAuthPartyId");

@@ -43,10 +43,10 @@ under the License.
         <fileset dir="../../framework/webapp/lib" includes="*.jar"/>
         <fileset dir="../../framework/webapp/build/lib" includes="*.jar"/>
         <fileset dir="../../framework/common/build/lib" includes="*.jar"/>
-        <fileset dir="../party/build/lib" includes="*.jar"/>
-        <fileset dir="../product/build/lib" includes="*.jar"/>
-        <fileset dir="../marketing/build/lib" includes="*.jar"/>
-        <fileset dir="../order/build/lib" includes="*.jar"/>
+        <fileset dir="../clparty/build/lib" includes="*.jar"/>
+        <fileset dir="../clproduct/build/lib" includes="*.jar"/>
+        <fileset dir="../clmarketing/build/lib" includes="*.jar"/>
+        <fileset dir="../clorder/build/lib" includes="*.jar"/>
         <!-- <fileset dir="lib/cybersource" includes="*.jar"/> -->
         <!-- <fileset dir="lib/securepay" includes="*.jar"/> -->
         <fileset dir="lib" includes="*.jar"/>
