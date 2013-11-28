@@ -79,7 +79,7 @@ under the License.
                 <div>
                   <#if cartLine.getProductId()?exists>
                     <#-- product item -->
-                    <a href="<@ofbizUrl>product?product_id=${cartLine.getProductId()}</@ofbizUrl>" class="buttontext">${cartLine.getProductId()}-Falta Decripcion ${cartLine.getDescription()}</a> -
+                    <a href="<@ofbizUrl>product?product_id=${cartLine.getProductId()}</@ofbizUrl>" class="buttontext">${cartLine.getProductId()}-${cartLine.getDescription()}</a> -
                     <input size="60" type="text" name="description_${cartLineIndex}" value="${cartLine.getName()?default("")}"/><br />
                     <i>${cartLine.getDescription()?if_exists}</i>
                     <#if shoppingCart.getOrderType() != "PURCHASE_ORDER">
