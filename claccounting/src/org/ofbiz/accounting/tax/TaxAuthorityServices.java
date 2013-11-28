@@ -413,9 +413,13 @@ public class TaxAuthorityServices {
                 //BigDecimal varAux = new BigDecimal(1);
                 BigDecimal varAux = taxRate.divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
                 
+                varAux = varAux.add(BigDecimal.ONE);
+                
                 //varAux = varAux.multiply(taxRate).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
                 
-                BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
+                //BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
+
+                BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, 0, salestaxRounding));
 
                 String taxAuthGeoId = taxAuthorityRateProduct.getString("taxAuthGeoId");
                 String taxAuthPartyId = taxAuthorityRateProduct.getString("taxAuthPartyId");

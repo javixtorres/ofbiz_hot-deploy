@@ -1879,7 +1879,7 @@ under the License.
     <!-- end of request mappings -->
 
     <!-- View Mappings -->
-    <view-map name="LookupProductCategory" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProductCategory"/>
+    <view-map name="LookupProductCategory" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupProductCategory"/>
 
     <view-map name="main" type="screen" page="component://clorder//widget/clordermgr/OrderViewScreens.xml#Main"/>
 
@@ -1906,9 +1906,9 @@ under the License.
 
     <view-map name="quickcheckout" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#quickFinalizeOrder"/>
     <view-map name="checkoutshippingaddress" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#checkoutshippingaddress"/>
-    <view-map name="editcontactmech" type="screen" page="component://party/widget/partymgr/PartyScreens.xml#editcontactmech"/>
-    <view-map name="editcreditcard" type="screen" page="component://party/widget/partymgr/PaymentMethodScreens.xml#editcreditcard"/>
-    <view-map name="editeftaccount" type="screen" page="component://party/widget/partymgr/PaymentMethodScreens.xml#editeftaccount"/>
+    <view-map name="editcontactmech" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#editcontactmech"/>
+    <view-map name="editcreditcard" type="screen" page="component://clparty/widget/clpartymgr/PaymentMethodScreens.xml#editcreditcard"/>
+    <view-map name="editeftaccount" type="screen" page="component://clparty/widget/clpartymgr/PaymentMethodScreens.xml#editeftaccount"/>
 
     <view-map name="category" type="screen" page="component://clorder//widget/clordermgr/OrderEntryCatalogScreens.xml#category"/>
     <view-map name="product" type="screen" page="component://clorder//widget/clordermgr/OrderEntryCatalogScreens.xml#product"/>
@@ -2001,20 +2001,20 @@ under the License.
     <view-map name="EditOrderHeader" type="screen" page="component://clorder//widget/clordermgr/OrderHeaderScreens.xml#EditOrderHeader"/>
     <view-map name="ListOrderHeaders" type="screen" page="component://clorder//widget/clordermgr/OrderHeaderScreens.xml#ListOrderHeaders"/>
 
-    <view-map name="LookupPerson" type="screen" page="component://party/widget/partymgr/LookupScreens.xml#LookupPerson"/>
-    <view-map name="LookupPartyGroup" type="screen" page="component://party/widget/partymgr/LookupScreens.xml#LookupPartyGroup"/>
-    <view-map name="LookupPartyName" type="screen" page="component://party/widget/partymgr/LookupScreens.xml#LookupPartyName"/>
-    <view-map name="LookupCustomerName" type="screen" page="component://party/widget/partymgr/LookupScreens.xml#LookupCustomerName"/>
-    <view-map name="LookupProduct" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProduct"/>
-    <view-map name="LookupSupplierProduct" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupSupplierProduct"/>
+    <view-map name="LookupPerson" type="screen" page="component://clparty/widget/clpartymgr/LookupScreens.xml#LookupPerson"/>
+    <view-map name="LookupPartyGroup" type="screen" page="component://clparty/widget/clpartymgr/LookupScreens.xml#LookupPartyGroup"/>
+    <view-map name="LookupPartyName" type="screen" page="component://clparty/widget/clpartymgr/LookupScreens.xml#LookupPartyName"/>
+    <view-map name="LookupCustomerName" type="screen" page="component://clparty/widget/clpartymgr/LookupScreens.xml#LookupCustomerName"/>
+    <view-map name="LookupProduct" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupProduct"/>
+    <view-map name="LookupSupplierProduct" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupSupplierProduct"/>
     <view-map name="LookupBulkAddSupplierProductsInApprovedOrder" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#LookupBulkAddSupplierProductsInApprovedOrder"/>
-    <view-map name="LookupProductAndPrice" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProductAndPrice"/>
-    <view-map name="LookupProductFeature" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupProductFeature"/>
-    <view-map name="LookupUserLoginAndPartyDetails" type="screen" page="component://party/widget/partymgr/LookupScreens.xml#LookupUserLoginAndPartyDetails"/>
+    <view-map name="LookupProductAndPrice" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupProductAndPrice"/>
+    <view-map name="LookupProductFeature" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupProductFeature"/>
+    <view-map name="LookupUserLoginAndPartyDetails" type="screen" page="component://clparty/widget/clpartymgr/LookupScreens.xml#LookupUserLoginAndPartyDetails"/>
     <view-map name="LookupPreferredContactMech" type="screen" page="component://marketing/widget/ContactListScreens.xml#LookupPreferredContactMech"/>
-    <view-map name="LookupVariantProduct" type="screen" page="component://product/widget/catalog/LookupScreens.xml#LookupVariantProduct"/>
+    <view-map name="LookupVariantProduct" type="screen" page="component://clproduct/widget/clcatalog/LookupScreens.xml#LookupVariantProduct"/>
 
-    <view-map name="LookupFacility" type="screen" page="component://product/widget/facility/LookupScreens.xml#LookupFacility"/>
+    <view-map name="LookupFacility" type="screen" page="component://clproduct/widget/clfacility/LookupScreens.xml#LookupFacility"/>
     <view-map name="LookupFixedAsset" type="screen" page="component://accounting/widget/LookupScreens.xml#LookupFixedAsset"/>
 
     <view-map name="LookupShoppingList" type="screen" page="component://clorder//widget/clordermgr/LookupScreens.xml#LookupShoppingList"/>
@@ -2034,7 +2034,7 @@ under the License.
     <view-map name="OrderPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#OrderPDF" content-type="application/pdf" encoding="none"/>
     <view-map name="ReturnPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#ReturnPDF" content-type="application/pdf" encoding="none"/>
     <view-map name="ShipGroupsPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#ShipGroupsPDF" content-type="application/pdf" encoding="none"/>
-    <view-map name="OrderPickSheetPDF" type="screenfop" page="component://product/widget/facility/FacilityScreens.xml#PrintPickSheets.fo" content-type="application/pdf" encoding="none"/>
+    <view-map name="OrderPickSheetPDF" type="screenfop" page="component://clproduct/widget/clfacility/FacilityScreens.xml#PrintPickSheets.fo" content-type="application/pdf" encoding="none"/>
 
     <view-map name="SendConfirmationMail" type="screen" page="component://clorder//widget/clordermgr/OrderViewScreens.xml#SendOrderConfirmation"/>
     <view-map name="SendCompletionMail" type="screen" page="component://clorder//widget/clordermgr/OrderViewScreens.xml#SendOrderCompletion"/>
