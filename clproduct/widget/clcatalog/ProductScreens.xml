@@ -186,7 +186,7 @@ under the License.
                     <order-by field-name="fromDate"/>
                 </entity-and>
 
-                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/>
+                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonProductDecorator" location="${parameters.productDecoratorLocation}">
@@ -445,7 +445,7 @@ under the License.
                 <set field="productCostComponentId" from-field="parameters.productCostComponentId"/>
 
                 <!-- default currency in framework/common/config/general.properties -->
-                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/>
+                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
 
                 <entity-one entity-name="CostComponent" value-field="costComponent" auto-field-map="false">
                     <field-map field-name="costComponentId" from-field="productCostComponentId"/>
@@ -853,7 +853,7 @@ under the License.
                 <set field="labelTitleProperty" value="ProductSuppliers"/>
 
                 <!-- default currency in framework/common/config/general.properties -->
-                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/>
+                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
 
                 <entity-one entity-name="SupplierProduct" value-field="supplierProduct" auto-field-map="true"/>
             </actions>
@@ -1377,7 +1377,7 @@ under the License.
                     <order-by field-name="fromDate"/>
                 </entity-and>
 
-                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/>
+                <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonProductDecorator" location="${parameters.productDecoratorLocation}">

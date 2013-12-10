@@ -180,7 +180,7 @@ under the License.
             <!-- get the invoice and do some further validation against it -->
             <entity-one entity-name="Invoice" value-field="invoice"/>
             <!-- check the currencies if they are compatible -->           
-            <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="USD"/>
+            <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
             <if>
                 <condition>
                     <or>
