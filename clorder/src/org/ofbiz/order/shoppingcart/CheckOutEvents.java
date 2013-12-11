@@ -996,7 +996,7 @@ public class CheckOutEvents {
 
         String customerPartyId = cart.getPartyId();
 
-        String[] processOrder = {"customer", "shipping", "shipGroups", "options", "term", "payment",
+        String[] processOrder = {"customer", "shipping", "shipGroups", "options", "agreement", "term", "payment",
                                  "addparty", "paysplit"};
 
         if (cart.getOrderType().equals("PURCHASE_ORDER")) {
@@ -1028,6 +1028,10 @@ public class CheckOutEvents {
             } else if (currProcess.equals("options")) {
                 if (requireOptions && !shippingOptionsSet) {
                     return "options";
+                }
+            } else if (currProcess.equals("agreement")) {
+                if (requireTerm && !cart.isOrderTermSet()) {
+                    return "agreement";
                 }
             } else if (currProcess.equals("term")) {
                 if (requireTerm && !cart.isOrderTermSet()) {

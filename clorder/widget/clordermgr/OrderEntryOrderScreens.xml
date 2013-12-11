@@ -226,6 +226,25 @@ under the License.
             </widgets>
         </section>
     </screen>
+    <screen name="AgreementOrderTerms">
+    <section>
+        <actions>
+<!--             <set field="stepTitleId" value="OrderOrderEntryOrderTerms"/> -->
+            <set field="stepTitleId" value="Contrato de Credito"/>
+            <set field="stepLabelId" value="OrderOrderTerms"/>
+            <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/entry/AgreementOrderTerms.groovy"/>
+        </actions>
+        <widgets>
+            <decorator-screen name="CommonOrderCheckoutDecorator">
+                <decorator-section name="body">
+                    <platform-specific>
+                        <html><html-template location="component://clorder/webapp/clordermgr/entry/agreementorderterms.ftl"/></html>
+                    </platform-specific>
+                </decorator-section>
+            </decorator-screen>
+        </widgets>
+    </section>
+    </screen>
     <screen name="ConfirmOrder">
         <section>
             <actions>

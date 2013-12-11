@@ -756,6 +756,7 @@ under the License.
         <response name="options" type="view" value="optionsetting"/>
         <response name="payment" type="request" value="calcShippingBeforePayment"/>
         <response name="paymentError" type="request" value="calcShippingBeforePayment"/>
+        <response name="agreement" type="view" value="agreementOrderTerm"/>
         <response name="term" type="view" value="orderTerm"/>
         <response name="shipGroups" type="view" value="SetItemShipGroups"/>
         <response name="sales" type="request" value="calcShipping"/>
@@ -1925,6 +1926,7 @@ under the License.
     <view-map name="confirm" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#ConfirmOrder"/>
     <view-map name="ordercomplete" type="screen" page="component://clorder//widget/clordermgr/OrderViewScreens.xml#OrderHeaderView"/>
     <view-map name="orderTerm" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#OrderTerms"/>
+    <view-map name="agreementOrderTerm" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#AgreementOrderTerms"/>
     <view-map name="setAdditionalParty" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#SetAdditionalParty"/>
 
     <view-map name="showAllPromotions" type="screen" page="component://clorder//widget/clordermgr/OrderEntryCartScreens.xml#showAllPromotions"/>
