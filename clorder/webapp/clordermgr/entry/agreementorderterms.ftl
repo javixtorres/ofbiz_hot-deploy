@@ -58,7 +58,7 @@ under the License.
                         
                             <#assign lookupPartyView="LookupPerson">
                         
-                            <form method="post" action="<@ofbizUrl>addOrderTerm</@ofbizUrl>" name="agreementtermform">
+                            <form method="post" action="<@ofbizUrl>addAgreementOrderTerm</@ofbizUrl>" name="agreementtermform">
                                 <input type="hidden" name="termIndex" value="${termIndex?if_exists}" />
                                 <table class="basic-table">
                                 

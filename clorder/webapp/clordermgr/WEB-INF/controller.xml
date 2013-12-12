@@ -1041,9 +1041,20 @@ under the License.
         <security https="true" auth="true"/>
         <response name="success" type="view" value="orderTerm"/>
     </request-map>
+    <request-map uri="setAgreementOrderTerm">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="agreementOrderTerm"/>
+    </request-map>
     <request-map uri="addOrderTerm">
         <security https="true" auth="true"/>
         <event type="java" path="org.ofbiz.order.shoppingcart.ShoppingCartEvents" invoke="addOrderTerm"/>
+        <response name="success" type="view" value="orderTerm"/>
+        <response name="error" type="view" value="orderTerm"/>
+    </request-map>
+    </request-map>
+    <request-map uri="addAgreementOrderTerm">
+        <security https="true" auth="true"/>
+        <event type="java" path="org.ofbiz.order.shoppingcart.ShoppingCartEvents" invoke="addAgreementOrderTerm"/>
         <response name="success" type="view" value="orderTerm"/>
         <response name="error" type="view" value="orderTerm"/>
     </request-map>
