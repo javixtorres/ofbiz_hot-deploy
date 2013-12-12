@@ -78,7 +78,7 @@ under the License.
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                            <input type=" "text" size="20" maxlength="60"  name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
+                                            <input type="text" size="20" maxlength="60"  name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
                                         </td>
                                     </tr> 
                                      <tr>
