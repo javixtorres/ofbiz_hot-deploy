@@ -55,72 +55,22 @@ under the License.
                                 </tr>
                             </table>
                         <#else>
-                            <form method="post" action="<@ofbizUrl>addOrderTerm</@ofbizUrl>" name="termform">
+                        
+                            <#assign lookupPartyView="LookupPerson">
+                        
+                            <form method="post" action="<@ofbizUrl>addOrderTerm</@ofbizUrl>" name="agreementtermform">
                                 <input type="hidden" name="termIndex" value="${termIndex?if_exists}" />
-                                <table class="basic-table"
-                                    <tr>
-                                    <td width="25%" align="right" valign="top">
-                                        1. Referencia Personal/Comercial
-                                    </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="25%">
-                                            <input type="text" size="40" maxlength="255" name="textValueRef1" value="${textValueRef1?if_exists}" />
-                                        </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="5%" align="right" valign="top">
-                                         Tel.
-                                    </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="15%">
-                                        <input type="text" size="30" maxlength="60" name="termValueRef1" value="${termValueRef1?if_exists}" />
-                                    </td>
-                                    <td width="30%">
-                                    </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                    <td width="25%" align="right" valign="top">
-                                        2. Referencia Personal/Comercial
-                                    </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="25%">
-                                            <input type="text" size="40" maxlength="255" name="textValueRef2" value="${textValueRef2?if_exists}" />
-                                        </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="5%" align="right" valign="top">
-                                         Tel.
-                                    </td>
-                                    <td width="5">&nbsp;</td>
-                                    <td width="15%">
-                                        <input type="text" size="30" maxlength="60" name="termValueRef2" value="${termValueRef2?if_exists}" />
-                                    </td>
-                                    <td width="30%">
-                                    </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td width="25%" align="right" valign="top">&nbsp;</td>
-                                        <td width="5">&nbsp;</td>
-                                        <td width="25%">
-                                            <input type="submit" class="smallSubmit" value="Aceptar" />
-                                        </td>
-                                        <td width="5%" align="right" valign="top">&nbsp;</td>
-                                        <td width="5">&nbsp;</td>
-                                        <td width="15%">
-                                        </td>
-                                        <td width="30%">
-                                        </td>
-                                    </tr>
-                                </table>
                                 <table class="basic-table">
-                                     <tr>
+                                
+                                <tr>
                                         <td width="26%" align="right" valign="top">
-                                            Cuotas
+                                            Codeudor
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                            <input type="text" size="30" maxlength="60" name="termValueCuotas" value="${termValueCuotas?if_exists}" />
-                                        </td>
+                                        <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor}" />
+                                        <@htmlTemplate.lookupField value="${textValueCodeudor?if_exists}" formName="agreementtermform" name="textValueCodeudor" id="textValueCodeudor" fieldFormName="${lookupPartyView}"/>                  						</div>                    
+                  						</td>
                                     </tr>
                                     <tr>
                                         <td width="26%" align="right" valign="top">
@@ -128,7 +78,78 @@ under the License.
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                            <input type="text" size="30" maxlength="60" name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
+                                            <input type=" "text" size="20" maxlength="60"  name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
+                                        </td>
+                                    </tr> 
+                                     <tr>
+                                        <td width="26%" align="right" valign="top">
+                                            Cuotas
+                                        </td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+                                            <input type="text" size="10" maxlength="60" name="termValueCuotas" value="${termValueCuotas?if_exists}" />
+                                        </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td width="26%" align="right" valign="top">
+                                            Fecha Primer Vencimiento
+                                        </td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+                                        <input type="hidden" name="textValueDate" value="${textValueDate}" />
+										<@htmlTemplate.renderDateTimeField name="textValueDate" value="${textValueDate?default('')}" event="" action="" className="" alert="" title="Format: yyyy-MM-dd" size="10" maxlength="15" id="textValueDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>                    
+                  						</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td width="26%" align="right" valign="top">
+                                        1. Referencia Personal/Comercial
+                                    </td>
+                                    <td width="5">&nbsp;</td>
+                                    <td width="74%">
+                                            <input type="text" size="40" maxlength="255" name="textValueRef1" value="${textValueRef1?if_exists}" />
+                                        </td>
+                                    <td width="5">&nbsp;</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td width="26%" align="right" valign="top">
+                                         1. Tel.
+                                    </td>
+                                    <td width="5">&nbsp;</td>
+                                    <td width="74%">
+                                        <input type="text" size="30" maxlength="60" name="termValueRef1" value="${termValueRef1?if_exists}" />
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td width="26%" align="right" valign="top">
+                                        2. Referencia Personal/Comercial
+                                    </td>
+                                    <td width="5">&nbsp;</td>
+                                    <td width="76%">
+                                            <input type="text" size="40" maxlength="255" name="textValueRef2" value="${textValueRef2?if_exists}" />
+                                        </td>
+                                    </tr>
+                                        
+                                    <tr>
+                                    <td width="26%" align="right" valign="top">
+                                         2. Tel.
+                                    </td>
+                                    <td width="5">&nbsp;</td>
+                                    <td width="76%">
+                                        <input type="text" size="30" maxlength="60" name="termValueRef2" value="${termValueRef2?if_exists}" />
+                                    </td>
+                                    </tr>
+                                   
+                                   
+                                    
+                                     <tr>
+                                        <td width="26%" align="right" valign="top">&nbsp;</td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+                                            <input type="submit" class="smallSubmit" value="Aceptar" />
                                         </td>
                                     </tr>
                                 </table>
