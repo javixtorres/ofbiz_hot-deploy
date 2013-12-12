@@ -1051,7 +1051,6 @@ under the License.
         <response name="success" type="view" value="orderTerm"/>
         <response name="error" type="view" value="orderTerm"/>
     </request-map>
-    </request-map>
     <request-map uri="addAgreementOrderTerm">
         <security https="true" auth="true"/>
         <event type="java" path="org.ofbiz.order.shoppingcart.ShoppingCartEvents" invoke="addAgreementOrderTerm"/>
