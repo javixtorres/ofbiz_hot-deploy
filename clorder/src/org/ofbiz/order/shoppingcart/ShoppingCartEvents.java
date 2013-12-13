@@ -54,6 +54,7 @@ import org.ofbiz.entity.GenericValue;
 import org.ofbiz.entity.condition.EntityCondition;
 import org.ofbiz.entity.condition.EntityOperator;
 import org.ofbiz.entity.util.EntityUtil;
+import org.ofbiz.order.shoppingcart.ShoppingCart;
 import org.ofbiz.order.shoppingcart.ShoppingCart.ProductPromoUseInfo;
 import org.ofbiz.order.shoppingcart.product.ProductPromoWorker;
 import org.ofbiz.product.catalog.CatalogWorker;
@@ -1344,12 +1345,27 @@ public class ShoppingCartEvents {
 
         ShoppingCart cart = getCartObject(request);
         Locale locale = UtilHttp.getLocale(request);
+        
+        cart.removeOrderTerms();
 
         String termTypeId = request.getParameter("termTypeId");
         String termValueStr = request.getParameter("termValue");
         String termDaysStr = request.getParameter("termDays");
         String textValue = request.getParameter("textValue");
-
+        
+        String textValueCodeudor = request.getParameter("textValueCodeudor");
+        String termValueAnticipo = request.getParameter("termValueAnticipo");
+        String termValueCuotas = request.getParameter("termValueCuotas");
+        String textValueDate = request.getParameter("textValueDate");
+        String textValueRefNom1 = request.getParameter("textValueRefNom1");
+        String termValueRefTel1 = request.getParameter("termValueRefTel1");
+        String textValueRefNom2 = request.getParameter("textValueRefNom2");
+        String termValueRefTel2 = request.getParameter("termValueRefTel2");
+        
+        
+        termTypeId="CRD_ANTICIPO";
+        termValueStr=termValueAnticipo;
+        
         GenericValue termType = null;
         Delegator delegator = (Delegator) request.getAttribute("delegator");
 
@@ -1394,7 +1410,295 @@ public class ShoppingCartEvents {
         removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+        
+        //----------------------------------------------------//
+        
+        termTypeId = null;
+        termValueStr = null;
+        termDaysStr = null;
+        textValue = null;
+        
+        termTypeId="CRD_CODEUDOR";
+        textValue=textValueCodeudor;
+        
+        termType = null;
+        termValue = null;
+        termDays = null;
+        
 
+        if (UtilValidate.isEmpty(termTypeId)) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
+            return "error";
+        }
+
+        try {
+            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
+        } catch (GenericEntityException gee) {
+            request.setAttribute("_ERROR_MESSAGE_", gee.getMessage());
+            return "error";
+        }
+
+        if (("FIN_PAYMENT_TERM".equals(termTypeId) && UtilValidate.isEmpty(termDaysStr)) || (UtilValidate.isNotEmpty(termType) && "FIN_PAYMENT_TERM".equals(termType.get("parentTypeId")) && UtilValidate.isEmpty(termDaysStr))) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysIsRequired", locale));
+            return "error";
+        }
+
+        if (UtilValidate.isNotEmpty(termValueStr)) {
+            try {
+                termValue = new BigDecimal(termValueStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+
+        if (UtilValidate.isNotEmpty(termDaysStr)) {
+            try {
+                termDays = Long.valueOf(termDaysStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
+                return "error";
+            }
+        }
+
+        removeOrderTerm(request, response);
+
+        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+        
+       //----------------------------------------------------//
+        
+        termTypeId = null;
+        termValueStr = null;
+        termDaysStr = null;
+        textValue = null;
+        
+        termTypeId="CRD_REFERENCIA";
+        textValue=textValueRefNom1;
+        termValueStr=termValueRefTel1;
+        
+        termType = null;
+        termValue = null;
+        termDays = null;
+        
+
+        if (UtilValidate.isEmpty(termTypeId)) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
+            return "error";
+        }
+
+        try {
+            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
+        } catch (GenericEntityException gee) {
+            request.setAttribute("_ERROR_MESSAGE_", gee.getMessage());
+            return "error";
+        }
+
+        if (("FIN_PAYMENT_TERM".equals(termTypeId) && UtilValidate.isEmpty(termDaysStr)) || (UtilValidate.isNotEmpty(termType) && "FIN_PAYMENT_TERM".equals(termType.get("parentTypeId")) && UtilValidate.isEmpty(termDaysStr))) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysIsRequired", locale));
+            return "error";
+        }
+
+        if (UtilValidate.isNotEmpty(termValueStr)) {
+            try {
+                termValue = new BigDecimal(termValueStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+
+        if (UtilValidate.isNotEmpty(termDaysStr)) {
+            try {
+                termDays = Long.valueOf(termDaysStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
+                return "error";
+            }
+        }
+
+        removeOrderTerm(request, response);
+
+        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+        
+        //----------------------------------------------------//
+        
+        termTypeId = null;
+        termValueStr = null;
+        termDaysStr = null;
+        textValue = null;
+        
+        termTypeId="CRD_REFERENCIA";
+        textValue=textValueRefNom2;
+        termValueStr=termValueRefTel2;
+        
+        termType = null;
+        termValue = null;
+        termDays = null;
+        
+
+        if (UtilValidate.isEmpty(termTypeId)) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
+            return "error";
+        }
+
+        try {
+            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
+        } catch (GenericEntityException gee) {
+            request.setAttribute("_ERROR_MESSAGE_", gee.getMessage());
+            return "error";
+        }
+
+        if (("FIN_PAYMENT_TERM".equals(termTypeId) && UtilValidate.isEmpty(termDaysStr)) || (UtilValidate.isNotEmpty(termType) && "FIN_PAYMENT_TERM".equals(termType.get("parentTypeId")) && UtilValidate.isEmpty(termDaysStr))) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysIsRequired", locale));
+            return "error";
+        }
+
+        if (UtilValidate.isNotEmpty(termValueStr)) {
+            try {
+                termValue = new BigDecimal(termValueStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+
+        if (UtilValidate.isNotEmpty(termDaysStr)) {
+            try {
+                termDays = Long.valueOf(termDaysStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
+                return "error";
+            }
+        }
+
+        removeOrderTerm(request, response);
+
+        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+        
+        
+        //----------------------------------------------------//
+        
+        termTypeId = null;
+        termValueStr = null;
+        termDaysStr = null;
+        textValue = null;
+        
+        termTypeId="CRD_FECHA_INI";
+        textValue=textValueDate;
+        
+        termType = null;
+        termValue = null;
+        termDays = null;
+        
+
+        if (UtilValidate.isEmpty(termTypeId)) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
+            return "error";
+        }
+
+        try {
+            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
+        } catch (GenericEntityException gee) {
+            request.setAttribute("_ERROR_MESSAGE_", gee.getMessage());
+            return "error";
+        }
+
+        if (("FIN_PAYMENT_TERM".equals(termTypeId) && UtilValidate.isEmpty(termDaysStr)) || (UtilValidate.isNotEmpty(termType) && "FIN_PAYMENT_TERM".equals(termType.get("parentTypeId")) && UtilValidate.isEmpty(termDaysStr))) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysIsRequired", locale));
+            return "error";
+        }
+
+        if (UtilValidate.isNotEmpty(termValueStr)) {
+            try {
+                termValue = new BigDecimal(termValueStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+
+        if (UtilValidate.isNotEmpty(termDaysStr)) {
+            try {
+                termDays = Long.valueOf(termDaysStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
+                return "error";
+            }
+        }
+
+        removeOrderTerm(request, response);
+
+        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+
+        
+        //---------------------------------------------------------------//
+        
+        int Cuotas=0;
+        
+        if (UtilValidate.isNotEmpty(termValueCuotas)) {
+            try {
+                Cuotas = Integer.parseInt(termValueCuotas);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+
+        
+        termTypeId="CRD_CUOTA";
+        if (UtilValidate.isEmpty(termTypeId)) {
+            request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
+            return "error";
+        }
+        try {
+            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
+        } catch (GenericEntityException gee) {
+            request.setAttribute("_ERROR_MESSAGE_", gee.getMessage());
+            return "error";
+        }
+
+        
+        for(int x = 0; x < Cuotas; x++) {
+            	 
+             termValueStr = null;
+             termDaysStr = null;
+             textValue = null;
+             
+             
+             textValue=textValueDate;
+             
+             termType = null;
+             termValue = null;
+             termDays = null;
+             
+             termValue = BigDecimal.valueOf(x);
+       
+             if (UtilValidate.isNotEmpty(termValueStr)) {
+                 try {
+                     termValue = new BigDecimal(termValueStr);
+                 } catch (NumberFormatException e) {
+                     request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                     return "error";
+                 }
+             }
+
+             if (UtilValidate.isNotEmpty(termDaysStr)) {
+                 try {
+                     termDays = Long.valueOf(termDaysStr);
+                 } catch (NumberFormatException e) {
+                     request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
+                     return "error";
+                 }
+             }
+
+             removeOrderTerm(request, response);
+
+             cart.addOrderTerm(termTypeId, termValue, termDays, textValue);        	
+        	
+         }
+        
+        
+        
         return "success";
     }
 

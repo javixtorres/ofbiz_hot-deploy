@@ -27,35 +27,7 @@ under the License.
                         <form method="post" action="<@ofbizUrl>finalizeOrder</@ofbizUrl>" name="checkoutsetupform">
                             <input type="hidden" name="finalizeMode" value="term" />
                         </form>
-                        <#if orderTerms?has_content && parameters.createNew?default('') != 'Y'>
-                            <table class="basic-table hover-bar">
-                                <tr class="header-row">
-                                    <td>${uiLabelMap.OrderOrderTermType}</td>
-                                    <td align="center">${uiLabelMap.OrderOrderTermValue}</td>
-                                    <td align="center">${uiLabelMap.OrderOrderTermDays}</td>
-                                    <td>${uiLabelMap.CommonDescription}</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <#list orderTerms as orderTerm>
-                                    <tr <#if orderTerm_index % 2 != 0>class="alternate-row"</#if> >
-                                        <td nowrap="nowrap">${orderTerm.getRelatedOne('TermType', false).get('description', locale)}</td>
-                                        <td align="center">${orderTerm.termValue?if_exists}</td>
-                                        <td align="center">${orderTerm.termDays?if_exists}</td>
-                                        <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
-                                        <td align="right">
-                                            <a href="<@ofbizUrl>setOrderTerm?termIndex=${orderTerm_index}&amp;createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonUpdate}</a>
-                                            <a href="<@ofbizUrl>removeCartOrderTerm?termIndex=${orderTerm_index}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonRemove}</a>
-                                        </td>
-                                    </tr>
-                                </#list>
-                                <tr>
-                                    <td colspan="5">
-                                        <a href="<@ofbizUrl>setOrderTerm?createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonCreateNew}</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        <#else>
-                        
+
                             <#assign lookupPartyView="LookupPerson">
                         
                             <form method="post" action="<@ofbizUrl>addAgreementOrderTerm</@ofbizUrl>" name="agreementtermform">
@@ -68,7 +40,6 @@ under the License.
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                        <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor}" />
                                         <@htmlTemplate.lookupField value="${textValueCodeudor?if_exists}" formName="agreementtermform" name="textValueCodeudor" id="textValueCodeudor" fieldFormName="${lookupPartyView}"/>                  						</div>                    
                   						</td>
                                     </tr>
@@ -97,7 +68,6 @@ under the License.
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                        <input type="hidden" name="textValueDate" value="${textValueDate}" />
 										<@htmlTemplate.renderDateTimeField name="textValueDate" value="${textValueDate?default('')}" event="" action="" className="" alert="" title="Format: yyyy-MM-dd" size="10" maxlength="15" id="textValueDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>                    
                   						</td>
                                     </tr>
@@ -108,7 +78,7 @@ under the License.
                                     </td>
                                     <td width="5">&nbsp;</td>
                                     <td width="74%">
-                                            <input type="text" size="40" maxlength="255" name="textValueRef1" value="${textValueRef1?if_exists}" />
+                                            <input type="text" size="40" maxlength="255" name="textValueRefNom1" value="${textValueRefNom1?if_exists}" />
                                         </td>
                                     <td width="5">&nbsp;</td>
                                     </tr>
@@ -119,7 +89,7 @@ under the License.
                                     </td>
                                     <td width="5">&nbsp;</td>
                                     <td width="74%">
-                                        <input type="text" size="30" maxlength="60" name="termValueRef1" value="${termValueRef1?if_exists}" />
+                                        <input type="text" size="30" maxlength="60" name="termValueRefTel1" value="${termValueRefTel1?if_exists}" />
                                     </td>
                                     </tr>
                                     
@@ -129,7 +99,7 @@ under the License.
                                     </td>
                                     <td width="5">&nbsp;</td>
                                     <td width="76%">
-                                            <input type="text" size="40" maxlength="255" name="textValueRef2" value="${textValueRef2?if_exists}" />
+                                            <input type="text" size="40" maxlength="255" name="textValueRefNom2" value="${textValueRefNom2?if_exists}" />
                                         </td>
                                     </tr>
                                         
@@ -139,7 +109,7 @@ under the License.
                                     </td>
                                     <td width="5">&nbsp;</td>
                                     <td width="76%">
-                                        <input type="text" size="30" maxlength="60" name="termValueRef2" value="${termValueRef2?if_exists}" />
+                                        <input type="text" size="30" maxlength="60" name="termValueRefTel2" value="${termValueRefTel2?if_exists}" />
                                     </td>
                                     </tr>
                                    
@@ -149,13 +119,16 @@ under the License.
                                         <td width="26%" align="right" valign="top">&nbsp;</td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
+    
+                                            <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor}" />
+                                            <input type="hidden" name="textValueDate" value="${textValueDate}" />
+                                        
                                             <input type="submit" class="smallSubmit" value="Aceptar" />
                                         </td>
                                     </tr>
                                 </table>
                                 
                             </form>
-                        </#if>
                     </td>
                 </tr>
             </table>
