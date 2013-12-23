@@ -1049,12 +1049,15 @@ public class OrderServices {
 
        List<GenericValue> orderTerms = UtilGenerics.checkList(context.get("orderTerms"));
        if (UtilValidate.isNotEmpty(orderTerms)) {
+    	   int contador=1;
            for(GenericValue orderTerm : orderTerms) {
                orderTerm.set("orderId", orderId);
                if (orderTerm.get("orderItemSeqId") == null) {
-                   orderTerm.set("orderItemSeqId", "_NA_");
+                   //orderTerm.set("orderItemSeqId", "_NA_");
+                   orderTerm.set("orderItemSeqId", String.valueOf(contador));
                }
                toBeStored.add(orderTerm);
+               contador++;
            }
        }
 

@@ -1407,7 +1407,7 @@ public class ShoppingCartEvents {
             }
         }
 
-        removeOrderTerm(request, response);
+        //removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
         
@@ -1461,7 +1461,7 @@ public class ShoppingCartEvents {
             }
         }
 
-        removeOrderTerm(request, response);
+        //removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
         
@@ -1473,7 +1473,7 @@ public class ShoppingCartEvents {
         textValue = null;
         
         termTypeId="CRD_REFERENCIA";
-        textValue=textValueRefNom1;
+        textValue=textValueRefNom1.toUpperCase();
         termValueStr=termValueRefTel1;
         
         termType = null;
@@ -1516,7 +1516,7 @@ public class ShoppingCartEvents {
             }
         }
 
-        removeOrderTerm(request, response);
+        //removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
         
@@ -1528,7 +1528,7 @@ public class ShoppingCartEvents {
         textValue = null;
         
         termTypeId="CRD_REFERENCIA";
-        textValue=textValueRefNom2;
+        textValue=textValueRefNom2.toUpperCase();
         termValueStr=termValueRefTel2;
         
         termType = null;
@@ -1571,7 +1571,7 @@ public class ShoppingCartEvents {
             }
         }
 
-        removeOrderTerm(request, response);
+        //removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
         
@@ -1626,14 +1626,44 @@ public class ShoppingCartEvents {
             }
         }
 
-        removeOrderTerm(request, response);
+        //removeOrderTerm(request, response);
 
         cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
 
         
         //---------------------------------------------------------------//
         
+        
+        
         int Cuotas=0;
+        
+        BigDecimal MtTotal = cart.getGrandTotal();
+        BigDecimal MtAnticipo = null;
+        BigDecimal MtCuota  =  null;
+        BigDecimal CantCuotas  =  null;
+        
+        
+        if (UtilValidate.isNotEmpty(termValueAnticipo)) {
+            try {
+            	MtAnticipo = new BigDecimal(termValueAnticipo);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+  
+        if (UtilValidate.isNotEmpty(termValueCuotas)) {
+            try {
+            	CantCuotas = new BigDecimal(termValueCuotas);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
+                return "error";
+            }
+        }
+        
+        MtCuota = MtTotal.subtract(MtAnticipo);
+        
+        MtCuota	= MtCuota.divide(CantCuotas);
         
         if (UtilValidate.isNotEmpty(termValueCuotas)) {
             try {
@@ -1657,47 +1687,34 @@ public class ShoppingCartEvents {
             return "error";
         }
 
+        termValueStr = null;
+        termDaysStr = null;
+        textValue = null;
+
+        termType = null;
+        termValue = null;
+        termDays = null;      
         
-        for(int x = 0; x < Cuotas; x++) {
-            	 
-             termValueStr = null;
-             termDaysStr = null;
-             textValue = null;
-             
-             
+        // termValue = BigDecimal.valueOf(x);
+        
+        termValue = MtCuota;
+
+        
+        for(int x = 1; x <= Cuotas; x++) {
+            	       
              textValue=textValueDate;
              
-             termType = null;
-             termValue = null;
-             termDays = null;
+             textValue = "Nro."+ String.valueOf(x);
              
-             termValue = BigDecimal.valueOf(x);
-       
-             if (UtilValidate.isNotEmpty(termValueStr)) {
-                 try {
-                     termValue = new BigDecimal(termValueStr);
-                 } catch (NumberFormatException e) {
-                     request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermValueError", UtilMisc.toMap("orderTermValue", termValueStr), locale));
-                     return "error";
-                 }
-             }
-
-             if (UtilValidate.isNotEmpty(termDaysStr)) {
-                 try {
-                     termDays = Long.valueOf(termDaysStr);
-                 } catch (NumberFormatException e) {
-                     request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
-                     return "error";
-                 }
-             }
-
-             removeOrderTerm(request, response);
+                      
+             //removeOrderTerm(request, response);
 
              cart.addOrderTerm(termTypeId, termValue, termDays, textValue);        	
         	
          }
         
-        
+        //---------------------------------------------------------------//
+
         
         return "success";
     }
