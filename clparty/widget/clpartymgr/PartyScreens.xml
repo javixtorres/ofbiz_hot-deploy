@@ -736,6 +736,7 @@ under the License.
     </screen>
 
     <!-- New Prospect Party Screen -->
+      <!-- New Prospect Party Screen -->
     <screen name="NewProspect">
         <section>
             <actions>
