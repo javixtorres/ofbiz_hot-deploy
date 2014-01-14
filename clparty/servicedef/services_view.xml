@@ -34,6 +34,7 @@ under the License.
         <attribute name="VIEW_SIZE" type="String" mode="IN" optional="true"/>
         <attribute name="lookupFlag" type="String" mode="IN" optional="true"/>
         <attribute name="showAll" type="String" mode="IN" optional="true"/>
+        <attribute name="cardId" type="String" mode="IN" optional="true"/> <!-- CI -->
         <attribute name="partyId" type="String" mode="IN" optional="true"/> <!-- does a LIKE compare on this, can do partial, case insensitive, etc -->
         <attribute name="partyTypeId" type="String" mode="IN" optional="true"/>
         <attribute name="userLoginId" type="String" mode="IN" optional="true"/> <!-- does a LIKE compare on this, can do partial, case insensitive, etc -->

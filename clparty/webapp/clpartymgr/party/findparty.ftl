@@ -200,7 +200,7 @@ under the License.
       </form>
     </div>
     <script language="JavaScript" type="text/javascript">
-      document.lookupparty.partyId.focus();
+      document.lookupparty.cardId.focus();
     </script>
 
 <#if partyList?exists>
