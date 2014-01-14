@@ -3081,7 +3081,7 @@ public class PaymentGatewayServices {
         // this record is not to be stored, just passed to the service for use
 
         // get the default currency
-        String currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+        String currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
 
         // prepare the auth context
         Map<String, Object> authContext = FastMap.newInstance();
@@ -3246,7 +3246,7 @@ public class PaymentGatewayServices {
             requestContext.put("billToParty", orh.getBillToParty());
             requestContext.put("billToEmail", billToEmail);
             requestContext.put("referenceCode", referenceCode);
-            String currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            String currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
             requestContext.put("currency", currency);
             requestContext.put("creditAmount", context.get("amount"));
         } else {

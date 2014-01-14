@@ -501,7 +501,7 @@ public class InvoiceWorker {
                 otherCurrencyUomId = UtilProperties.getPropertyValue("general", "currency.uom.id.default");
             }
             if (otherCurrencyUomId == null) {
-                otherCurrencyUomId = "USD"; // final default
+                otherCurrencyUomId = "PYG"; // final default
             }
         } catch (GenericEntityException e) {
             Debug.logError(e, "Trouble getting database records....", module);

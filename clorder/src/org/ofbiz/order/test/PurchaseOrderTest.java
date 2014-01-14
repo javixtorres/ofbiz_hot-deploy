@@ -52,7 +52,7 @@ public class PurchaseOrderTest extends OFBizTestCase {
         Map <String, Object> ctx = FastMap.newInstance();
         ctx.put("partyId", "Company");
         ctx.put("orderTypeId", "PURCHASE_ORDER");
-        ctx.put("currencyUom", "USD");
+        ctx.put("currencyUom", "PYG");
         ctx.put("productStoreId","9000");
 
         GenericValue orderItem = delegator.makeValue("OrderItem", UtilMisc.toMap("orderItemSeqId", "00001", "orderItemTypeId", "PRODUCT_ORDER_ITEM", "prodCatalogId", "DemoCatalog", "productId", "GZ-1000", "quantity", new BigDecimal("2"), "isPromo", "N"));

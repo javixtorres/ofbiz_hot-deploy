@@ -96,6 +96,15 @@ function makeExpDate() {
                   <label for="checkOutPaymentId_EXT_COD">${uiLabelMap.OrderCOD}</label>
                 </td>
               </tr>
+              <tr><td colspan="3"><hr /></td></tr>
+              <tr>
+                <td width="1%">
+                  <input type="radio" id="checkOutPaymentId_CASH" name="checkOutPaymentId" value="CASH" <#if checkOutPaymentId?exists && checkOutPaymentId == "CASH">checked="checked"</#if>/>
+                </td>
+                <td colspan="2" width="50%">
+                  <label for="checkOutPaymentId_CASH">Pago en Efectivo</label>
+                </td>
+              </tr>
              <tr><td colspan="3"><hr /></td></tr>
               <#if paymentMethodList?has_content>
                 <#list paymentMethodList as paymentMethod>
@@ -497,12 +506,15 @@ function makeExpDate() {
                 <td width='50%' nowrap="nowrap"><div>${uiLabelMap.OrderPaymentOfflineCheckMoney}</div></td>
               </tr>
               <tr><td colspan="2"><hr /></td></tr>
+              <#--
               <tr>
                 <td width="1%" nowrap="nowrap"><input type="radio" name="paymentMethodTypeAndId" value="EXT_COD" <#if checkOutPaymentId?exists && checkOutPaymentId == "EXT_COD">checked="checked"</#if> onchange="setCheckoutPaymentId(this.value)" onclick="setCheckoutPaymentId(this.value)"/></td>
                 <td width="50%" nowrap="nowrap"><div>${uiLabelMap.OrderCOD}</div></td>
               </tr>
               <tr><td colspan="2"><hr /></td></tr>
+              -->
               </#if>
+              <#--
               <tr>
                 <td width='1%' nowrap="nowrap"><input type="radio" name="paymentMethodTypeAndId" value="CC" onchange="setCheckoutPaymentId(this.value)" onclick="setCheckoutPaymentId(this.value)"/>
                 <td width='50%' nowrap="nowrap"><div>${uiLabelMap.AccountingVisaMastercardAmexDiscover}</div></td>
@@ -511,6 +523,16 @@ function makeExpDate() {
               <tr>
                 <td width='1%' nowrap="nowrap"><input type="radio" name="paymentMethodTypeAndId" value="EFT" onchange="setCheckoutPaymentId(this.value)" onclick="setCheckoutPaymentId(this.value)"/>
                 <td width='50%' nowrap="nowrap"><div>${uiLabelMap.AccountingAHCElectronicCheck}</div></td>
+              </tr>
+              <tr><td colspan="2"><hr /></td></tr>
+              -->
+              <tr>
+                <td width="1%">
+                  <input type="radio" id="checkOutPaymentId_CASH" name="checkOutPaymentId" value="CASH" <#if checkOutPaymentId?exists && checkOutPaymentId == "CASH">checked="checked"</#if>/>
+                </td>
+                <td colspan="2" width="50%">
+                  <label for="checkOutPaymentId_CASH">Pago en Efectivo</label>
+                </td>
               </tr>
             </table>
           </form>

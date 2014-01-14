@@ -829,7 +829,7 @@ public class ValueLinkServices {
 
         // make sure we have a currency
         if (currency == null) {
-            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
         }
 
         Map<String, Object> redeemCtx = FastMap.newInstance();
@@ -922,7 +922,7 @@ public class ValueLinkServices {
 
         // make sure we have a currency
         if (currency == null) {
-            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
         }
 
         Map<String, Object> redeemCtx = FastMap.newInstance();
@@ -987,7 +987,7 @@ public class ValueLinkServices {
 
         // make sure we have a currency
         if (currency == null) {
-            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
         }
 
         Map<String, Object> refundCtx = FastMap.newInstance();
@@ -1053,7 +1053,7 @@ public class ValueLinkServices {
 
         // make sure we have a currency
         if (currency == null) {
-            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
         }
 
         // get the product store
@@ -1347,7 +1347,7 @@ public class ValueLinkServices {
 
         // make sure we have a currency
         if (currency == null) {
-            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "USD", delegator);
+            currency = EntityUtilProperties.getPropertyValue("general.properties", "currency.uom.id.default", "PYG", delegator);
         }
 
         // get the product store
