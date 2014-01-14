@@ -228,7 +228,7 @@ public class WorldPayEvents {
         // get the company name
         String company = UtilFormatOut.checkEmpty(productStore.getString("companyName"), "");
         // get the currency
-        String defCur = UtilFormatOut.checkEmpty(productStore.getString("defaultCurrencyUomId"), "USD");
+        String defCur = UtilFormatOut.checkEmpty(productStore.getString("defaultCurrencyUomId"), "PYG");
         // order description
         String description = UtilProperties.getMessage(resource, "AccountingOrderNr", locale) + orderId + " " +
                                  (company != null ? UtilProperties.getMessage(commonResource, "CommonFrom", locale) + " "+ company : "");

@@ -1600,7 +1600,7 @@ public class ProductSearch {
         public ListPriceRangeConstraint(BigDecimal lowPrice, BigDecimal highPrice, String currencyUomId) {
             this.lowPrice = lowPrice;
             this.highPrice = highPrice;
-            this.currencyUomId = UtilValidate.isNotEmpty(currencyUomId) ? currencyUomId : "USD";
+            this.currencyUomId = UtilValidate.isNotEmpty(currencyUomId) ? currencyUomId : "PYG";
         }
 
         @Override
@@ -2078,7 +2078,7 @@ public class ProductSearch {
         @Override
         public void setSortOrder(ProductSearchContext productSearchContext) {
             if (this.currencyUomId == null) {
-                this.currencyUomId = UtilProperties.getPropertyValue("general", "currency.uom.id.default", "USD");
+                this.currencyUomId = UtilProperties.getPropertyValue("general", "currency.uom.id.default", "PYG");
             }
             if (this.productStoreGroupId == null) {
                 this.productStoreGroupId = "_NA_";
