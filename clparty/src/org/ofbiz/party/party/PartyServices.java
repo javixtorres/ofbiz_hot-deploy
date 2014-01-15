@@ -1158,6 +1158,7 @@ public class PartyServices {
 
             // get the params
             String partyId = (String) context.get("partyId");
+            String cardId = (String) context.get("cardId");
             String statusId = (String) context.get("statusId");
             String userLoginId = (String) context.get("userLoginId");
             String firstName = (String) context.get("firstName");
@@ -1170,7 +1171,7 @@ public class PartyServices {
                     paramList = paramList + "&partyId=" + partyId;
                     andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("partyId"), EntityOperator.LIKE, EntityFunction.UPPER("%"+partyId+"%")));
                 }
-
+                
                 // now the statusId - send ANY for all statuses; leave null for just enabled; or pass a specific status
                 if (statusId != null) {
                     paramList = paramList + "&statusId=" + statusId;
@@ -1230,14 +1231,16 @@ public class PartyServices {
                 // ----
 
                 // modify the dynamic view
-                if (UtilValidate.isNotEmpty(firstName) || UtilValidate.isNotEmpty(lastName)) {
+                if (UtilValidate.isNotEmpty(firstName) || UtilValidate.isNotEmpty(lastName) || UtilValidate.isNotEmpty(cardId)) {
                     dynamicView.addMemberEntity("PE", "Person");
                     dynamicView.addAlias("PE", "firstName");
                     dynamicView.addAlias("PE", "lastName");
+                    dynamicView.addAlias("PE", "cardId");
                     dynamicView.addViewLink("PT", "PE", Boolean.FALSE, ModelKeyMap.makeKeyMapList("partyId"));
 
                     fieldsToSelect.add("firstName");
                     fieldsToSelect.add("lastName");
+                    fieldsToSelect.add("cardId");
                     orderBy.add("lastName");
                     orderBy.add("firstName");
                 }
@@ -1253,7 +1256,13 @@ public class PartyServices {
                     paramList = paramList + "&lastName=" + lastName;
                     andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("lastName"), EntityOperator.LIKE, EntityFunction.UPPER("%"+lastName+"%")));
                 }
-
+                
+                // check for a cardId - CodigoLinux
+                if (UtilValidate.isNotEmpty(cardId)) {
+                    paramList = paramList + "&cardId=" + cardId;
+                    andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("cardId"), EntityOperator.EQUALS, cardId));
+                }
+                
                 // ----
                 // RoleType Fields
                 // ----
