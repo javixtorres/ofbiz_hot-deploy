@@ -58,6 +58,13 @@ under the License.
                 <input type="hidden" name="fromDate" value="${fromDate?if_exists}"/>
               </form>
               </li>
+              <#-- CodigoLinux 01/2014 -->
+              <li><a href="javascript:document.OrderCompleteOrder.submit()">${uiLabelMap.OrderCompleteOrder}</a>
+              <form name="OrderCompleteOrder" method="post" action="<@ofbizUrl>changeOrderStatus/orderview</@ofbizUrl>">
+                <input type="hidden" name="statusId" value="ORDER_COMPLETED"/>
+                <input type="hidden" name="orderId" value="${orderId?if_exists}"/>
+              </form>
+              </li>
             <#elseif currentStatus.statusId == "ORDER_HOLD">
               <li><a href="javascript:document.OrderApproveOrder.submit()">${uiLabelMap.OrderApproveOrder}</a>
               <form name="OrderApproveOrder" method="post" action="<@ofbizUrl>changeOrderStatus/orderview</@ofbizUrl>">
