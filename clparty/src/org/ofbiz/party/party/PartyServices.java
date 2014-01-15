@@ -1257,7 +1257,7 @@ public class PartyServices {
                     andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("lastName"), EntityOperator.LIKE, EntityFunction.UPPER("%"+lastName+"%")));
                 }
                 
-                // check for a cardId - CodigoLinux
+                // check for a cardId - CodigoLinux - 01/2014
                 if (UtilValidate.isNotEmpty(cardId)) {
                     paramList = paramList + "&cardId=" + cardId;
                     andExprs.add(EntityCondition.makeCondition(EntityFunction.UPPER_FIELD("cardId"), EntityOperator.EQUALS, cardId));
