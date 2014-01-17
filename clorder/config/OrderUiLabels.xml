@@ -5561,6 +5561,7 @@
     <property key="OrderMarkViewed">
         <value xml:lang="de">Als gesehen markieren</value>
         <value xml:lang="en">Mark Viewed</value>
+        <value xml:lang="en">Marcar como Revisado</value>
         <value xml:lang="fr">Marquer comme vu</value>
         <value xml:lang="it">Marca come visionato</value>
         <value xml:lang="ja">表示済マーク</value>
@@ -14050,6 +14051,7 @@
     <property key="OrderViewed">
         <value xml:lang="de">Gesehen</value>
         <value xml:lang="en">Viewed</value>
+        <value xml:lang="es">Revisado</value>
         <value xml:lang="fr">Vu</value>
         <value xml:lang="it">Visionato</value>
         <value xml:lang="ja">表示</value>

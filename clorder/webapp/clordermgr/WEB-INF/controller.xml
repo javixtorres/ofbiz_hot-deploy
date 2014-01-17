@@ -1774,6 +1774,8 @@ under the License.
 
     <!-- PDFs -->
     <request-map uri="order.pdf"><security https="true" auth="true"/><response name="success" type="view" value="OrderPDF"/></request-map>
+    <!-- Contrato CodigoLinux 01/2014-->
+    <request-map uri="agreement.pdf"><security https="true" auth="true"/><response name="success" type="view" value="AgreementPDF"/></request-map>
     <request-map uri="return.pdf"><security https="true" auth="true"/><response name="success" type="view" value="ReturnPDF"/></request-map>
     <request-map uri="shipGroups.pdf"><security https="true" auth="true"/><response name="success" type="view" value="ShipGroupsPDF"/></request-map>
     <request-map uri="orderPickSheet.pdf">
@@ -2044,6 +2046,7 @@ under the License.
     <view-map name="LookupAssociatedProducts" type="screen" page="component://clorder//widget/clordermgr/OrderEntryCartScreens.xml#LookupAssociatedProducts"/>
     <!-- PDFs  -->
     <view-map name="OrderPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#OrderPDF" content-type="application/pdf" encoding="none"/>
+    <view-map name="AgreementPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#AgreementPDF" content-type="application/pdf" encoding="none"/>    
     <view-map name="ReturnPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#ReturnPDF" content-type="application/pdf" encoding="none"/>
     <view-map name="ShipGroupsPDF" type="screenfop" page="component://clorder//widget/clordermgr/OrderPrintScreens.xml#ShipGroupsPDF" content-type="application/pdf" encoding="none"/>
     <view-map name="OrderPickSheetPDF" type="screenfop" page="component://clproduct/widget/clfacility/FacilityScreens.xml#PrintPickSheets.fo" content-type="application/pdf" encoding="none"/>
