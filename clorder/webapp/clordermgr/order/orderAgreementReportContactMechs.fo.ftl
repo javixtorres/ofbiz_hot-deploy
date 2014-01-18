@@ -74,9 +74,8 @@ under the License.
     </#if>
 </#list>
 
-<fo:block space-after="0.2in"/>
-
 <#if orderPaymentPreferences?has_content>
+<#--
     <fo:block font-weight="bold">${uiLabelMap.AccountingPaymentInformation}:</fo:block>
     <#list orderPaymentPreferences as orderPaymentPreference>
         <fo:block text-indent="0.2in">
@@ -89,9 +88,11 @@ under the License.
             </#if>
         </fo:block>
     </#list>
+-->    
 </#if>
 
 <#if orderHeader.getString("orderTypeId") == "SALES_ORDER" && shipGroups?has_content>
+<#--
     <fo:block font-weight="bold">${uiLabelMap.OrderShipmentInformation}:</fo:block>
     <#list shipGroups as shipGroup>
         <fo:block text-indent="0.2in">
@@ -104,16 +105,38 @@ under the License.
             </#if>
         </fo:block>
     </#list>
+-->
 </#if>
 
 <#if orderTerms?has_content && orderTerms.size() gt 0>
     <fo:block font-weight="bold">${uiLabelMap.OrderOrderTerms}:</fo:block>
     <#list orderTerms as orderTerm>
         <fo:block text-indent="0.2in">
+            <#if orderTerm.getRelatedOne("TermType", false).get("description",locale) != "Codeudor">
             ${orderTerm.getRelatedOne("TermType", false).get("description",locale)} ${orderTerm.termValue?default("")} ${orderTerm.termDays?default("")} ${orderTerm.textValue?default("")}
+            </#if>
         </fo:block>
     </#list>
 </#if>
 
 <fo:block space-after="0.2in"/>
+<#--
+     <fo:table border-spacing="3pt">
+     <fo:table-column column-width="3in"/>
+     <fo:table-header>
+         <fo:table-row>
+               <fo:table-cell>
+                    <fo:block font-weight="bold">------</fo:block>
+               </fo:table-cell>
+         </fo:table-row>
+	</fo:table-header>
+	 <fo:table-body>
+	 <fo:table-row>
+	  <fo:table-cell number-columns-spanned="2" background-color="#EEEEEE">
+	  <fo:block font-weight="bold">-</fo:block>
+      </fo:table-cell>
+    </fo:table-row>               
+     </fo:table-body>
+        </fo:table>
+ -->
 </#escape>

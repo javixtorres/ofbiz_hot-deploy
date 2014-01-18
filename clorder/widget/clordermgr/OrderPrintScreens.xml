@@ -112,7 +112,7 @@ under the License.
                             <widgets>
                                 <!-- the contach mechanisms, terms, payment and shipping methods are shown in the first page -->
                                 <platform-specific>
-                                    <xsl-fo><html-template location="component://clorder/webapp/clordermgr/order/orderReportContactMechs.fo.ftl"/></xsl-fo>
+                                    <xsl-fo><html-template location="component://clorder/webapp/clordermgr/order/orderAgreementReportContactMechs.fo.ftl"/></xsl-fo>
                                 </platform-specific>
                                 <!-- order items and totals -->
                                 <platform-specific>

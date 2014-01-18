@@ -27,7 +27,7 @@ under the License.
     <#if postalAddress?exists>
         <#if postalAddress?has_content>
             ${setContextField("postalAddress", postalAddress)}
-            ${screens.render("component://party/widget/partymgr/PartyScreens.xml#postalAddressPdfFormatter")}
+            ${screens.render("component://clparty/widget/clpartymgr/PartyScreens.xml#postalAddressPdfFormatter")}
         </#if>
     <#else>
         <fo:block>${uiLabelMap.CommonNoPostalAddress}</fo:block>
@@ -57,13 +57,20 @@ under the License.
         </fo:list-item>
         </#if>
         <#if email?exists>
+        
         <fo:list-item>
+        
             <fo:list-item-label>
+            	<#--
                 <fo:block>${uiLabelMap.CommonEmail}:</fo:block>
+                -->
             </fo:list-item-label>
             <fo:list-item-body start-indent="body-start()">
+            	<#--
                 <fo:block>${email.infoString?if_exists}</fo:block>
+                -->
             </fo:list-item-body>
+        
         </fo:list-item>
         </#if>
         <#if website?exists>
