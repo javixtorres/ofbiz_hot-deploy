@@ -22,6 +22,7 @@
     <property key="AcctgTransType.description.AMORTIZATION">
         <value xml:lang="de">Amortisation</value>
         <value xml:lang="en">Amortization</value>
+        <value xml:lang="es">Amortizacion</value>
         <value xml:lang="fr">Amortissements</value>
         <value xml:lang="hi_IN">परिशोधन</value>
         <value xml:lang="it">Ammortamento</value>
@@ -38,6 +39,7 @@
     <property key="AcctgTransType.description.CAPITALIZATION">
         <value xml:lang="de">Aktivierung</value>
         <value xml:lang="en">Capitalization</value>
+        <value xml:lang="es">Capitalizacion</value>
         <value xml:lang="fr">Capitalisations</value>
         <value xml:lang="hi_IN">कुल पूंजी</value>
         <value xml:lang="it">Capitalizzazioni</value>
@@ -54,6 +56,7 @@
     <property key="AcctgTransType.description.CREDIT_LINE">
         <value xml:lang="de">Kreditlimit</value>
         <value xml:lang="en">Credit Line</value>
+        <value xml:lang="es">Liena de Crédito</value>
         <value xml:lang="fr">Ligne de crédit</value>
         <value xml:lang="hi_IN">क्रेडिट सीमा</value>
         <value xml:lang="it">Riga Nota Credito</value>
@@ -70,6 +73,7 @@
     <property key="AcctgTransType.description.CREDIT_MEMO">
         <value xml:lang="de">Gutschrift</value>
         <value xml:lang="en">Credit Memo</value>
+        <value xml:lang="es">Nota de Crédito</value>
         <value xml:lang="fr">Note de crédit</value>
         <value xml:lang="hi_IN">क्रेडिट मेमो</value>
         <value xml:lang="it">Nota Credito</value>
@@ -86,6 +90,7 @@
     <property key="AcctgTransType.description.DEPRECIATION">
         <value xml:lang="de">Abschreibung</value>
         <value xml:lang="en">Depreciation</value>
+        <value xml:lang="es">Depreciación</value>
         <value xml:lang="fr">Dépréciation</value>
         <value xml:lang="hi_IN">मूल्यह्रास</value>
         <value xml:lang="it">Deprecato</value>
@@ -102,6 +107,7 @@
     <property key="AcctgTransType.description.DISBURSEMENT">
         <value xml:lang="de">Auszahlung</value>
         <value xml:lang="en">Disbursement</value>
+        <value xml:lang="es">Desembolso</value>
         <value xml:lang="fr">Débours</value>
         <value xml:lang="hi_IN">अदायगी</value>
         <value xml:lang="it">Esborso</value>
@@ -118,6 +124,7 @@
     <property key="AcctgTransType.description.EXTERNAL_ACCTG_TRANS">
         <value xml:lang="de">Extern</value>
         <value xml:lang="en">External</value>
+        <value xml:lang="es">Externo</value>
         <value xml:lang="fr">Externe</value>
         <value xml:lang="hi_IN">बाहरी</value>
         <value xml:lang="it">Esterno</value>
@@ -134,6 +141,7 @@
     <property key="AcctgTransType.description.INCOMING_PAYMENT">
         <value xml:lang="de">Zahlungseingang</value>
         <value xml:lang="en">Incoming Payment</value>
+        <value xml:lang="es">Pago Ingreso</value>
         <value xml:lang="fr">Paiement à recevoir</value>
         <value xml:lang="hi_IN">आवक भुगतान</value>
         <value xml:lang="it">Pagamento in entrata</value>
@@ -147,6 +155,7 @@
     <property key="AcctgTransType.description.INTERNAL_ACCTG_TRANS">
         <value xml:lang="de">Intern</value>
         <value xml:lang="en">Internal</value>
+        <value xml:lang="es">Interno</value>
         <value xml:lang="fr">Interne</value>
         <value xml:lang="hi_IN">आंतरिक</value>
         <value xml:lang="it">Interno</value>
@@ -163,6 +172,7 @@
     <property key="AcctgTransType.description.INVENTORY">
         <value xml:lang="de">Bestand</value>
         <value xml:lang="en">Inventory</value>
+        <value xml:lang="es">Inventario</value>
         <value xml:lang="fr">Stock</value>
         <value xml:lang="hi_IN">वस्तुसूची(Inventory)</value>
         <value xml:lang="it">Inventario</value>
@@ -176,6 +186,7 @@
     <property key="AcctgTransType.description.INVENTORY_RETURN">
         <value xml:lang="de">Retoureneingang</value>
         <value xml:lang="en">Inventory from Return</value>
+        <value xml:lang="es">Inventario de Retorno</value>
         <value xml:lang="fr">Inventaire des retours</value>
         <value xml:lang="hi_IN">वस्तुसूची(Inventory) में वापसी से</value>
         <value xml:lang="it">Inventario dal Reso</value>
@@ -192,6 +203,7 @@
     <property key="AcctgTransType.description.ITEM_VARIANCE">
         <value xml:lang="de">Bestandsabweichung</value>
         <value xml:lang="en">Item Variance</value>
+        <value xml:lang="es">Item Varianza</value>
         <value xml:lang="fr">Différence d'inventaire</value>
         <value xml:lang="hi_IN">मद विचरण</value>
         <value xml:lang="it">Riga Varianza</value>
@@ -208,6 +220,7 @@
     <property key="AcctgTransType.description.MANUFACTURING">
         <value xml:lang="de">Produktion</value>
         <value xml:lang="en">Manufacturing</value>
+        <value xml:lang="es">Manufactura</value>
         <value xml:lang="fr">Production</value>
         <value xml:lang="hi_IN">विनिर्माण</value>
         <value xml:lang="it">Produzione</value>
@@ -221,6 +234,7 @@
     <property key="AcctgTransType.description.NOTE">
         <value xml:lang="de">Notiz</value>
         <value xml:lang="en">Note</value>
+        <value xml:lang="es">Nota</value>
         <value xml:lang="fr">Note</value>
         <value xml:lang="hi_IN">टिप्पणी</value>
         <value xml:lang="it">Nota</value>
@@ -237,6 +251,7 @@
     <property key="AcctgTransType.description.OBLIGATION_ACCTG_TRA">
         <value xml:lang="de">Verbindlichkeit</value>
         <value xml:lang="en">Obligation</value>
+        <value xml:lang="es">Obligación</value>
         <value xml:lang="fr">Obligation</value>
         <value xml:lang="hi_IN">दायित्व</value>
         <value xml:lang="it">Obbligazione</value>
@@ -253,6 +268,7 @@
     <property key="AcctgTransType.description.OTHER_INTERNAL">
         <value xml:lang="de">Sonstige Interne</value>
         <value xml:lang="en">Other Internal</value>
+        <value xml:lang="es">Otro Interno</value>
         <value xml:lang="fr">Autre interne</value>
         <value xml:lang="hi_IN">अन्य आंतरिक</value>
         <value xml:lang="it">Altri Interni</value>
@@ -269,6 +285,7 @@
     <property key="AcctgTransType.description.OTHER_OBLIGATION">
         <value xml:lang="de">Sonstige Verbindlichkeiten</value>
         <value xml:lang="en">Other Obligation</value>
+        <value xml:lang="es">Otra Obligación</value>
         <value xml:lang="fr">Autre obligation</value>
         <value xml:lang="hi_IN">अन्य दायित्व</value>
         <value xml:lang="it">Altra Obbligazione</value>
@@ -285,6 +302,7 @@
     <property key="AcctgTransType.description.OUTGOING_PAYMENT">
         <value xml:lang="de">Zahlungsausgang</value>
         <value xml:lang="en">Outgoing Payment</value>
+        <value xml:lang="es">Pago Salida</value>
         <value xml:lang="fr">Paiement sortant</value>
         <value xml:lang="hi_IN">निर्गामी भुगतान</value>
         <value xml:lang="it">Pagamento in uscita</value>
@@ -298,6 +316,7 @@
     <property key="AcctgTransType.description.PAYMENT_ACCTG_TRANS">
         <value xml:lang="de">Zahlung</value>
         <value xml:lang="en">Payment</value>
+        <value xml:lang="es">Pago</value>
         <value xml:lang="fr">Paiement</value>
         <value xml:lang="hi_IN">भुगतान</value>
         <value xml:lang="it">Pagamento</value>
@@ -314,6 +333,7 @@
     <property key="AcctgTransType.description.PAYMENT_APPL">
         <value xml:lang="de">Ausstehende Zahlung</value>
         <value xml:lang="en">Payment Applied</value>
+        <value xml:lang="es">Pago Ejecutado</value>
         <value xml:lang="fr">Paiment effectué</value>
         <value xml:lang="hi_IN">भुगतान लागू</value>
         <value xml:lang="it">Pagamento applicato</value>
@@ -327,6 +347,7 @@
     <property key="AcctgTransType.description.PERIOD_CLOSING">
         <value xml:lang="de">Abschluss Zeitraum</value>
         <value xml:lang="en">Period Closing</value>
+        <value xml:lang="es">Periodo Cerrado</value>
         <value xml:lang="fr">Clôture de période</value>
         <value xml:lang="hi_IN">अवधि समापन</value>
         <value xml:lang="it">Chiusura di Periodo Fiscale</value>
@@ -357,6 +378,7 @@
     <property key="AcctgTransType.description.RECEIPT">
         <value xml:lang="de">Beleg</value>
         <value xml:lang="en">Receipt</value>
+        <value xml:lang="es">Recibo</value>
         <value xml:lang="fr">Reçu</value>
         <value xml:lang="hi_IN">रसीद</value>
         <value xml:lang="it">Ricevute</value>
@@ -404,6 +426,7 @@
     <property key="AcctgTransType.description.SALES_SHIPMENT">
         <value xml:lang="de">Warenausgang</value>
         <value xml:lang="en">Sales Shipment</value>
+        <value xml:lang="es">Entrega de Venta</value>
         <value xml:lang="fr">Facture d'expédition</value>
         <value xml:lang="hi_IN">बिक्री शिपमेंट</value>
         <value xml:lang="it">Spedizione di vendita</value>
@@ -417,6 +440,7 @@
     <property key="AcctgTransType.description.SHIPMENT_RECEIPT">
         <value xml:lang="de">Wareneingang</value>
         <value xml:lang="en">Shipment Receipt</value>
+        <value xml:lang="es">Recibo de Entrega</value>
         <value xml:lang="fr">Reçu d'expédition</value>
         <value xml:lang="hi_IN">शिपमेंट रसीद</value>
         <value xml:lang="it">Ricevuta di spedizione</value>
@@ -430,6 +454,7 @@
     <property key="AcctgTransType.description.TAX_DUE">
         <value xml:lang="de">Steuerschuld</value>
         <value xml:lang="en">Tax Due</value>
+        <value xml:lang="es">Impuesto Deuda</value>
         <value xml:lang="fr">Impôts dûs</value>
         <value xml:lang="hi_IN">देय कर</value>
         <value xml:lang="it">Tasse Dovute</value>
@@ -446,6 +471,7 @@
     <property key="FinAccountTransType.description.ADJUSTMENT">
         <value xml:lang="de">Anpassung</value>
         <value xml:lang="en">Adjustment</value>
+        <value xml:lang="es">Ajuste</value>
         <value xml:lang="fr">Ajustement</value>
         <value xml:lang="hi_IN">समायोजन</value>
         <value xml:lang="it">Aggiustamento</value>
@@ -461,6 +487,7 @@
     <property key="FinAccountTransType.description.DEPOSIT">
         <value xml:lang="de">Einlage</value>
         <value xml:lang="en">Deposit</value>
+        <value xml:lang="es">Depósito</value>
         <value xml:lang="fr">Dépôt</value>
         <value xml:lang="hi_IN">जमा</value>
         <value xml:lang="it">Deposito</value>
@@ -476,6 +503,7 @@
     <property key="FinAccountTransType.description.WITHDRAWAL">
         <value xml:lang="de">Auszahlung</value>
         <value xml:lang="en">Withdraw</value>
+        <value xml:lang="es">Retirar</value>
         <value xml:lang="fr">Retrait</value>
         <value xml:lang="hi_IN">निकालना</value>
         <value xml:lang="it">Prelievo</value>
@@ -491,6 +519,7 @@
     <property key="FinAccountType.description.BANK_ACCOUNT">
         <value xml:lang="de">Bankkonto</value>
         <value xml:lang="en">Bank Account</value>
+        <value xml:lang="es">Cuenta Bancaria</value>
         <value xml:lang="fr">Compte bancaire</value>
         <value xml:lang="hi_IN">बैंक खाता</value>
         <value xml:lang="it">Conto Bancario</value>
@@ -506,6 +535,7 @@
     <property key="FinAccountType.description.DEPOSIT_ACCOUNT">
         <value xml:lang="de">Anlagekonto</value>
         <value xml:lang="en">Deposit Account</value>
+        <value xml:lang="es">Cuenta de Depósito</value>
         <value xml:lang="fr">Dépôt sur compte</value>
         <value xml:lang="hi_IN">जमा खाता</value>
         <value xml:lang="it">Conto Deposito</value>
@@ -521,6 +551,7 @@
     <property key="FinAccountType.description.GIFTCERT_ACCOUNT">
         <value xml:lang="de">Gutschrift</value>
         <value xml:lang="en">Gift Certificate</value>
+        <value xml:lang="es">Cupón de Regalo</value>
         <value xml:lang="fr">Chèque cadeau</value>
         <value xml:lang="hi_IN">उपहार प्रमाण पत्र(GiftCertificate)</value>
         <value xml:lang="it">Certificato Omaggio</value>
@@ -536,6 +567,7 @@
     <property key="FinAccountType.description.INVESTMENT_ACCOUNT">
         <value xml:lang="de">Finanzkonto</value>
         <value xml:lang="en">Investment Account</value>
+        <value xml:lang="es">Cuenta de Investigación</value>
         <value xml:lang="fr">Compte d'investissement</value>
         <value xml:lang="hi_IN">निवेश खाता</value>
         <value xml:lang="it">Conto Investimento</value>
@@ -551,6 +583,7 @@
     <property key="FinAccountType.description.REPLENISH_ACCOUNT">
         <value xml:lang="de">Konto auffüllen</value>
         <value xml:lang="en">Replenish Account</value>
+        <value xml:lang="es">Cuenta de Reposición</value>
         <value xml:lang="fr">Renflouer le compte</value>
         <value xml:lang="hi_IN">रेप्लेनिश(Replenish) खाता</value>
         <value xml:lang="it">Conto Rifornimento</value>
@@ -566,6 +599,7 @@
     <property key="FinAccountType.description.SVCCRED_ACCOUNT">
         <value xml:lang="de">Guthabenkonto</value>
         <value xml:lang="en">Service Credit Account</value>
+        <value xml:lang="es">Cuenta de Sevicio de Credito</value>
         <value xml:lang="fr">Compte de service crédit</value>
         <value xml:lang="hi_IN">सेवा जमा खाता</value>
         <value xml:lang="it">Conto Servizio Credito</value>
@@ -580,6 +614,7 @@
     </property>
     <property key="FixedAssetIdentType.description.GAS_CARD1">
         <value xml:lang="en">Gas Card Number 1</value>
+        <value xml:lang="es">Tarjeta de Combustible Nro 1</value>
         <value xml:lang="fr">Carte d'essence 1</value>
         <value xml:lang="hi_IN">गैस कार्ड नंबर 1</value>
         <value xml:lang="it">Numero Carta Carburante 1</value>
@@ -595,6 +630,7 @@
     </property>
     <property key="FixedAssetIdentType.description.GAS_CARD2">
         <value xml:lang="en">Gas Card Number 2</value>
+        <value xml:lang="es">Tarjeta de Combustible Nro 2</value>
         <value xml:lang="fr">Carte d'essence 2</value>
         <value xml:lang="hi_IN">गैस कार्ड नंबर 2</value>
         <value xml:lang="it">Numero Carta Carburante 2</value>
@@ -610,6 +646,7 @@
     </property>
     <property key="FixedAssetIdentType.description.GAS_CARD3">
         <value xml:lang="en">Gas Card Number 3</value>
+        <value xml:lang="es">Tarjeta de Combustible Nro 3</value>
         <value xml:lang="fr">Carte d'essence 3</value>
         <value xml:lang="hi_IN">गैस कार्ड नंबर 3</value>
         <value xml:lang="it">Numero Carta Carburante 3</value>
@@ -626,6 +663,7 @@
     <property key="FixedAssetIdentType.description.MFG_SERIAL">
         <value xml:lang="de">Seriennummer</value>
         <value xml:lang="en">Mfg Serial Number</value>
+        <value xml:lang="es">Nro de serie(fabricación)</value>
         <value xml:lang="fr">No de série (fabrication)</value>
         <value xml:lang="hi_IN">Mfg क्रम संख्या</value>
         <value xml:lang="it">Numero Seriale Mfg</value>
@@ -642,6 +680,7 @@
     <property key="FixedAssetIdentType.description.TRACKING_LABEL">
         <value xml:lang="de">Verfolgungsetikett</value>
         <value xml:lang="en">Internal Tracking Label Number</value>
+        <value xml:lang="es">Número de Control Interno</value>
         <value xml:lang="fr">Numéro de traçage interne</value>
         <value xml:lang="hi_IN">आंतरिक ट्रैकिंग लेबल संख्या</value>
         <value xml:lang="it">Numero Interno Tracciatura Etichetta</value>
@@ -658,6 +697,7 @@
     <property key="FixedAssetIdentType.description.TRACKING_VENDOR">
         <value xml:lang="de">Referneznummer des Herstellers</value>
         <value xml:lang="en">Vendor Tracking/Inventory Number</value>
+        <value xml:lang="es">Numero Control/Inventario Vendedor</value>
         <value xml:lang="fr">Traçage fournisseur/Numéro d'inventaire</value>
         <value xml:lang="hi_IN">विक्रेता ट्रैकिंग/सूची संख्या</value>
         <value xml:lang="it">Numero Tracciatura/Inventario Fornitore</value>
@@ -674,6 +714,7 @@
     <property key="FixedAssetIdentType.description.VIN">
         <value xml:lang="de">Fahrzeug-Identifizierungsnummer (FIN)</value>
         <value xml:lang="en">Vehicle Identification Number (VIN)</value>
+        <value xml:lang="es">Número de Identificacion de Vehiculo</value>
         <value xml:lang="fr">Numéro d'Identification de Véhicule</value>
         <value xml:lang="hi_IN">वाहन पहचान संख्या (VIN)</value>
         <value xml:lang="it">Numero Identificazione Veicolo (VIN)</value>
@@ -690,6 +731,7 @@
     <property key="FixedAssetProductType.description.FAPT_SALE">
         <value xml:lang="de">Anlagenverkauf</value>
         <value xml:lang="en">Sale of Asset</value>
+        <value xml:lang="es">Venta de Activo</value>
         <value xml:lang="fr">Vente d'actif</value>
         <value xml:lang="hi_IN">परिसंपत्ति की बिक्री</value>
         <value xml:lang="it">Vendita Cespite</value>
@@ -706,6 +748,7 @@
     <property key="FixedAssetProductType.description.FAPT_USE">
         <value xml:lang="de">Anlagennutzung</value>
         <value xml:lang="en">Use of Asset</value>
+        <value xml:lang="es">Uso de Activo</value>
         <value xml:lang="fr">Utilisation d'actif</value>
         <value xml:lang="hi_IN">परिसंपत्ति का उपयोग</value>
         <value xml:lang="it">Uso Cespite</value>
@@ -722,6 +765,7 @@
     <property key="FixedAssetStdCostType.description.SETUP_COST">
         <value xml:lang="de">Einrichtungskosten</value>
         <value xml:lang="en">Standard Setup Cost</value>
+        <value xml:lang="es">Costro Inicial Estandard</value>
         <value xml:lang="fr">Coût standard d'installation</value>
         <value xml:lang="hi_IN">मानक स्थापना लागत</value>
         <value xml:lang="it">Costo Standard Iniziale</value>
@@ -738,6 +782,7 @@
     <property key="FixedAssetStdCostType.description.USAGE_COST">
         <value xml:lang="de">Nutzungskosten</value>
         <value xml:lang="en">Standard Usage Cost</value>
+        <value xml:lang="es">Costo Estandar de Uso</value>
         <value xml:lang="fr">Coût standard d'utilisation</value>
         <value xml:lang="hi_IN">मानक उपयोग की लागत</value>
         <value xml:lang="it">Costo Standard Uso</value>
@@ -754,6 +799,7 @@
     <property key="FixedAssetType.description.COMPUTER_HARDWARE">
         <value xml:lang="de">Computer Hardware</value>
         <value xml:lang="en">Computer Hardware</value>
+        <value xml:lang="es">Hardware de Computadora</value>
         <value xml:lang="fr">Matériel informatique</value>
         <value xml:lang="hi_IN">कंप्यूटर हार्डवेयर</value>
         <value xml:lang="it">Hardware per computer</value>
@@ -767,6 +813,7 @@
     <property key="FixedAssetType.description.COMPUTER_SOFTWARE">
         <value xml:lang="de">Computer Software</value>
         <value xml:lang="en">Computer Software</value>
+        <value xml:lang="es">Software de Computadora</value>
         <value xml:lang="fr">Logiciel informatique</value>
         <value xml:lang="hi_IN">कंप्यूटर सॉफ्टवेयर</value>
         <value xml:lang="it">Software per computer</value>
@@ -780,6 +827,7 @@
     <property key="FixedAssetType.description.EQUIPMENT">
         <value xml:lang="de">Austattung</value>
         <value xml:lang="en">Equipment</value>
+        <value xml:lang="es">Equipamiento</value>
         <value xml:lang="fr">Equipement</value>
         <value xml:lang="hi_IN">उपकरण</value>
         <value xml:lang="it">Attrezzature</value>
@@ -796,6 +844,7 @@
     <property key="FixedAssetType.description.GROUP_EQUIPMENT">
         <value xml:lang="de">Maschinengruppe zur Erstellung von Ablaufs- und Arbeitsplänen</value>
         <value xml:lang="en">Group of machines, used for task and routing definition</value>
+        <value xml:lang="es">Grupo de Maquinas, usadas para tarea y enrutamiento</value>
         <value xml:lang="fr">Groupe de machines, utilisé pour la définition de tâches et de gamme de fabrication</value>
         <value xml:lang="hi_IN">मशीनों का समूह कार्य और परिभाषा अनुमार्गण के लिए प्रयोग किया जाता है</value>
         <value xml:lang="it">Gruppo di macchine, usato nelle operazioni e cicli di produzione</value>
@@ -812,6 +861,7 @@
     <property key="FixedAssetType.description.OTHER_FIXED_ASSET">
         <value xml:lang="de">Sonstige Anlagen</value>
         <value xml:lang="en">Other Fixed Asset</value>
+        <value xml:lang="es">Otro Activo Fijo</value>
         <value xml:lang="fr">Autre actif immobilisé</value>
         <value xml:lang="hi_IN">अन्य अचल संपत्ति</value>
         <value xml:lang="it">Altri Cespiti</value>
@@ -828,6 +878,7 @@
     <property key="FixedAssetType.description.PRODUCTION_EQUIPMENT">
         <value xml:lang="de">Anlage, die zur Arbeitsplanung genutzt wird</value>
         <value xml:lang="en">The fixed asset used in the operation-routing definition</value>
+        <value xml:lang="es">Activo fijo usado en definicion de opreacion-ruteo</value>
         <value xml:lang="fr">Actif immobilisé utilisé dans la définition de gammes et tâches</value>
         <value xml:lang="hi_IN">आपरेशन-परिभाषा अनुमार्गण में अचल संपत्ति का उपयोग</value>
         <value xml:lang="it">Attrezzature usate nelle operazioni e cicli di produzione</value>
@@ -844,6 +895,7 @@
     <property key="FixedAssetType.description.PROPERTY">
         <value xml:lang="de">Anlagevermögen</value>
         <value xml:lang="en">Property</value>
+        <value xml:lang="es">Propiedad</value>
         <value xml:lang="fr">Propriété</value>
         <value xml:lang="hi_IN">संपत्ति</value>
         <value xml:lang="it">Proprietà</value>
@@ -860,6 +912,7 @@
     <property key="FixedAssetType.description.REAL_ESTATE">
         <value xml:lang="de">Immobilien</value>
         <value xml:lang="en">Real Estate</value>
+        <value xml:lang="es">Bien Inmobiliario</value>
         <value xml:lang="fr">Bien immobilier</value>
         <value xml:lang="hi_IN">रियल एस्टेट</value>
         <value xml:lang="it">Immobiliare</value>
@@ -876,6 +929,7 @@
     <property key="FixedAssetType.description.VEHICLE">
         <value xml:lang="de">Fahrzeug</value>
         <value xml:lang="en">Vehicle</value>
+        <value xml:lang="es">Vehiculo</value>
         <value xml:lang="fr">Véhicule</value>
         <value xml:lang="hi_IN">वाहन</value>
         <value xml:lang="it">Veicolo</value>
@@ -892,6 +946,7 @@
     <property key="GlAccountClass.description.ACCUM_AMORTIZATION">
         <value xml:lang="de">Akkumulierte Amortisierung</value>
         <value xml:lang="en">Accumulated Amortization</value>
+        <value xml:lang="es">Amortización Acumulada</value>
         <value xml:lang="fr">Amortissement cumulé</value>
         <value xml:lang="hi_IN">संचित परिशोधन</value>
         <value xml:lang="it">Fondo Ammortamento Beni Intangibili</value>
@@ -908,6 +963,7 @@
     <property key="GlAccountClass.description.ACCUM_DEPRECIATION">
         <value xml:lang="de">Akkumulierte Abschreibung</value>
         <value xml:lang="en">Accumulated Depreciation</value>
+        <value xml:lang="es">Depreciación Accumulada</value>
         <value xml:lang="fr">Dépréciation cumulée</value>
         <value xml:lang="hi_IN">संचित मूल्यह्रास</value>
         <value xml:lang="it">Fondo Ammortamento Beni Tangibili</value>
@@ -924,6 +980,7 @@
     <property key="GlAccountClass.description.AMORTIZATION">
         <value xml:lang="de">Amortisierung</value>
         <value xml:lang="en">Amortization</value>
+        <value xml:lang="es">Amortiguación</value>
         <value xml:lang="fr">Amortissement</value>
         <value xml:lang="hi_IN">ऋण परिशोधन</value>
         <value xml:lang="it">Ammortamento Beni Intangibili</value>
@@ -939,6 +996,7 @@
     <property key="GlAccountClass.description.ASSET">
         <value xml:lang="de">Aktiva</value>
         <value xml:lang="en">Asset</value>
+        <value xml:lang="es">Activo</value>
         <value xml:lang="fr">Actif</value>
         <value xml:lang="hi_IN">परिसंपत्ति</value>
         <value xml:lang="it">Attivo</value>
@@ -955,6 +1013,7 @@
     <property key="GlAccountClass.description.CASH_EQUIVALENT">
         <value xml:lang="de">Flüssige und gleichwertige Mittel</value>
         <value xml:lang="en">Cash and Equivalent</value>
+        <value xml:lang="es">Efectivo y Equivalente</value>
         <value xml:lang="fr">Caisse et équivalent</value>
         <value xml:lang="hi_IN">नकद और समतुल्य</value>
         <value xml:lang="it">Cassa e Banca</value>
@@ -971,6 +1030,7 @@
     <property key="GlAccountClass.description.CASH_EXPENSE">
         <value xml:lang="de">Aufwendung</value>
         <value xml:lang="en">Cash Expense</value>
+        <value xml:lang="es">Gastos en Efectivo</value>
         <value xml:lang="fr">Décaissement</value>
         <value xml:lang="hi_IN">नकद व्यय</value>
         <value xml:lang="it">Spese Di Cassa</value>
@@ -987,6 +1047,7 @@
     <property key="GlAccountClass.description.CASH_INCOME">
         <value xml:lang="de">Ertrag</value>
         <value xml:lang="en">Cash Income</value>
+        <value xml:lang="es">Ingresos en efectivo</value>
         <value xml:lang="fr">Encaissement</value>
         <value xml:lang="hi_IN">नकद आय</value>
         <value xml:lang="it">Ricavi di Cassa</value>
@@ -1003,6 +1064,7 @@
     <property key="GlAccountClass.description.COGS_EXPENSE">
         <value xml:lang="de">Wareneinsatz</value>
         <value xml:lang="en">Cost of Goods Sold Expense</value>
+        <value xml:lang="es">Gastos de Costo de bienes vendidos</value>
         <value xml:lang="fr">Coût direct des marchandises vendues</value>
         <value xml:lang="hi_IN">बेचे हुए माल के व्यय की लागत</value>
         <value xml:lang="it">Costo dela Merce Venduta</value>
@@ -1019,6 +1081,7 @@
     <property key="GlAccountClass.description.CREDIT">
         <value xml:lang="de">Haben</value>
         <value xml:lang="en">Credit</value>
+        <value xml:lang="es">Credito</value>
         <value xml:lang="fr">Crédit</value>
         <value xml:lang="hi_IN">जमा</value>
         <value xml:lang="it">Avere</value>
@@ -1035,6 +1098,7 @@
     <property key="GlAccountClass.description.CURRENT_ASSET">
         <value xml:lang="de">Kurzfristiger Vermögenswert</value>
         <value xml:lang="en">Current Asset</value>
+        <value xml:lang="es">Activo Corriente</alue>
         <value xml:lang="fr">Actif à court terme</value>
         <value xml:lang="hi_IN">वर्तमान परिसंपत्ति</value>
         <value xml:lang="it">Attivo Circolante</value>
@@ -1051,6 +1115,7 @@
     <property key="GlAccountClass.description.CURRENT_LIABILITY">
         <value xml:lang="de">Kurzfristige Verbindlichkeiten</value>
         <value xml:lang="en">Current Liability</value>
+        <value xml:lang="es">Pasivo Corriente</value>
         <value xml:lang="fr">Dette à court terme</value>
         <value xml:lang="hi_IN">चालू दायित्व</value>
         <value xml:lang="it">Debiti a Breve Termine</value>
@@ -1067,6 +1132,7 @@
     <property key="GlAccountClass.description.DEBIT">
         <value xml:lang="de">Soll</value>
         <value xml:lang="en">Debit</value>
+        <value xml:lang="es">Debe</value>
         <value xml:lang="fr">Débit</value>
         <value xml:lang="hi_IN">नामे</value>
         <value xml:lang="it">Dare</value>
@@ -1083,6 +1149,7 @@
     <property key="GlAccountClass.description.DEPRECIATION">
         <value xml:lang="de">Abschreibung</value>
         <value xml:lang="en">Depreciation</value>
+        <value xml:lang="es">Depreciación</value>
         <value xml:lang="fr">Dépréciation</value>
         <value xml:lang="hi_IN">मूल्यह्रास</value>
         <value xml:lang="it">Ammortamento Beni Tangibili</value>
@@ -1099,6 +1166,7 @@
     <property key="GlAccountClass.description.DISTRIBUTION">
         <value xml:lang="de">Ausschüttung</value>
         <value xml:lang="en">Equity Distribution</value>
+        <value xml:lang="es">Distribución de bienes</value>
         <value xml:lang="fr">Capitaux propres distribués</value>
         <value xml:lang="hi_IN">इक्विटी वितरण</value>
         <value xml:lang="it">Distribuzione Azioni</value>
@@ -1115,6 +1183,7 @@
     <property key="GlAccountClass.description.DIVIDEND">
         <value xml:lang="de">Dividenden</value>
         <value xml:lang="en">Dividends</value>
+        <value xml:lang="es">Dividendos</value>
         <value xml:lang="fr">Dividendes</value>
         <value xml:lang="hi_IN">लाभांश</value>
         <value xml:lang="it">Dividendi</value>
@@ -1131,6 +1200,7 @@
     <property key="GlAccountClass.description.EQUITY">
         <value xml:lang="de">Eigenkapital</value>
         <value xml:lang="en">Equity</value>
+        <value xml:lang="es">Patrimonio Neto</value>
         <value xml:lang="fr">Capitaux propres</value>
         <value xml:lang="hi_IN">इक्विटी</value>
         <value xml:lang="it">Patrimonio Netto</value>
@@ -1147,6 +1217,7 @@
     <property key="GlAccountClass.description.EXPENSE">
         <value xml:lang="de">Aufwand</value>
         <value xml:lang="en">Expense</value>
+        <value xml:lang="es">Gastos</value>
         <value xml:lang="fr">Charges</value>
         <value xml:lang="hi_IN">व्यय</value>
         <value xml:lang="it">Costi</value>
@@ -1163,6 +1234,7 @@
     <property key="GlAccountClass.description.INCOME">
         <value xml:lang="de">Ertrag</value>
         <value xml:lang="en">Income</value>
+        <value xml:lang="es">Ganancia</value>
         <value xml:lang="fr">Revenus</value>
         <value xml:lang="hi_IN">आय</value>
         <value xml:lang="it">Ricavi</value>
@@ -1179,6 +1251,7 @@
     <property key="GlAccountClass.description.INTEREST_EXPENSE">
         <value xml:lang="de">Zinsaufwand</value>
         <value xml:lang="en">Interest Expense</value>
+        <value xml:lang="es">Gastos por Intereses</value>
         <value xml:lang="fr">Charges financières</value>
         <value xml:lang="hi_IN">ब्याज व्यय</value>
         <value xml:lang="it">Costi per Interessi</value>
@@ -1195,6 +1268,7 @@
     <property key="GlAccountClass.description.INVENTORY_ADJUST">
         <value xml:lang="de">Inventurdifferenz</value>
         <value xml:lang="en">Inventory Adjustment</value>
+        <value xml:lang="es">Ajuste de Inventario</value>
         <value xml:lang="fr">Ajustement d'inventaire</value>
         <value xml:lang="hi_IN">सूची समायोजन</value>
         <value xml:lang="it">Modifiche di Inventario</value>
@@ -1211,6 +1285,7 @@
     <property key="GlAccountClass.description.INVENTORY_ASSET">
         <value xml:lang="de">Vorräte</value>
         <value xml:lang="en">Inventory Asset</value>
+        <value xml:lang="es">Inventario de Activos</value>
         <value xml:lang="fr">Actif en stock</value>
         <value xml:lang="hi_IN">सूची परिसंपत्ति</value>
         <value xml:lang="it">Inventario cespite</value>
@@ -1224,6 +1299,7 @@
     <property key="GlAccountClass.description.LIABILITY">
         <value xml:lang="de">Verbindlichkeiten</value>
         <value xml:lang="en">Liability</value>
+        <value xml:lang="es">Pasivo</value>
         <value xml:lang="fr">Dette</value>
         <value xml:lang="hi_IN">दायित्व</value>
         <value xml:lang="it">Passività</value>
@@ -1240,6 +1316,7 @@
     <property key="GlAccountClass.description.LONGTERM_ASSET">
         <value xml:lang="de">Anlagevermögen</value>
         <value xml:lang="en">Long Term Asset</value>
+        <value xml:lang="es">Activo a Largo Plazo</value>
         <value xml:lang="fr">Actif à long terme</value>
         <value xml:lang="hi_IN">दीर्घकालिक परिसंपत्ति</value>
         <value xml:lang="it">Cespiti</value>
@@ -1256,6 +1333,7 @@
     <property key="GlAccountClass.description.LONGTERM_LIABILITY">
         <value xml:lang="de">Langfristige Verbindlichkeiten</value>
         <value xml:lang="en">Long Term Liability</value>
+        <value xml:lang="es">Pasivo a Largo Plazo</value>
         <value xml:lang="fr">Dette à long terme</value>
         <value xml:lang="hi_IN">दीर्घकालिक दायित्व</value>
         <value xml:lang="it">Finanziamenti e Altri Debiti a Lungo Termine</value>
@@ -1272,6 +1350,7 @@
     <property key="GlAccountClass.description.NON_CASH_EXPENSE">
         <value xml:lang="de">Zahlungsunwirksame Aufwendungen</value>
         <value xml:lang="en">Non-Cash Expense</value>
+        <value xml:lang="es">Gastos no en Efectivo</value>
         <value xml:lang="fr">Charge non décaissée</value>
         <value xml:lang="hi_IN">गैर नकद व्यय</value>
         <value xml:lang="it">Spesa Non-Cassa</value>
@@ -1287,6 +1366,7 @@
     <property key="GlAccountClass.description.NON_CASH_INCOME">
         <value xml:lang="de">Zahlungsunwirksame Erträge</value>
         <value xml:lang="en">Non-Cash Income</value>
+        <value xml:lang="es">Ingresos no en Efectivo</value>
         <value xml:lang="fr">Revenu non décaissé</value>
         <value xml:lang="hi_IN">गैर नकद आय</value>
         <value xml:lang="it">Reddito Non-Cassa</value>
@@ -1302,6 +1382,7 @@
     <property key="GlAccountClass.description.NON_POSTING">
         <value xml:lang="de">Nicht gebucht</value>
         <value xml:lang="en">Non-Posting</value>
+        <value xml:lang="es">No Contabiliza</value>
         <value xml:lang="fr">Non posté</value>
         <value xml:lang="hi_IN">नॉन पोस्टिंग</value>
         <value xml:lang="it">Non-Contabilizzata</value>
@@ -1317,6 +1398,7 @@
     <property key="GlAccountClass.description.OWNERS_EQUITY">
         <value xml:lang="de">Eigentümer Eigenkapital</value>
         <value xml:lang="en">Owners Equity</value>
+        <value xml:lang="es">Patrimonio Neto</value>
         <value xml:lang="fr">Capitaux propres</value>
         <value xml:lang="hi_IN">स्वामी की इक्विटी</value>
         <value xml:lang="it">Capitale Sociale</value>
@@ -1333,6 +1415,7 @@
     <property key="GlAccountClass.description.RESOURCE">
         <value xml:lang="de">Ressource</value>
         <value xml:lang="en">Resource</value>
+        <value xml:lang="es">Recursos</value>
         <value xml:lang="fr">Ressource</value>
         <value xml:lang="hi_IN">संसाधन</value>
         <value xml:lang="it">Risorsa</value>
@@ -1348,6 +1431,7 @@
     <property key="GlAccountClass.description.RETAINED_EARNINGS">
         <value xml:lang="de">Einbehaltene Gewinne</value>
         <value xml:lang="en">Retained Earnings</value>
+        <value xml:lang="es">Beneficios Retenidos</value>
         <value xml:lang="fr">Report à nouveau</value>
         <value xml:lang="hi_IN">प्रतिधारित कमाई</value>
         <value xml:lang="it">Utili a Nuovo</value>
@@ -1363,6 +1447,7 @@
     <property key="GlAccountClass.description.RETURN_OF_CAPITAL">
         <value xml:lang="de">Kapitalrückzahlung</value>
         <value xml:lang="en">Return of Capital</value>
+        <value xml:lang="es">Retorno de Capital</value>
         <value xml:lang="fr">Revenu du capital</value>
         <value xml:lang="hi_IN">वापसी पूंजी</value>
         <value xml:lang="it">Ritorno di Capitale</value>
@@ -1378,6 +1463,7 @@
     <property key="GlAccountClass.description.REVENUE">
         <value xml:lang="de">Ertrag</value>
         <value xml:lang="en">Revenue</value>
+        <value xml:lang="es">Renta</value>
         <value xml:lang="fr">Revenu</value>
         <value xml:lang="hi_IN">राजस्व</value>
         <value xml:lang="it">Ricavi</value>
@@ -1393,6 +1479,7 @@
     <property key="GlAccountClass.description.SGA_EXPENSE">
         <value xml:lang="de">Vertriebsgemeinkosten</value>
         <value xml:lang="en">Selling, General, and Administrative Expense</value>
+        <value xml:lang="es">Venta, Gastos generales y Gastos Administrativos</value>
         <value xml:lang="fr">Frais généraux</value>
         <value xml:lang="hi_IN">बिक्री, जनरल, और प्रशासनिक व्यय</value>
         <value xml:lang="it">Spese Commerciali, Generali, e Amministrative</value>
@@ -1408,6 +1495,7 @@
     <property key="GlAccountType.description.ACCOUNTS_PAYABLE">
         <value xml:lang="de">Verbindlichkeiten</value>
         <value xml:lang="en">Accounts Payable</value>
+        <value xml:lang="es">Cuentas a Pagar</value>
         <value xml:lang="fr">Comptes fournisseurs</value>
         <value xml:lang="hi_IN">देय लेखा</value>
         <value xml:lang="it">Conto debiti</value>
@@ -1423,6 +1511,7 @@
     <property key="GlAccountType.description.ACCOUNTS_RECEIVABLE">
         <value xml:lang="de">Forderungen</value>
         <value xml:lang="en">Accounts Receivable</value>
+        <value xml:lang="es">Cuentas a Cobrar</value>
         <value xml:lang="fr">Comptes clients</value>
         <value xml:lang="hi_IN">प्राप्य लेखा</value>
         <value xml:lang="it">Conto crediti</value>
@@ -1438,6 +1527,7 @@
     <property key="GlAccountType.description.ACCTPAY_WRITEOFF">
         <value xml:lang="de">Abschreibung von Verbindlichkeiten</value>
         <value xml:lang="en">Accounts Payables Write Off</value>
+        <value xml:lang="es">Cuentas a Pagar Cancelación</value>
         <value xml:lang="hi_IN">देय लेखा राइट ऑफ</value>
         <value xml:lang="it">Conti debiti ammortizzati</value>
         <value xml:lang="ja">買掛金償却</value>
@@ -1449,6 +1539,7 @@
     <property key="GlAccountType.description.ACCTRECV_WRITEOFF">
         <value xml:lang="de">Abschreibung von Forderungen</value>
         <value xml:lang="en">Accounts Receivables Write Off</value>
+        <value xml:lang="es">Cuenta a Cobrar Cancelación</value>
         <value xml:lang="hi_IN">प्राप्य लेखा राइट ऑफ</value>
         <value xml:lang="it">Conto crediti ammortizzati</value>
         <value xml:lang="ja">売掛金償却</value>
@@ -1460,6 +1551,7 @@
     <property key="GlAccountType.description.BALANCE_ACCOUNT">
         <value xml:lang="de">Saldo</value>
         <value xml:lang="en">Balance</value>
+        <value xml:lang="es">Balance</value>
         <value xml:lang="fr">Solde du compte</value>
         <value xml:lang="hi_IN">शेष</value>
         <value xml:lang="it">Bilancio</value>
@@ -1475,6 +1567,7 @@
     <property key="GlAccountType.description.BANK_STLMNT_ACCOUNT">
         <value xml:lang="de">Bankenausgleich</value>
         <value xml:lang="en">Bank Settlement</value>
+        <value xml:lang="es">Extracto Bancario</value>
         <value xml:lang="fr">Réglement bancaire</value>
         <value xml:lang="hi_IN">बैंक समाधान</value>
         <value xml:lang="it">Estratto Conto Bancario</value>
@@ -1490,6 +1583,7 @@
     <property key="GlAccountType.description.COGS_ACCOUNT">
         <value xml:lang="de">Wareneinsatz</value>
         <value xml:lang="en">Cost of Goods Sold</value>
+        <value xml:lang="es">Costo de Producto Vendido</value>
         <value xml:lang="fr">Coût des marchandises vendues</value>
         <value xml:lang="hi_IN">बेचे हुए माल का मूल्य</value>
         <value xml:lang="it">Costo delle Merci Vendute </value>
@@ -1505,6 +1599,7 @@
     <property key="GlAccountType.description.COGS_ADJ_AVG_COST">
         <value xml:lang="de">COGS - Durchschnittliche Regulieringskosten</value>
         <value xml:lang="en">COGS - Average Cost Adjustment</value>
+        <value xml:lang="es">COGS - Ajuste de Costo Promedio</value>
         <value xml:lang="fr">Variation des stocks - Ajustement au coût moyen</value>
         <value xml:lang="hi_IN">COGS - औसत मूल्य समायोजन(Adjustment)</value>
         <value xml:lang="it">COGS - Costo Medio Aggiustamento</value>
@@ -1520,6 +1615,7 @@
     <property key="GlAccountType.description.COMMISSIONS_PAYABLE">
         <value xml:lang="de">Kommissionsgebühren</value>
         <value xml:lang="en">Commissions Payables</value>
+        <value xml:lang="es">Comisiones a Pagar</value>
         <value xml:lang="fr">Commissions payables</value>
         <value xml:lang="hi_IN">देय दलाली</value>
         <value xml:lang="it">Provvigioni a debito</value>
@@ -1532,6 +1628,7 @@
     <property key="GlAccountType.description.COMMISSIONS_WRITEOFF">
         <value xml:lang="de">Abschreibung von Kommissionierungskosten</value>
         <value xml:lang="en">Commissions Payables Write Off</value>
+        <value xml:lang="es">Comisiones a Pagar Cancelación</value>
         <value xml:lang="hi_IN">देय दलाली राइट ऑफ</value>
         <value xml:lang="it">Provvigioni a credito</value>
         <value xml:lang="ja">委託費用償却</value>
@@ -1543,6 +1640,7 @@
     <property key="GlAccountType.description.COMMISSION_EXPENSE">
         <value xml:lang="de">Kommisionsausgaben</value>
         <value xml:lang="en">Commission Expense</value>
+        <value xml:lang="es">Gastos de Comisiones</value>
         <value xml:lang="fr">Frais de commission</value>
         <value xml:lang="hi_IN">दलाली व्यय</value>
         <value xml:lang="it">Provvigioni sulle spese</value>
