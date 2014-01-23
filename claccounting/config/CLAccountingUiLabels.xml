@@ -572,6 +572,7 @@
     <property key="AccountingAddTax">
         <value xml:lang="de">Steuer hinzufühen</value>
         <value xml:lang="en">Add Tax</value>
+        <value xml:lang="es">Agregar Iva</value>
         <value xml:lang="fr">Ajouter les taxes</value>
         <value xml:lang="ja">税を追加</value>
         <value xml:lang="nl">Belastingen toevoegen</value>
@@ -7884,6 +7885,7 @@
         <value xml:lang="de">Rechnung pro Lieferung</value>
         <value xml:lang="fr">Facturation pour chaque expédition</value>
         <value xml:lang="en">Invoice Per Shipment</value>
+        <value xml:lang="es">Factura por Envio</value>
         <value xml:lang="ja">発送ごとの請求書</value>
         <value xml:lang="vi">Hóa đơn với mỗi Chuyển vận</value>
         <value xml:lang="zh">每次运输的发票</value>
@@ -7956,6 +7958,7 @@
     </property>
     <property key="AccountingInvoiceSaveAsTemplate">
         <value xml:lang="en">Save Invoice As Template</value>
+        <value xml:lang="es">Grabar como Plantilla</value>
         <value xml:lang="fr">Sauvegarder comme modèle</value>
         <value xml:lang="it">Salva fattura come template</value>
         <value xml:lang="ja">テンプレートとして請求書を保存</value>
@@ -7966,7 +7969,7 @@
         <value xml:lang="ar">سوابق الوضعيات</value>
         <value xml:lang="de">Statusverlauf</value>
         <value xml:lang="en">Status History</value>
-        <value xml:lang="es">Historial de Status</value>
+        <value xml:lang="es">Historial de Estados</value>
         <value xml:lang="fr">Historique des statuts</value>
         <value xml:lang="hi_IN">पिछली स्थिति</value>
         <value xml:lang="it">Storia Stati</value>
@@ -7984,7 +7987,7 @@
         <value xml:lang="ar">الوضعية إلى 'مقبول'</value>
         <value xml:lang="de">Status auf 'Genehmigt'</value>
         <value xml:lang="en">Status to 'Approved'</value>
-        <value xml:lang="es">Status a 'Aprovado'</value>
+        <value xml:lang="es">Aprobar</value>
         <value xml:lang="fr">Statut à 'Approuvée'</value>
         <value xml:lang="hi_IN">'स्वीकृति' की स्थिति</value>
         <value xml:lang="it">Stato a 'Approvato'</value>
@@ -8002,7 +8005,7 @@
         <value xml:lang="ar">الوضعية إلى 'ملغى'</value>
         <value xml:lang="de">Status auf 'Annulliert'</value>
         <value xml:lang="en">Status to 'Cancelled'</value>
-        <value xml:lang="es">Status a 'Cancelado'</value>
+        <value xml:lang="es">Cancelar</value>
         <value xml:lang="fr">Statut à 'Annulée'</value>
         <value xml:lang="hi_IN">'रद्द' की स्थिति</value>
         <value xml:lang="it">Stato a 'Annullato'</value>
@@ -8020,7 +8023,7 @@
         <value xml:lang="ar">الوضعية إلى 'طور الإنجاز'</value>
         <value xml:lang="de">Status auf 'In Bearbeitung'</value>
         <value xml:lang="en">Status to 'In Process'</value>
-        <value xml:lang="es">Status a 'En Proceso'</value>
+        <value xml:lang="es">En Proceso</value>
         <value xml:lang="fr">Statut à 'En cours'</value>
         <value xml:lang="hi_IN">'प्रक्रिया में' की स्थिति</value>
         <value xml:lang="it">Stato a 'In Corso'</value>
@@ -8038,7 +8041,7 @@
         <value xml:lang="ar">الوضعية إلى 'مخلص</value>
         <value xml:lang="de">Status auf 'Bezahlt'</value>
         <value xml:lang="en">Status to 'Paid'</value>
-        <value xml:lang="es">Status a 'Pagado'</value>
+        <value xml:lang="es">Pagar</value>
         <value xml:lang="fr">Statut à 'Payée'</value>
         <value xml:lang="hi_IN">'अदा किया गया ' की स्थिति</value>
         <value xml:lang="it">Stato a 'Pagato'</value>
@@ -8056,7 +8059,7 @@
         <value xml:lang="ar">الوضعية إلى 'جاهز'</value>
         <value xml:lang="de">Status auf 'Erledigt'</value>
         <value xml:lang="en">Status to 'Ready'</value>
-        <value xml:lang="es">Status a 'Listo'</value>
+        <value xml:lang="es">Listo</value>
         <value xml:lang="fr">Statut à 'Prête'</value>
         <value xml:lang="hi_IN">'तैयार'(Ready) की स्थिति</value>
         <value xml:lang="it">Stato a 'Pronto'</value>
@@ -8074,7 +8077,7 @@
         <value xml:lang="ar">الوضعية إلى 'مستلم'</value>
         <value xml:lang="de">Status auf 'Erhalten'</value>
         <value xml:lang="en">Status to 'Received'</value>
-        <value xml:lang="es">Status a 'Recibido'</value>
+        <value xml:lang="es">Recibir</value>
         <value xml:lang="fr">Statut à 'Reçue'</value>
         <value xml:lang="hi_IN">'प्राप्त' की स्थिति</value>
         <value xml:lang="it">Stato a 'Ricevuto'</value>
@@ -8092,7 +8095,7 @@
         <value xml:lang="ar">الوضعية إلى 'مرسل'</value>
         <value xml:lang="de">Status auf 'Sent'</value>
         <value xml:lang="en">Status to 'Sent'</value>
-        <value xml:lang="es">Status a 'Enviado'</value>
+        <value xml:lang="es">Enviar</value>
         <value xml:lang="fr">Statut à 'Envoyée'</value>
         <value xml:lang="hi_IN">'भेजा गया ' की स्थिति</value>
         <value xml:lang="it">Stato a 'Inviato'</value>
@@ -8110,7 +8113,7 @@
         <value xml:lang="ar">الوضعية إلى 'ملغى'</value>
         <value xml:lang="de">Status auf 'Abgeschrieben'</value>
         <value xml:lang="en">Status to 'Writeoff'</value>
-        <value xml:lang="es">Status to 'Anulado'</value>
+        <value xml:lang="es">Anular</value>
         <value xml:lang="fr">Statut à 'Irrecouvrable'</value>
         <value xml:lang="hi_IN">'राइट ऑफ' की स्थिति</value>
         <value xml:lang="it">Stato a 'Perso'</value>
@@ -11582,7 +11585,7 @@
         <value xml:lang="ar">الوضعية إلى 'ملغي'</value>
         <value xml:lang="de">Status auf 'Annulliert'</value>
         <value xml:lang="en">Status to 'Cancelled'</value>
-        <value xml:lang="es">Status a 'Cancelado'</value>
+        <value xml:lang="es">Cancelar</value>
         <value xml:lang="fr">Statut à 'Annullé'</value>
         <value xml:lang="hi_IN">स्थिति 'रद्द' करने के लिए</value>
         <value xml:lang="it">Stato a 'Annullato'</value>
@@ -11600,7 +11603,7 @@
         <value xml:lang="ar">الوضعية إلى 'موفق'</value>
         <value xml:lang="de">Status auf 'Bestätigt'</value>
         <value xml:lang="en">Status to 'Confirmed'</value>
-        <value xml:lang="es">Status a 'Confirmado'</value>
+        <value xml:lang="es">Confirmar</value>
         <value xml:lang="fr">Statut à 'Confirmé'</value>
         <value xml:lang="hi_IN">स्थिति 'स्थिर' करने के लिए</value>
         <value xml:lang="it">Stato a 'Confermato'</value>
@@ -11618,7 +11621,7 @@
         <value xml:lang="ar">الوضعية إلى 'مستلم'</value>
         <value xml:lang="de">Status auf 'Erhalten'</value>
         <value xml:lang="en">Status to 'Received'</value>
-        <value xml:lang="es">Status a 'Recibido'</value>
+        <value xml:lang="es">Recibir</value>
         <value xml:lang="fr">Statut à 'Reçu'</value>
         <value xml:lang="hi_IN">स्थिति 'प्राप्त' करने के लिए</value>
         <value xml:lang="it">Stato a 'Ricevuto'</value>
@@ -11636,7 +11639,7 @@
         <value xml:lang="ar">الوضعية إلى 'مرسل'</value>
         <value xml:lang="de">Status auf 'Übermittelt'</value>
         <value xml:lang="en">Status to 'Sent'</value>
-        <value xml:lang="es">Status a 'Enviado'</value>
+        <value xml:lang="es">Enviar</value>
         <value xml:lang="fr">Statut à 'Envoyé'</value>
         <value xml:lang="hi_IN">स्थिति 'भेज दिया' करने के लिए</value>
         <value xml:lang="it">Stato a 'Inviato'</value>
@@ -11653,6 +11656,7 @@
     <property key="AccountingPaymentTabStatusToVoid">
         <value xml:lang="de">Status auf 'Ungültig'</value>
         <value xml:lang="en"> Status to 'Void'</value>
+        <value xml:lang="es"> Anular</value>
         <value xml:lang="fr">Statut à "Vide"</value>
         <value xml:lang="hi_IN">स्थिति 'रिक्त' करने के लिए</value>
         <value xml:lang="ja">ｽﾃｰﾀｽを'無効'</value>
@@ -13060,6 +13064,7 @@
     </property>
     <property key="AccountingSagePayPaymentVoided">
         <value xml:lang="en">Payment Voided</value>
+        <value xml:lang="es">Pago Anulado</value>        
         <value xml:lang="fr">Annulation</value>
         <value xml:lang="it">Pagamento annullato</value>
         <value xml:lang="ja">支払が無効になりました</value>
@@ -13117,6 +13122,7 @@
     </property>
     <property key="AccountingSagePayProduction">
         <value xml:lang="en">Production</value>
+        <value xml:lang="es">Producción</value>
         <value xml:lang="fr">Production</value>
         <value xml:lang="ja">本番</value>
         <value xml:lang="pt">Produção</value>
@@ -13193,6 +13199,7 @@
     </property>
     <property key="AccountingSagePayVoidUrl">
         <value xml:lang="en">Void Url</value>
+        <value xml:lang="es">Url Nulo</value>
         <value xml:lang="fr">URL vide</value>
         <value xml:lang="ja">無効URL</value>
         <value xml:lang="pt">Url nula</value>
