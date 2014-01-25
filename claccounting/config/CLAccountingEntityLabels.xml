@@ -3232,6 +3232,7 @@
     <property key="InvoiceItemType.description.ITM_MISC_CHARGE">
         <value xml:lang="de">Rechnungsposten zusätzliche Gebühren</value>
         <value xml:lang="en">Invoice Item Miscellaneous Charges (Sales)</value>
+        <value xml:lang="es">Item de Factura Cargos Varios (Ventas)</value>
         <value xml:lang="fr">Frais divers sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद विविध व्यय</value>
         <value xml:lang="it">Fattura Riga Commissioni Varie</value>
@@ -3247,6 +3248,7 @@
     <property key="InvoiceItemType.description.ITM_PROMOTION_ADJ">
         <value xml:lang="de">Rechnungsposten Aktion</value>
         <value xml:lang="en">Invoice Item Promotion (Sales)</value>
+        <value xml:lang="es">Item de Factura Promoción (Ventas)</value>
         <value xml:lang="fr">Promotion sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद संवर्धन</value>
         <value xml:lang="it">Fattura Riga Promozione</value>
@@ -3262,6 +3264,7 @@
     <property key="InvoiceItemType.description.ITM_REPLACE_ADJ">
         <value xml:lang="de">Rechnungsposten Ersatzartikel</value>
         <value xml:lang="en">Invoice Item Replacement (Sales)</value>
+        <value xml:lang="es">Item de Factura Remplazo (Ventas)</value>
         <value xml:lang="fr">Echange sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद प्रतिस्थापन</value>
         <value xml:lang="it">Fattura Riga Sostituzione</value>
@@ -3277,6 +3280,7 @@
     <property key="InvoiceItemType.description.ITM_SALES_TAX">
         <value xml:lang="de">Rechnungsposten MwSt.</value>
         <value xml:lang="en">Invoice Item Sales Tax (Sales)</value>
+        <value xml:lang="es">Item de Factura Impuesto de Venta (Ventas)</value>
         <value xml:lang="fr">Ligne de TVA (ventes)</value>
         <value xml:lang="hi_IN">चालान मद बिक्री टैक्स</value>
         <value xml:lang="it">Fattura Riga Tasse Vendita</value>
@@ -3292,6 +3296,7 @@
     <property key="InvoiceItemType.description.ITM_SHIPPING_CHARGES">
         <value xml:lang="de">Rechnungsposten Versandkosten</value>
         <value xml:lang="en">Invoice Item Shipping and Handling (Sales)</value>
+        <value xml:lang="es">Item de Factura Envio y Entrega (Ventas)</value>
         <value xml:lang="fr">Frais d'expédition sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद शिपिंग और हैंडलिंग</value>
         <value xml:lang="it">Fattura Riga Spese di Spedizione e Imballaggio</value>
@@ -3307,6 +3312,7 @@
     <property key="InvoiceItemType.description.ITM_SURCHARGE_ADJ">
         <value xml:lang="de">Rechnungsposten Zuschlag</value>
         <value xml:lang="en">Invoice Item Surcharge (Sales)</value>
+        <value xml:lang="es">Item de Factura Sobrecargo (Ventas)</value>
         <value xml:lang="fr">Surcoût sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद अधिभार</value>
         <value xml:lang="it">Fattura Riga Supplementare</value>
@@ -3322,6 +3328,7 @@
     <property key="InvoiceItemType.description.ITM_WARRANTY_ADJ">
         <value xml:lang="de">Rechnungsposten Garantie</value>
         <value xml:lang="en">Invoice Item Warranty (Sales)</value>
+        <value xml:lang="es">Item de Factura Garantia (Ventas)</value>
         <value xml:lang="fr">Garantie sur ligne de facturation (ventes)</value>
         <value xml:lang="hi_IN">चालान मद वारंटी</value>
         <value xml:lang="it">Fattura Riga Garanzia</value>
@@ -3337,6 +3344,7 @@
     <property key="InvoiceItemType.description.PAYROL">
         <value xml:lang="de">Gehalt</value>
         <value xml:lang="en">Payrol</value>
+        <value xml:lang="es">Salario</value>
         <value xml:lang="hi_IN">वेतन</value>
         <value xml:lang="it">Paghe</value>
         <value xml:lang="ja">ペイロール</value>
@@ -3348,6 +3356,7 @@
     <property key="InvoiceItemType.description.PAYROL_ADV_PAY">
         <value xml:lang="de">Vorauszahlung</value>
         <value xml:lang="en">Advance Pay</value>
+        <value xml:lang="es">Pago Adelantado</value>
         <value xml:lang="hi_IN">अग्रिम वेतन</value>
         <value xml:lang="it">Paghe avanzate</value>
         <value xml:lang="ja">前払金</value>
@@ -3359,6 +3368,7 @@
     <property key="InvoiceItemType.description.PAYROL_BONUS">
         <value xml:lang="de">Bonus</value>
         <value xml:lang="en">Bonus</value>
+        <value xml:lang="es">Extras</value>
         <value xml:lang="hi_IN">बोनस</value>
         <value xml:lang="it">Premio</value>
         <value xml:lang="ja">ボーナス</value>
@@ -3370,6 +3380,7 @@
     <property key="InvoiceItemType.description.PAYROL_COMMISSION">
         <value xml:lang="de">Provision</value>
         <value xml:lang="en">Commission</value>
+        <value xml:lang="es">Comisión</value>
         <value xml:lang="hi_IN">दलाली</value>
         <value xml:lang="it">Provvigione</value>
         <value xml:lang="ja">委託手数料</value>
@@ -3380,6 +3391,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_125COMPY">
         <value xml:lang="en">125*Compy. Contr Other Prem.</value>
+        <value xml:lang="es">125*Compy. Contr Otro Prem.</value>
         <value xml:lang="it">125*Compy. Contr Altri Prem.</value>
         <value xml:lang="vi">125*Compy. Contr Other Prem.</value>
         <value xml:lang="zh">125医疗计划公司存入的其它奖励</value>
@@ -3387,6 +3399,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_125HSA">
         <value xml:lang="en">125*HSA Contribution (pre tax)</value>
+        <value xml:lang="es">125*HSA Contribución (pre impuesto)</value>
         <value xml:lang="it">125*HSA Contributo (prima delle tasse)</value>
         <value xml:lang="vi">125*HSA Contribution (trước thuế)</value>
         <value xml:lang="zh">125医疗计划存款账户（税前）</value>
@@ -3394,6 +3407,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_125PPO">
         <value xml:lang="en">125*PPO (pre tax)</value>
+        <value xml:lang="es">125*PPO (pre impuesto)</value>
         <value xml:lang="it">125*PPO (prima delle tasse)</value>
         <value xml:lang="vi">125*PPO (trước thuế)</value>
         <value xml:lang="zh">125医疗计划首选供应商组织（税前）</value>
@@ -3401,6 +3415,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_401K">
         <value xml:lang="en">401K Emp.</value>
+        <value xml:lang="es">401K Emp.</value>
         <value xml:lang="it">401K Emp.</value>
         <value xml:lang="ja">401K 被雇用者</value>
         <value xml:lang="vi">401K Emp.</value>
@@ -3410,6 +3425,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_CHAR_DONAT">
         <value xml:lang="de">Gemeinnützige Spende</value>
         <value xml:lang="en">Charity Donation</value>
+        <value xml:lang="es">Donaciones de Caridad</value>
         <value xml:lang="hi_IN">धर्मार्थ दान</value>
         <value xml:lang="it">Donazione carità</value>
         <value xml:lang="ja">慈善寄付金</value>
@@ -3421,6 +3437,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_CHILD_SUPP">
         <value xml:lang="de">Unterhaltszahlung</value>
         <value xml:lang="en">Child Support Garnishment</value>
+        <value xml:lang="es">Salario a Empleada</value>
         <value xml:lang="hi_IN">बाल सहायता गर्निश्मेंट</value>
         <value xml:lang="it">Support figlio</value>
         <value xml:lang="ja">子供養育費積立</value>
@@ -3432,6 +3449,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_FROM_GROSS">
         <value xml:lang="de">Abzüge vom Bruttobetrag</value>
         <value xml:lang="en">Deductions from Gross</value>
+        <value xml:lang="es">Deducciones en Bruto</value>
         <value xml:lang="hi_IN">सकल से कटौती</value>
         <value xml:lang="it">Deduzione dal lordo</value>
         <value xml:lang="ja">総額控除</value>
@@ -3443,6 +3461,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_MISC">
         <value xml:lang="de">Sonstige Abzüge</value>
         <value xml:lang="en">Miscellaneous Deduction</value>
+        <value xml:lang="es">Deducciones Varias</value>
         <value xml:lang="hi_IN">विविध कटौती</value>
         <value xml:lang="it">Deduzione varie</value>
         <value xml:lang="ja">その他控除</value>
@@ -3454,6 +3473,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_REPAY">
         <value xml:lang="de">Vorauszahlung</value>
         <value xml:lang="en">Advance Repayment</value>
+        <value xml:lang="es">Reembolso Anticipado</value>
         <value xml:lang="hi_IN">अग्रिम चुकौती</value>
         <value xml:lang="it">Anticipo rimborso</value>
         <value xml:lang="ja">前払給与</value>
@@ -3474,6 +3494,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_SAL_TIMOFF">
         <value xml:lang="de">Unbezahlte Abwesenheit</value>
         <value xml:lang="en">Unpaid Salary Time off.</value>
+        <value xml:lang="es">Salario a Pagar Fuera de Tiempo</value>
         <value xml:lang="hi_IN">बकाया वेतन समय से</value>
         <value xml:lang="it">Salario da pagare tempo libero.</value>
         <value xml:lang="ja">未払給与休職</value>
@@ -3484,6 +3505,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_SIMP_IRA">
         <value xml:lang="en">Simple IRA emp.</value>
+        <value xml:lang="es">Incentivo a Empleados</value>
         <value xml:lang="it">Semplice IRA emp.</value>
         <value xml:lang="vi">Simple IRA emp.</value>
         <value xml:lang="zh">简单个人退休账户</value>
@@ -3491,7 +3513,7 @@
     </property>
     <property key="InvoiceItemType.description.PAYROL_DD_UNION">
         <value xml:lang="de">Gewerkschaftsbeitrag</value>
-        <value xml:lang="en">Union Dues</value>
+        <value xml:lang="en">Cuota de Sindicato</value>
         <value xml:lang="hi_IN">संघ देय</value>
         <value xml:lang="it">Diritti sindacali dovuti</value>
         <value xml:lang="ja">組合費</value>
@@ -3503,6 +3525,7 @@
     <property key="InvoiceItemType.description.PAYROL_DD_WAG_GARN">
         <value xml:lang="de">Lohnpfändung</value>
         <value xml:lang="en">Wage Garnishment</value>
+        <value xml:lang="es">Embaro de Salario</value>
         <value xml:lang="hi_IN">मजदूरी गर्निश्मेंट</value>
         <value xml:lang="it">Salario</value>
         <value xml:lang="ja">賃金差押</value>
@@ -3514,6 +3537,7 @@
     <property key="InvoiceItemType.description.PAYROL_EARN_HOURS">
         <value xml:lang="de">Einkommen und Stunden</value>
         <value xml:lang="en">Earnings and Hours</value>
+        <value xml:lang="es">Ingresos y Horas</value>
         <value xml:lang="hi_IN">आय और घंटे</value>
         <value xml:lang="it">Guadagni e ore</value>
         <value xml:lang="ja">収入および時間</value>
@@ -3525,6 +3549,7 @@
     <property key="InvoiceItemType.description.PAYROL_HRLY_RATE">
         <value xml:lang="de">Stundensatz</value>
         <value xml:lang="en">Hourly Rate</value>
+        <value xml:lang="es">Taza Horaria</value>
         <value xml:lang="hi_IN">घंटा दर</value>
         <value xml:lang="it">Percentuale oraria</value>
         <value xml:lang="ja">時間単価</value>
@@ -3536,6 +3561,7 @@
     <property key="InvoiceItemType.description.PAYROL_HRLY_RATE_SIC">
         <value xml:lang="de">Lohnfortzahlung im Krankheitsfall</value>
         <value xml:lang="en">Sick Hourly Rate</value>
+        <value xml:lang="es">Taza Horaria Enfermedad</value>
         <value xml:lang="it">Percentuale oraria per la malattia</value>
         <value xml:lang="ja">疾病時間単価</value>
         <value xml:lang="pt">Taxa por hora de doença</value>
@@ -3546,6 +3572,7 @@
     <property key="InvoiceItemType.description.PAYROL_MIL_REIMB">
         <value xml:lang="de">Reisekostenausgleich</value>
         <value xml:lang="en">Mileage Reimbursement</value>
+        <value xml:lang="es">Reembolso por Kilometraje</value>
         <value xml:lang="hi_IN">लाभ प्रतिपूर्ति</value>
         <value xml:lang="it">Rimborso chilometrico</value>
         <value xml:lang="ja">交通費補助</value>
@@ -3557,6 +3584,7 @@
     <property key="InvoiceItemType.description.PAYROL_OFF_EXP_REIMB">
         <value xml:lang="de">Büroauslagen</value>
         <value xml:lang="en">Office Exp. reimbursement</value>
+        <value xml:lang="es">Reembolso por Office Exp.</value>
         <value xml:lang="hi_IN">दफ्तर खर्च प्रतिपूर्ति</value>
         <value xml:lang="it">Rimborso spese ufficio</value>
         <value xml:lang="ja">勤務補助</value>
