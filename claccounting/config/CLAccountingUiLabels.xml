@@ -117,6 +117,7 @@
     <property key="AccountingAccountNumberMissing">
         <value xml:lang="de">Kontonummer fehlt</value>
         <value xml:lang="en">Account Number is missing</value>
+        <value xml:lang="es">No se encuentra Numero de Cuenta</value>
         <value xml:lang="fr">Numéro de compte manquant</value>
         <value xml:lang="ja">アカウント番号が正しくありません</value>
         <value xml:lang="nl">Rekeningnummer ontbreekt</value>
@@ -128,6 +129,7 @@
     <property key="AccountingAccountTransactionId">
         <value xml:lang="de">Buchungs-Id</value>
         <value xml:lang="en">Account Transaction Id</value>
+        <value xml:lang="es">Id de Transaccion de Cuenta</value>
         <value xml:lang="fr">Réf transaction</value>
         <value xml:lang="hi_IN">लेखा गतिविधि क्रमांक</value>
         <value xml:lang="ja">アカウントトランザクションID</value>
@@ -160,6 +162,7 @@
     <property key="AccountingAccountTypeMissing">
         <value xml:lang="de">Kontotyp fehlt</value>
         <value xml:lang="en">Account Type is missing</value>
+        <value xml:lang="es">No se encuentra Tipo de Cuenta</value>
         <value xml:lang="fr">Type de compte manquant</value>
         <value xml:lang="ja">アカウント種類が正しくありません</value>
         <value xml:lang="nl">Rekening type ontbreekt</value>
@@ -171,6 +174,7 @@
     <property key="AccountingAccounting">
         <value xml:lang="de">Buchhaltung</value>
         <value xml:lang="en">Accounting</value>
+        <value xml:lang="es">Contable</value>
         <value xml:lang="fr">Comptabilité</value>
         <value xml:lang="hi_IN">लेखांकन</value>
         <value xml:lang="it">Contabilità</value>
@@ -203,6 +207,7 @@
     <property key="AccountingAcctRecon">
         <value xml:lang="de">Kontoabstimmung</value>
         <value xml:lang="en">Account Reconciliation</value>
+        <value xml:lang="es">Reconciliación de Cuenta</value>
         <value xml:lang="fr">Rapprochement de compte</value>
         <value xml:lang="hi_IN">लेखा पुनर्मिलान</value>
         <value xml:lang="it">Riconciliazione</value>
@@ -217,6 +222,7 @@
     <property key="AccountingAcctRecons">
         <value xml:lang="de">Kontenabstimmungen</value>
         <value xml:lang="en">Account Reconciliations</value>
+        <value xml:lang="es">Reconciliaciones de Cuentas</value>
         <value xml:lang="fr">Rapprochements de compte</value>
         <value xml:lang="hi_IN">लेखा पुनर्मिलान</value>
         <value xml:lang="it">Riconciliazioni</value>
@@ -231,6 +237,7 @@
     <property key="AccountingAcctgTrans">
         <value xml:lang="de">Kontenbewegungen</value>
         <value xml:lang="en">Accounting Transactions</value>
+        <value xml:lang="es">Transacciones Contables</value>
         <value xml:lang="fr">Transactions comptables</value>
         <value xml:lang="hi_IN">लेखा गतिविधियाँ</value>
         <value xml:lang="it">Prime Note</value>
@@ -245,6 +252,7 @@
     <property key="AccountingAcctgTransEntries">
         <value xml:lang="de">Kontenbewegungen</value>
         <value xml:lang="en">Accounting Transactions Entries</value>
+        <value xml:lang="es">Entradas de Transacciones Contables</value>
         <value xml:lang="fr">Entrées de transactions comptables</value>
         <value xml:lang="hi_IN">लेखा लेनदेन की प्रविष्टियाँ</value>
         <value xml:lang="it">Righe Prime Note</value>
@@ -259,6 +267,7 @@
     <property key="AccountingAcctgTransEntriesFor">
         <value xml:lang="de">Kontenbewegungen für</value>
         <value xml:lang="en">Accounting Transaction Entries For</value>
+        <value xml:lang="es">>Entradas de Transacciones Contables Para</value>
         <value xml:lang="fr">Entrées de transactions comptables pour</value>
         <value xml:lang="hi_IN">लेखा गतिविधि प्रविष्टियों के लिए</value>
         <value xml:lang="ja">会計仕訳エントリ:</value>
@@ -271,6 +280,7 @@
     <property key="AccountingAcctgTransFor">
         <value xml:lang="de">Kontobewegungen für</value>
         <value xml:lang="en">Accounting Transactions For</value>
+        <value xml:lang="es">Entradas de Transacciones Contables Para</value>
         <value xml:lang="fr">Transactions comptables pour</value>
         <value xml:lang="hi_IN">लेखा गतिविधि के लिए</value>
         <value xml:lang="ja">会計仕訳:</value>
@@ -283,6 +293,7 @@
     <property key="AccountingActualCurrencyAmount">
         <value xml:lang="de">Ist-Währungsbetrag</value>
         <value xml:lang="en">Actual Currency Amount</value>
+        <value xml:lang="es">Monto Actual Corriente</value>
         <value xml:lang="fr">Valeur réelle en devise</value>
         <value xml:lang="hi_IN">वास्तविक मुद्रा राशि</value>
         <value xml:lang="it">Attuale Importo in Valuta</value>
@@ -298,6 +309,7 @@
     <property key="AccountingActualCurrencyUomId">
         <value xml:lang="de">Ist-Währung</value>
         <value xml:lang="en">Actual Currency Uom Id</value>
+        <value xml:lang="es">Uom Id Actual Corriente</value>
         <value xml:lang="fr">Réf. UOM de la devise réelle</value>
         <value xml:lang="hi_IN">वास्तविक मुद्रा माप की इकाई क्रमांक</value>
         <value xml:lang="it">Attuale Udm Valuta</value>
@@ -313,6 +325,7 @@
     <property key="AccountingAddAgreementWorkEffortApplic">
         <value xml:lang="de">Vereinbarung-Arbeitseinsatz hinzufügen</value>
         <value xml:lang="en">Add Agreement Work Effort Applic</value>
+        <value xml:lang="es">Añadir aplicación de acuerdo de trabajo</value>
         <value xml:lang="fr">Ajouter une application de tâche d'accord commercial</value>
         <value xml:lang="hi_IN">अनुबंध कार्य प्रयास अनुप्रयोग(AgreementWorkEffortApplic) बनाएँ</value>
         <value xml:lang="it">Aggiungi Applicazione Termine Impegno di Lavoro</value>
@@ -326,6 +339,7 @@
     <property key="AccountingAddCategoryGlAccount">
         <value xml:lang="de">Hauptkonten-Kategorie hinzufügen</value>
         <value xml:lang="en">Add Category GL Account</value>
+        <value xml:lang="es">Añadir Categoria de Cuenta GL</value>
         <value xml:lang="fr">Ajouter la catégorie de compte au GL</value>
         <value xml:lang="hi_IN">श्रेणी सामान्य बही खाता जोड़ें</value>
         <value xml:lang="it">Aggiungi una Categoria Conto GL</value>
@@ -340,6 +354,7 @@
     <property key="AccountingAddCustomTimePeriod">
         <value xml:lang="de">Individueller Zeitraum hinzufügen</value>
         <value xml:lang="en">Add Custom Time Period</value>
+        <value xml:lang="es">Añadir Periodo de Tiempo Personalizado</value>
         <value xml:lang="fr">Ajouter une période de temps</value>
         <value xml:lang="hi_IN">स्वनिर्धारित समय अवधि जोड़ें</value>
         <value xml:lang="it">Aggiungi Periodi di Tempo Personalizzati</value>
@@ -354,6 +369,7 @@
     <property key="AccountingAddFinAccountReconciliations">
         <value xml:lang="de">Finanzkontenabstimmung für Finanzkonto : ${finAccount.finAccountName} [${finAccountId}] hinzufügen</value>
         <value xml:lang="en">Add Financial Account Reconciliations for Financial Account : ${finAccount.finAccountName} [${finAccountId}]</value>
+        <value xml:lang="es">Añadir una Reconciliacion de Cuenta Financiera para la Cuenta: ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="fr">Ajouter un rapprochement pour le compte financier : ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="ja">金融アカウント: ${finAccount.finAccountName} [${finAccountId}] に対して金融アカウント照合を追加</value>
         <value xml:lang="nl">Toevoegen afstemmingen voor Financiele rekening : ${finAccount.finAccountName} [${finAccountId}]</value>
@@ -364,6 +380,7 @@
     <property key="AccountingAddFinAccountTypeGlAccount">
         <value xml:lang="de">Finanzkonten-Art Hauptkonto hinzufügen</value>
         <value xml:lang="en">Add FinAccount Type Gl Account</value>
+        <value xml:lang="es">Añadir Tipo de Cuenta Financiera a Cuentas GL</value>
         <value xml:lang="fr">Ajouter le type de compte financier au GL</value>
         <value xml:lang="hi_IN">वित्तीय खाता प्रकार का सामान्य खाता जोड़ें</value>
         <value xml:lang="it">Aggiungi Tipo Conto Finanziario Gl</value>
@@ -378,7 +395,7 @@
     <property key="AccountingAddFixedAssetIdent">
         <value xml:lang="de">Anlagen-Identifikation hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Identification</value>
-        <value xml:lang="es">Editar Indents de Activo Fijo</value>
+        <value xml:lang="es">Añadir Ifdentificación de Activo Fijo</value>
         <value xml:lang="fr">Ajouter une identification d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति की पहचान जोड़ें</value>
         <value xml:lang="it">Nuova identificazione cespite</value>
@@ -395,6 +412,7 @@
     <property key="AccountingAddFixedAssetMaintOrder">
         <value xml:lang="de">Anlagen-Wartungs-Reihenfolge hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Maintenance Order</value>
+        <value xml:lang="es">Añadir Mantenimiento de Pedido a Activos Fijos</value>
         <value xml:lang="fr">Ajouter une commande de maintenance d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति रखरखाव के आदेश जोड़ें</value>
         <value xml:lang="it">Nuovo ordine di manutenzione cespite</value>
@@ -409,7 +427,7 @@
     <property key="AccountingAddFixedAssetMaintenance">
         <value xml:lang="de">Anlagen-Wartung hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Maintenance</value>
-        <value xml:lang="es">Editar Mantenimiento de Activo Fijo</value>
+        <value xml:lang="es">Añadir Mantenimiento de Activo Fijo</value>
         <value xml:lang="fr">Ajouter une maintenance d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति रखरखाव जोड़ें</value>
         <value xml:lang="it">Nuova manutenzione cespite</value>
@@ -426,6 +444,7 @@
     <property key="AccountingAddFixedAssetMeter">
         <value xml:lang="de">Ablesen des Anlage-Zählers hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Meter Reading</value>
+        <value xml:lang="es">Añadir Medidor de Lectura a Activos Fijos</value>
         <value xml:lang="fr">Ajouter une mesure de la maintenance d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति मापक रीडिंग जोड़ें</value>
         <value xml:lang="it">Nuova misura contatori cespite</value>
@@ -440,6 +459,7 @@
     <property key="AccountingAddFixedAssetPartyAssignment">
         <value xml:lang="de">Akteurszuweisung zu Anlage hinzufügen</value>
         <value xml:lang="en">Add Party Fixed Asset Assignment</value>
+        <value xml:lang="es">Añadir Asignación de Participante a Activo Fijo</value>
         <value xml:lang="fr">Ajouter une tâche d'un acteur à une immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति में नियत कार्य करने के लिए पार्टी जोड़ें</value>
         <value xml:lang="it">Nuova assegnazione cespite a soggetto</value>
@@ -454,7 +474,7 @@
     <property key="AccountingAddFixedAssetRegistration">
         <value xml:lang="de">Anlagen-Registierung hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Registration</value>
-        <value xml:lang="es">Editar Registros de Activo Fijo</value>
+        <value xml:lang="es">Añadir Registros de Activo Fijo</value>
         <value xml:lang="fr">Ajouter l'enregistrement d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति के लिए पंजीयन जोड़ें</value>
         <value xml:lang="it">Nuova registrazione cespite</value>
@@ -471,7 +491,7 @@
     <property key="AccountingAddFixedAssetStdCost">
         <value xml:lang="de">Anlagen-Plankosten hinzufügen</value>
         <value xml:lang="en">Add Fixed Asset Standard Cost</value>
-        <value xml:lang="es">Editar Costo Estandar de Activo Fijo</value>
+        <value xml:lang="es">Añadir Costo Estandar de Activo Fijo</value>
         <value xml:lang="fr">Ajouter un coût standard d'immobilisation</value>
         <value xml:lang="hi_IN">अचल संपत्ति के लिए मानक लागत</value>
         <value xml:lang="it">Nuovo costo standard del cespite</value>
@@ -529,7 +549,7 @@
         <value xml:lang="cs">Přidat nový dárkový poukaz</value>
         <value xml:lang="de">Neuen Gutschein hinzufügen</value>
         <value xml:lang="en">Add New Gift Card</value>
-        <value xml:lang="es">Añadir certificado de regalo</value>
+        <value xml:lang="es">Añadir Tarjeta de Regalo</value>
         <value xml:lang="fr">Ajouter une nouvelle carte cadeau</value>
         <value xml:lang="hi_IN">नया उपहार ख़ाता</value>
         <value xml:lang="it">Aggiungi nuova carta omaggio</value>
@@ -546,6 +566,7 @@
     <property key="AccountingAddPartyGlAccount">
         <value xml:lang="de">Personenkonto hinzufügen</value>
         <value xml:lang="en">Add Party Gl Account</value>
+        <value xml:lang="es">Añadir Participante a Cuenta GL</value>
         <value xml:lang="fr">Ajouter le compte de tiers au GL</value>
         <value xml:lang="hi_IN">सामान्य खाता बही खाते में जोड़ने के लिए पार्टी</value>
         <value xml:lang="it">Aggiungi Conto Gl Soggetto</value>
@@ -560,6 +581,7 @@
     <property key="AccountingAddPaymentGroupMember">
         <value xml:lang="de">Zahlungsgruppen-Mitglied hinzufügen</value>
         <value xml:lang="en">Add Payment Group Member</value>
+        <value xml:lang="es">Añadir Miembro al Grupo Pago</value>
         <value xml:lang="fr">Ajout d'un paiement au groupe</value>
         <value xml:lang="hi_IN">भुगतान समूह सदस्य जोड़ें</value>
         <value xml:lang="ja">支払グループメンバを追加</value>
@@ -572,7 +594,7 @@
     <property key="AccountingAddTax">
         <value xml:lang="de">Steuer hinzufühen</value>
         <value xml:lang="en">Add Tax</value>
-        <value xml:lang="es">Agregar Iva</value>
+        <value xml:lang="es">Añadir Iva</value>
         <value xml:lang="fr">Ajouter les taxes</value>
         <value xml:lang="ja">税を追加</value>
         <value xml:lang="nl">Belastingen toevoegen</value>
@@ -582,6 +604,7 @@
     <property key="AccountingAddTaxAuthorityGlAccount">
         <value xml:lang="de">Steuerkonto hinzufügen</value>
         <value xml:lang="en">Add TaxAuthority GL Account</value>
+        <value xml:lang="es">Añadir Autoridad Impositiva a Cuenta GL</value>
         <value xml:lang="fr">Ajouter le compte de taxe au GL</value>
         <value xml:lang="hi_IN">सामान्य बही खातों कर अधिकारियों को जोड़ने के लिए</value>
         <value xml:lang="it">Aggiungi Conto Gl Autorità Tasse</value>
@@ -596,6 +619,7 @@
     <property key="AccountingAdditionalShippingChargeForShipment">
         <value xml:lang="de">Zusätzliche Versandkosten für Lieferung #${shipmentId}</value>
         <value xml:lang="en">Additional Shipping Charge For Shipment #${shipmentId}</value>
+        <value xml:lang="es">Cargo Adicional de Envio por Repartidor #${shipmentId}</value>
         <value xml:lang="fr">Ajouter des frais de transport à la livraison n°${shipmentId}</value>
         <value xml:lang="hi_IN">अतिरिक्त माल के परिवहन के लिए प्रयुक्त</value>
         <value xml:lang="it">Ricarico spedizione aggiuntivo per la spedizione #${shipmentId}</value>
@@ -1824,7 +1848,7 @@
         <value xml:lang="ar">مذكرة الميزانية</value>
         <value xml:lang="de">Bilanz</value>
         <value xml:lang="en">Balance Sheet</value>
-        <value xml:lang="es">Hoja de Balance</value>
+        <value xml:lang="es">Balance General</value>
         <value xml:lang="fr">Bilan</value>
         <value xml:lang="hi_IN">पक्का-चिट्ठा/तुलन-पत्र</value>
         <value xml:lang="it">Stato Patrimoniale</value>
@@ -2298,7 +2322,7 @@
         <value xml:lang="ar">عنوان الفوترة; أضف طرف/دور أولا; ثم اختر من القائمة المسدلة</value>
         <value xml:lang="de">Rechnungsadresse; Bitte zuerst Aktuer/Rolle hinzufügen und dann auswählen</value>
         <value xml:lang="en">Billing Address; Add Party/Role first, then select from drop-down</value>
-        <value xml:lang="es">Dirección de facturación; Agregar Grupo/Rol primero, despues seleccionar de la lista desplegable</value>
+        <value xml:lang="es">Dirección de facturación; Añadir Grupo/Rol primero, despues seleccionar de la lista desplegable</value>
         <value xml:lang="fr">Adresse de facturation; Ajouter un Acteur/Rôle, puis choisir dans le menu déroulant</value>
         <value xml:lang="hi_IN">देयकांकन(बिलिंग) पता; पहले पार्टी/भूमिका जोड़ें , फिर ड्रॉप डाउन से चुनें</value>
         <value xml:lang="it">Indirizzo Fatturazione; Aggiungi Soggetto/Ruolo per primo, allora seleziona dalla lista</value>
@@ -2673,6 +2697,7 @@
     <property key="AccountingCashFlowStatement">
         <value xml:lang="de">Kapitalflussrechnung</value>
         <value xml:lang="en">Cash Flow Statement</value>
+        <value xml:lang="es">Estado de Flujo de Efectivo</value>
         <value xml:lang="fr">Tableau des flux de trésorerie</value>
         <value xml:lang="hi_IN">रोकड प्रवाह विवरण</value>
         <value xml:lang="ja">キャッシュフロー計算書</value>
@@ -3026,6 +3051,7 @@
     <property key="AccountingComparativeBalanceSheet">
         <value xml:lang="de">Vergleichsbilanz</value>
         <value xml:lang="en">Comparative Balance Sheet</value>
+        <value xml:lang="es">Comparativa de Balance General</value>
         <value xml:lang="fr">Bilan comparatif</value>
         <value xml:lang="hi_IN">तुलनात्मक तुलन-पत्र</value>
         <value xml:lang="it">Stato Patrimoniale Comparativo</value>
@@ -3040,6 +3066,7 @@
     <property key="AccountingComparativeCashFlowStatement">
         <value xml:lang="de">Vergleichs-Kapitalflussrechnung</value>
         <value xml:lang="en">Comparative Cash Flow Statement</value>
+        <value xml:lang="es">Comparativa de Flujo de Efectivo</value>
         <value xml:lang="fr">Tableau comparatif de flux de trésorerie</value>
         <value xml:lang="hi_IN">तुलनात्मक रोकड प्रवाह विवरण</value>
         <value xml:lang="ja">比較キャッシュフロー計算書</value>
@@ -3052,6 +3079,7 @@
     <property key="AccountingComparativeIncomeStatement">
         <value xml:lang="de">Vergleichs-Ertragsrechnung</value>
         <value xml:lang="en">Comparative Income Statement</value>
+        <value xml:lang="es">Comparativa de Estado de Resultados</value>
         <value xml:lang="fr">Comparatif Compte de résultat</value>
         <value xml:lang="hi_IN">तुलनात्मक आय विवरण</value>
         <value xml:lang="it">Conto Economico Comparativo</value>
@@ -5025,6 +5053,7 @@
     <property key="AccountingExpenses">
         <value xml:lang="de">Aufwendungen</value>
         <value xml:lang="en">Expenses</value>
+        <value xml:lang="es">Gastos</value>        
         <value xml:lang="fr">Dépenses</value>
         <value xml:lang="hi_IN">व्यय</value>
         <value xml:lang="ja">費用</value>
@@ -6855,6 +6884,7 @@
     <property key="AccountingGlAccountTrialBalance">
         <value xml:lang="de">Probebilanz</value>
         <value xml:lang="en">GL Account Trial Balance</value>
+        <value xml:lang="es">Balance de Prueba de Cuenta GL</value>
         <value xml:lang="fr">Balance</value>
         <value xml:lang="hi_IN">जीएल(GL) खाता तलपट(Trial Balance)</value>
         <value xml:lang="ja">GL勘定試算</value>
@@ -7067,6 +7097,7 @@
     </property>
     <property key="AccountingIncome">
         <value xml:lang="en">Income</value>
+        <value xml:lang="es">Ingresos Netos</value>        
         <value xml:lang="fr">Revenu</value>
         <value xml:lang="hi_IN">आय</value>
         <value xml:lang="ja">損益</value>
@@ -7088,7 +7119,7 @@
         <value xml:lang="ar">تصربح الدخل</value>
         <value xml:lang="de">Ertragsrechnung</value>
         <value xml:lang="en">Income Statement</value>
-        <value xml:lang="es">Declaración de ingresos</value>
+        <value xml:lang="es">Estado de Resultados</value>
         <value xml:lang="fr">Déclaration de revenus</value>
         <value xml:lang="hi_IN">आय विवरण</value>
         <value xml:lang="it">Conto Economico</value>
@@ -7180,6 +7211,7 @@
     </property>
     <property key="AccountingInventoryValuation">
         <value xml:lang="en">Inventory Valuation</value>
+        <value xml:lang="es">Valoración de Invetario</value>
         <value xml:lang="fr">Évaluation des stocks</value>
         <value xml:lang="hi_IN">वस्तु मूल्यांकन</value>
         <value xml:lang="ja">棚卸資産評価</value>
@@ -7191,6 +7223,7 @@
     </property>
     <property key="AccountingInventoryValuationList">
         <value xml:lang="en">Inventory Valuation List</value>
+        <value xml:lang="es">Lista de Valoración de Invetario</value>
         <value xml:lang="fr">Liste des évaluations de stocks</value>
         <value xml:lang="hi_IN">वस्तु मूल्यांकन सूची</value>
         <value xml:lang="ja">棚卸資産評価一覧</value>
@@ -7583,7 +7616,7 @@
         <value xml:lang="ar">إضافة بند فاتورة جديد</value>
         <value xml:lang="de">Weitere Rechnungsposition hinzufügen</value>
         <value xml:lang="en">Add a new invoice Item</value>
-        <value xml:lang="es">Agregar un nuevo elemento de factura</value>
+        <value xml:lang="es">Añadir un nuevo elemento de factura</value>
         <value xml:lang="fr">Ajouter une ligne de facturation</value>
         <value xml:lang="hi_IN">एक नया चालान मद जोड़ें</value>
         <value xml:lang="it">Aggiungi una nuova Riga fattura</value>
@@ -8939,7 +8972,7 @@
         <value xml:lang="ar">اضافة ترقية جديدة</value>
         <value xml:lang="de">Neue Promotion hinzufügen</value>
         <value xml:lang="en">Add New Promotion</value>
-        <value xml:lang="es">Agregar nueva promoción</value>
+        <value xml:lang="es">Añadir nueva promoción</value>
         <value xml:lang="fr">Ajouter une promotion</value>
         <value xml:lang="hi_IN">नया संवर्धन बनाएँ</value>
         <value xml:lang="it">Aggiungi Nuova Promozione</value>
@@ -9894,6 +9927,7 @@
     </property>
     <property key="AccountingOperatingExpenses">
         <value xml:lang="en">Operating Expenses</value>
+        <value xml:lang="es">Gastos de Operación</value>
         <value xml:lang="fr">Charges d'exploitation</value>
         <value xml:lang="ja">営業費用</value>
         <value xml:lang="nl">Operationele kosten</value>
@@ -10192,6 +10226,7 @@
     <property key="AccountingPartyAccountsSummary">
         <value xml:lang="de">Kontenzuammenfassung</value>
         <value xml:lang="en">Accounts Summary</value>
+        <value xml:lang="es">Resumen de Cuentas</value>
         <value xml:lang="fr">Résumé des comptes</value>
         <value xml:lang="hi_IN">लेखा सारांश</value>
         <value xml:lang="it">Sommario Conti</value>
@@ -10323,7 +10358,7 @@
         <value xml:lang="ar">اضافة دور الطرف جديد</value>
         <value xml:lang="de">Neue Akteurs-Rolle hinzufügen</value>
         <value xml:lang="en">Add a new Party Role</value>
-        <value xml:lang="es">Agregar un nuevo Rol de Grupo</value>
+        <value xml:lang="es">Añadir un nuevo Rol de Grupo</value>
         <value xml:lang="fr">Ajouter un rôle d'acteur</value>
         <value xml:lang="hi_IN">नई पार्टी भूमिका बनाएँ</value>
         <value xml:lang="it">Aggiungi un nuovo Ruolo Soggetto</value>
@@ -13395,6 +13430,7 @@
     </property>
     <property key="AccountingSetup">
         <value xml:lang="en">Setup</value>
+        <value xml:lang="es">Configuración</value>
         <value xml:lang="fr">Configuration</value>
         <value xml:lang="hi_IN">विन्यास</value>
         <value xml:lang="it">Configurazione</value>
@@ -14105,6 +14141,7 @@
     </property>
     <property key="AccountingTotalCostCenterAmount">
         <value xml:lang="en">Cost center amount percentage saved successfully</value>
+        <value xml:lang="es">Centro de Costo porcentaje de Monto salvado Exitosamente</value>
         <value xml:lang="fr">Le pourcentage du centre de coût a été sauvegardé</value>
         <value xml:lang="ja">コストセンター金額率を保存しました</value>
         <value xml:lang="nl">Percentage kostenplaats succesvol opgeslagen</value>
@@ -15437,6 +15474,7 @@
     <property key="AcctgPartyGlJournalSummary">
         <value xml:lang="de">Zusammenfassung</value>
         <value xml:lang="en">Summary</value>
+        <value xml:lang="es">Resumen</value>
         <value xml:lang="fr">Résumé</value>
         <value xml:lang="hi_IN">सारांश</value>
         <value xml:lang="it">Sommario</value>
@@ -16218,6 +16256,7 @@
     </property>
     <property key="FormFieldTitle_costCenters">
         <value xml:lang="en">Cost Centers</value>
+        <value xml:lang="es">Centros de Costo</value>
         <value xml:lang="fr">Centres de coût</value>
         <value xml:lang="hi_IN">लागत केंद्र</value>
         <value xml:lang="ja">コストセンター</value>
@@ -19818,7 +19857,7 @@
     </property>
     <property key="PageTitleAddGlAccount">
         <value xml:lang="en">Add Gl Account</value>
-        <value xml:lang="es">Agregar Cuenta de LM</value>
+        <value xml:lang="es">Añadir Cuenta de LM</value>
         <value xml:lang="fr">Ajouter un compte comptable</value>
         <value xml:lang="hi_IN">जीएल(Gl) खाता जोड़ें</value>
         <value xml:lang="it">Aggiungi Conto Gl</value>
@@ -19834,7 +19873,7 @@
     </property>
     <property key="PageTitleAddTaxAuthorityAssoc">
         <value xml:lang="en">Add Tax Authority Association</value>
-        <value xml:lang="es">Agregar Asociación de Autoridad Fiscal</value>
+        <value xml:lang="es">Añadir Asociación de Autoridad Fiscal</value>
         <value xml:lang="fr">Créer une association vers une administration fiscale</value>
         <value xml:lang="hi_IN">टैक्स प्राधिकरण एसोसिएशन बनाएँ</value>
         <value xml:lang="it">Aggiungi Associazione Autorità Tasse</value>
@@ -19850,7 +19889,7 @@
     </property>
     <property key="PageTitleAddTaxAuthorityCategory">
         <value xml:lang="en">Add Tax Authority Product Category</value>
-        <value xml:lang="es">Agregar Categoría de Producto de Autoridad Fiscal</value>
+        <value xml:lang="es">Añadir Categoría de Producto de Autoridad Fiscal</value>
         <value xml:lang="fr">Ajouter une administration fiscale à une catégorie de produits</value>
         <value xml:lang="hi_IN">टैक्स प्राधिकरण उत्पाद श्रेणी बनाएँ</value>
         <value xml:lang="it">Aggiungi Autorità Tasse Categoria Prodotto</value>
@@ -19866,7 +19905,7 @@
     </property>
     <property key="PageTitleAddTaxAuthorityGlAccount">
         <value xml:lang="en">Add Tax Authority GL Account</value>
-        <value xml:lang="es">Agregar Cuenta de LM de Autoridad Fiscal</value>
+        <value xml:lang="es">Añadir Cuenta de LM de Autoridad Fiscal</value>
         <value xml:lang="fr">Ajouter un compte comptable d'administration fiscale</value>
         <value xml:lang="hi_IN">टैक्स प्राधिकरण जीएल(Gl) खाता बनाएँ</value>
         <value xml:lang="it">Aggiungi Autorità Tasse Conto Contabilità Generale</value>
@@ -19882,7 +19921,7 @@
     </property>
     <property key="PageTitleAddTaxAuthorityRateProduct">
         <value xml:lang="en">Add Tax Authority Product Rate</value>
-        <value xml:lang="es">Agregar Tarifa de Producto de Autoridad Fiscal</value>
+        <value xml:lang="es">Añadir Tarifa de Producto de Autoridad Fiscal</value>
         <value xml:lang="fr">Ajouter un taux de taxation produit</value>
         <value xml:lang="hi_IN">टैक्स प्राधिकरण उत्पाद दर जोड़ें</value>
         <value xml:lang="it">Aggiungi Autorità Tasse Percentuale Prodotto</value>
@@ -20563,6 +20602,7 @@
     </property>
     <property key="PageTitleFinancialAccountSummary">
         <value xml:lang="en">Financial Account Summary</value>
+        <value xml:lang="es">Resumen Contable Financiero</value>
         <value xml:lang="fr">Résumé des comptes financiers</value>
         <value xml:lang="hi_IN">वित्तीय खाता सारांश</value>
         <value xml:lang="it">Sommario conto finanziario</value>
@@ -20577,6 +20617,7 @@
     </property>
     <property key="PageTitleFinancialSummaryReportOptions">
         <value xml:lang="en">Financial Summary Report Options</value>
+        <value xml:lang="es">Opciones de Reporte de Resumen Financiero</value>
         <value xml:lang="fr">Options du rapport de résumé financier</value>
         <value xml:lang="hi_IN">वित्तीय सारांश ब्यौरेवार विवरण विकल्प</value>
         <value xml:lang="it">Opzioni sommario report finanziario</value>
@@ -20840,6 +20881,7 @@
     </property>
     <property key="PageTitleInventoryIssueSummary">
         <value xml:lang="en">Inventory Issue Summary</value>
+        <value xml:lang="es">Resumen de Resultados de Inventario</value>
         <value xml:lang="fr">Résumé des problèmes d'inventaire</value>
         <value xml:lang="hi_IN">वस्तुसूची(Inventory) जारी सारांश</value>
         <value xml:lang="it">Sommario problemi inventario</value>
@@ -21342,6 +21384,7 @@
     </property>
     <property key="PageTitlePaymentByMethodSummary">
         <value xml:lang="en">Payments By Method Summary</value>
+        <value xml:lang="es">Resumen por Metodo de pagos</value>
         <value xml:lang="fr">Résumé des paiements par de méthode</value>
         <value xml:lang="hi_IN">विधि(Method) से भुगतान सारांश</value>
         <value xml:lang="it">Sommario per metodo di pagamento</value>
@@ -21663,4 +21706,8 @@
         <value xml:lang="vi">Bút toán đã thành công.</value>
         <value xml:lang="zh">交易成功了。</value>
     </property>
+     <property key="AccountingRevenues">
+        <value xml:lang="en">Accounting Revenues</value>
+        <value xml:lang="es">Ingresos Brutos</value>
+    </property>  
 </resource>
