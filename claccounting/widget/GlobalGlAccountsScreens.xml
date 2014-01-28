@@ -245,7 +245,7 @@ under the License.
     <screen name="ListGlAccountsReport">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="PageTitleListAccounts"/>
                 <set field="pageLayoutName" value="simple-landscape"/>
                 <set field="paginate" value="false"/>
@@ -295,7 +295,7 @@ under the License.
     <screen name="ViewRateAmounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingRateAmounts"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingRateAmounts}"/>
                 <set field="tabButtonItem" value="ViewRateAmounts"/>
@@ -316,7 +316,7 @@ under the License.
     <screen name="ViewFXConversions">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingFX"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingFX}"/>
                 <set field="tabButtonItem" value="ViewFXConversions"/>
@@ -346,7 +346,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="FormFieldTitle_costCenters"/>
                 <set field="tabButtonItem" value="CostCenters"/>
                 <set field="layoutSettings.javaScripts[+0]" value="/accounting/images/costCenters.js" global="true"/>

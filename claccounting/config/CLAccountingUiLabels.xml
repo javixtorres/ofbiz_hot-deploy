@@ -174,7 +174,7 @@
     <property key="AccountingAccounting">
         <value xml:lang="de">Buchhaltung</value>
         <value xml:lang="en">Accounting</value>
-        <value xml:lang="es">Contable</value>
+        <value xml:lang="es">Contabilidad</value>
         <value xml:lang="fr">Comptabilité</value>
         <value xml:lang="hi_IN">लेखांकन</value>
         <value xml:lang="it">Contabilità</value>
@@ -2031,7 +2031,7 @@
         <value xml:lang="ar">حساب الفوترة [${billingAccountId}] ميزانية غير موجودة...(</value>
         <value xml:lang="de">Saldo für Rechnungskonto [${billingAccountId}] nicht gefunden...(</value>
         <value xml:lang="en">Billing Account [${billingAccountId}] balance not found...(</value>
-        <value xml:lang="es">Cuenta de facturación [${billingAccountId}] balance no encontrado...(</value>
+        <value xml:lang="es">Cuenta de Facturación [${billingAccountId}] balance no encontrado...(</value>
         <value xml:lang="fr">Pas trouvé le solde du compte de facturation [${billingAccountId}]...</value>
         <value xml:lang="hi_IN">देयकांकन खाता [${billingAccountId}] में शेष नहीं मिला...</value>
         <value xml:lang="it">Conto Fatturazione [${billingAccountId}] bilancio non trovato...(</value>
@@ -2049,7 +2049,7 @@
         <value xml:lang="ar">حساب الفوترة [${billingAccountId}] لا يعتد بميزانية إيجابية: ${billingAccountApplyAvailable?currency(${isoCode})}</value>
         <value xml:lang="de">Rechnungskonto [${billingAccountId}] hat kein positives Saldo: ${billingAccountAvailableBalance?currency(${isoCode})}</value>
         <value xml:lang="en">Billing Account [${billingAccountId}] doesn't have a positive balance: ${billingAccountAvailableBalance?currency(${isoCode})}</value>
-        <value xml:lang="es">Cuenta de facturación [${billingAccountId}] no tiene un balance positivo: ${billingAccountApplyAvailable?currency(${isoCode})}</value>
+        <value xml:lang="es">Cuenta de Facturación [${billingAccountId}] no tiene un balance positivo: ${billingAccountApplyAvailable?currency(${isoCode})}</value>
         <value xml:lang="fr">Le compte de facturation [${billingAccountId}] n'a pas un solde positif: ${billingAccountApplyAvailable?currency(${isoCode})}</value>
         <value xml:lang="hi_IN">देयकांकन खाता [${billingAccountId}] में सकारात्मक संतुलन नहीं है: ${billingAccountAvailableBalance?currency(${isoCode})}</value>
         <value xml:lang="it">Conto Fatturazione [${billingAccountId}] non ha un bilancio positivo: ${billingAccountApplyAvailable?currency(${isoCode})}</value>
@@ -2067,7 +2067,7 @@
         <value xml:lang="ar">العملات لا تتطابق, حساب الفوترة [${billingAccountId}] عملته: ${accountCurrencyUomId} و التسديد [${paymentId}] عملته: ${paymentCurrencyUomId}</value>
         <value xml:lang="de">Währungen sind unterschiedlich, Rechnungskonto [${billingAccountId}] hat Währung: ${accountCurrencyUomId} und die Zahlung [${paymentId}] hat Währung: ${paymentCurrencyUomId}</value>
         <value xml:lang="en">Currencies are not the same, Billing Account [${billingAccountId}] has currency: ${accountCurrencyUomId} and Payment [${paymentId}] has currency: ${paymentCurrencyUomId}</value>
-        <value xml:lang="es">Monedas no son las mismas, Cuenta de facturación [${billingAccountId}] tiene moneda: ${accountCurrencyUomId} y pago [${paymentId}] tiene moneda: ${paymentCurrencyUomId}</value>
+        <value xml:lang="es">Monedas no son las mismas, Cuenta de Facturación [${billingAccountId}] tiene moneda: ${accountCurrencyUomId} y pago [${paymentId}] tiene moneda: ${paymentCurrencyUomId}</value>
         <value xml:lang="fr">Les monnaies ne sont pas identiques, le compte de facturation [${billingAccountId}] est en monnaie ${accountCurrencyUomId} et le paiement [${paymentId}] est en monnaie ${paymentCurrencyUomId}</value>
         <value xml:lang="hi_IN">मुद्रन्ये सामान नहीं हैं, देयकांकन खाता [${billingAccountId}] की मुद्रा है : ${accountCurrencyUomId} और भुगतान [${paymentId}] की मुद्रा है: ${paymentCurrencyUomId}</value>
         <value xml:lang="it">Valute non sono le stesse, Conto Fatturazione [${billingAccountId}] ha valuta: ${accountCurrencyUomId} e Pagamento [${paymentId}] ha valuta: ${paymentCurrencyUomId}</value>
@@ -2121,7 +2121,7 @@
         <value xml:lang="ar">حساب الفوترة  [${billingAccountId}]لديه ${billingAccountApplyAvailable?currency(${isoCode})} للتطبيق لكن ${amountApplied?currency(${isoCode})}مطلوبة</value>
         <value xml:lang="de">Rechnungskonto [${billingAccountId}] hat ${billingAccountApplyAvailable?currency(${isoCode})} zuzuweisen, aber ${amountApplied?currency(${isoCode})} wird gefordert</value>
         <value xml:lang="en">Billing Account [${billingAccountId}] has ${billingAccountApplyAvailable?currency(${isoCode})} to apply but ${amountApplied?currency(${isoCode})} is requested</value>
-        <value xml:lang="es">Cuenta de facturación [${billingAccountId}] tiene ${billingAccountApplyAvailable?currency(${isoCode})} por aplicar pero ${amountApplied?currency(${isoCode})} es requerido</value>
+        <value xml:lang="es">Cuenta de Facturación [${billingAccountId}] tiene ${billingAccountApplyAvailable?currency(${isoCode})} por aplicar pero ${amountApplied?currency(${isoCode})} es requerido</value>
         <value xml:lang="fr">Le compte de facturation [${billingAccountId}] a un solde de ${billingAccountApplyAvailable?currency(${isoCode})}; un montant de ${amountApplied?currency(${isoCode})} trop élevé ne peut être alloué</value>
         <value xml:lang="hi_IN">देयकांकन खाता [${billingAccountId}] लागू करने के लिए ${billingAccountApplyAvailable?currency(${isoCode})} रखता है पर ${amountApplied?currency(${isoCode})} अपेक्षित  है</value>
         <value xml:lang="it">Conto Fatturazione [${billingAccountId}] ha ${billingAccountApplyAvailable?currency(${isoCode})} da applicare ma ${amountApplied?currency(${isoCode})} è richiesto</value>
@@ -2139,7 +2139,7 @@
         <value xml:lang="ar">حساب الفوترة [${billingAccountId}] لديه سوى  ${newBillingAccountApplyAvailable?currency(${isoCode})} متوفرة إذن ${amountApplied?currency(${isoCode})} أكثر من اللازم</value>
         <value xml:lang="de">Rechnungskonto [${billingAccountId}] hat nur  ${newBillingAccountApplyAvailable?currency(${isoCode})} verfügbar, deswegen ist ${amountApplied?currency(${isoCode})} zu viel</value>
         <value xml:lang="en">Billing Account [${billingAccountId}] has only  ${newBillingAccountApplyAvailable?currency(${isoCode})} available so ${amountApplied?currency(${isoCode})} is too much</value>
-        <value xml:lang="es">Cuenta de facturación [${billingAccountId}] tiene solo ${newBillingAccountApplyAvailable?currency(${isoCode})} disponible asi que ${amountApplied?currency(${isoCode})} es demasiado</value>
+        <value xml:lang="es">Cuenta de Facturación [${billingAccountId}] tiene solo ${newBillingAccountApplyAvailable?currency(${isoCode})} disponible asi que ${amountApplied?currency(${isoCode})} es demasiado</value>
         <value xml:lang="fr">Le compte de facturation [${billingAccountId}] est limité à  ${newBillingAccountApplyAvailable?currency(${isoCode})} donc ${amountApplied?currency(${isoCode})} est trop élevé</value>
         <value xml:lang="hi_IN">देयकांकन खाता [${billingAccountId}] में ${newBillingAccountApplyAvailable?currency(${isoCode})} इतना ही उपलब्ध है ,इसलिए ${amountApplied?currency(${isoCode})} बहुत अधिक है</value>
         <value xml:lang="it">Conto Fatturazione [${billingAccountId}] ha solo  ${newBillingAccountApplyAvailable?currency(${isoCode})} disponibile così ${amountApplied?currency(${isoCode})} è troppo grande</value>
@@ -2157,7 +2157,7 @@
         <value xml:lang="ar">حساب الفوترة ${billingAccountId} عير موجود...</value>
         <value xml:lang="de">Rechnungskonto ${billingAccountId} nicht gefunden...</value>
         <value xml:lang="en">Billing Account ${billingAccountId} not found...</value>
-        <value xml:lang="es">Cuenta de facturación ${billingAccountId} no encontrada...</value>
+        <value xml:lang="es">Cuenta de Facturación ${billingAccountId} no encontrada...</value>
         <value xml:lang="fr">Compte de facturation ${billingAccountId} pas trouvé...</value>
         <value xml:lang="hi_IN">देयकांकन खाता ${billingAccountId} उपलब्ध नहीं है</value>
         <value xml:lang="it">Conto Fatturazione ${billingAccountId} non trovato...</value>
@@ -2212,7 +2212,7 @@
         <value xml:lang="ar">حسابات الفوترة</value>
         <value xml:lang="de">Rechnungskonten</value>
         <value xml:lang="en">Billing Accounts</value>
-        <value xml:lang="es">Cuentas de facturación</value>
+        <value xml:lang="es">Cuentas de Facturación</value>
         <value xml:lang="fr">Comptes de facturation</value>
         <value xml:lang="hi_IN">देयकांकन(बिलिंग) खातें</value>
         <value xml:lang="it">Conti Fatturazione</value>
@@ -2358,7 +2358,7 @@
         <value xml:lang="ar">حسابات الفوترة</value>
         <value xml:lang="de">Rechnungskonten</value>
         <value xml:lang="en">Billing Accounts</value>
-        <value xml:lang="es">Cuentas de facturación</value>
+        <value xml:lang="es">Cuentas de Facturación</value>
         <value xml:lang="fr">Comptes de facturation</value>
         <value xml:lang="hi_IN">देयकांकन(बिलिंग) खातें</value>
         <value xml:lang="it">Conti Fatturazione</value>
@@ -3403,6 +3403,7 @@
     <property key="AccountingCreateNewFinAccount">
         <value xml:lang="de">Neues Finanzkonto erstellen</value>
         <value xml:lang="en">Create New Financial Account</value>
+        <value xml:lang="es">Crear Nueva Cuenta Financiera</value>
         <value xml:lang="fr">Créer un nouveau compte financier</value>
         <value xml:lang="hi_IN">नया  वित्तीय खाता बनाएँ</value>
         <value xml:lang="ja">新規金融アカウントを作成</value>
@@ -3413,6 +3414,7 @@
     <property key="AccountingCreateNewFinAccountReconciliations">
         <value xml:lang="de">Neue Finanzkonto-Abstimmung erstellen</value>
         <value xml:lang="en">Create New Financial Account Reconciliations</value>
+        <value xml:lang="es">Crear Nueva Cuenta Financiera de Reconciliación</value>
         <value xml:lang="fr">Créer un nouveau compte financier de rapprochement</value>
         <value xml:lang="ja">新規金融アカウント照合表を作成</value>
         <value xml:lang="pt">Criar nova reconciliações de conta Financeira</value>
@@ -3454,6 +3456,7 @@
     <property key="AccountingCreateNewPaymentGroup">
         <value xml:lang="de">Neue Zahlungsgruppe erstellen</value>
         <value xml:lang="en">Create New Payment Group</value>
+        <value xml:lang="es">Crear Nuevo Grupo de Pago</value>
         <value xml:lang="fr">Créer un groupe de paiement</value>
         <value xml:lang="hi_IN">नया  भुगतान समूह बनाएँ</value>
         <value xml:lang="ja">新規支払グループを作成</value>
@@ -4651,6 +4654,7 @@
     <property key="AccountingEditPaymentGroup">
         <value xml:lang="de">Zahlungsgruppe bearbeiten</value>
         <value xml:lang="en">Edit Payment Group</value>
+        <value xml:lang="es">Editar Grupo de Pago</value>
         <value xml:lang="fr">Modifier un groupe de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह सम्पादित करें</value>
         <value xml:lang="ja">支払グループを編集</value>
@@ -4662,6 +4666,7 @@
     <property key="AccountingEditPaymentGroupFor">
         <value xml:lang="de">Zahlungsgruppe für ${finAccount.finAccountName} [${finAccountId}] bearbeiten</value>
         <value xml:lang="en">Edit Payment Group For ${finAccount.finAccountName} [${finAccountId}]</value>
+        <value xml:lang="es">Edita Grupo de Pago para ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="fr">Modifier un groupe de paiement pour ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="hi_IN">भुगतान समूह ${finAccount.finAccountName} [${finAccountId}] के लिए सम्पादित करें</value>
         <value xml:lang="ja">${finAccount.finAccountName} [${finAccountId}] に対する支払グループを編集</value>
@@ -4673,6 +4678,7 @@
     <property key="AccountingEditPaymentGroupMember">
         <value xml:lang="de">Mitglied der Zahlungsgruppe bearbeiten</value>
         <value xml:lang="en">Edit Payment Group Member</value>
+        <value xml:lang="es">Edita Miembros de Grupo de Pago</value>
         <value xml:lang="fr">Modifier un membre du grp. de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह सदस्य को सम्पादित करें</value>
         <value xml:lang="ja">支払グループメンバを編集</value>
@@ -5181,7 +5187,7 @@
     <property key="AccountingFinAccount">
         <value xml:lang="de">Finanzkonto</value>
         <value xml:lang="en">Financial Account</value>
-        <value xml:lang="en">Cuenta Financiera</value>
+        <value xml:lang="es">Cuenta Financiera</value>
         <value xml:lang="fr">Compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता</value>
         <value xml:lang="it">Conto Finanziario</value>
@@ -5262,7 +5268,7 @@
     <property key="AccountingFinAccounts">
         <value xml:lang="de">Finanzkonten</value>
         <value xml:lang="en">Financial Accounts</value>
-        <value xml:lang="es">Cuentas financieras</value>
+        <value xml:lang="es">Cuentas Financieras</value>
         <value xml:lang="fr">Comptes financiers</value>
         <value xml:lang="hi_IN">वित्तीय लेखा</value>
         <value xml:lang="it">Conti Finanziari</value>
@@ -6988,6 +6994,7 @@
     <property key="AccountingGlobalGLSettings">
         <value xml:lang="de">Hauptbuch-Einstellungen, global</value>
         <value xml:lang="en">Global GL Settings</value>
+        <value xml:lang="es">Configuración Global GL</value>
         <value xml:lang="fr">Configurations globales du GL</value>
         <value xml:lang="hi_IN">सार्विक जीएल(GL) सेटिंग्स</value>
         <value xml:lang="it">Configurazione Contabilità Generale</value>
@@ -9147,6 +9154,7 @@
     </property>
     <property key="AccountingNewPaymentGroup">
         <value xml:lang="en">New Payment Group</value>
+        <value xml:lang="es">Nuevo Grupo de Pago</value>
         <value xml:lang="fr">Nouv. grp. de paiement</value>
         <value xml:lang="hi_IN">नया भुगतान समूह</value>
         <value xml:lang="ja">新規支払グループ</value>
@@ -10029,6 +10037,7 @@
     <property key="AccountingOrgGlSettings">
         <value xml:lang="de">Hauptbuch-Einstellungen, Org.</value>
         <value xml:lang="en">Organization GL Settings</value>
+        <value xml:lang="es">Configuración Organización GL</value>
         <value xml:lang="fr">Configurations internes du GL</value>
         <value xml:lang="hi_IN">संगठन जीएल(Gl) सेटिंग्स</value>
         <value xml:lang="ja">組織GL設定</value>
@@ -10924,6 +10933,7 @@
     <property key="AccountingPaymentGatewayConfig">
         <value xml:lang="de">Zahlungs-Gateway-Konfiguration</value>
         <value xml:lang="en">Payment Gateway Config</value>
+        <value xml:lang="es">Configuración de Gateway de Pago</value>
         <value xml:lang="fr">Configuration de la passerelle de paiement</value>
         <value xml:lang="hi_IN">भुगतान गेटवे विन्यास(PaymentGatewayConfig)</value>
         <value xml:lang="it">Configurazioni gateway pagamenti</value>
@@ -11050,6 +11060,7 @@
     <property key="AccountingPaymentGroup">
         <value xml:lang="de">Zahlungsgruppe</value>
         <value xml:lang="en">Payment Group</value>
+        <value xml:lang="es">Grupo de Pago</value>
         <value xml:lang="fr">Groupe de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह</value>
         <value xml:lang="ja">支払グループ</value>
@@ -11061,6 +11072,7 @@
     <property key="AccountingPaymentGroupId">
         <value xml:lang="de">Zahlungsgruppen-Nr.</value>
         <value xml:lang="en">Payment Group Id</value>
+        <value xml:lang="es">Id de Grupo de Pago</value>
         <value xml:lang="fr">Réf. grp. de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह क्रमांक</value>
         <value xml:lang="ja">支払グループID</value>
@@ -11071,6 +11083,7 @@
     </property>
     <property key="AccountingPaymentGroupMembers">
         <value xml:lang="en">Payment Group Members</value>
+        <value xml:lang="es">Miembros del Grupo de Pago</value>
         <value xml:lang="fr">Membres du groupe de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह सदस्य</value>
         <value xml:lang="ja">支払グループメンバ</value>
@@ -11082,6 +11095,7 @@
     <property key="AccountingPaymentGroupName">
         <value xml:lang="de">Name der Zahlungsgruppe</value>
         <value xml:lang="en">Payment Group Name</value>
+        <value xml:lang="es">Nombre Grupo de Pago</value>
         <value xml:lang="fr">Nom grp. de paiement</value>
         <value xml:lang="hi_IN">भुगतान समूह नाम</value>
         <value xml:lang="ja">支払グループ名称</value>
@@ -13706,7 +13720,7 @@
         <value xml:lang="ar">الوضعية المحاسبية</value>
         <value xml:lang="de">Kontierungs-Status</value>
         <value xml:lang="en">Accounting Status</value>
-        <value xml:lang="es">Status Contable</value>
+        <value xml:lang="es">Estado Contable</value>
         <value xml:lang="fr">Statut comptable</value>
         <value xml:lang="hi_IN">लेखांकन की स्थिति(Status)</value>
         <value xml:lang="it">Stato Contabile</value>
@@ -13767,7 +13781,7 @@
         <value xml:lang="ar">السلط الضريبية</value>
         <value xml:lang="de">Steuerbehörden</value>
         <value xml:lang="en">Tax Authorities</value>
-        <value xml:lang="es">Autoridades fiscales</value>
+        <value xml:lang="es">Autoridades Fiscales</value>
         <value xml:lang="fr">Administrations fiscales</value>
         <value xml:lang="hi_IN">टैक्स प्राधिकारी</value>
         <value xml:lang="it">Autorità Tasse</value>
@@ -20222,6 +20236,7 @@
     </property>
     <property key="PageTitleEditFinAccount">
         <value xml:lang="en">Edit Financial Account</value>
+        <value xml:lang="es">Editar Cuenta Financiera</value>
         <value xml:lang="fr">Modifier un compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता संपादित करें</value>
         <value xml:lang="it">Aggiorna Conto Finanziario</value>
@@ -20236,6 +20251,7 @@
     </property>
     <property key="PageTitleEditFinAccountAuths">
         <value xml:lang="en">Edit Financial Account Authority</value>
+        <value xml:lang="es">Editar Autoridad de Cuenta Financiera</value>
         <value xml:lang="fr">Modifier une autorité de compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता प्राधिकरण संपादित करें</value>
         <value xml:lang="it">Aggiorna Autorità Conto Finanziario</value>
@@ -20250,6 +20266,7 @@
     </property>
     <property key="PageTitleEditFinAccountRole">
         <value xml:lang="en">Edit Financial Account Role</value>
+        <value xml:lang="es">Editar Roles de Cuenta Financiera</value>
         <value xml:lang="fr">Modifier un rôle de compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खातें की भूमिका संपादित करें</value>
         <value xml:lang="it">Aggiorna Ruolo Conto Finanziario</value>
@@ -20264,6 +20281,7 @@
     </property>
     <property key="PageTitleEditFinAccountTrans">
         <value xml:lang="en">Edit Financial Account Transaction</value>
+        <value xml:lang="es">Editar Transaccion de cuenta Financiera</value>
         <value xml:lang="fr">Modifier une transaction de rôle financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता गतिविधि संपादित करें</value>
         <value xml:lang="it">Aggiorna Transazione Conto Finanziario</value>
@@ -20680,6 +20698,7 @@
     <property key="PageTitleFindFinAccount">
         <value xml:lang="de">Suche Finanzkonto</value>
         <value xml:lang="en">Find Financial Account</value>
+        <value xml:lang="es">Buscar Cuenta Financiera</value>
         <value xml:lang="fr">Rechercher un compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता खोजें</value>
         <value xml:lang="it">Ricerca Conto Finanziario</value>
