@@ -51,7 +51,7 @@ under the License.
     <screen name="ListCompanies">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingAvailableInternalOrganizations"/>
                 <set field="headerItem" value="companies"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingAvailableInternalOrganizations}"/>
@@ -80,7 +80,7 @@ under the License.
     <screen name="AddCompany">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingNewCompany"/>
             </actions>
             <widgets>
@@ -97,7 +97,7 @@ under the License.
     <screen name="ListGlAccountOrganization">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingChartOfAcctsMenu"/>
                 <set field="tabButtonItem" value="ListGlAccountOrganization"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingChartOfAcctsMenu}"/>
@@ -123,7 +123,7 @@ under the License.
     <screen name="TimePeriods">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingTimePeriod"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingTimePeriod}"/>
                 <set field="tabButtonItem" value="TimePeriods"/>
@@ -165,7 +165,7 @@ under the License.
     <screen name="PartyAcctgPreference">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingPreference"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingPreference}"/>
                 <set field="tabButtonItem" value="PartyAcctgPreference"/>
@@ -188,7 +188,7 @@ under the License.
     <screen name="SetupGlJournals">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingGlJournals"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingGlJournals}"/>
                 <set field="tabButtonItem" value="SetupGlJournals"/>
@@ -210,7 +210,7 @@ under the License.
     <screen name="GlAccountTypeDefaults">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingGlAccountTypeDefaults"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingGlAccountTypeDefaults}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -232,7 +232,7 @@ under the License.
     <screen name="GlAccountSalInvoice">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingInvoiceSales"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingInvoiceSales}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -254,7 +254,7 @@ under the License.
     <screen name="GlAccountPurInvoice">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingInvoicePurchase"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="GlAccountPurInvoice"/>
@@ -275,7 +275,7 @@ under the License.
     <screen name="GlAccountTypePaymentType">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="${uiLabelMap.AccountingPaymentType}/${uiLabelMap.FormFieldTitle_glAccountTypeId}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="GlAccountTypePaymentType"/>
@@ -296,7 +296,7 @@ under the License.
     <screen name="GlAccountNrPaymentMethod">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="${uiLabelMap.AccountingPaymentMethodId}/${uiLabelMap.AccountingGlAccountId}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="GlAccountNrPaymentMethod"/>
@@ -317,7 +317,7 @@ under the License.
     <screen name="EditProductGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingProductGlAccount"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingProductGlAccount}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -344,7 +344,7 @@ under the License.
     <screen name="EditFinAccountTypeGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingFinAccountTypeGlAccount"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingFinAccountTypeGlAccount}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -374,7 +374,7 @@ under the License.
     <screen name="EditProductCategoryGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingProductCategoryGlAccount"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.AccountingProductCategoryGlAccount}"/>
@@ -402,7 +402,7 @@ under the License.
     <screen name="EditVarianceReasonGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingVarianceReasonGlAccounts"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="VarianceReasonGlAccounts"/>
@@ -429,7 +429,7 @@ under the License.
     <screen name="EditCreditCardTypeGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingCreditCardTypeGlAccount"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="CreditCardTypeGlAccount"/>
@@ -454,7 +454,7 @@ under the License.
     <screen name="EditOrganizationTaxAuthorityGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="PageTitleEditTaxAuthorityGlAccounts"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
                 <set field="tabButtonItem2" value="TaxAuthorityGlAccounts"/>
@@ -482,7 +482,7 @@ under the License.
     <screen name="EditPartyGlAccount">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="PageTitleEditPartyGlAccounts"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.PageTitleEditPartyGlAccounts}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -508,7 +508,7 @@ under the License.
     <screen name="FixedAssetTypeGlAccounts">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="FixedAssetTypeGlAccounts"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.FixedAssetTypeGlAccounts}"/>
                 <set field="tabButtonItem" value="GlAccountAssignment"/>
@@ -531,7 +531,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <entity-condition entity-name="GlAccountOrganizationAndClass" list="glAccountOrgAndClassList">
                     <condition-expr field-name="organizationPartyId" from-field="organizationPartyId"/>
@@ -551,7 +551,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
             </actions>
             <widgets>
