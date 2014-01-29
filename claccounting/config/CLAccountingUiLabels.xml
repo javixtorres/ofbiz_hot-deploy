@@ -252,7 +252,7 @@
     <property key="AccountingAcctgTransEntries">
         <value xml:lang="de">Kontenbewegungen</value>
         <value xml:lang="en">Accounting Transactions Entries</value>
-        <value xml:lang="es">Entradas de Transacciones Contables</value>
+        <value xml:lang="es">Detalles de Transacciones Contables</value>
         <value xml:lang="fr">Entrées de transactions comptables</value>
         <value xml:lang="hi_IN">लेखा लेनदेन की प्रविष्टियाँ</value>
         <value xml:lang="it">Righe Prime Note</value>
@@ -267,7 +267,7 @@
     <property key="AccountingAcctgTransEntriesFor">
         <value xml:lang="de">Kontenbewegungen für</value>
         <value xml:lang="en">Accounting Transaction Entries For</value>
-        <value xml:lang="es">>Entradas de Transacciones Contables Para</value>
+        <value xml:lang="es">>Detalles de Transacciones Contables Para</value>
         <value xml:lang="fr">Entrées de transactions comptables pour</value>
         <value xml:lang="hi_IN">लेखा गतिविधि प्रविष्टियों के लिए</value>
         <value xml:lang="ja">会計仕訳エントリ:</value>
@@ -280,7 +280,7 @@
     <property key="AccountingAcctgTransFor">
         <value xml:lang="de">Kontobewegungen für</value>
         <value xml:lang="en">Accounting Transactions For</value>
-        <value xml:lang="es">Entradas de Transacciones Contables Para</value>
+        <value xml:lang="es">Detalles de Transacciones Contables Para</value>
         <value xml:lang="fr">Transactions comptables pour</value>
         <value xml:lang="hi_IN">लेखा गतिविधि के लिए</value>
         <value xml:lang="ja">会計仕訳:</value>
@@ -2879,6 +2879,7 @@
     <property key="AccountingCommissionAmount">
         <value xml:lang="de">Provisionsbetrag</value>
         <value xml:lang="en">Commission Amount</value>
+        <value xml:lang="es">Monto de Comisión</value>
         <value xml:lang="fr">Montant Commission</value>
         <value xml:lang="hi_IN">दलाली राशी</value>
         <value xml:lang="ja">委託金額</value>
@@ -2889,6 +2890,7 @@
     <property key="AccountingCommissionInvoicesCreated">
         <value xml:lang="de">Provisionsabrechnungen wurden für alle Akteure, die Provisionen erhalten, erstellt ${invoicesCreated}</value>
         <value xml:lang="en">Created Commission invoices for each commission receiving parties ${invoicesCreated}</value>
+        <value xml:lang="es">Creada la Factura de Comsión por cada persona que recibe la comisión ${invoicesCreated}</value>
         <value xml:lang="fr">Création des commissions sur facture pour les acteurs concernés</value>
         <value xml:lang="it">Create fatture provvigioni per ogni provvigione ricevuta dai soggetti ${invoicesCreated}</value>
         <value xml:lang="ja">取引先から受け取る各委託料に対して委託請求書が作成されました ${invoicesCreated}</value>
@@ -2898,6 +2900,7 @@
     <property key="AccountingCommissionReport">
         <value xml:lang="de">Provisionsbericht</value>
         <value xml:lang="en">Commission Report</value>
+        <value xml:lang="es">Reporte de Comisión</value>
         <value xml:lang="fr">Journal Commission</value>
         <value xml:lang="hi_IN">दलाली विवरण</value>
         <value xml:lang="it">Report commissioni</value>
@@ -2909,6 +2912,7 @@
     <property key="AccountingCommissionRun">
         <value xml:lang="de">Provisionslauf</value>
         <value xml:lang="en">Commission Run</value>
+        <value xml:lang="es">Ejecutar Comisión</value>
         <value xml:lang="fr">Traitement Commission</value>
         <value xml:lang="hi_IN">दलाली भुगतान</value>
         <value xml:lang="it">Commissioni correnti</value>
@@ -5442,6 +5446,7 @@
     <property key="AccountingFindPurchaseInvoicesByDueDate">
         <value xml:lang="de">Suche Einkaufsrechnungen über Fälligkeit</value>
         <value xml:lang="en">Find Purchase Invoices By Due Date</value>
+        <value xml:lang="es">Buscar Factura de Compra por Vencimiento</value>
         <value xml:lang="fr">Chercher les factures d'achat à échéance</value>
         <value xml:lang="hi_IN">अन्तिम दिनांक से खरीद चालान खोजें</value>
         <value xml:lang="it">Ricerca Fatture Acquisto Per Data Scadenza</value>
@@ -5456,6 +5461,7 @@
     <property key="AccountingFindSalesInvoicesByDueDate">
         <value xml:lang="de">Suche Verkaufsrechnungen über Fälligkeit</value>
         <value xml:lang="en">Find Sales Invoices By Due Date</value>
+        <value xml:lang="es">Buscar Factura de Compra por Vencimiento</value>
         <value xml:lang="fr">Chercher les factures de ventes à échéance</value>
         <value xml:lang="hi_IN">अन्तिम दिनांक से बिक्री चालान खोजें</value>
         <value xml:lang="it">Ricerca Fatture Vendita Per Data Scadenza</value>
@@ -5470,6 +5476,7 @@
     <property key="AccountingFindSalesInvoicesForCommissionRun">
         <value xml:lang="de">Suche Verkaufsrechnungen für Komissionslauf</value>
         <value xml:lang="en">Find Sales Invoices For Commission Run</value>
+        <value xml:lang="es">Buscar Factura de Ventas para Ejecutar Comisión</value>
         <value xml:lang="fr">Rechercher les factures de ventes à commissionner</value>
         <value xml:lang="hi_IN">दलाली भुगतान के लिए बिक्री चालान खोजें</value>
         <value xml:lang="it">Ricerca fatture di vendita per commissione</value>
@@ -6994,7 +7001,7 @@
     <property key="AccountingGlobalGLSettings">
         <value xml:lang="de">Hauptbuch-Einstellungen, global</value>
         <value xml:lang="en">Global GL Settings</value>
-        <value xml:lang="es">Configuración Global GL</value>
+        <value xml:lang="es">Configuración Global</value>
         <value xml:lang="fr">Configurations globales du GL</value>
         <value xml:lang="hi_IN">सार्विक जीएल(GL) सेटिंग्स</value>
         <value xml:lang="it">Configurazione Contabilità Generale</value>
@@ -7218,7 +7225,7 @@
     </property>
     <property key="AccountingInventoryValuation">
         <value xml:lang="en">Inventory Valuation</value>
-        <value xml:lang="es">Valoración de Invetario</value>
+        <value xml:lang="es">Inventario de Costos</value>
         <value xml:lang="fr">Évaluation des stocks</value>
         <value xml:lang="hi_IN">वस्तु मूल्यांकन</value>
         <value xml:lang="ja">棚卸資産評価</value>
@@ -7230,7 +7237,7 @@
     </property>
     <property key="AccountingInventoryValuationList">
         <value xml:lang="en">Inventory Valuation List</value>
-        <value xml:lang="es">Lista de Valoración de Invetario</value>
+        <value xml:lang="es">Lista de Inventario de Costos</value>
         <value xml:lang="fr">Liste des évaluations de stocks</value>
         <value xml:lang="hi_IN">वस्तु मूल्यांकन सूची</value>
         <value xml:lang="ja">棚卸資産評価一覧</value>
@@ -9917,6 +9924,7 @@
     <property key="AccountingOpeningBalance">
         <value xml:lang="de">Eröffnungsbilanz</value>
         <value xml:lang="en">Opening Balance</value>
+        <value xml:lang="es">Saldo Inicial</value>
         <value xml:lang="fr">Solde en cours</value>
         <value xml:lang="hi_IN">प्रारंभिक शेष</value>
         <value xml:lang="ja">期首残高</value>
@@ -9926,6 +9934,7 @@
     </property>
     <property key="AccountingOpeningCashBalance">
         <value xml:lang="en">Opening Cash Balance</value>
+        <value xml:lang="es">Saldo Incial de Efectivo</value>
         <value xml:lang="fr">Solde du compte liquidités</value>
         <value xml:lang="hi_IN">प्रारंभिक नकदी शेष</value>
         <value xml:lang="ja">期首現金残高</value>
@@ -10037,7 +10046,7 @@
     <property key="AccountingOrgGlSettings">
         <value xml:lang="de">Hauptbuch-Einstellungen, Org.</value>
         <value xml:lang="en">Organization GL Settings</value>
-        <value xml:lang="es">Configuración Organización GL</value>
+        <value xml:lang="es">Organización Contabilidad</value>
         <value xml:lang="fr">Configurations internes du GL</value>
         <value xml:lang="hi_IN">संगठन जीएल(Gl) सेटिंग्स</value>
         <value xml:lang="ja">組織GL設定</value>
@@ -13344,6 +13353,7 @@
     </property>
     <property key="AccountingSelectPartiesForCommissionInvoice">
         <value xml:lang="en">Select The Parties For Commission Invoice</value>
+        <value xml:lang="es">Selecionar Personas para Factura de Comisión</value>
         <value xml:lang="fr">Sélection des acteurs pour les commissions</value>
         <value xml:lang="hi_IN">दलाली चालान के लिए पार्टियों चुनें</value>
         <value xml:lang="ja">委託請求に対する取引先を選択</value>
@@ -14145,6 +14155,7 @@
     </property>
     <property key="AccountingTotalCommissionAmount">
         <value xml:lang="en">Total Commission Amount</value>
+        <value xml:lang="es">Monto Total de Comisión</value>
         <value xml:lang="fr">Montant total de commission</value>
         <value xml:lang="hi_IN">कुल दलाली राशी</value>
         <value xml:lang="ja">委託金額合計</value>
@@ -14282,6 +14293,7 @@
     </property>
     <property key="AccountingTotalOpeningCashBalance">
         <value xml:lang="en">Total Opening Cash Balance</value>
+        <value xml:lang="es">Saldo Inicial Total de Efectivo</value>
         <value xml:lang="fr">Total ouvert du solde de caisse</value>
         <value xml:lang="hi_IN">कुल अथ नकदी शेष</value>
         <value xml:lang="ja">期首現金残高合計</value>
@@ -15580,7 +15592,7 @@
     </property>
     <property key="FormFieldTitle_acctgTransEntrySeqId">
         <value xml:lang="en">Acctg Trans Entry Seq Id</value>
-        <value xml:lang="es">Id Sec Entrada Trans Contable</value>
+        <value xml:lang="es">Detalle Trans Contable</value>
         <value xml:lang="fr">Séq. enreg. comptable</value>
         <value xml:lang="hi_IN">खाता गतिविधि प्रवेश अनुक्रम क्रमांक</value>
         <value xml:lang="it">Numero Sequenza Voce Transazione Contabilità</value>
@@ -15596,7 +15608,7 @@
     </property>
     <property key="FormFieldTitle_acctgTransEntryTypeId">
         <value xml:lang="en">Acctg Trans Entry Type Id</value>
-        <value xml:lang="es">Id Tipo Entrada Trans Contable</value>
+        <value xml:lang="es">Id Tipo Detalle Trans Contable</value>
         <value xml:lang="fr">Type enreg. comptable</value>
         <value xml:lang="hi_IN">खाता गतिविधि प्रवेश प्रकार क्रमांक</value>
         <value xml:lang="it">Tipo Voce Transazione Contabilità</value>
@@ -16426,6 +16438,7 @@
     <property key="FormFieldTitle_daysOffset">
         <value xml:lang="de">Tageverschiebung</value>
         <value xml:lang="en">Days Offset</value>
+        <value xml:lang="es">Dias de Atrazo</value>
         <value xml:lang="fr">Décalages en jours</value>
         <value xml:lang="hi_IN">ऑफसेट दिन</value>
         <value xml:lang="it">Giorni di Intervallo</value>
@@ -16438,6 +16451,7 @@
     </property>
     <property key="FormFieldTitle_debit">
         <value xml:lang="en">Debit</value>
+        <value xml:lang="es">Debito</value>
         <value xml:lang="fr">Débit</value>
         <value xml:lang="hi_IN">नामे</value>
         <value xml:lang="it">Debito</value>
@@ -17954,6 +17968,7 @@
     </property>
     <property key="FormFieldTitle_openingBalanceCredit">
         <value xml:lang="en">Opening Balance Credit</value>
+        <value xml:lang="es">Saldo Inicial de Crédito</value>
         <value xml:lang="fr">Solde ouvert en crédit</value>
         <value xml:lang="hi_IN">प्रारंभिक शेष जमा</value>
         <value xml:lang="ja">貸方期首残高</value>
@@ -17963,6 +17978,7 @@
     </property>
     <property key="FormFieldTitle_openingBalanceDebit">
         <value xml:lang="en">Opening Balance Debit</value>
+        <value xml:lang="es">Saldo Inicial de Débito</value>
         <value xml:lang="fr">Solde ouvert en débit</value>
         <value xml:lang="hi_IN">प्रारंभिक शेष नामे</value>
         <value xml:lang="ja">借方期首残高</value>
@@ -20607,7 +20623,7 @@
     </property>
     <property key="PageTitleEditTransactionEntries">
         <value xml:lang="en">Edit Transaction Entries</value>
-        <value xml:lang="es">Editar Entradas de la Transacción</value>
+        <value xml:lang="es">Editar Detalles de Transacción</value>
         <value xml:lang="fr">Modifier les écritures de la transaction</value>
         <value xml:lang="hi_IN">गतिविधि प्रविष्टियों को संपादित करें</value>
         <value xml:lang="it">Aggiorna voci transazione</value>
@@ -21642,7 +21658,7 @@
     </property>
     <property key="PageTitleViewGlAccountEntries">
         <value xml:lang="en">View Gl Account Entries</value>
-        <value xml:lang="es">Ver entradas de Cuentas de LM</value>
+        <value xml:lang="es">Ver Detalles de Cuentas Contables</value>
         <value xml:lang="fr">Voir les entrées sur le compte comptable</value>
         <value xml:lang="hi_IN">जीएल(Gl) खातें की प्रविष्टियां देखें</value>
         <value xml:lang="it">Mostra Voci Conto Gl</value>
