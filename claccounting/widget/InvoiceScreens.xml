@@ -548,7 +548,7 @@ under the License.
     <screen name="ListCustomerInvoices">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetMyCompany.groovy"/>
                 <entity-condition list="invoices" entity-name="Invoice">
                     <condition-list combine="and">

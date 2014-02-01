@@ -753,7 +753,7 @@
         <value xml:lang="ar">بند إتفاق</value>
         <value xml:lang="de">Vereinbarungsposition</value>
         <value xml:lang="en">Agreement Item</value>
-        <value xml:lang="es">Elemento de acuerdo</value>
+        <value xml:lang="es">Item de acuerdo</value>
         <value xml:lang="fr">Point de l'accord commercial</value>
         <value xml:lang="hi_IN">अनुबंध की वस्तु</value>
         <value xml:lang="it">Riga Contratto</value>
@@ -788,7 +788,7 @@
         <value xml:lang="ar">رمز التسلسلي لبند إتفاق</value>
         <value xml:lang="de">Vereinbarungs-Positions-Nr.</value>
         <value xml:lang="en">Agreement Item Seq Id</value>
-        <value xml:lang="es">Id elemento secuencia de acuerdo</value>
+        <value xml:lang="es">Id secuencia de Item de Acuerdo</value>
         <value xml:lang="fr">No séq. du point d'accord</value>
         <value xml:lang="hi_IN">अनुबंध वस्तु का अनुक्रम क्रमांक</value>
         <value xml:lang="it">Numero Seq Riga Contratto</value>
@@ -837,7 +837,7 @@
         <value xml:lang="ar">رمز نوع بند إتفاق</value>
         <value xml:lang="de">Vereinbarungs-Positions-Art</value>
         <value xml:lang="en">Agreement Item Type Id</value>
-        <value xml:lang="es">Id tipo de elemento de acuerdo</value>
+        <value xml:lang="es">Id tipo de Item de acuerdo</value>
         <value xml:lang="fr">Réf. de type de point d'accord commercial</value>
         <value xml:lang="hi_IN">अनुबंध मद प्रकार क्रमांक</value>
         <value xml:lang="it">Tipo Contratto Riga</value>
@@ -855,7 +855,7 @@
         <value xml:lang="ar">بنود إتفاق</value>
         <value xml:lang="de">Vereinbarungs-Positionen</value>
         <value xml:lang="en">Agreement Items</value>
-        <value xml:lang="es">Elementos de acuerdo</value>
+        <value xml:lang="es">Items de acuerdo</value>
         <value xml:lang="fr">Points d'accord commercial</value>
         <value xml:lang="hi_IN">अनुबंध मदें</value>
         <value xml:lang="it">Righe Contratto</value>
@@ -1296,7 +1296,7 @@
     <property key="AccountingApplicationToInvoiceItem">
         <value xml:lang="de">zu Rechnung [${paymentApplication.invoiceId}], Position [${paymentApplication.invoiceItemSeqId}]</value>
         <value xml:lang="en">to invoice [${paymentApplication.invoiceId}] Item [${paymentApplication.invoiceItemSeqId}]</value>
-        <value xml:lang="es">a factura [${paymentApplication.invoiceId}] Elemento [${paymentApplication.invoiceItemSeqId}]</value>
+        <value xml:lang="es">a factura [${paymentApplication.invoiceId}] Item [${paymentApplication.invoiceItemSeqId}]</value>
         <value xml:lang="fr">à la ligne [${paymentApplication.invoiceItemSeqId}] de la facture  [${paymentApplication.invoiceId}]</value>
         <value xml:lang="hi_IN">चालान के लिए [${paymentApplication.invoiceId}] मद [${paymentApplication.invoiceItemSeqId}]</value>
         <value xml:lang="it">alla fattura [${paymentApplication.invoiceId}] Riga [${paymentApplication.invoiceItemSeqId}]</value>
@@ -1419,7 +1419,7 @@
         <value xml:lang="ar">تطبيق على بنود الفاتورة</value>
         <value xml:lang="de">Rechnungspositionen zuweisen</value>
         <value xml:lang="en">Apply to Invoice Items</value>
-        <value xml:lang="es">Aplicar para facturar elementos</value>
+        <value xml:lang="es">Aplicar para Item de Facturar</value>
         <value xml:lang="fr">Allouer à des lignes de facturation</value>
         <value xml:lang="hi_IN">लागू करने के लिए मद चालान</value>
         <value xml:lang="it">Applica alle Righe Fattura</value>
@@ -7064,7 +7064,7 @@
         <value xml:lang="ar">تجاهل بنود الفاتورة</value>
         <value xml:lang="de">Rechnungspositionen auslassen</value>
         <value xml:lang="en">Ignore Invoice Items</value>
-        <value xml:lang="es">Ignorar elementos de facturas</value>
+        <value xml:lang="es">Ignorar Items de facturas</value>
         <value xml:lang="fr">Ignorer les lignes de facturation</value>
         <value xml:lang="hi_IN">चालान वस्तुओं पर ध्यान न दें</value>
         <value xml:lang="it">Ignora Righe Fattura</value>
@@ -7384,7 +7384,7 @@
         <value xml:lang="ar">خطأ أثناء استحداث بند لوصلة فاتورة</value>
         <value xml:lang="de">Fehler bei der Rechnungspositionserstellung der Provisionsabrechnung</value>
         <value xml:lang="en">Error creating invoice item for commission invoice</value>
-        <value xml:lang="es">Error creando elemento de factura para factura de comisión</value>
+        <value xml:lang="es">Error creando Item de factura para factura de comisión</value>
         <value xml:lang="fr">Erreur lors de la création d'une ligne de facturation pour la facture de commission</value>
         <value xml:lang="hi_IN">चालान मद के लिए दलाली चालान  बनाने में त्रुटि</value>
         <value xml:lang="it">Errore creazione righe fattura per provvigioni fattura</value>
@@ -7611,7 +7611,7 @@
         <value xml:lang="ar">بند الفاتورة</value>
         <value xml:lang="de">Rechnungsposition</value>
         <value xml:lang="en">Invoice Item</value>
-        <value xml:lang="es">Elemento de factura</value>
+        <value xml:lang="es">Item de factura</value>
         <value xml:lang="fr">Ligne de facturation</value>
         <value xml:lang="hi_IN">चालान मद</value>
         <value xml:lang="it">Riga Fattura</value>
@@ -7630,7 +7630,7 @@
         <value xml:lang="ar">إضافة بند فاتورة جديد</value>
         <value xml:lang="de">Weitere Rechnungsposition hinzufügen</value>
         <value xml:lang="en">Add a new invoice Item</value>
-        <value xml:lang="es">Añadir un nuevo elemento de factura</value>
+        <value xml:lang="es">Añadir un nuevo Item de factura</value>
         <value xml:lang="fr">Ajouter une ligne de facturation</value>
         <value xml:lang="hi_IN">एक नया चालान मद जोड़ें</value>
         <value xml:lang="it">Aggiungi una nuova Riga fattura</value>
@@ -7655,7 +7655,7 @@
     </property>
     <property key="AccountingInvoiceItemLessRequested">
         <value xml:lang="en">Invoice [${invoiceId} Item [${invoiceItemSeqId} has ${invoiceItemApplyAvailable?currency(${isoCode})} to apply but  ${amountApplied?currency(${isoCode})} is requested</value>
-        <value xml:lang="es">Factura [${invoiceId} Elemento [${invoiceItemSeqId} tiene ${invoiceItemApplyAvailable?currency(${isoCode})} para aplicar pero   ${amountApplied?currency(${isoCode})} es requerio</value>
+        <value xml:lang="es">Factura [${invoiceId} Item [${invoiceItemSeqId} tiene ${invoiceItemApplyAvailable?currency(${isoCode})} para aplicar pero   ${amountApplied?currency(${isoCode})} es requerio</value>
         <value xml:lang="fr">La facture [${invoiceId} Item [${invoiceItemSeqId} est payable en ${invoiceItemApplyAvailable?currency(${isoCode})} mais  ${amountApplied?currency(${isoCode})} est requis</value>
         <value xml:lang="hi_IN">चालान [${invoiceId}] मद [${invoiceItemSeqId}] पर लागू करने के लिए ${invoiceItemApplyAvailable?currency(${isoCode})} उपलब्ध है, पर ${amountApplied?currency(${isoCode})} अनिवार्य है</value>
         <value xml:lang="it">Fattura [${invoiceId} Riga [${invoiceItemSeqId} ha ${invoiceItemApplyAvailable?currency(${isoCode})} da applicare ma  ${amountApplied?currency(${isoCode})} è richiesta</value>
@@ -7671,7 +7671,7 @@
     </property>
     <property key="AccountingInvoiceItemNotEnough">
         <value xml:lang="en">Requested Amount is ${tooMuch?currency(${isoCode})} to much for this Invoice [${invoiceId}] Item [${invoiceItemSeqId}]</value>
-        <value xml:lang="es">Cantidad requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}] elemento [${invoiceItemSeqId}]</value>
+        <value xml:lang="es">Cantidad requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}] Item [${invoiceItemSeqId}]</value>
         <value xml:lang="fr">Le montant demandé est de ${tooMuch?currency(${isoCode})} trop élevé pour la ligne [${invoiceItemSeqId}] de cette facture [${invoiceId}]</value>
         <value xml:lang="hi_IN">अनुरोधित राशि ${tooMuch?currency(${isoCode})} इस चालान [${invoiceId}] मद [${invoiceItemSeqId}] के लिए अधिक है</value>
         <value xml:lang="it">Importo Richiesto è ${tooMuch?currency(${isoCode})} troppo grande per questa Fattura [${invoiceId}] Riga [${invoiceItemSeqId}]</value>
@@ -7687,7 +7687,7 @@
     </property>
     <property key="AccountingInvoiceItemNotFound">
         <value xml:lang="en">Invoice [${invoiceId}]  item [${invoiceItemSeqId}] record not found</value>
-        <value xml:lang="es">Factura[${invoiceId}]  elemento [${invoiceItemSeqId}] registro no encontrado</value>
+        <value xml:lang="es">Factura[${invoiceId}]  Item [${invoiceItemSeqId}] registro no encontrado</value>
         <value xml:lang="fr">Pas trouvé la ligne [${invoiceItemSeqId}] de la facture [${invoiceId}]</value>
         <value xml:lang="hi_IN">चालान [${invoiceId}] मद [${invoiceItemSeqId}] का रेकार्ड नहीं मिला</value>
         <value xml:lang="it">Fattura [${invoiceId}]  riga [${invoiceItemSeqId}] record non trovata</value>
@@ -7703,7 +7703,7 @@
     </property>
     <property key="AccountingInvoiceItemPaymentCurrencyProblem">
         <value xml:lang="en">Payment currency [${paymentCurrencyId}] and invoice Item currency [${itemCurrency}] not the same</value>
-        <value xml:lang="es">Moneda de pago [${paymentCurrencyId}] y moneda de elemento de factura [${itemCurrency}] no son las mismas</value>
+        <value xml:lang="es">Moneda de pago [${paymentCurrencyId}] y moneda de Item de factura [${itemCurrency}] no son las mismas</value>
         <value xml:lang="fr">La monnaie de paiement [${paymentCurrencyId}] et la monnaie de la ligne de facture [${itemCurrency}] ne correspondent pas</value>
         <value xml:lang="hi_IN">भुगतान की मुद्रा [${paymentCurrencyId}] और चालान मद की मुद्रा [${itemCurrency}] सामान नहीं है</value>
         <value xml:lang="it">Valuta Pagamento [${paymentCurrencyId}]e valuta riga fattura [${itemCurrency}] non sono le stesse</value>
@@ -7721,7 +7721,7 @@
         <value xml:lang="ar">رقم البند</value>
         <value xml:lang="de">Pos.Nr.</value>
         <value xml:lang="en">Item Nr</value>
-        <value xml:lang="es">Nr Elemento</value>
+        <value xml:lang="es">Nº de Item</value>
         <value xml:lang="fr">Ligne de facturation réf.</value>
         <value xml:lang="hi_IN">मद संख्या</value>
         <value xml:lang="it">N.Riga</value>
@@ -7753,7 +7753,7 @@
         <value xml:lang="ar">البنود</value>
         <value xml:lang="de">Positionen</value>
         <value xml:lang="en">Items</value>
-        <value xml:lang="es">Elementos</value>
+        <value xml:lang="es">Detalle</value>
         <value xml:lang="fr">Lignes de facturation</value>
         <value xml:lang="hi_IN">वस्तुएं</value>
         <value xml:lang="it">Righe</value>
@@ -7832,7 +7832,7 @@
         <value xml:lang="ar">نبذة</value>
         <value xml:lang="de">Übersicht</value>
         <value xml:lang="en">Overview</value>
-        <value xml:lang="es">Visión general</value>
+        <value xml:lang="es">Resumen</value>
         <value xml:lang="fr">Aperçu</value>
         <value xml:lang="hi_IN">विवरण</value>
         <value xml:lang="it">Visione</value>
@@ -8177,6 +8177,7 @@
     <property key="AccountingInvoiceTimeEntries">
         <value xml:lang="de">Zeiteinträge</value>
         <value xml:lang="en">Time Entries</value>
+        <value xml:lang="es">Registros de Tiempos</value>
         <value xml:lang="fr">Ecritures d'horaire</value>
         <value xml:lang="hi_IN">समय प्रतिविष्टियाँ</value>
         <value xml:lang="it">Righe Timbratura</value>
@@ -8330,7 +8331,7 @@
     </property>
     <property key="AccountingItemNr">
         <value xml:lang="en">ItemNr</value>
-        <value xml:lang="es">NrElemento</value>
+        <value xml:lang="es">Item Nº</value>
         <value xml:lang="fr">Item no.</value>
         <value xml:lang="hi_IN">मद संख्या</value>
         <value xml:lang="it">Nr.Riga</value>
@@ -8950,7 +8951,7 @@
     <property key="AccountingNewAgreementItem">
         <value xml:lang="de">Vereinbarungsposition erstellen</value>
         <value xml:lang="en">Create Agreement Item</value>
-        <value xml:lang="es">Crear elemento de acuerdo</value>
+        <value xml:lang="es">Crear Item de acuerdo</value>
         <value xml:lang="fr">Nouvel article d'accord</value>
         <value xml:lang="hi_IN">अनुबंध मद बनाएँ</value>
         <value xml:lang="it">Nuova riga contratto</value>
@@ -9505,7 +9506,7 @@
     <property key="AccountingNoKnownInvoiceItemTypeReturnAdjustmentType">
         <value xml:lang="de">Keine bekannte Rechnungspositionsart für Retouren-Anpassungs-Art [${returnAdjustmentTypeId}]</value>
         <value xml:lang="en">No known invoice item type for the return adjustment type [${returnAdjustmentTypeId}]</value>
-        <value xml:lang="es">Tipo de elemento de factura desconocido para tipo de ajuste de retorno [${returnAdjustmentTypeId}]</value>
+        <value xml:lang="es">Tipo de Item de factura desconocido para tipo de ajuste de retorno [${returnAdjustmentTypeId}]</value>
         <value xml:lang="fr">Aucuntype de facture identifié pour cet ajustement sur retour de type [${returnAdjustmentTypeId}]</value>
         <value xml:lang="hi_IN">वापसी समायोजन प्रकार [$(returnAdjustmentTypeId)] के लिए कोई चालान मद प्रकार ज्ञात नहीं है</value>
         <value xml:lang="it">Nessuna tipo riga fattura conosciuta per il tipo aggiustamento reso [${returnAdjustmentTypeId}]</value>
@@ -9522,7 +9523,7 @@
     <property key="AccountingNoKnownInvoiceItemTypeReturnItemType">
         <value xml:lang="de">Keine bekannte Rechnungspositionsart für Retouren-Positions-Art [${returnItemTypeId}]</value>
         <value xml:lang="en">No known invoice item type for the return item type [${returnItemTypeId}]</value>
-        <value xml:lang="es">Tipo de elemento de factura desconocido para el tipo de elemento de retorno [${returnItemTypeId}]</value>
+        <value xml:lang="es">Tipo de Item de factura desconocido para el tipo de item de retorno [${returnItemTypeId}]</value>
         <value xml:lang="fr">Aucuntype de facture identifié pour ce  retour de type [${returnItemTypeId}]</value>
         <value xml:lang="hi_IN">वापसी मद प्रकार [${returnItemTypeId}] के लिए कोई चालान मद प्रकार ज्ञात नहीं है</value>
         <value xml:lang="it">Nessuna tipo riga fattura conosciuta per il tipo riga reso [${returnItemTypeId}]</value>
@@ -9557,7 +9558,7 @@
     <property key="AccountingNoOrderItemsToInvoice">
         <value xml:lang="de">Keine Auftragspositionen zu fakturieren, Rechnung wird nicht erstellt</value>
         <value xml:lang="en">No order items to invoice, not creating invoice.</value>
-        <value xml:lang="es">Sin elementos de orden para factura, no es factura crear factura.</value>
+        <value xml:lang="es">Sin items de orden para factura, no es factura crear factura.</value>
         <value xml:lang="fr">Aucune ligne de facturation trouvée; il n'a pas été créé de facture</value>
         <value xml:lang="hi_IN">चालान बनाने के लिए आदेश मद नहीं है, चालान नहीं बनाया</value>
         <value xml:lang="it">Nessuna riga ordine da fatturare, nessuna creazione fattura.</value>
@@ -9690,7 +9691,7 @@
         <value xml:lang="ar">لا سطر فاتورة حالي</value>
         <value xml:lang="de">Keine aktuellen Rechnungspositionen</value>
         <value xml:lang="en">No current invoice line items</value>
-        <value xml:lang="es">Sin elementos en linea de factura actual</value>
+        <value xml:lang="es">Sin items en linea de factura actual</value>
         <value xml:lang="fr">Aucuneligne de facturation sélectionnée</value>
         <value xml:lang="hi_IN">वर्तमान में कोई चालान लाइन मदे नहीं है</value>
         <value xml:lang="it">Nessuna riga fattura attualmente</value>
@@ -12476,7 +12477,7 @@
     <property key="AccountingProblemGettingItemsFromShipments">
         <value xml:lang="ar">مشكل عند التحصل على السلع من الشحنات</value>
         <value xml:lang="en">Problem getting issued items from shipments</value>
-        <value xml:lang="es">Problema obteniendo elementos entregados del envío</value>
+        <value xml:lang="es">Problema obteniendo items entregados del envío</value>
         <value xml:lang="fr">Erreur en recherchant les articles des livraisons</value>
         <value xml:lang="hi_IN">मदो की माल लदाई जरी करने में समस्या</value>
         <value xml:lang="it">Problemi leggendo righe con problemi dalle spedizioni</value>
@@ -12492,7 +12493,7 @@
     </property>
     <property key="AccountingProblemGettingOrderItemOrderItemBilling">
         <value xml:lang="en">Problem getting OrderItem/OrderItemBilling records ${lookup}</value>
-        <value xml:lang="es">Problema obteniendo registros de Elemento de orden/Facturación de elementos de orden ${lookup}</value>
+        <value xml:lang="es">Problema obteniendo registros de Item de orden/Facturación de Items de orden ${lookup}</value>
         <value xml:lang="fr">Erreur en recherchant la lignes de la commande ${lookup}</value>
         <value xml:lang="hi_IN">अभिलेखों OrderItem/OrderItemBilling में समस्या हो रही ${lookup}</value>
         <value xml:lang="it">Problemi leggendo OrderItem/OrderItemBilling records ${lookup}</value>
@@ -12547,7 +12548,7 @@
     </property>
     <property key="AccountingProblemLookingUpOrderItemBilling">
         <value xml:lang="en">Problem looking up OrderItemBilling records for ${billFields}</value>
-        <value xml:lang="es">Problema buscando Elemento de orden de facturación para ${billFields}</value>
+        <value xml:lang="es">Problema buscando Item de orden de facturación para ${billFields}</value>
         <value xml:lang="fr">Erreur en recherchant les lignes de commandes facturées relatives à ${billFields}</value>
         <value xml:lang="hi_IN">OrderItemBilling अभिलेखों में ${billFields} के लिए समस्या हो रही</value>
         <value xml:lang="it">Problemi ricercando OrderItemBilling records per ${billFields}</value>
@@ -13438,7 +13439,7 @@
     </property>
     <property key="AccountingServiceOtherProblemCreatingInvoiceFromOrderItems">
         <value xml:lang="en">Service/other problem creating invoice from order items: ${reason} </value>
-        <value xml:lang="es">Servicio/otro problema creando factura a partir de elementos de orden: ${reason}</value>
+        <value xml:lang="es">Servicio/otro problema creando factura a partir de items de orden: ${reason}</value>
         <value xml:lang="fr">Service/ erreur en essayant de créer une facture à partir des lignes de la commande:  ${reason}</value>
         <value xml:lang="hi_IN">सेवा/अन्य को चालान बनाने में आदेश मदो से पैदा समस्या: ${reason}</value>
         <value xml:lang="it">Servizio/altro problema creando la fattura dalle righe ordine: ${reason} </value>
@@ -17445,7 +17446,7 @@
         <value xml:lang="ar">رفم البند</value>
         <value xml:lang="de">Objekt Nummer</value>
         <value xml:lang="en">Item No</value>
-        <value xml:lang="es">No Elemento</value>
+        <value xml:lang="es">Item Nº</value>
         <value xml:lang="fr">Réf. de la ligne de facture</value>
         <value xml:lang="hi_IN">मद संख्या</value>
         <value xml:lang="it">N.Riga</value>
@@ -17462,7 +17463,7 @@
     <property key="FormFieldTitle_invoiceItemTypeId">
         <value xml:lang="ar">نوع بند فاتورة البيع</value>
         <value xml:lang="en">Invoice Item Type      </value>
-        <value xml:lang="es">Tipo de elemento factura de venta</value>
+        <value xml:lang="es">Tipo de items factura de venta</value>
         <value xml:lang="fr">Type de ligne de facturation</value>
         <value xml:lang="hi_IN">चालन मद प्रकार</value>
         <value xml:lang="it">Tipo Riga Fattura</value>
@@ -17840,7 +17841,7 @@
     </property>
     <property key="FormFieldTitle_minItemPrice">
         <value xml:lang="en">Min Item Price</value>
-        <value xml:lang="es">Precio mínimo de elemento</value>
+        <value xml:lang="es">Precio mínimo de Item</value>
         <value xml:lang="fr">Prix minimum de l'article</value>
         <value xml:lang="hi_IN">व्यापारी क्रमांक</value>
         <value xml:lang="it">Prezzo Minimo Riga</value>
@@ -20049,7 +20050,7 @@
     </property>
     <property key="PageTitleEditAgreementItem">
         <value xml:lang="en">Edit Agreement Item</value>
-        <value xml:lang="es">Editar elemento de acuerdo</value>
+        <value xml:lang="es">Editar Item de acuerdo</value>
         <value xml:lang="fr">Modifier un article de l'accord</value>
         <value xml:lang="hi_IN">अनुबंध मद संपादित करें</value>
         <value xml:lang="it">Aggiorna Riga Contratto</value>
@@ -21038,7 +21039,7 @@
     </property>
     <property key="PageTitleListAgreementItems">
         <value xml:lang="en">List Agreement Items</value>
-        <value xml:lang="es">Lista Elementos de Acuerdo</value>
+        <value xml:lang="es">Lista Items de Acuerdo</value>
         <value xml:lang="fr">Liste des articles de l'accord</value>
         <value xml:lang="hi_IN">अनुबंध मदों की सूची</value>
         <value xml:lang="it">Lista Righe Contratto</value>

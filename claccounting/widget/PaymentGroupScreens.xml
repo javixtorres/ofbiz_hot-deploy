@@ -139,7 +139,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-one entity-name="PaymentGroup" value-field="paymentGroup"/>
                 <service service-name="getPayments" result-map="getPaymentsMap"/>
                 <set field="payments" from-field="getPaymentsMap.payments"/>

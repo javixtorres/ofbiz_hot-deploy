@@ -292,7 +292,7 @@ under the License.
     <screen name="EditAcctgTrans">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="PageTitleEditTransaction"/>
                 <set field="tabButtonItem" value="FindAcctgTrans"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId" global="true"/>
@@ -352,7 +352,7 @@ under the License.
     <screen name="ListUnpostedAcctgTrans">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="PageTitleUnpostedTransactions"/>
                 <set field="tabButtonItem" value="FindAcctgTrans"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId" global="true"/>
@@ -378,7 +378,7 @@ under the License.
     <screen name="ListChecksToPrint">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingPrintChecks"/>
                 <set field="tabButtonItem" value="ChecksTabButton"/>
                 <set field="tabButtonItem2" value="PrintChecksTabButton"/>
@@ -421,7 +421,7 @@ under the License.
     <screen name="ListChecksToSend">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingSendChecks"/>
                 <set field="tabButtonItem" value="ChecksTabButton"/>
                 <set field="tabButtonItem2" value="SendChecksTabButton"/>
@@ -572,7 +572,7 @@ under the License.
     <screen name="AcctgTransSearchResultsCsv">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
             </actions>
             <widgets>
@@ -586,7 +586,7 @@ under the License.
     <screen name="AcctgTransEntriesSearchResultsCsv">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
             </actions>
             <widgets>
@@ -601,7 +601,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="WorkEffortUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId" global="true"/>
                 <entity-condition entity-name="AcctgTransAndEntries" list="acctgTransEntryList">
@@ -638,7 +638,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="WorkEffortUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId" global="true"/>
                 <entity-condition entity-name="AcctgTransAndEntries" list="acctgTransList" distinct="true" >
@@ -683,7 +683,7 @@ under the License.
     <screen name="AcctgTransDetailReportPdf">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="acctgTransId" from-field="parameters.acctgTransId"/>
                 <entity-one entity-name="AcctgTrans" value-field="acctgTrans"/>
                 <entity-and entity-name="AcctgTransEntry" list="acctgTransEntries">

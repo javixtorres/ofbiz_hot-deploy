@@ -517,7 +517,7 @@ under the License.
         <section>
             <actions>
                 <set field="titleProperty" value="AccountingPageTitleAgreementPriceList"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <entity-one entity-name="Agreement" value-field="agreement" auto-field-map="true"/>
@@ -550,7 +550,7 @@ under the License.
         <section>
             <actions>
                 <set field="titleProperty" value="AccountingPageTitleAgreementPriceList"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <entity-one entity-name="Agreement" value-field="agreement" auto-field-map="true"/>
@@ -683,7 +683,7 @@ under the License.
         <section>
             <actions>
                 <set field="titleProperty" value="AccountingPageTitleAgreementPriceList"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
 

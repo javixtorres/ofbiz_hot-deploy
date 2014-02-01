@@ -478,7 +478,7 @@ under the License.
             <actions>
                 <!-- pass in paymentId to print one check, otherwise use multi form input -->
                 <set field="paymentId" from-field="parameters.paymentId"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <script location="component://accounting/webapp/accounting/WEB-INF/actions/payment/PrintChecks.groovy"/>
                 <entity-condition entity-name="InvoiceItemType" list="PayrolGroup">

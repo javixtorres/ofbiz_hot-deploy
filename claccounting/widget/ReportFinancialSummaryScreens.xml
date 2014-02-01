@@ -278,7 +278,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <service service-name="getPartyAccountingPreferences" result-map="result">
                     <field-map field-name="organizationPartyId"/>
@@ -313,7 +313,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <service service-name="getPartyAccountingPreferences" result-map="result">
                     <field-map field-name="organizationPartyId"/>
@@ -411,7 +411,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <service service-name="getPartyAccountingPreferences" result-map="result">
                     <field-map field-name="organizationPartyId"/>
@@ -446,7 +446,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <service service-name="getPartyAccountingPreferences" result-map="result">
                     <field-map field-name="organizationPartyId"/>
@@ -559,7 +559,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingComparativeBalanceSheet"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
                 <set field="tabButtonItem2" value="ComparativeBalanceSheet"/>
@@ -631,7 +631,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingComparativeBalanceSheet"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
                 <set field="tabButtonItem2" value="ComparativeBalanceSheet"/>
@@ -764,7 +764,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingTransactionTotals"/>
                 <set field="labelTitleProperty" value="AccountingTransactionTotals"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
@@ -802,7 +802,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="AccountingTransactionTotals"/>
                 <set field="labelTitleProperty" value="AccountingTransactionTotals"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
@@ -890,7 +890,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <set field="fromDate" from-field="parameters.fromDate" type="Timestamp"/>
                 <set field="thruDate" from-field="parameters.thruDate" type="Timestamp"/>
@@ -922,7 +922,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <set field="fromDate" from-field="parameters.fromDate" type="Timestamp"/>
                 <set field="thruDate" from-field="parameters.thruDate" type="Timestamp"/>
@@ -1046,7 +1046,7 @@ under the License.
     <screen name="ComparativeIncomeStatementsPdf">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
                 <set field="titleProperty" value="AccountingComparativeIncomeStatement"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
@@ -1128,7 +1128,7 @@ under the License.
     <screen name="ComparativeIncomeStatementsCsv">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
                 <set field="titleProperty" value="AccountingComparativeIncomeStatement"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
@@ -1243,7 +1243,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <script location="component://accounting/webapp/accounting/WEB-INF/actions/reports/GlAccountTrialBalance.groovy"/>
@@ -1323,7 +1323,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <service service-name="getPartyAccountingPreferences" result-map="result" auto-field-map="true"/>
                 <set field="partyAcctgPreference" from-field="result.partyAccountingPreference"/>
                 <set field="currencyUomId" from-field="partyAcctgPreference.baseCurrencyUomId"/>
@@ -1396,7 +1396,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
             </actions>
@@ -1416,7 +1416,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
             </actions>
@@ -1488,7 +1488,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <set field="fromDate" from-field="parameters.fromDate" type="Timestamp"/>
                 <set field="thruDate" from-field="parameters.thruDate" type="Timestamp"/>
@@ -1519,7 +1519,7 @@ under the License.
         <section>
             <actions>
                 <set field="viewSize" value="99999"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="organizationPartyId" from-field="parameters.organizationPartyId"/>
                 <set field="fromDate" from-field="parameters.fromDate" type="Timestamp"/>
                 <set field="thruDate" from-field="parameters.thruDate" type="Timestamp"/>
@@ -1626,7 +1626,7 @@ under the License.
     <screen name="ComparativeCashFlowStatementPdf">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
                 <set field="titleProperty" value="AccountingComparativeCashFlowStatement"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
@@ -1691,7 +1691,7 @@ under the License.
     <screen name="ComparativeCashFlowStatementCsv">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="viewSize" value="99999"/>
                 <set field="titleProperty" value="AccountingComparativeCashFlowStatement"/>
                 <set field="tabButtonItem" value="OrganizationAccountingReports"/>
