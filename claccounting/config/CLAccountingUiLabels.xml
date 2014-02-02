@@ -1021,7 +1021,7 @@
         <value xml:lang="ar">مبلغ مطبق</value>
         <value xml:lang="de">Angewandter Betrag</value>
         <value xml:lang="en">Amount Applied </value>
-        <value xml:lang="es">Cantidad aplicada</value>
+        <value xml:lang="es">Monto aplicado</value>
         <value xml:lang="fr">Montant alloué</value>
         <value xml:lang="hi_IN">राशि लागू है</value>
         <value xml:lang="it">Importo Applicato</value>
@@ -1039,7 +1039,7 @@
         <value xml:lang="ar">مبلغ لم يطبق بعد</value>
         <value xml:lang="de">Noch nicht angewandter Betrag</value>
         <value xml:lang="en">Amount not yet applied</value>
-        <value xml:lang="es">Cantidad aún no aplicada</value>
+        <value xml:lang="es">Monto aún no aplicado</value>
         <value xml:lang="fr">Montant non encore alloué</value>
         <value xml:lang="hi_IN">राशि अब तक लागु नहीं  है</value>
         <value xml:lang="it">Importo non ancora applicato</value>
@@ -2741,7 +2741,7 @@
         <value xml:lang="ar">قيمة الصك</value>
         <value xml:lang="de">Scheckbetrag</value>
         <value xml:lang="en">Check Amount</value>
-        <value xml:lang="es">Cantidad del cheque</value>
+        <value xml:lang="es">Monto del cheque</value>
         <value xml:lang="fr">Vérifier le montant</value>
         <value xml:lang="hi_IN">चेक/हुंडी राशि</value>
         <value xml:lang="it">Importo Assegno</value>
@@ -3097,6 +3097,7 @@
     <property key="AccountingCompleteAcctgTransFields">
         <value xml:lang="de">Felder für Buchung ausfüllen</value>
         <value xml:lang="en">Complete transaction fields</value>
+        <value xml:lang="es">Completar Campos de Transacción</value>
         <value xml:lang="fr">Remplissez les champs de la transaction</value>
         <value xml:lang="hi_IN">इस सौदे को पूरा</value>
         <value xml:lang="it">Completa i campi della transazione</value>
@@ -3187,6 +3188,7 @@
     <property key="AccountingCreateAcctgTransAndEntries">
         <value xml:lang="de">Schnellerstellung Kontenbuchung</value>
         <value xml:lang="en">Quick Create an Accounting Transaction</value>
+        <value xml:lang="es">Creación rapida de Transacciones Contable</value>
         <value xml:lang="fr">Créer rapidement une transaction comptable</value>
         <value xml:lang="hi_IN">तुरंत एक लेखा लेन-देन गतिविधि बनाएँ</value>
         <value xml:lang="it">Creazione Veloce Prima Nota</value>
@@ -3201,6 +3203,7 @@
     <property key="AccountingCreateAnAccountingTransaction">
         <value xml:lang="de">Kontenbuchung erstellen</value>
         <value xml:lang="en">Create an Accounting Transaction</value>
+        <value xml:lang="es">Crear una Transacción Contable</value>
         <value xml:lang="fr">Créer une transaction comptable</value>
         <value xml:lang="hi_IN">एक लेखा लेन-देन गतिविधि बनाएँ</value>
         <value xml:lang="it">Crea una Prima Nota</value>
@@ -3542,6 +3545,7 @@
     <property key="AccountingCreatePaymentAcctgTrans">
         <value xml:lang="de">Zahlungs-Kontenbuchung erstellen</value>
         <value xml:lang="en">Create Payment Accounting Transaction</value>
+        <value xml:lang="es">Crear Transacción Contable de Pago</value>
         <value xml:lang="fr">Créer une transaction de paiement</value>
         <value xml:lang="hi_IN">भुगतान लेखा गतिविधि बनाएँ</value>
         <value xml:lang="it">Creazione Prima Nota Per Pagamento</value>
@@ -3592,6 +3596,7 @@
     <property key="AccountingCreateSalesAcctgTrans">
         <value xml:lang="de">Verkaufs-Kontenbuchung erstellen</value>
         <value xml:lang="en">Create Sales Accounting Transaction</value>
+        <value xml:lang="es">Crear Transacción Contable de Ventas</value>
         <value xml:lang="fr">Créer une transaction de vente</value>
         <value xml:lang="hi_IN">बिक्री लेखा गतिविधि बनाएँ</value>
         <value xml:lang="it">Creazione Prima Nota Per Vendite</value>
@@ -3848,6 +3853,7 @@
     <property key="AccountingCreditDebitFlag">
         <value xml:lang="de">S/H</value>
         <value xml:lang="en">Cr/Dr</value>
+        <value xml:lang="es">D/H</value>
         <value xml:lang="fr">C/D</value>
         <value xml:lang="hi_IN">जमा/नामे</value>
         <value xml:lang="ja">貸/借</value>
@@ -3858,6 +3864,7 @@
     <property key="AccountingCreditFlag">
         <value xml:lang="de">H</value>
         <value xml:lang="en">Cr</value>
+        <value xml:lang="es">H</value>
         <value xml:lang="fr">C</value>
         <value xml:lang="hi_IN">जमा</value>
         <value xml:lang="ja">貸</value>
@@ -4243,6 +4250,7 @@
     <property key="AccountingDebitAmount">
         <value xml:lang="de">Sollbetrag</value>
         <value xml:lang="en">Debit Amount</value>
+        <value xml:lang="es">Monto de Débito</value>
         <value xml:lang="fr">Montant débité</value>
         <value xml:lang="hi_IN">नामे/उधार राशि</value>
         <value xml:lang="ja">借方金額</value>
@@ -4271,6 +4279,7 @@
     <property key="AccountingDebitFlag">
         <value xml:lang="de">S</value>
         <value xml:lang="en">Dr</value>
+        <value xml:lang="es">D</value>
         <value xml:lang="fr">D</value>
         <value xml:lang="hi_IN">नामे</value>
         <value xml:lang="ja">借</value>
@@ -4281,6 +4290,7 @@
     <property key="AccountingDebitOrCreditOfBalance">
         <value xml:lang="de">Soll oder Haben der Bilanz</value>
         <value xml:lang="en">Debit Or Credit Of The Balance</value>
+        <value xml:lang="es">D o H en Balance</value>
         <value xml:lang="fr">Solde Débit ou Crédit</value>
         <value xml:lang="hi_IN">नामे/उधार या जमा की शेष राशि</value>
         <value xml:lang="ja">借方または貸方</value>
@@ -4422,6 +4432,7 @@
     <property key="AccountingDuplicateAccountingTransaction">
         <value xml:lang="de">Doppelte Buchung</value>
         <value xml:lang="en">Duplicate Accounting Transaction</value>
+        <value xml:lang="es">Duplicar Transacción Contable</value>
         <value xml:lang="fr">Transaction comptable en double</value>
         <value xml:lang="hi_IN">लेनदेन लेखा प्रतिलिपि</value>
         <value xml:lang="it">Duplicazione Prima Nota</value>
@@ -6861,7 +6872,7 @@
         <value xml:lang="ar">دليل الحساب المحاسبي</value>
         <value xml:lang="de">HB Konto ID</value>
         <value xml:lang="en">GL Account ID</value>
-        <value xml:lang="es">Id Cuenta de LM</value>
+        <value xml:lang="es">Cuenta Contable</value>
         <value xml:lang="fr">Réf. compte comptable</value>
         <value xml:lang="hi_IN">जीएल(GL) खाता क्रमांक</value>
         <value xml:lang="it">Codice Conto Contabilità Generale</value>
@@ -7671,7 +7682,7 @@
     </property>
     <property key="AccountingInvoiceItemNotEnough">
         <value xml:lang="en">Requested Amount is ${tooMuch?currency(${isoCode})} to much for this Invoice [${invoiceId}] Item [${invoiceItemSeqId}]</value>
-        <value xml:lang="es">Cantidad requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}] Item [${invoiceItemSeqId}]</value>
+        <value xml:lang="es">Monto requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}] Item [${invoiceItemSeqId}]</value>
         <value xml:lang="fr">Le montant demandé est de ${tooMuch?currency(${isoCode})} trop élevé pour la ligne [${invoiceItemSeqId}] de cette facture [${invoiceId}]</value>
         <value xml:lang="hi_IN">अनुरोधित राशि ${tooMuch?currency(${isoCode})} इस चालान [${invoiceId}] मद [${invoiceItemSeqId}] के लिए अधिक है</value>
         <value xml:lang="it">Importo Richiesto è ${tooMuch?currency(${isoCode})} troppo grande per questa Fattura [${invoiceId}] Riga [${invoiceItemSeqId}]</value>
@@ -7785,7 +7796,7 @@
     </property>
     <property key="AccountingInvoiceNotEnough">
         <value xml:lang="en">Requested Amount is ${tooMuch?currency(${isoCode})} to much for this Invoice [${invoiceId}]</value>
-        <value xml:lang="es">Cantidad requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}]</value>
+        <value xml:lang="es">Monto requerida es ${tooMuch?currency(${isoCode})} demasiado para esta factura [${invoiceId}]</value>
         <value xml:lang="fr">Le montant requis est de ${tooMuch?currency(${isoCode})} trop élevé pour cette facture [${invoiceId}]</value>
         <value xml:lang="hi_IN">अनुरोधित राशि ${tooMuch?currency(${isoCode})} इस चालान [${invoiceId}] के लिए अधिक है</value>
         <value xml:lang="it">Importo Richiesto è ${tooMuch?currency(${isoCode})} troppo grande per questa Fattura [${invoiceId}]</value>
@@ -9257,6 +9268,7 @@
     <property key="AccountingNoAcctgTransFound">
         <value xml:lang="de">Keine Buchungstransaktionen gefunden</value>
         <value xml:lang="en">No Accounting Transactions Found.</value>
+        <value xml:lang="es">No se encontró Transacción Contable.</value>
         <value xml:lang="fr">Pas de transaction trouvée</value>
         <value xml:lang="hi_IN">लेखांकन गतिविधि नहीं मिली</value>
         <value xml:lang="ja">会計仕訳はありません</value>
@@ -9268,7 +9280,7 @@
         <value xml:lang="ar">المبلغ المطلوب للتطبيق صفر أو غير موفر: لا مبلغ مطبق</value>
         <value xml:lang="de">Angeforderter Betrag ist Null oder wurde nicht vorhanden: es wurde kein Betrag zugewiesen</value>
         <value xml:lang="en">Amount requested to apply is zero or not provided: no amount applied/n</value>
-        <value xml:lang="es">Cantidad requerida a aplicar es cero o no se proporciono: ninguna cantidad aplicada/n</value>
+        <value xml:lang="es">Monto requerida a aplicar es cero o no se proporciono: ninguna cantidad aplicada/n</value>
         <value xml:lang="fr">Le montant à allouer est zéro ou manquant: il n'a pas été appliqué de montant/n</value>
         <value xml:lang="hi_IN">लागु करने के लिए दी गयी राशी शून्य है या प्रदान नहीं की गयी : कोई राशि लागू नहीं/n</value>
         <value xml:lang="it">Importo richiesto da applicare è zero o non inserito: nessun importo applicato/n</value>
@@ -12851,6 +12863,7 @@
     <property key="AccountingRevertAccountingTransaction">
         <value xml:lang="de">Kontenabstimmung rückgängig machen</value>
         <value xml:lang="en">Revert Accounting Transaction</value>
+        <value xml:lang="es">Revertir Transacción Contable</value>
         <value xml:lang="fr">Reprendre la transaction comptable</value>
         <value xml:lang="hi_IN">लेखांकन गतिविधि उलटें</value>
         <value xml:lang="it">Annulla (inverti) Prima Nota</value>
@@ -15641,6 +15654,7 @@
     </property>
     <property key="FormFieldTitle_acctgTransType">
         <value xml:lang="en">Acctg Trans Type</value>
+        <value xml:lang="es">Tipo Trans.Contable</value>
         <value xml:lang="fr">Type d'enreg. comptable</value>
         <value xml:lang="hi_IN">लेनदेन खातों के  प्रकार</value>
         <value xml:lang="ja">会計仕訳種類</value>
@@ -15901,7 +15915,7 @@
     <property key="FormFieldTitle_amountApplied">
         <value xml:lang="ar">المبلغ المطبق</value>
         <value xml:lang="en">Amount Applied</value>
-        <value xml:lang="es">Cantidad Aplicada</value>
+        <value xml:lang="es">Monto Aplicado</value>
         <value xml:lang="fr">Montant alloué</value>
         <value xml:lang="hi_IN">लागू राशि</value>
         <value xml:lang="it">Importo Applicato</value>
@@ -15919,7 +15933,7 @@
         <value xml:lang="ar">المبلغ للتطبيق</value>
         <value xml:lang="de">zuzuweisender Betrag</value>
         <value xml:lang="en">Outstanding amount</value>
-        <value xml:lang="es">Cantidad por aplicar</value>
+        <value xml:lang="es">Monto por aplicar</value>
         <value xml:lang="fr">Montant à allouer</value>
         <value xml:lang="hi_IN">बकाया राशि</value>
         <value xml:lang="it">Importo Da Applicare</value>
@@ -16306,7 +16320,7 @@
     </property>
     <property key="FormFieldTitle_creditGlAccountId">
         <value xml:lang="en">Credit Gl Account Id</value>
-        <value xml:lang="es">Id Cuenta de LM Crédito</value>
+        <value xml:lang="es">Cuenta de Crédito</value>
         <value xml:lang="fr">Compte de crédit</value>
         <value xml:lang="hi_IN">जमा जीएल(Gl) खाता क्रमांक</value>
         <value xml:lang="it">Codice Conto Credito Gl</value>
@@ -16481,7 +16495,7 @@
     </property>
     <property key="FormFieldTitle_debitGlAccountId">
         <value xml:lang="en">Debit Gl Account Id</value>
-        <value xml:lang="es">Id Cuenta de LM Débito</value>
+        <value xml:lang="es">Cuenta de Débito</value>
         <value xml:lang="fr">Compte de débit</value>
         <value xml:lang="hi_IN">नामे जीएल(Gl) खाता क्रमांक</value>
         <value xml:lang="it">Codice Conto Debito Gl</value>
@@ -16498,7 +16512,7 @@
     <property key="FormFieldTitle_defaultGlAccountId">
         <value xml:lang="de">Standard HB-Konto ID</value>
         <value xml:lang="en">Default Gl Account Id</value>
-        <value xml:lang="es">Id Cuenta de LM por omisión</value>
+        <value xml:lang="es">Cuenta por omisión</value>
         <value xml:lang="fr">Réf. de compte par défaut</value>
         <value xml:lang="hi_IN">डिफ़ॉल्ट जीएल(Gl) खाता क्रमांक</value>
         <value xml:lang="it">Default Conto Gl</value>
@@ -17166,6 +17180,7 @@
     </property>
     <property key="FormFieldTitle_glFiscalType">
         <value xml:lang="en">Fiscal Gl Type</value>
+        <value xml:lang="es">Tipo de Contabilidad Fiscal</value>
         <value xml:lang="fr">Type fiscal</value>
         <value xml:lang="hi_IN">वित्तीय सामान्य बही खाते का प्रकार</value>
         <value xml:lang="ja">会計GL種類</value>
@@ -17381,6 +17396,7 @@
     <property key="FormFieldTitle_invoiceAmount">
         <value xml:lang="de">Rechnungsbetrag</value>
         <value xml:lang="en">Invoice Amount</value>
+        <value xml:lang="es">Monto de Factura</value>
         <value xml:lang="fr">Montant</value>
         <value xml:lang="hi_IN">चालान राशि</value>
         <value xml:lang="it">Importo fattura</value>
@@ -17793,6 +17809,7 @@
     </property>
     <property key="FormFieldTitle_maxAmount">
         <value xml:lang="en">Max Amount</value>
+        <value xml:lang="es">Monto Máximo</value>
         <value xml:lang="fr">Montant maximum</value>
         <value xml:lang="hi_IN">अधिकतम राशि</value>
         <value xml:lang="it">Importo Massimo</value>
@@ -17887,6 +17904,7 @@
     </property>
     <property key="FormFieldTitle_monthAmountCredit">
         <value xml:lang="en">Month Amount Credit</value>
+        <value xml:lang="es">Monto Menusal de Credito</value>
         <value xml:lang="fr">Montant du mois en crédit</value>
         <value xml:lang="hi_IN">जमा महीने राशि</value>
         <value xml:lang="ja">貸方月額</value>
@@ -17896,6 +17914,7 @@
     </property>
     <property key="FormFieldTitle_monthAmountDebit">
         <value xml:lang="en">Month Amount Debit</value>
+        <value xml:lang="es">Monto Mensual de Débitot</value>
         <value xml:lang="fr">Montant du mois en débit</value>
         <value xml:lang="hi_IN">नामे महीने राशि</value>
         <value xml:lang="ja">借方月額</value>
@@ -18054,6 +18073,7 @@
     </property>
     <property key="FormFieldTitle_origAmount">
         <value xml:lang="en">Orig Amount</value>
+        <value xml:lang="es">Monto Original</value>
         <value xml:lang="fr">Montant original</value>
         <value xml:lang="hi_IN">मूल राशि</value>
         <value xml:lang="it">Importo originale</value>
@@ -18132,6 +18152,7 @@
     </property>
     <property key="FormFieldTitle_paidAmount">
         <value xml:lang="en">Paid Amount</value>
+        <value xml:lang="es">Monto Pago</value>
         <value xml:lang="fr">Quantité payée</value>
         <value xml:lang="hi_IN">भुगतान की गई राशि</value>
         <value xml:lang="it">Importo Pagato</value>
@@ -18273,7 +18294,7 @@
     <property key="FormFieldTitle_paymentApplyNow">
         <value xml:lang="de">zuzuweisender Betrag</value>
         <value xml:lang="en">Amount to Apply</value>
-        <value xml:lang="es">Cantidad por aplicar</value>
+        <value xml:lang="es">Monto por aplicar</value>
         <value xml:lang="fr">Montant à allouer</value>
         <value xml:lang="hi_IN">लागू करने के लिए राशि</value>
         <value xml:lang="it">Importo da Applicare</value>
