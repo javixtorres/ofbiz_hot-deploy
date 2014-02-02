@@ -10047,7 +10047,7 @@
     <property key="AccountingOrgGlSettings">
         <value xml:lang="de">Hauptbuch-Einstellungen, Org.</value>
         <value xml:lang="en">Organization GL Settings</value>
-        <value xml:lang="es">Organización Contabilidad</value>
+        <value xml:lang="es">Contabilidad de Organización</value>
         <value xml:lang="fr">Configurations internes du GL</value>
         <value xml:lang="hi_IN">संगठन जीएल(Gl) सेटिंग्स</value>
         <value xml:lang="ja">組織GL設定</value>
