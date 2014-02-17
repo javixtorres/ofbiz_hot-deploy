@@ -41,12 +41,14 @@ under the License.
                 <if-compare field="iiCount" operator="greater" value="0" type="BigDecimal">
                     <iterate list="orderItemList" entry="orderItem">
                         <if-not-empty field="orderItem.productId">
-                            <clear-field field="callSvcMap"/>
-                            <set-service-fields to-map="callSvcMap" service-name="issueImmediatelyFulfilledOrderItem" map="orderItem"/>
-                            <set field="callSvcMap.orderHeader" from-field="orderHeader"/>
-                            <set field="callSvcMap.orderItem" from-field="orderItem"/>
-                            <set field="callSvcMap.productStore" from-field="productStore"/>
-                            <call-service service-name="issueImmediatelyFulfilledOrderItem" in-map-name="callSvcMap"/>
+                        	<if-compare field="orderItem.productId" operator="not-equals" value="FINANCIACION">  
+	                            <clear-field field="callSvcMap"/>
+	                            <set-service-fields to-map="callSvcMap" service-name="issueImmediatelyFulfilledOrderItem" map="orderItem"/>
+	                            <set field="callSvcMap.orderHeader" from-field="orderHeader"/>
+	                            <set field="callSvcMap.orderItem" from-field="orderItem"/>
+	                            <set field="callSvcMap.productStore" from-field="productStore"/>
+	                            <call-service service-name="issueImmediatelyFulfilledOrderItem" in-map-name="callSvcMap"/>
+	                        </if-compare>  
                         </if-not-empty>
                     </iterate>
                     <!-- now that the issuance is done, set the needsInventoryIssuance=N -->
