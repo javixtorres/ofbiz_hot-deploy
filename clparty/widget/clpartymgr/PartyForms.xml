@@ -461,9 +461,14 @@ under the License.
             </drop-down>
         </field>
         
+        <field name="USER_EMPOYER" title="Empresa donde Trabaja"><text size="20" maxlength="30"/></field>
+        
+        
         <field name="USER_OCCUPATION" title="${uiLabelMap.FormFieldTitle_occupation}"><text size="20" maxlength="30"/></field>      
         <field name="USER_YEARS_WITH_EMPLOYER" title="${uiLabelMap.FormFieldTitle_yearsWithEmployer}"><text size="5" maxlength="5"/></field>
         <field name="USER_MONTHS_WITH_EMPLOYER" title="${uiLabelMap.FormFieldTitle_monthsWithEmployer}"><text size="5" maxlength="5"/></field>
+        
+        <field name="USER_SALARY" title="Total Ingresos (Aprox.)"><text size="20" maxlength="30"/></field>
 
         <field name="USER_EXTERNAL_ID" title="Carpeta Nro." tooltip="${uiLabelMap.CommonRequired}" widget-style="required"><text size="15" maxlength="30"/></field>
 
