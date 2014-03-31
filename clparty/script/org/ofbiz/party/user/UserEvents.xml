@@ -148,6 +148,19 @@ under the License.
         <!-- Create the PartyRole -->
         <set field="partyRoleContext.roleTypeId" from-field="parameters.roleTypeId"/>
 
+        <!-- Create the PartyAttribute -->
+        <set field="partyAttributeContext.attrName" value="Salario"/>
+        <set field="partyAttributeContext.attrValue" from-field="parameters.USER_SALARY"/>
+        
+        <set field="partyAttributeContextE.attrName" value="Empresa"/>
+        <set field="partyAttributeContextE.attrValue" from-field="parameters.USER_EMPOYER"/>
+
+        <!-- Create the Billing Account -->
+        <set field="billingAccountRoleContext.roleTypeId" value="BILL_TO_CUSTOMER"/>
+        <set field="billingAccountContext.accountLimit" value="2000000"/>
+        <set field="billingAccountContext.description"  value="CC ${parameters.USER_CARD_ID} ${parameters.USER_FIRST_NAME} ${parameters.USER_LAST_NAME}"/>
+        <set field="billingAccountContext.accountCurrencyUomId" value="PYG"/>
+
         <!-- Create the Postal Address -->
         <if-compare field="parameters.USE_ADDRESS" operator="equals" value="false">
             <!-- address not used, do nothing -->
@@ -314,6 +327,10 @@ under the License.
         <set field="userLoginContext.partyId" from-field="tempMap.partyId"/>
         <set field="personContext.partyId" from-field="tempMap.partyId"/>
         <set field="partyRoleContext.partyId" from-field="tempMap.partyId"/>
+        
+        <set field="partyAttributeContext.partyId" from-field="tempMap.partyId"/>
+        <set field="partyAttributeContextE.partyId" from-field="tempMap.partyId"/>      
+          
         <set field="addressContext.partyId" from-field="tempMap.partyId"/>
         <set field="homePhoneContext.partyId" from-field="tempMap.partyId"/>
         <set field="workPhoneContext.partyId" from-field="tempMap.partyId"/>
@@ -356,6 +373,18 @@ under the License.
         <create-value value-field="partyDataSource"/>
         <call-service service-name="createPartyRole" in-map-name="partyRoleContext"/>
 
+		<call-service service-name="createPartyAttribute" in-map-name="partyAttributeContext"/>
+        <call-service service-name="createPartyAttribute" in-map-name="partyAttributeContextE"/>
+        
+        <call-service service-name="createBillingAccount" in-map-name="billingAccountContext">
+                 <result-to-field result-name="billingAccountId" field="tempMap.billingAccountId"/>
+        </call-service>
+        
+        <set field="billingAccountRoleContext.partyId" from-field="tempMap.partyId"/>
+        <set field="billingAccountRoleContext.billingAccountId" from-field="tempMap.billingAccountId"/>
+        
+        <call-service service-name="createBillingAccountRole" in-map-name="billingAccountRoleContext"/>           
+        
         <!-- shipping address -->
         <if-compare field="parameters.USE_ADDRESS" operator="equals" value="false">
             <!-- address not used, do nothing -->
