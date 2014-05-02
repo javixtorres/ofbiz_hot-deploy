@@ -111,16 +111,16 @@ under the License.
         mount-point="/claccounting"/>
 
     <webapp name="clar"
-        title="CL Compras"
+        title="CL Ventas"
         server="default-server"
         location="webapp/clar"
         base-permission="OFBTOOLS,ACCOUNTINGSALES"
         mount-point="/clar"/>
 
     <webapp name="clap"
-        title="CL Ventas"
+        title="CL Compras"
         server="default-server"
         location="webapp/clap"
-        base-permission="OFBTOOLS,ACCOUNTING"
+        base-permission="OFBTOOLS,ACCOUNTINGPURCHASE"
         mount-point="/clap"/>
 </ofbiz-component>

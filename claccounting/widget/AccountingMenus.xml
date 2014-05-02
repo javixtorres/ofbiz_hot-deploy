@@ -48,7 +48,11 @@ under the License.
         <menu-item name="TaxAuthorities" title="${uiLabelMap.AccountingTaxAuthorities}"><link target="FindTaxAuthority"/></menu-item>
         <menu-item name="agreements" title="${uiLabelMap.AccountingAgreements}"><link target="FindAgreement"/></menu-item>
         <menu-item name="ListFixedAssets" title="${uiLabelMap.AccountingFixedAssets}"><link target="ListFixedAssets"/></menu-item>
-        <menu-item name="GlobalGLSettings" title="${uiLabelMap.AccountingGlobalGLSettings}"><link target="globalGLSettings"/></menu-item>
+        <menu-item name="GlobalGLSettings" title="${uiLabelMap.AccountingGlobalGLSettings}"><link target="globalGLSettings"/>
+            <condition>
+                    <if-has-permission permission="ACCOUNTING" action="_CONFIG"/>
+            </condition>
+        </menu-item>
         <menu-item name="companies" title="${uiLabelMap.AccountingOrgGlSettings}"><link target="ListCompanies"/></menu-item>
     </menu>
 
