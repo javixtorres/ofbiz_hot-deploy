@@ -29,7 +29,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderOrder"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/order/OrderView.groovy"/>
@@ -82,7 +82,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="PageTitleOrderAgreements"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/order/OrderView.groovy"/>
@@ -144,7 +144,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderOrderReturn"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/return/ReturnHeader.groovy"/>
                 <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/return/ReturnItems.groovy"/>

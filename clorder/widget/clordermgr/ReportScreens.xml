@@ -41,7 +41,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
             </actions>
             <widgets>
@@ -69,7 +69,7 @@ under the License.
     <screen name="OrderReportPurchasesByOrganization">
         <section>
             <actions>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
             </actions>
             <widgets>
@@ -113,7 +113,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderReportPurchasesByPaymentMethod"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
