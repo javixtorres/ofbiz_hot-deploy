@@ -513,7 +513,7 @@ under the License.
         <section>
             <actions>
                 <set field="parameters.sortField" from-field="parameters.sortField" default-value="-custRequestDate"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition list="custRequests" entity-name="CustReqAndTypeAndPartyRel">
                     <condition-list combine="and">
                         <condition-expr field-name="statusId" operator="equals" value="CRQ_SUBMITTED"/>
@@ -544,7 +544,7 @@ under the License.
     <screen name="ListCustRequests">
         <section>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="fromPartyId" from-field="userLogin.partyId"/>
             </actions>
             <widgets>

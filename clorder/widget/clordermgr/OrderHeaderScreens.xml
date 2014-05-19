@@ -56,7 +56,7 @@ under the License.
 
                 <set field="orderId" from-field="parameters.orderId"/>
                 <entity-one entity-name="OrderHeader" value-field="orderHeader"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonOrderHeaderDecorator">
@@ -78,7 +78,7 @@ under the License.
 
                 <set field="orderId" from-field="parameters.orderId"/>
                 <entity-one entity-name="OrderHeader" value-field="OrderHeader"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonOrderHeaderDecorator">

@@ -244,7 +244,7 @@ under the License.
                 <set field="asm_formSize" value="700"/>
                 <set field="asm_asmListItemPercentOfForm" value="95"/>
                 <set field="asm_sortable" value="false"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="asm_title" value="${uiLabelMap.OrderPartySelectRoleForParty}"/>                
                 
             </actions>
@@ -292,7 +292,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderViewEditDeliveryScheduleInfo"/>
                 <set field="headerItem" value="findorders"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
@@ -510,7 +510,7 @@ under the License.
     <screen name="ListCustomerOrders">
         <section>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="MyPortalUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="userLogin.partyId"/>
                 <set field="statusId" from-field="statusId"/>
@@ -528,7 +528,7 @@ under the License.
     <screen name="ListSalesOrders">
         <section>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="filterDate" type="Timestamp" value="${nowTimestamp}"/>
                 <script location="component://clorder/webapp/clordermgr/WEB-INF/actions/order/OrderList.groovy"/>
             </actions>

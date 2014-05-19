@@ -26,7 +26,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ContentUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
@@ -55,7 +55,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupOrderHeaderAndShipInfo}"/>
                 <set field="parameters.roleTypeId" to-scope="screen" default-value="SHIP_TO_CUSTOMER"/>
                 <set field="queryString" from-field="result.queryString"/>
@@ -82,7 +82,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupPurchaseOrderHeaderAndShipInfo}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
@@ -109,7 +109,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="WorkEffortUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupCustomerRequest}"/>
                 <set field="queryString" from-field="result.queryString"/>
@@ -136,7 +136,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupCustomerRequestItem}"/>
                 <set field="custRequestId" from-field="parameters.custRequestId" default-value="${parameters.parm0}"/>
                 <set field="queryString" from-field="result.queryString"/>
@@ -163,7 +163,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupQuote}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
@@ -189,7 +189,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupQuoteItem}"/>
                 <set field="quoteId" from-field="parameters.quoteId" default-value="${parameters.parm0}"/>
                 <set field="queryString" from-field="result.queryString"/>
@@ -216,7 +216,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupRequirement}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
@@ -242,7 +242,7 @@ under the License.
                 <if-has-permission permission="ORDERMGR" action="_VIEW"/>
             </condition>
             <actions>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupShoppingList}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>

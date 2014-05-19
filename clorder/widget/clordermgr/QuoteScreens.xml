@@ -104,7 +104,7 @@ under the License.
                 <get-related value-name="quote" relation-name="QuoteAttribute" list-name="quoteAttributes"/>
                 <get-related value-name="quote" relation-name="QuoteCoefficient" list-name="quoteCoefficients"/>
                 -->
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonQuoteDecorator" location="${parameters.quoteDecoratorLocation}">
@@ -138,7 +138,7 @@ under the License.
                 <get-related value-field="quote" relation-name="QuoteAdjustment" list="quoteAdjustments"/>
                 <get-related value-field="quote" relation-name="QuoteRole" list="quoteRoles"/>
 
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
@@ -154,7 +154,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderOrderQuoteReport"/>
 
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
