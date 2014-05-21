@@ -10214,7 +10214,7 @@
     <property key="OrderRecalculateOrder">
         <value xml:lang="de">Auftrag neuberechnen</value>
         <value xml:lang="en">Recalculate Order</value>
-        <value xml:lang="es">Recalcular el pedido</value>
+        <value xml:lang="es">Actualizar Pedido</value>
         <value xml:lang="fr">Recalculer la commande</value>
         <value xml:lang="it">Ricalcola Ordine</value>
         <value xml:lang="ja">注文を再計算</value>
