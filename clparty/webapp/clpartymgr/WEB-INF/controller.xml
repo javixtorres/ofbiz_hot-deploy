@@ -337,6 +337,14 @@ under the License.
         <response name="success" type="view" value="viewprofile"/>
         <response name="error" type="view" value="NewCustomer"/>
     </request-map>
+    
+    <request-map uri="NewOrganization"><security https="true" auth="true"/><response name="success" type="view" value="NewOrganization"/></request-map>
+    <request-map uri="createOrganization">
+        <security https="true" auth="true"/>
+        <event type="simple" path="component://clparty/script/org/ofbiz/party/user/UserEvents.xml" invoke="createOrganization"/>
+        <response name="success" type="view" value="viewprofile"/>
+        <response name="error" type="view" value="NewOrganization"/>
+    </request-map>    
 
     <request-map uri="NewProspect"><security https="true" auth="true"/><response name="success" type="view" value="NewProspect"/></request-map>
     <request-map uri="createProspect">
@@ -1312,6 +1320,7 @@ under the License.
 
     <view-map name="CreateNewParty" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#CreateNewParty"/>
     <view-map name="NewCustomer" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#NewCustomer"/>
+    <view-map name="NewOrganization" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#NewOrganization"/>
     <view-map name="NewProspect" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#NewProspect"/>
     <view-map name="NewEmployee" type="screen" page="component://clparty/widget/clpartymgr/PartyScreens.xml#NewEmployee"/>
 

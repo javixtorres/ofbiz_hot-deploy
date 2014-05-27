@@ -23,7 +23,7 @@
     <screen name="Party">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="parameters.partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-and entity-name="PartyNameHistory" list="partyNameHistoryList">
                     <field-map field-name="partyId" from-field="parameters.partyId"/>
@@ -134,7 +134,7 @@
     <screen name="Contact">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetContactMechs.groovy"/>
                 <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetUserLoginPrimaryEmail.groovy"/>
@@ -152,7 +152,7 @@
     <screen name="PartyIdentifications">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId"/>
             </actions>
             <widgets>
@@ -167,7 +167,7 @@
     <screen name="PaymentMethods">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetPaymentMethods.groovy"/>
             </actions>
@@ -184,7 +184,7 @@
     <screen name="Attributes">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-one entity-name="Party" value-field="party"/>
                 <entity-and entity-name="PartyAttribute" list="attributes">
@@ -204,7 +204,7 @@
     <screen name="AvsSettings">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-one entity-name="Party" value-field="party"/>
                 <entity-and entity-name="PartyIcsAvsOverride" list="avsOverride">
@@ -239,7 +239,7 @@
     <screen name="LoyaltyPoints">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetLoyaltyPoints.groovy"/>
             </actions>
             <widgets>
@@ -255,7 +255,7 @@
     <screen name="UserLogin">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-one entity-name="Party" value-field="party"/>
                 <entity-and entity-name="UserLogin" list="userLogins">
@@ -275,7 +275,7 @@
     <screen name="Visits">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-and entity-name="Visit" list="visits">
                     <field-map field-name="partyId" from-field="partyId"/>
@@ -420,7 +420,7 @@
     <screen name="Content">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition entity-name="PartyContentType" list="partyContentTypes">
                     <order-by field-name="description"/>
                 </entity-condition>
@@ -466,7 +466,7 @@
     <screen name="Notes">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-and entity-name="PartyNoteView" list="notes">
                     <field-map field-name="targetPartyId" from-field="partyId"/>
@@ -509,7 +509,7 @@
     <screen name="partyRelContacts">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-one entity-name="Party" value-field="party"></entity-one>
                 <entity-and list="contacts" entity-name="PartyRelationship" filter-by-date="true">
                     <field-map field-name="partyIdFrom" from-field="parameters.partyId"/>
@@ -545,7 +545,7 @@
     <screen name="partyRelAccounts">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-and list="accounts" entity-name="PartyRelationship" filter-by-date="true">
                     <field-map field-name="partyIdTo" from-field="parameters.partyId"/>
                     <field-map field-name="roleTypeIdFrom" value="ACCOUNT"/>
@@ -615,7 +615,7 @@
     <screen name="ProductStores">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
                 <entity-and entity-name="ProductStoreRole" list="productStoreRoles" filter-by-date="true">

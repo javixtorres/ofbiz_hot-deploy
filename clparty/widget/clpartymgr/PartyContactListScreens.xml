@@ -56,7 +56,7 @@ under the License.
         <section>
             <actions>
                 <property-map resource="MarketingUiLabels" map-name="uiLabelMap"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="tabButtonItem" value="ContactList"/>
                 <set field="labelTitleProperty" value="${uiLabelMap.PageTitleListContactList}"/>
                 <set field="title" value="${uiLabelMap.PageTitleListContactList}"/>

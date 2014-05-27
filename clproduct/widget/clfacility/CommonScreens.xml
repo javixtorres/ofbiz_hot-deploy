@@ -27,9 +27,9 @@ under the License.
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductErrorUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="WebtoolsUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <set field="layoutSettings.companyName" from-field="uiLabelMap.FacilityCompanyName" global="true"/>

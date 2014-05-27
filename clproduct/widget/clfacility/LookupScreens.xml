@@ -76,7 +76,7 @@ under the License.
     <screen name="LookupShipment">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.ProductLookupShipment}"/>
                 <set field="queryString" from-field="result.queryString"/>

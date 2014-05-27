@@ -19,6 +19,12 @@
     under the License.
 -->
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <property key="PartyCardId">
+        <value xml:lang="es">C.I.</value>
+    </property>   
+    <property key="PartyExternalId">
+        <value xml:lang="es">R.U.C.</value>
+    </property> 
     <property key="FormFieldTitle_annualRevenue">
         <value xml:lang="de">Jahresumsatz</value>
         <value xml:lang="en">Annual revenue</value>
@@ -513,7 +519,8 @@
     <property key="FormFieldTitle_groupName">
         <value xml:lang="de">Gruppenname</value>
         <value xml:lang="en">Group Name</value>
-        <value xml:lang="es">Nombre del grupo</value>
+<!--         <value xml:lang="es">Nombre del grupo</value> -->
+        <value xml:lang="es">Nombre de Organización</value>
         <value xml:lang="fr">Nom du groupe d'acteurs</value>
         <value xml:lang="hi_IN">समूह का नाम</value>
         <value xml:lang="it">Nome gruppo</value>
@@ -9246,7 +9253,8 @@
     <property key="PartyOrganizationPartyId">
         <value xml:lang="de">Organisation Akteur ID</value>
         <value xml:lang="en">Organization Party ID</value>
-        <value xml:lang="es">Código de participante</value>
+<!--         <value xml:lang="es">Código de participante</value> -->
+        <value xml:lang="es">Código Interno</value>
         <value xml:lang="fr">Organisation de l'acteur</value>
         <value xml:lang="hi_IN">संगठन पार्टी क्रमांक</value>
         <value xml:lang="it">Codice Organizzazione</value>
@@ -9460,7 +9468,8 @@
     <property key="PartyPartyGroupName">
         <value xml:lang="de">Akteurgruppe Namen</value>
         <value xml:lang="en">Party Group Name</value>
-        <value xml:lang="es">Nombre del grupo</value>
+<!--         <value xml:lang="es">Nombre del grupo</value> -->
+        <value xml:lang="es">Nombre de Organización</value>
         <value xml:lang="fr">Nom du groupe d'acteurs</value>
         <value xml:lang="hi_IN">पार्टी समूह का नाम</value>
         <value xml:lang="it">Nome gruppo soggetti</value>
@@ -9529,7 +9538,8 @@
         <value xml:lang="ar">دليل الصلة</value>
         <value xml:lang="de">Akteur ID</value>
         <value xml:lang="en">Party ID</value>
-        <value xml:lang="es">Código de participante</value>
+<!--         <value xml:lang="es">Código de participante</value> -->
+        <value xml:lang="es">Código Interno</value>
         <value xml:lang="fr">Acteur</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक</value>
         <value xml:lang="it">Codice soggetto</value>
@@ -9548,7 +9558,8 @@
     <property key="PartyPartyIdMissing">
         <value xml:lang="de">Akteur ID fehlt</value>
         <value xml:lang="en">Party ID missing</value>
-        <value xml:lang="es">Falta el código de participante</value>
+<!--         <value xml:lang="es">Falta el código de participante</value> -->
+        <value xml:lang="es">Falta el código interno</value>
         <value xml:lang="fr">Acteur disparu</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक गायब है</value>
         <value xml:lang="it">Soggetto mancante</value>

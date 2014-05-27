@@ -23,7 +23,7 @@ under the License.
     <screen name="CreatePartyNotification">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PartyNotificationMailCreate}"/>
             </actions>
             <widgets>
@@ -34,7 +34,7 @@ under the License.
     <screen name="ChangePersonalInfoNotification">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PartyNotificationMailChange}"/>
             </actions>
             <widgets>
@@ -45,7 +45,7 @@ under the License.
     <screen name="VerifyEmailAddressNotification">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PartyNotificationMailVerification}"/>
             </actions>
             <widgets>
@@ -56,7 +56,7 @@ under the License.
     <screen name="AccountActivatedNotification">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PartyNotificationMailActivated}"/>
             </actions>
             <widgets>

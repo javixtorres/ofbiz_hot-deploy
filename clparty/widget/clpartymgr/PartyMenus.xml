@@ -232,6 +232,9 @@
         <menu-item name="create-customer" title="${uiLabelMap.PartyCreateNewCustomer}">
             <link target="NewCustomer"/>
         </menu-item>
+        <menu-item name="create-organization" title="Nueva Organizacion">
+            <link target="NewOrganization"/>
+        </menu-item>
         <!-- 
         <menu-item name="create-prospect" title="${uiLabelMap.PartyCreateNewProspect}">
             <link target="NewProspect"/>

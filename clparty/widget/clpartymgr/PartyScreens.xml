@@ -206,7 +206,7 @@ under the License.
         <section>
             <actions>
                 <property-map map-name="uiLabelMap" resource="CommonUiLabels"/>
-                <property-map map-name="uiLabelMap" resource="PartyUiLabels"/>
+                <property-map map-name="uiLabelMap" resource="CLPartyUiLabels"/>
             </actions>
             <widgets>
                 <label style="h2">${uiLabelMap.PartyAddToSecondRole}</label>
@@ -723,6 +723,51 @@ under the License.
                                 <platform-specific><html><html-template location="component://common/webcommon/includes/setDependentDropdownValuesJs.ftl"/></html></platform-specific>
                                 <screenlet title="${uiLabelMap.PartyCreateNewCustomer}">
                                     <include-form name="NewUser" location="component://clparty/widget/clpartymgr/PartyForms.xml"/>
+                                </screenlet>
+                            </widgets>
+                            <fail-widgets>
+                                <label style="h3">${uiLabelMap.PartyMgrCreatePermissionError}</label>
+                            </fail-widgets>
+                        </section>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
+	<!-- New Organization Party Screen -->
+    <screen name="NewOrganization">
+        <section>
+            <actions>
+                <set field="titleProperty" value="PartyCreateNewCustomer"/>
+                <set field="headerItem" value="find"/>
+                <set field="target" value="createOrganization"/>
+                <set field="previousParams" from-field="_PREVIOUS_PARAMS_" from-scope="user"/>
+                <property-to-field field="defaultCountryGeoId" resource="general" property="country.geo.id.default" default="PRY"/>
+            </actions>
+            <widgets>
+                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                    <decorator-section name="body">
+                        <section>
+                            <condition>
+                                <if-has-permission permission="PARTYMGR" action="_CREATE"/>
+                            </condition>
+                            <actions>
+                                <!-- fields for setDependentDropdownValuesJs.ftl -->
+                                <set field="dependentForm" value="NewGroup"/>
+                                <set field="paramKey" value="countryGeoId"/>
+                                <set field="mainId" value="USER_COUNTRY"/>
+                                <set field="dependentId" value="USER_STATE"/>
+                                <set field="requestName" value="getAssociatedStateList"/>
+                                <set field="responseName" value="stateList"/>
+                                <set field="dependentKeyName" value="geoId"/>
+                                <set field="descName" value="geoName"/>
+                                <set field="selectedDependentOption" value="_none_"/>
+                            </actions>
+                            <widgets>
+                                <platform-specific><html><html-template location="component://common/webcommon/includes/setDependentDropdownValuesJs.ftl"/></html></platform-specific>
+                                <screenlet title="Crear Un Nueva Organizacion">
+                                    <include-form name="NewGroup" location="component://clparty/widget/clpartymgr/PartyForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -1273,7 +1318,7 @@ under the License.
     <screen name="postalAddressHtmlFormatter">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="postalAddressTemplateSuffix" value=".ftl"/>
                 <set field="addressTemplatePath" value="${sys:getProperty('ofbiz.home')}/applications/party/webapp/partymgr/party/contactmechtemplates/"/>
                 <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetPostalAddressTemplate.groovy"/>
@@ -1290,7 +1335,7 @@ under the License.
     <screen name="postalAddressPdfFormatter">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="postalAddressTemplateSuffix" value=".fo.ftl"/>
                 <set field="addressTemplatePath" value="${sys:getProperty('ofbiz.home')}/applications/party/webapp/partymgr/party/contactmechtemplates/"/>
                 <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetPostalAddressTemplate.groovy"/>
