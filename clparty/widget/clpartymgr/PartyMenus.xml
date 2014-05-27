@@ -219,11 +219,11 @@
     </menu>
     <menu name="create-new-party" type="simple" menu-container-style="basic-nav">
 <!--         <menu-item name="create-party-group" title="${uiLabelMap.PartyCreateNewPartyGroup}"> -->
-        <menu-item name="create-party-group" title="Nueva Empresa/Grupo">
-            <link target="editpartygroup">
-                <parameter param-name="create_new" value="Y"/>
-            </link>
-        </menu-item>
+<!--         <menu-item name="create-party-group" title="Nueva Empresa/Grupo"> -->
+<!--             <link target="editpartygroup"> -->
+<!--                 <parameter param-name="create_new" value="Y"/> -->
+<!--             </link> -->
+<!--         </menu-item> -->
         <!--<menu-item name="create-person" title="${uiLabelMap.PartyCreateNewPerson}">
             <link target="editperson">
                 <parameter param-name="create_new" value="Y"/>
@@ -232,7 +232,7 @@
         <menu-item name="create-customer" title="${uiLabelMap.PartyCreateNewCustomer}">
             <link target="NewCustomer"/>
         </menu-item>
-        <menu-item name="create-organization" title="Nueva Organizacion">
+        <menu-item name="create-organization" title="${uiLabelMap.PartyCreateNewPartyGroup} (Proveedor)">
             <link target="NewOrganization"/>
         </menu-item>
         <!-- 

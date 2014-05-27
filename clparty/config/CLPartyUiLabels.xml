@@ -5302,7 +5302,8 @@
         <value xml:lang="de">Neue Akteurgruppe erstellen</value>
         <value xml:lang="en">Create New Party Group</value>
         <!--  <value xml:lang="es">Nuevo grupo de participantes</value> -->
-        <value xml:lang="es">Nueva Empresa/Grupo</value>
+<!--         <value xml:lang="es">Nueva Empresa/Grupo</value> -->
+        <value xml:lang="es">Nueva Organización</value>
         <value xml:lang="fr">Créer un nouveau groupe d'acteurs</value>
         <value xml:lang="hi_IN">पार्टी का नया समूह बनाएँ</value>
         <value xml:lang="it">Creare nuovo gruppo soggetto</value>
