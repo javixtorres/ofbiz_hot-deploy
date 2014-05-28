@@ -5194,7 +5194,7 @@
     <property key="PartyCreateNewCustomer">
         <value xml:lang="de">Neuen Kunde erstellen</value>
         <value xml:lang="en">Create Customer</value>
-        <value xml:lang="es">Nuevo cliente</value>
+        <value xml:lang="es">Nuevo Cliente</value>
         <value xml:lang="fr">Créer un nouveau client</value>
         <value xml:lang="hi_IN">ग्राहक बनाएँ</value>
         <value xml:lang="it">Creare soggetto</value>
@@ -5339,7 +5339,7 @@
     <property key="PartyCreateNewProspect">
         <value xml:lang="de">Neuen potentiellen Kunden erstellen</value>
         <value xml:lang="en">Create Prospect</value>
-        <value xml:lang="es">Nuevo cliente potencial</value>
+        <value xml:lang="es">Nuevo Cliente Potencial</value>
         <value xml:lang="fr">Créer un nouveau prospect</value>
         <value xml:lang="hi_IN">संभावना बनाएँ</value>
         <value xml:lang="it">Creare prospetto</value>
