@@ -46,6 +46,10 @@ under the License.
             </else>
         </if-empty>
         <field-to-result field="payment.paymentId" result-name="paymentId"/>
+        
+        <if-not-empty field="parameters.paymentComments">
+                <set field="payment.comments" from-field="parameters.paymentComments"/>
+        </if-not-empty>
 
         <if-not-empty field="parameters.paymentMethodId">
             <entity-one entity-name="PaymentMethod" value-field="paymentMethod">
@@ -1022,7 +1026,7 @@ under the License.
       
         <!-- Modificaciones para tener en cuenta las cuotas . . . . -->
         
-                <clear-field field="parameters.paymentId"/>
+        <clear-field field="parameters.paymentId"/>
 
         <entity-and list="orderTermList0" entity-name="OrderTerm">
             <field-map field-name="orderId" from-field="orderHeader.orderId"/>
@@ -1131,6 +1135,10 @@ under the License.
         <set field="parameters.partyIdTo" from-field="orderRoleTo.partyId"/>
         <set field="parameters.paymentMethodTypeId" value="COMPANY_ACCOUNT"/>
         <set field="parameters.statusId" value="PMNT_NOT_PAID"/>
+        
+        <!-- Agregar Comentarios al Pago -->
+        <set field="parameters.paymentComments"  from-field="orderTerm.termText"/>
+                
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
             <result-to-field result-name="paymentId" field="parameters.paymentId"/>
@@ -1139,6 +1147,7 @@ under the License.
         
 <!--         <set field="parameters.maxAmount" from-field="orderHeader.grandTotal"/> -->
         <set field="parameters.maxAmount"  from-field="orderTerm.termValue" type="BigDecimal"/>
+        
 
         <set-service-fields service-name="createOrderPaymentPreference" to-map="newOrderPaymentPreference" map="parameters"/>
         <call-service service-name="createOrderPaymentPreference" in-map-name="newOrderPaymentPreference">
@@ -1151,7 +1160,8 @@ under the License.
         
         
         <clear-field field="parameters.paymentId"/>
-
+        <clear-field field="parameters.paymentComments"/>
+        
 </iterate>
      
         
