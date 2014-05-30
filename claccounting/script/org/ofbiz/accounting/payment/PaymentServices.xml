@@ -47,10 +47,6 @@ under the License.
         </if-empty>
         <field-to-result field="payment.paymentId" result-name="paymentId"/>
         
-        <if-not-empty field="parameters.paymentComments">
-                <set field="payment.comments" from-field="parameters.paymentComments"/>
-        </if-not-empty>
-
         <if-not-empty field="parameters.paymentMethodId">
             <entity-one entity-name="PaymentMethod" value-field="paymentMethod">
                 <field-map field-name="paymentMethodId" from-field="parameters.paymentMethodId"/>
@@ -81,6 +77,23 @@ under the License.
         <if-empty field="payment.effectiveDate">
             <now-timestamp field="payment.effectiveDate"/>
         </if-empty>
+        
+<!--         <if-not-empty field="parameters.paymentComments"> -->
+<!--                 <set field="payment.comments" from-field="parameters.paymentComments"/> -->
+<!--         </if-not-empty> -->
+        
+<!--         <if-not-empty field="parameters.paymentAmount"> -->
+<!--                 <set field="payment.amount" from-field="parameters.paymentAmount"/> -->
+<!--         </if-not-empty> -->
+
+<!--         <if-not-empty field="parameters.paymentComments"> -->
+<!--                 <set field="payment.comments" from-field="parameters.comments"/> -->
+<!--         </if-not-empty> -->
+        
+<!--         <if-not-empty field="parameters.paymentAmount"> -->
+<!--                 <set field="payment.amount" from-field="parameters.amount"/> -->
+<!--         </if-not-empty> -->
+        
         <create-value value-field="payment"/>
     </simple-method>
     <simple-method method-name="updatePayment" short-description="Update a Payment">
@@ -1033,7 +1046,7 @@ under the License.
             <field-map field-name="termTypeId" value="CRD_CUOTA"/>
         </entity-and>
         
-<iterate list="orderTermList0" entry="orderTerm">
+<iterate list="orderTermList0" entry="orderTerm0">
 
         <entity-and list="orderRoleToList" entity-name="OrderRole">
             <field-map field-name="orderId" from-field="orderHeader.orderId"/>
@@ -1137,7 +1150,10 @@ under the License.
         <set field="parameters.statusId" value="PMNT_NOT_PAID"/>
         
         <!-- Agregar Comentarios al Pago -->
-        <set field="parameters.paymentComments"  from-field="orderTerm.termText"/>
+<!--         <set field="parameters.paymentComments"  from-field="orderTerm.textValue"/> -->
+<!--         <set field="parameters.paymentAmount"  from-field="orderTerm.termValue"/> -->
+        <set field="parameters.comments"  from-field="orderTerm0.textValue"/>
+        <set field="parameters.amount"  from-field="orderTerm0.termValue"/>
                 
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
@@ -1146,8 +1162,8 @@ under the License.
         <set field="parameters.orderId" from-field="orderHeader.orderId"/>
         
 <!--         <set field="parameters.maxAmount" from-field="orderHeader.grandTotal"/> -->
-        <set field="parameters.maxAmount"  from-field="orderTerm.termValue" type="BigDecimal"/>
-        
+        <set field="parameters.maxAmount"  from-field="orderTerm0.termValue"/>
+
 
         <set-service-fields service-name="createOrderPaymentPreference" to-map="newOrderPaymentPreference" map="parameters"/>
         <call-service service-name="createOrderPaymentPreference" in-map-name="newOrderPaymentPreference">
@@ -1160,7 +1176,10 @@ under the License.
         
         
         <clear-field field="parameters.paymentId"/>
-        <clear-field field="parameters.paymentComments"/>
+<!--         <clear-field field="parameters.paymentComments"/> -->
+<!--         <clear-field field="parameters.paymentAmount"/> -->
+		<clear-field field="parameters.comments"/>
+        <clear-field field="parameters.amount"/>        
         
 </iterate>
      
