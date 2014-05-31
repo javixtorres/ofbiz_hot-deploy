@@ -984,6 +984,7 @@ under the License.
             <now-timestamp field="parameters.effectiveDate"/>
         </if-empty>
         
+   
         <!-- check currency and when required use invoice currency rate or convert when invoice not available -->
         <set field="partyAccountingPreferencesMap.organizationPartyId" from-field="organizationPartyId"/>
         <call-service service-name="getPartyAccountingPreferences" in-map-name="partyAccountingPreferencesMap">
@@ -1019,6 +1020,9 @@ under the License.
         <set field="parameters.partyIdTo" from-field="orderRoleTo.partyId"/>
         <set field="parameters.paymentMethodTypeId" value="COMPANY_ACCOUNT"/>
         <set field="parameters.statusId" value="PMNT_NOT_PAID"/>
+        
+ <if-empty field="orderHeader.billingAccountId">
+        
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
             <result-to-field result-name="paymentId" field="parameters.paymentId"/>
@@ -1036,123 +1040,105 @@ under the License.
         <field-to-result field="parameters.paymentId" result-name="paymentId"/>
         <log level="info" message="payment ${parameters.paymentId} with the not-paid status automatically created from order: ${parameters.orderId} (can be disabled in CLAccountingConfig.properties)"/>
 
+		<return/>
+</if-empty>
       
-        <!-- Modificaciones para tener en cuenta las cuotas . . . . -->
+ <!-- Modificaciones para tener en cuenta las cuotas . . . . -->
         
-        <clear-field field="parameters.paymentId"/>
+<!--         <clear-field field="parameters.paymentId"/> -->
+
+<!--         <entity-and list="orderRoleToList" entity-name="OrderRole"> -->
+<!--             <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
+<!--             <field-map field-name="roleTypeId" value="BILL_FROM_VENDOR"/> -->
+<!--         </entity-and> -->
+<!--         <first-from-list entry="orderRoleTo" list="orderRoleToList"/> -->
+<!--         <entity-and list="orderRoleFromList" entity-name="OrderRole"> -->
+<!--             <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
+<!--             <field-map field-name="roleTypeId" value="BILL_TO_CUSTOMER"/> -->
+<!--         </entity-and> -->
+<!--         <first-from-list entry="orderRoleFrom" list="orderRoleFromList"/> -->
+<!--         <if-compare operator="equals" value="PURCHASE_ORDER" field="orderHeader.orderTypeId"> -->
+<!--             <entity-and list="agreementList" entity-name="Agreement" filter-by-date="true"> -->
+<!--                 <field-map field-name="partyIdFrom" from-field="orderRoleFrom.partyId"/> -->
+<!--                 <field-map field-name="partyIdTo" from-field="orderRoleTo.partyId"/> -->
+<!--                 <field-map field-name="agreementTypeId" value="PURCHASE_AGREEMENT"/> -->
+<!--             </entity-and> -->
+<!--             <set field="parameters.paymentTypeId" value="VENDOR_PAYMENT"/> -->
+<!--             <set field="organizationPartyId" from-field="orderRoleFrom.partyId"/> -->
+<!--             <else> -->
+<!--                <entity-and list="agreementList" entity-name="Agreement" filter-by-date="true"> -->
+<!--                     <field-map field-name="partyIdFrom" from-field="orderRoleFrom.partyId"/> -->
+<!--                     <field-map field-name="partyIdTo" from-field="orderRoleTo.partyId"/> -->
+<!--                     <field-map field-name="agreementTypeId" value="SALES_AGREEMENT"/> -->
+<!--                 </entity-and> -->
+<!--                 <set field="parameters.paymentTypeId" value="CUSTOMER_PAYMENT"/> -->
+<!--                 <set field="organizationPartyId" from-field="orderRoleTo.partyId"/> -->
+<!--             </else> -->
+<!--         </if-compare> -->
+<!--         <first-from-list entry="agreement" list="agreementList"/> -->
+<!--         <if-not-empty field="agreement"> -->
+<!--             <entity-and list="orderTermList" entity-name="OrderTerm"> -->
+<!--                 <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
+<!--                 <field-map field-name="termTypeId" value="FIN_PAYMENT_TERM"/> -->
+<!--             </entity-and> -->
+<!--             <first-from-list entry="orderTerm" list="orderTermList"/> -->
+<!--             <if-not-empty field="orderTerm.termDays"> -->
+<!--                 <set field="days" from-field="orderTerm.termDays" type="Integer"/> -->
+<!--                 <now-timestamp field="start"/> -->
+<!--                 <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="parameters.effectiveDate"> -->
+<!--                     <field field="start" type="java.sql.Timestamp"/> -->
+<!--                     <field field="days" type="int"/> -->
+<!--                 </call-class-method> -->
+<!--             </if-not-empty> -->
+<!--         </if-not-empty> -->
+            
+<!--         <if-empty field="parameters.effectiveDate"> -->
+<!--             <now-timestamp field="parameters.effectiveDate"/> -->
+<!--         </if-empty> -->
+        <entity-and list="orderTermList1" entity-name="OrderTerm">
+            <field-map field-name="orderId" from-field="orderHeader.orderId"/>
+            <field-map field-name="termTypeId" value="CRD_ANTICIPO"/>
+        </entity-and>
+
+	<first-from-list list="orderTermList1" entry="orderTerm1"/>
+        
+	<if-not-empty field="orderTerm1">
+<!-- 	    <set field="parameters.comments"  from-field="orderTerm1.textValue"/> -->
+	    <set field="parameters.comments"  value="${orderHeader.orderName} - Anticipo"/>
+        <set field="parameters.amount"  from-field="orderTerm1.termValue"/>
+        
+        <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
+        <call-service service-name="createPayment" in-map-name="createPayment">
+            <result-to-field result-name="paymentId" field="parameters.paymentId"/>
+        </call-service>
+        <set field="parameters.orderId" from-field="orderHeader.orderId"/>
+        
+        <set field="parameters.maxAmount" from-field="orderTerm1.termValue"/> 
+
+        <set-service-fields service-name="createOrderPaymentPreference" to-map="newOrderPaymentPreference" map="parameters"/>
+        <call-service service-name="createOrderPaymentPreference" in-map-name="newOrderPaymentPreference">
+            <result-to-field result-name="orderPaymentPreferenceId" field="parameters.paymentPreferenceId"/>
+        </call-service>
+        <set-service-fields service-name="updatePayment" to-map="updatePayment" map="parameters"/>
+        <call-service service-name="updatePayment" in-map-name="updatePayment"/>
+        <field-to-result field="parameters.paymentId" result-name="paymentId"/>
+        <log level="info" message="payment ${parameters.paymentId} with the not-paid status automatically created from order: ${parameters.orderId} (can be disabled in CLAccountingConfig.properties)"/>
+        
+	</if-not-empty> 
 
         <entity-and list="orderTermList0" entity-name="OrderTerm">
             <field-map field-name="orderId" from-field="orderHeader.orderId"/>
             <field-map field-name="termTypeId" value="CRD_CUOTA"/>
         </entity-and>
+
         
 <iterate list="orderTermList0" entry="orderTerm0">
 
-        <entity-and list="orderRoleToList" entity-name="OrderRole">
-            <field-map field-name="orderId" from-field="orderHeader.orderId"/>
-            <field-map field-name="roleTypeId" value="BILL_FROM_VENDOR"/>
-        </entity-and>
-        <first-from-list entry="orderRoleTo" list="orderRoleToList"/>
-        <entity-and list="orderRoleFromList" entity-name="OrderRole">
-            <field-map field-name="orderId" from-field="orderHeader.orderId"/>
-            <field-map field-name="roleTypeId" value="BILL_TO_CUSTOMER"/>
-        </entity-and>
-        <first-from-list entry="orderRoleFrom" list="orderRoleFromList"/>
-        <if-compare operator="equals" value="PURCHASE_ORDER" field="orderHeader.orderTypeId">
-            <entity-and list="agreementList" entity-name="Agreement" filter-by-date="true">
-                <field-map field-name="partyIdFrom" from-field="orderRoleFrom.partyId"/>
-                <field-map field-name="partyIdTo" from-field="orderRoleTo.partyId"/>
-                <field-map field-name="agreementTypeId" value="PURCHASE_AGREEMENT"/>
-            </entity-and>
-            <set field="parameters.paymentTypeId" value="VENDOR_PAYMENT"/>
-            <set field="organizationPartyId" from-field="orderRoleFrom.partyId"/>
-            <else>
-               <entity-and list="agreementList" entity-name="Agreement" filter-by-date="true">
-                    <field-map field-name="partyIdFrom" from-field="orderRoleFrom.partyId"/>
-                    <field-map field-name="partyIdTo" from-field="orderRoleTo.partyId"/>
-                    <field-map field-name="agreementTypeId" value="SALES_AGREEMENT"/>
-                </entity-and>
-                <set field="parameters.paymentTypeId" value="CUSTOMER_PAYMENT"/>
-                <set field="organizationPartyId" from-field="orderRoleTo.partyId"/>
-            </else>
-        </if-compare>
-        <first-from-list entry="agreement" list="agreementList"/>
-        <if-not-empty field="agreement">
-            <entity-and list="orderTermList" entity-name="OrderTerm">
-                <field-map field-name="orderId" from-field="orderHeader.orderId"/>
-                <field-map field-name="termTypeId" value="FIN_PAYMENT_TERM"/>
-            </entity-and>
-            <first-from-list entry="orderTerm" list="orderTermList"/>
-            <if-not-empty field="orderTerm.termDays">
-                <set field="days" from-field="orderTerm.termDays" type="Integer"/>
-                <now-timestamp field="start"/>
-                <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="parameters.effectiveDate">
-                    <field field="start" type="java.sql.Timestamp"/>
-                    <field field="days" type="int"/>
-                </call-class-method>
-            </if-not-empty>
-        </if-not-empty>
+ 		<clear-field field="parameters.paymentId"/>
         
-<!-- Agregado para Cargar Fecha -->
-<!--         <if-empty field="parameters.effectiveDate"> -->
-<!--             <entity-and list="orderTermList" entity-name="OrderTerm"> -->
-<!--                 <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
-<!--                 <field-map field-name="termTypeId" value="CRD_FECHA_INI"/> -->
-<!--             </entity-and> -->
-<!--             <first-from-list entry="orderTerm" list="orderTermList"/> -->
-<!--             <if-not-empty field="orderTerm.textValue"> -->
-<!--                 <set field="dayTXT" from-field="orderTerm.textValue" type="String"/> -->
-<!--                 <now-timestamp field="start"/> -->
-<!--                 <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="toTimestamp" ret-field="parameters.effectiveDate"> -->
-<!--                     <field field="dayTXT" type="String"/> -->
-<!--                 </call-class-method> -->
-<!--             </if-not-empty> -->
-<!--         </if-empty> -->
-            
-        <if-empty field="parameters.effectiveDate">
-            <now-timestamp field="parameters.effectiveDate"/>
-        </if-empty>
-        
-        <!-- check currency and when required use invoice currency rate or convert when invoice not available -->
-        <set field="partyAccountingPreferencesMap.organizationPartyId" from-field="organizationPartyId"/>
-        <call-service service-name="getPartyAccountingPreferences" in-map-name="partyAccountingPreferencesMap">
-             <result-to-field result-name="partyAccountingPreference" field="partyAcctgPreference"/>
-        </call-service>
-        <if-compare-field to-field="partyAcctgPreference.baseCurrencyUomId" operator="equals" field="orderHeader.currencyUom">
-            <set field="parameters.currencyUomId" from-field="orderHeader.currencyUom"/>
-            <set field="parameters.amount" from-field="orderHeader.grandTotal"/>
-            <else>
-            	<!-- get conversion rate from related invoice when exists -->
-            	<entity-and list="invoices" entity-name="OrderItemBillingAndInvoiceAndItem">
-            		<field-map field-name="orderId" from-field="orderId"/>
-            	</entity-and>
-            	<if-not-empty field="invoices">
-            		<entity-one entity-name="Invoice" value-field="invoice">
-            			<field-map field-name="invoiceId" from-field="invoices[0].invoiceId"/>
-            		</entity-one>
-                	<set field="convertUomInMap.asOfDate" from-field="invoice.invoiceDate"/>
-            	</if-not-empty>
-                <set field="convertUomInMap.originalValue" from-field="orderHeader.grandTotal"/>
-                <set field="convertUomInMap.uomId" from-field="orderHeader.currencyUom"/>
-                <set field="convertUomInMap.uomIdTo" from-field="partyAcctgPreference.baseCurrencyUomId"/>
-                <call-service service-name="convertUom" in-map-name="convertUomInMap">
-                    <result-to-field result-name="convertedValue" field="parameters.amount"/>
-                </call-service>
-                <set field="parameters.actualCurrencyAmount" from-field="orderHeader.grandTotal"/>
-                <set field="parameters.actualCurrencyUomId" from-field="orderHeader.currencyUom"/>
-                <set field="parameters.currencyUomId" from-field="partyAcctgPreference.baseCurrencyUomId"/>
-            </else>
-        </if-compare-field>
-        
-        <set field="parameters.partyIdFrom" from-field="orderRoleFrom.partyId"/>
-        <set field="parameters.partyIdTo" from-field="orderRoleTo.partyId"/>
-        <set field="parameters.paymentMethodTypeId" value="COMPANY_ACCOUNT"/>
-        <set field="parameters.statusId" value="PMNT_NOT_PAID"/>
-        
-        <!-- Agregar Comentarios al Pago -->
-<!--         <set field="parameters.paymentComments"  from-field="orderTerm.textValue"/> -->
-<!--         <set field="parameters.paymentAmount"  from-field="orderTerm.termValue"/> -->
-        <set field="parameters.comments"  from-field="orderTerm0.textValue"/>
+ <!-- Agregar Comentarios al Pago -->
+<!--         <set field="parameters.comments"  from-field="orderTerm0.textValue"/> -->
+        <set field="parameters.comments"  value="${orderHeader.orderName} - Cuota ${orderTerm0.textValue}"/>
         <set field="parameters.amount"  from-field="orderTerm0.termValue"/>
                 
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
@@ -1160,10 +1146,8 @@ under the License.
             <result-to-field result-name="paymentId" field="parameters.paymentId"/>
         </call-service>
         <set field="parameters.orderId" from-field="orderHeader.orderId"/>
-        
-<!--         <set field="parameters.maxAmount" from-field="orderHeader.grandTotal"/> -->
+ <!-- Agregar Monto de la cuota -->       
         <set field="parameters.maxAmount"  from-field="orderTerm0.termValue"/>
-
 
         <set-service-fields service-name="createOrderPaymentPreference" to-map="newOrderPaymentPreference" map="parameters"/>
         <call-service service-name="createOrderPaymentPreference" in-map-name="newOrderPaymentPreference">
@@ -1176,8 +1160,6 @@ under the License.
         
         
         <clear-field field="parameters.paymentId"/>
-<!--         <clear-field field="parameters.paymentComments"/> -->
-<!--         <clear-field field="parameters.paymentAmount"/> -->
 		<clear-field field="parameters.comments"/>
         <clear-field field="parameters.amount"/>        
         
