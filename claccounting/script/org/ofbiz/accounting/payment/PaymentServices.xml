@@ -1023,6 +1023,8 @@ under the License.
         
  <if-empty field="orderHeader.billingAccountId">
         
+        <set field="parameters.comments"  value="${orderHeader.orderName}"/>
+        
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
             <result-to-field result-name="paymentId" field="parameters.paymentId"/>
