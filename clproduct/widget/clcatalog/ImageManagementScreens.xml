@@ -36,7 +36,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementApplication}">
-                                    <include-form name="ImageGallery" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageGallery" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -60,7 +60,7 @@ under the License.
                 <decorator-screen name="ImageManagementDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ImageManagementGallery}">
-                               <include-form name="ImageGallery" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                               <include-form name="ImageGallery" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -97,8 +97,8 @@ under the License.
                                 </entity-and>-->
                                 
                                 <!--<entity-one value-field="product" entity-name="Product"/>-->
-                                <!--<script location="component://product/webapp/catalog/WEB-INF/actions/imagemanagement/seoLocales.groovy"/>-->
-                                <script location="component://product/webapp/catalog/WEB-INF/actions/imagemanagement/ImageGallery.groovy"/>
+                                <!--<script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/imagemanagement/seoLocales.groovy"/>-->
+                                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/imagemanagement/ImageGallery.groovy"/>
                             </actions>
                             <widgets>
                                 <decorator-screen name="ImageManagementDecorator" location="${parameters.mainDecoratorLocation}">
@@ -106,7 +106,7 @@ under the License.
                                         <label style="h1">${uiLabelMap.Product} ${uiLabelMap.CommonFor}: ${product.internalName} [${uiLabelMap.CommonId}:${product.productId}]</label>
                                         <screenlet title="${uiLabelMap.ImageManagementGallery}">
                                             <platform-specific>
-                                                <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageGallery.ftl"/></html>
+                                                <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageGallery.ftl"/></html>
                                             </platform-specific>
                                         </screenlet>
                                     </decorator-section>
@@ -140,7 +140,7 @@ under the License.
                         <decorator-screen name="ImageManagementDecorator" location="${parameters.mainDecoratorLocation}">
                             <decorator-section name="body">
                                 <screenlet title="${uiLabelMap.ImageManagementGallery}">
-                                    <include-form name="ImageGallery" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageGallery" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </decorator-section>
                         </decorator-screen>
@@ -156,7 +156,7 @@ under the License.
                 <set field="userTabButtonImage" value="ImageUpload"/>
                 <set field="productId" from-field="parameters.productId"/>
                 <entity-one entity-name="Product" value-field="product"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/imagemanagement/ImageUpload.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/imagemanagement/ImageUpload.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="ImageManagementDecorator" location="${parameters.mainDecoratorLocation}">
@@ -171,11 +171,11 @@ under the License.
                             <widgets>
                                 <screenlet title="${uiLabelMap.CommonUpload}">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/AddMultipleImages.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/AddMultipleImages.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                                 <screenlet title="${uiLabelMap.ImageManagementImageUploadList}">
-                                    <include-form name="ListImageUpload" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ListImageUpload" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -220,10 +220,10 @@ under the License.
                             </condition>
                             <widgets>
                                 <platform-specific>
-                                    <html><html-template location="component://product/webapp/catalog/imagemanagement/showPeopleApprove.ftl"/></html>
+                                    <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/showPeopleApprove.ftl"/></html>
                                 </platform-specific>
                                 <screenlet title="${uiLabelMap.ImageManagementApprove}">
-                                    <include-form name="ImageApprove" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageApprove" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -271,10 +271,10 @@ under the License.
                             </condition>
                             <widgets>
                                 <platform-specific>
-                                    <html><html-template location="component://product/webapp/catalog/imagemanagement/showPeopleApprove.ftl"/></html>
+                                    <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/showPeopleApprove.ftl"/></html>
                                 </platform-specific>
                                 <screenlet title="${uiLabelMap.CommonApproved}">
-                                    <include-form name="ListPeopleApproved" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ListPeopleApproved" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -318,7 +318,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.CommonRejected}">
-                                    <include-form name="ImageRejected" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageRejected" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -364,10 +364,10 @@ under the License.
                             </condition>
                             <widgets>
                                 <platform-specific>
-                                    <html><html-template location="component://product/webapp/catalog/imagemanagement/showPeopleApprove.ftl"/></html>
+                                    <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/showPeopleApprove.ftl"/></html>
                                 </platform-specific>
                                 <screenlet title="${uiLabelMap.CommonRejected}">
-                                    <include-form name="ListPeopleRejected" location="component://product/widget/catalog/ImageManagementForms.xml"/>    
+                                    <include-form name="ListPeopleRejected" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>    
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -394,7 +394,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.CommonManage}">
-                                    <include-form name="ImageManage" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageManage" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -432,10 +432,10 @@ under the License.
                                     <widgets>
                                         <label style="h1">${uiLabelMap.Product} ${uiLabelMap.CommonFor}: ${product.internalName} [${uiLabelMap.CommonId}:${product.productId}]</label>
                                         <screenlet title="${uiLabelMap.CommonManage}">
-                                            <include-form name="ListImageManage" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                            <include-form name="ListImageManage" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                         </screenlet>
                                         <screenlet title="${uiLabelMap.ImageManagementDefaultImage}">
-                                            <include-form name="ShowDefaultImage" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                            <include-form name="ShowDefaultImage" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                         </screenlet>
                                     </widgets>
                                     <fail-widgets>
@@ -465,7 +465,7 @@ under the License.
                                     </condition>
                                     <widgets>
                                         <screenlet title="${uiLabelMap.CommonManage}">
-                                            <include-form name="ImageManage" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                            <include-form name="ImageManage" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                         </screenlet>
                                     </widgets>
                                     <fail-widgets>
@@ -496,9 +496,9 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementImageFrames}">
-                                    <include-form name="ImageFrames" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageFrames" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageFrame.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageFrame.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -534,9 +534,9 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementImageWatermarking}">
-                                    <include-form name="ImageWatermarking" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageWatermarking" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageWatermark.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageWatermark.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -566,9 +566,9 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementImageCropping}">
-                                    <include-form name="ImageCropping" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageCropping" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageCrop.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageCrop.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -599,11 +599,11 @@ under the License.
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementImageRotating}">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageRotateButton.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageRotateButton.ftl"/></html>
                                     </platform-specific>
-                                    <include-form name="ImageRotating" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageRotating" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageRotating.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageRotating.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -622,7 +622,7 @@ under the License.
             <actions>
                 <set field="userTabButtonImage" value="ImageGallery"/>
                 <set field="currentFormName" value="ImageShare"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
             </actions>
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
@@ -630,9 +630,9 @@ under the License.
                         <section>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementShareImage}">
-                                    <include-form name="ImageShare" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageShare" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageShare.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageShare.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -657,7 +657,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementReplace}">
-                                    <include-form name="ProductImageReplace" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ProductImageReplace" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -698,17 +698,17 @@ under the License.
                                         <label style="h1">${uiLabelMap.Product} ${uiLabelMap.CommonFor}: ${product.internalName} [${uiLabelMap.CommonId}:${product.productId}]</label>
                                         <container style="lefthalf">
                                             <screenlet title="${uiLabelMap.ImageManagementChooseReplacementImage}">
-                                                <include-form name="ListImageExist" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                                <include-form name="ListImageExist" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                             </screenlet>
                                         </container>
                                         <container style="righthalf">
                                             <screenlet title="${uiLabelMap.ImageManagementChooseImageToReplace}">
-                                                <include-form name="ListImageReplace" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                                <include-form name="ListImageReplace" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                             </screenlet>
                                         </container>
                                         <container style="clear"/>
                                         <screenlet title="${uiLabelMap.ImageManagementReplace}">
-                                            <include-form name="ImageReplace" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                            <include-form name="ImageReplace" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                         </screenlet>
                                     </widgets>
                                     <fail-widgets>
@@ -738,7 +738,7 @@ under the License.
                                     </condition>
                                     <widgets>
                                         <screenlet title="${uiLabelMap.ImageManagementReplace}">
-                                            <include-form name="ProductImageReplace" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                            <include-form name="ProductImageReplace" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                         </screenlet>
                                     </widgets>
                                     <fail-widgets>
@@ -758,7 +758,7 @@ under the License.
             <widgets>
                 <image src="${parameters.drObjectInfo}"/>
                 <platform-specific>
-                    <html><html-template location="component://product/webapp/catalog/imagemanagement/ResizeImage.ftl"/></html>
+                    <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ResizeImage.ftl"/></html>
                 </platform-specific>
             </widgets>
         </section>
@@ -780,7 +780,7 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="body">
-                        <include-form name="ListLookupImage" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                        <include-form name="ListLookupImage" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -791,7 +791,7 @@ under the License.
         <section>
             <actions>
                 <set field="userTabButtonImage" value="ImageRecentlyApproved"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/imagemanagement/ImageRecentlyApproved.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/imagemanagement/ImageRecentlyApproved.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="ImageManagementDecorator" location="${parameters.mainDecoratorLocation}">
@@ -806,7 +806,7 @@ under the License.
                             <widgets>
                                 <screenlet title="${uiLabelMap.ImageManagementRecentlyApproved}">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/catalog/imagemanagement/ImageRecentlyApproved.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clcatalog/imagemanagement/ImageRecentlyApproved.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </widgets>
@@ -834,7 +834,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${parameters.productId} : ${parameters.showDate}">
-                                    <include-form name="ListImageRecentlyApproved" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ListImageRecentlyApproved" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
@@ -852,7 +852,7 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="body">
-                        <include-form name="ListLookupImageFrame" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                        <include-form name="ListLookupImageFrame" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -884,10 +884,10 @@ under the License.
                             <widgets>
                                 <!--<label style="h1">${uiLabelMap.Product} ${uiLabelMap.CommonFor}: ${product.internalName} [${uiLabelMap.CommonId}:${product.productId}]</label>-->
                                 <screenlet title="${uiLabelMap.ImageManagementThumbnailSizeExistingInProduct} : ${product.internalName} [${uiLabelMap.CommonId}:${product.productId}]">
-                                    <include-form name="SizeListOfProduct" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="SizeListOfProduct" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                                 <screenlet title="${uiLabelMap.ImageManagementResize}">
-                                    <include-form name="ImageResize" location="component://product/widget/catalog/ImageManagementForms.xml"/>
+                                    <include-form name="ImageResize" location="component://clproduct/widget/clcatalog/ImageManagementForms.xml"/>
                                 </screenlet>
                             </widgets>
                             <fail-widgets>

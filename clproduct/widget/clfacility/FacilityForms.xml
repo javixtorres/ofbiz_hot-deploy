@@ -55,7 +55,7 @@ under the License.
         <field name="selectButton" title="${uiLabelMap.CommonSubmit}"><submit button-type="button"/></field>
     </form>
 
-    <form name="FindFacilityOptions" extends="lookupFacility" extends-resource="component://product/widget/facility/FieldLookupForms.xml" target="FindFacility">
+    <form name="FindFacilityOptions" extends="lookupFacility" extends-resource="component://clproduct/widget/clfacility/FieldLookupForms.xml" target="FindFacility">
         <field name="submitButton" title="${uiLabelMap.CommonFind}"><submit button-type="button"/></field>
     </form>
 
@@ -445,7 +445,7 @@ under the License.
         odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar"
         paginate-target="${facilityInventoryByProductScreen}" override-list-size="${overrideListSize}">
         <row-actions>
-            <script location="component://product/webapp/facility/WEB-INF/actions/facility/ComputeProductSellThroughData.groovy"/>
+            <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/facility/ComputeProductSellThroughData.groovy"/>
         </row-actions>
         <field name="items" title="${uiLabelMap.ProductProductId}" widget-style="buttontext">
             <hyperlink target="EditFacilityInventoryItems" description="${productId}">

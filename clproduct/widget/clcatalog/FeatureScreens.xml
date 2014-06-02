@@ -25,7 +25,7 @@
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -38,7 +38,7 @@
                                 </or>
                             </condition>
                             <widgets>
-                                <include-menu name="FeaturesTabBar" location="component://product/widget/catalog/CatalogMenus.xml"/>
+                                <include-menu name="FeaturesTabBar" location="component://clproduct/widget/clcatalog/CatalogMenus.xml"/>
                                 <decorator-section-include name="body"/>
                             </widgets>
                             <fail-widgets>
@@ -65,19 +65,19 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ProductEditFeature} : ${productFeature.description}">
-                            <include-form name="EditProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="EditProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.PageTitleEditFeaturePrice}">
-                            <include-form name="ListFeaturePrice" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="ListFeaturePrice" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.PageTitleAddFeaturePrice}">
-                            <include-form name="CreateFeaturePrice" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="CreateFeaturePrice" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.ProductSupplierSpecificFeatureInformation}">
-                            <include-form name="EditSupplierProductFeatures" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="EditSupplierProductFeatures" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.ProductCreateInformationNewSupplier}">
-                            <include-form name="CreateSupplierProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="CreateSupplierProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -103,10 +103,10 @@
                                         </container>
                                     </decorator-section>
                                     <decorator-section name="search-options">
-                                        <include-form name="FindFeatureType" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="FindFeatureType" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                     <decorator-section name="search-results">
-                                        <include-form name="ListFeatureTypes" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="ListFeatureTypes" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                 </decorator-screen>
                             </widgets>
@@ -129,7 +129,7 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditFeatureType}">
-                            <include-form name="EditFeatureType" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="EditFeatureType" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -155,10 +155,10 @@
                                         </container>
                                     </decorator-section>
                                     <decorator-section name="search-options">
-                                        <include-form name="FindFeatureInterAction" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="FindFeatureInterAction" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                     <decorator-section name="search-results">
-                                        <include-form name="ListFeatureInterActions" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="ListFeatureInterActions" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                 </decorator-screen>
                             </widgets>
@@ -184,7 +184,7 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleAddFeatureInterAction}">
-                            <include-form name="EditFeatureInterAction" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="EditFeatureInterAction" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -202,7 +202,7 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditFeatureType}">
-                            <include-form name="CreateProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="CreateProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -218,7 +218,7 @@
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX_1" type="Integer" default-value="0"/>
                 <set field="viewSize" from-field="parameters.VIEW_SIZE_1" type="Integer" default-value="10"/>
 
-                <!--script location="component://product/webapp/catalog/WEB-INF/actions/feature/EditFeatureCategories.groovy"/-->
+                <!--script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/feature/EditFeatureCategories.groovy"/-->
             </actions>
             <widgets>
                 <decorator-screen name="CommonFeatureDecorator">
@@ -232,10 +232,10 @@
                                         </container>
                                     </decorator-section>
                                     <decorator-section name="search-options">
-                                        <include-form name="FindProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="FindProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                     <decorator-section name="search-results">
-                                        <include-form name="ListProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                                        <include-form name="ListProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                                     </decorator-section>
                                 </decorator-screen>
                             </widgets>
@@ -254,13 +254,13 @@
 
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
                 <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="50"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/feature/EditFeatureCategoryFeatures.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/feature/EditFeatureCategoryFeatures.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/feature/EditFeatureCategoryFeatures.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/feature/EditFeatureCategoryFeatures.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -274,13 +274,13 @@
                 <set field="headerItem" value="featurecats"/>
                 <set field="tabButtonItem" value="FeatureGroup"/>
 
-                <script location="component://product/webapp/catalog/WEB-INF/actions/feature/EditFeatureGroups.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/feature/EditFeatureGroups.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/feature/EditFeatureGroups.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/feature/EditFeatureGroups.ftl"/></html>
                         </platform-specific>                    </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -312,14 +312,14 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ProductEditFeatureGroupAppls}">
-                            <include-form name="ListFeatureGroupAppls" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="ListFeatureGroupAppls" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.ProductQuickApplyFeature}">
-                            <include-form name="QuickApplyFeatureToGroup" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="QuickApplyFeatureToGroup" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.ProductApplyFeaturesFromCategory}">
-                            <include-form name="ApplyFeatureCategoryToGroup" location="component://product/widget/catalog/FeatureForms.xml"/>
-                            <include-form name="ApplyFeaturesFromCategoryToGroup" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="ApplyFeatureCategoryToGroup" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
+                            <include-form name="ApplyFeaturesFromCategoryToGroup" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -334,13 +334,13 @@
                 <set field="featureNum" from-field="parameters.featureNum" type="Integer"/>
                 <set field="productFeatureCategoryId" from-field="parameters.productFeatureCategoryId"/>
                 <set field="tabButtonItem" value="FeatureCategory"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/feature/QuickAddProductFeatures.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/feature/QuickAddProductFeatures.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/feature/BulkAddFeature.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/feature/BulkAddFeature.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -358,10 +358,10 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditFeaturePrice}">
-                            <include-form name="ListFeaturePrice" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="ListFeaturePrice" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.PageTitleAddFeaturePrice}">
-                            <include-form name="CreateFeaturePrice" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="CreateFeaturePrice" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -374,7 +374,7 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ProductQuickApplyFeature}">
-                            <include-form name="CreateFeaturePrice" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="CreateFeaturePrice" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -395,7 +395,7 @@
                 <decorator-screen name="CommonFeatureDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ProductEditFeature} : ${productFeature.description}">
-                            <include-form name="EditProductFeature" location="component://product/widget/catalog/FeatureForms.xml"/>
+                            <include-form name="EditProductFeature" location="component://clproduct/widget/clcatalog/FeatureForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>

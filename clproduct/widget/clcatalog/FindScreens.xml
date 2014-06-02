@@ -25,7 +25,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -58,13 +58,13 @@ under the License.
                 <entity-condition entity-name="ProdCatalog" list="prodCatalogs">
                     <order-by field-name="catalogName"/>
                 </entity-condition>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/find/advancedsearchoptions.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/find/advancedsearchoptions.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonFindDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/find/advancedsearch.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/find/advancedsearch.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -75,16 +75,16 @@ under the License.
         <section>
             <actions>
                 <set field="titleProperty" value="PageTitleSearchResults"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/find/keywordsearch.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/find/keywordsearch.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonFindDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/find/keywordsearch.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/find/keywordsearch.ftl"/></html>
                         </platform-specific>
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/find/keywordsearchactions.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/find/keywordsearchactions.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -101,7 +101,7 @@ under the License.
                 <decorator-screen name="CommonFindDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/find/exportproducts.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/find/exportproducts.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>                
@@ -127,10 +127,10 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>
                     <decorator-section name="body">
-                        <platform-specific><html><html-template location="component://product/webapp/catalog/find/FindProductById.ftl"/></html></platform-specific>
+                        <platform-specific><html><html-template location="component://clproduct/webapp/clcatalog/find/FindProductById.ftl"/></html></platform-specific>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

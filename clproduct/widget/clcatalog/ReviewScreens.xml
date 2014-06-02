@@ -25,7 +25,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -57,10 +57,10 @@ under the License.
                     <decorator-section name="body">
                         <decorator-screen name="FindScreenDecorator" location="component://common/widget/CommonScreens.xml">
                             <decorator-section name="search-options">
-                                <include-form name="FindReviews" location="component://product/widget/catalog/ReviewForms.xml"/>
+                                <include-form name="FindReviews" location="component://clproduct/widget/clcatalog/ReviewForms.xml"/>
                             </decorator-section>
                             <decorator-section name="search-results">
-                                <include-form name="ListReviews" location="component://product/widget/catalog/ReviewForms.xml"/>
+                                <include-form name="ListReviews" location="component://clproduct/widget/clcatalog/ReviewForms.xml"/>
                             </decorator-section>
                         </decorator-screen>
                     </decorator-section>

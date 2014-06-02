@@ -26,7 +26,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProduct}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="entityName" value="Product"/>
@@ -50,7 +50,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductVirtual}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="entityName" value="Product"/>
@@ -75,19 +75,19 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductVariant}"/>
                 <set field="entityName" value="Product"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="viewIndex" from-field="parameters.VIEW_INDEX" type="Integer"/>
                 <set field="viewSize" from-field="parameters.VIEW_SIZE" type="Integer" default-value="20"/>
-                <script location="component://product/webapp/catalog/WEB-INF/actions/lookup/LookupVariantProduct.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/lookup/LookupVariantProduct.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-results">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/lookup/LookupVariantProduct.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/lookup/LookupVariantProduct.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -100,7 +100,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductPrice}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <property-to-field field="defaultCurrencyUomId" resource="general" property="currency.uom.id.default" default="PYG"/>
@@ -126,7 +126,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductCategory}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="entityName" value="ProductCategory"/>
@@ -150,7 +150,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductFeature}"/>
                 <set field="queryString" from-field="result.queryString"/>
                 <set field="entityName" value="ProductFeature"/>
@@ -176,7 +176,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="title" value="${uiLabelMap.PageTitleLookupProductStore}"/>
                 <set field="entityName" value="ProductStore"/>
                 <set field="queryString" from-field="result.queryString"/>
@@ -202,7 +202,7 @@ under the License.
                 <if-service-permission service-name="catalogPermissionCheck" main-action="VIEW"/>
             </condition>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-one entity-name="PartyNameView" value-field="pnv"/>
 <!-- Se agrega emptyDate para hacer que tome la fecha de hasta cuando es valida vacia -->
                 <set field="emptyDate" type="Date"/>

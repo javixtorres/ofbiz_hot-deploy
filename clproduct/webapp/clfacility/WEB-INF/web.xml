@@ -36,12 +36,12 @@ under the License.
     </context-param>
     <context-param>
         <param-name>mainDecoratorLocation</param-name>
-        <param-value>component://product/widget/facility/CommonScreens.xml</param-value>
+        <param-value>component://clproduct/widget/clfacility/CommonScreens.xml</param-value>
         <description>The location of the main-decorator screen to use for this webapp; referred to as a context variable in screen def XML files.</description>
     </context-param>
     <context-param>
         <param-name>commonFacilityDecoratorLocation</param-name>
-        <param-value>component://product/widget/facility/CommonScreens.xml</param-value>
+        <param-value>component://clproduct/widget/clfacility/CommonScreens.xml</param-value>
         <description>The location of the CommonFacilityDecorator screen to use for this webapp; referred to as a context variable in screen def XML files.</description>
     </context-param>
 

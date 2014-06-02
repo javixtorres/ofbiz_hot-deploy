@@ -25,7 +25,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -37,7 +37,7 @@ under the License.
                                 <section>
                                     <condition><not><if-empty field="productPromoId"/></not></condition>
                                     <widgets>
-                                        <include-menu name="PromoTabBar" location="component://product/widget/catalog/CatalogMenus.xml"/>
+                                        <include-menu name="PromoTabBar" location="component://clproduct/widget/clcatalog/CatalogMenus.xml"/>
                                         <container style="button-bar">
                                             <link target="EditProductPromo" text="${uiLabelMap.ProductNewProductPromo}" style="buttontext"/>
                                         </container>
@@ -90,13 +90,13 @@ under the License.
                             </container>
                             <section>
                                 <widgets>
-                                    <include-form name="GoToProductPromoCode" location="component://product/widget/catalog/PromoForms.xml"/>
+                                    <include-form name="GoToProductPromoCode" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                                 </widgets>
                             </section>
                         </screenlet>
                     
                         <screenlet title="${uiLabelMap.ProductProductPromotionsList}">
-                            <include-form name="ListProductPromos" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="ListProductPromos" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -118,7 +118,7 @@ under the License.
                 <decorator-screen name="CommonPromoDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditProductPromos}">
-                            <include-form name="EditProductPromo" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="EditProductPromo" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -192,7 +192,7 @@ under the License.
                 <decorator-screen name="CommonPromoDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/promo/EditProductPromoRules.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/promo/EditProductPromoRules.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -223,7 +223,7 @@ under the License.
                 <decorator-screen name="CommonPromoDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/promo/EditProductPromoStores.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/promo/EditProductPromoStores.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -280,10 +280,10 @@ under the License.
                             </fail-widgets>
                         </section>
                         <screenlet title="${uiLabelMap.PageTitleFindProductPromotionCode}">
-                            <include-form name="ListProductPromoCodes" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="ListProductPromoCodes" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/promo/FindProductPromoCode.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/promo/FindProductPromoCode.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -298,7 +298,7 @@ under the License.
                 <set field="tabButtonItem" value="FindProductPromoCode"/>
                 <set field="labelTitleProperty" value="ProductPromotionCode"/>
 
-                <script location="component://product/webapp/catalog/WEB-INF/actions/promo/EditProductPromoCode.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/promo/EditProductPromoCode.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonPromoDecorator">
@@ -308,10 +308,10 @@ under the License.
                         </container>
 
                         <screenlet title="${uiLabelMap.PageTitleEditProductPromotionCode}">
-                            <include-form name="EditProductPromoCode" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="EditProductPromoCode" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/promo/EditProductPromoCode.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/promo/EditProductPromoCode.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -339,10 +339,10 @@ under the License.
                 <decorator-screen name="CommonPromoDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.PageTitleEditProductPromoContent}">
-                            <include-form name="EditProductPromoContentImage" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="EditProductPromoContentImage" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.ProductProductPromoContentList}">
-                            <include-form name="ListProductPromoContent" location="component://product/widget/catalog/PromoForms.xml"/>
+                            <include-form name="ListProductPromoContent" location="component://clproduct/widget/clcatalog/PromoForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>

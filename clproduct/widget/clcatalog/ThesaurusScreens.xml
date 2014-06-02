@@ -25,7 +25,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator"  location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -52,13 +52,13 @@ under the License.
                 <set field="tabButtonItem" value="EditKeywordThesaurus"/>
                 <set field="headerItem" value="thesaurus"/>
 
-                <script location="component://product/webapp/catalog/WEB-INF/actions/thesaurus/EditKeywordThesaurus.groovy"/>
+                <script location="component://clproduct/webapp/clcatalog/WEB-INF/actions/thesaurus/EditKeywordThesaurus.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonThesaurusDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/catalog/thesaurus/EditKeywordThesaurus.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clcatalog/thesaurus/EditKeywordThesaurus.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>

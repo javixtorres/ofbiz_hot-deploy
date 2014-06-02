@@ -32,7 +32,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -48,10 +48,10 @@ under the License.
                                         </container>
                                     </decorator-section>
                                     <decorator-section name="search-options">
-                                        <include-form name="FindSubscription" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                                        <include-form name="FindSubscription" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                                     </decorator-section>
                                     <decorator-section name="search-results">
-                                        <include-form name="ListFindSubscription" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                                        <include-form name="ListFindSubscription" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                                     </decorator-section>
                                 </decorator-screen>
                             </widgets>
@@ -75,7 +75,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -88,7 +88,7 @@ under the License.
                                         <not><if-empty field="subscription"/></not>
                                     </condition>
                                     <widgets>
-                                    <include-menu name="EditSubscription" location="component://product/widget/catalog/SubscriptionMenus.xml"/>
+                                    <include-menu name="EditSubscription" location="component://clproduct/widget/clcatalog/SubscriptionMenus.xml"/>
                                         <container style="button-bar"><link target="EditSubscription" text="${uiLabelMap.ProductNewSubscription}" style="buttontext"/></container>
                                         <container style="h1"><label>${uiLabelMap[titleProperty]} ${uiLabelMap.CommonFor} ${subscription.description} [${subscriptionId}]</label></container>
                                     </widgets>
@@ -133,7 +133,7 @@ under the License.
                 <decorator-screen name="CommonSubscriptionDecorator" location="${parameters.subscriptionDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet id="editSubscription" title="${uiLabelMap.PageTitleEditSubscription}" collapsible="true">
-                            <include-form name="EditSubscription" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                            <include-form name="EditSubscription" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -156,9 +156,9 @@ under the License.
                 <decorator-screen name="CommonSubscriptionDecorator" location="${parameters.subscriptionDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet id="addSubscriptionAttribute" title="${uiLabelMap.PageTitleAddSubscriptionAttributes}" collapsible="true">
-                            <include-form name="AddSubscriptionAttribute" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                            <include-form name="AddSubscriptionAttribute" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                         </screenlet>
-                        <include-form name="EditSubscriptionAttributes" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                        <include-form name="EditSubscriptionAttributes" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -187,7 +187,7 @@ under the License.
                                 <container style="button-bar">
                                     <link target="EditSubscriptionResource" text="${uiLabelMap.ProductNewSubscriptionResource}" style="buttontext create"/>
                                 </container>
-                                <include-form name="ListSubscriptionResources" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                                <include-form name="ListSubscriptionResources" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                             </widgets>
                             <fail-widgets>
                                 <label>${uiLabelMap.ProductSubscriptionViewPermissionError}</label>
@@ -209,7 +209,7 @@ under the License.
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="left-column">
-                        <include-screen name="leftbar" location="component://product/widget/catalog/CommonScreens.xml"/>
+                        <include-screen name="leftbar" location="component://clproduct/widget/clcatalog/CommonScreens.xml"/>
                     </decorator-section>                    
                     <decorator-section name="body">
                         <section>
@@ -222,7 +222,7 @@ under the License.
                                         <not><if-empty field="subscriptionResource"/></not>
                                     </condition>
                                     <widgets>
-                                        <include-menu name="EditSubscriptionResource" location="component://product/widget/catalog/SubscriptionMenus.xml"/>
+                                        <include-menu name="EditSubscriptionResource" location="component://clproduct/widget/clcatalog/SubscriptionMenus.xml"/>
                                         <container style="button-bar">
                                             <link target="EditSubscriptionResource" text="${uiLabelMap.ProductNewSubscriptionResource}" style="buttontext"/>
                                             <link target="FindSubscription" text="${uiLabelMap.ProductFindResourceSubscriptions}" style="buttontext">
@@ -265,7 +265,7 @@ under the License.
                 <decorator-screen name="CommonSubscriptionResourceDecorator" location="${parameters.subscriptionResourceDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet id="EditSubscriptionResource" title="${uiLabelMap.PageTitleEditSubscriptionResource}" collapsible="true">
-                            <include-form name="EditSubscriptionResource" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                            <include-form name="EditSubscriptionResource" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
@@ -284,9 +284,9 @@ under the License.
                 <decorator-screen name="CommonSubscriptionResourceDecorator" location="${parameters.subscriptionResourceDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet id="addSubscriptionResourceProduct" title="${uiLabelMap.PageTitleAddSubscriptionResourceProducts}" collapsible="true">
-                            <include-form name="AddSubscriptionResourceProduct" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                            <include-form name="AddSubscriptionResourceProduct" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                         </screenlet>
-                        <include-form name="ListSubscriptionResourceProducts" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                        <include-form name="ListSubscriptionResourceProducts" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -307,9 +307,9 @@ under the License.
                 <decorator-screen name="CommonSubscriptionDecorator" location="${parameters.subscriptionDecoratorLocation}">
                     <decorator-section name="body">
                         <screenlet id="addSubscriptionCommEvent" title="${uiLabelMap.PageTitleAddSubscriptionCommEvent}" collapsible="true">
-                            <include-form name="createSubscriptionCommEvent" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                            <include-form name="createSubscriptionCommEvent" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                         </screenlet>
-                        <include-form name="listSubscriptionCommEvent" location="component://product/widget/catalog/SubscriptionForms.xml"/>
+                        <include-form name="listSubscriptionCommEvent" location="component://clproduct/widget/clcatalog/SubscriptionForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

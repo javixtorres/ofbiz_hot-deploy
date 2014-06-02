@@ -25,13 +25,13 @@ under the License.
             <actions>
                 <set field="titleProperty" value="ProductFindShipment"/>
                 <set field="headerItem" value="shipment"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/FindShipment.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/FindShipment.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/FindShipment.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/FindShipment.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -56,7 +56,7 @@ under the License.
                             </condition>
                             <widgets>
                                 <platform-specific>
-                                    <html><html-template location="component://product/webapp/facility/shipment/ShipmentTabBar.ftl"/></html>
+                                    <html><html-template location="component://clproduct/webapp/clfacility/shipment/ShipmentTabBar.ftl"/></html>
                                 </platform-specific>
                                 <section>
                                     <condition>
@@ -127,10 +127,10 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="ViewShipment"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
             </actions>
             <widgets>
                 <section>
@@ -143,26 +143,26 @@ under the License.
                         <decorator-screen name="CommonShipmentDecorator">
                             <decorator-section name="body">
                                 <platform-specific>
-                                    <html><html-template location="component://product/webapp/facility/shipment/ViewShipmentInfo.ftl"/></html>
+                                    <html><html-template location="component://clproduct/webapp/clfacility/shipment/ViewShipmentInfo.ftl"/></html>
                                 </platform-specific>
                                 <screenlet id="shipmentItemPanel" title="${uiLabelMap.PageTitleViewShipmentItemInfo}" initially-collapsed="true">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/facility/shipment/ViewShipmentItemInfo.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clfacility/shipment/ViewShipmentItemInfo.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                                 <screenlet id="shipmentPackagePanel" title="${uiLabelMap.PageTitleViewShipmentPackageInfo}" initially-collapsed="true">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/facility/shipment/ViewShipmentPackageInfo.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clfacility/shipment/ViewShipmentPackageInfo.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                                 <screenlet id="shipmentRoutePanel" title="${uiLabelMap.PageTitleViewShipmentRouteInfo}" initially-collapsed="true">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/facility/shipment/ViewShipmentRouteInfo.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clfacility/shipment/ViewShipmentRouteInfo.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                                 <screenlet id="shipmentReceiptPanel" title="${uiLabelMap.PageTitleViewShipmentReceipts}" initially-collapsed="true">
                                     <platform-specific>
-                                        <html><html-template location="component://product/webapp/facility/shipment/ViewShipmentRouteInfo.ftl"/></html>
+                                        <html><html-template location="component://clproduct/webapp/clfacility/shipment/ViewShipmentRouteInfo.ftl"/></html>
                                     </platform-specific>
                                 </screenlet>
                             </decorator-section>
@@ -182,12 +182,12 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="EditShipment"/>
                 <set field="shipmentTypeId" from-field="parameters.shipmentTypeId"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipment.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipment.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
-                        <include-form name="EditShipment" location="component://product/widget/facility/ShipmentForms.xml"/>
+                        <include-form name="EditShipment" location="component://clproduct/widget/clfacility/ShipmentForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -200,13 +200,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="EditShipmentItems"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/EditShipmentItems.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/EditShipmentItems.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -220,13 +220,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="EditShipmentPlan"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentPlan.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentPlan.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <screenlet title="${uiLabelMap.ProductShipmentPlan}">
-                            <include-form name="findOrderItems" location="component://product/widget/facility//ShipmentForms.xml"/>
+                            <include-form name="findOrderItems" location="component://clproduct/widget/clfacility//ShipmentForms.xml"/>
                         </screenlet>
                         <section>
                             <condition>
@@ -234,12 +234,12 @@ under the License.
                             </condition>
                             <widgets>
                                 <screenlet title="${uiLabelMap.ProductShipmentPlanAdd}">
-                                    <include-form name="addToShipmentPlan" location="component://product/widget/facility//ShipmentForms.xml"/>
+                                    <include-form name="addToShipmentPlan" location="component://clproduct/widget/clfacility//ShipmentForms.xml"/>
                                 </screenlet>
                             </widgets>
                         </section>
                         <screenlet title="${uiLabelMap.ProductShipmentPlanList}">
-                            <include-form name="listShipmentPlan" location="component://product/widget/facility//ShipmentForms.xml"/>
+                            <include-form name="listShipmentPlan" location="component://clproduct/widget/clfacility//ShipmentForms.xml"/>
                             <label style="h2" text="${uiLabelMap.ProductShipmentTotalWeight}: ${totWeight} ${uiLabelMap.ProductShipmentTotalVolume}: ${totVolume}"/>
                         </screenlet>
                         <section>
@@ -265,13 +265,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="EditShipmentPackages"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/EditShipmentPackages.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/EditShipmentPackages.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -285,13 +285,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="EditShipmentRouteSegments"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/EditShipmentRouteSegments.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/EditShipmentRouteSegments.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -305,13 +305,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="AddItemsFromOrder"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/AddItemsFromOrder.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/AddItemsFromOrder.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/AddItemsFromOrder.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/AddItemsFromOrder.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -328,7 +328,7 @@ under the License.
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
-                        <include-form name="ShipmentReceipts" location="component://product/widget/facility/ShipmentForms.xml"/>
+                        <include-form name="ShipmentReceipts" location="component://clproduct/widget/clfacility/ShipmentForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -340,16 +340,16 @@ under the License.
             <actions>
                 <set field="titleProperty" value="ProductQuickShipOrder"/>
                 <set field="headerItem" value="shipment"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/QuickShipOrder.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/QuickShipOrder.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentItems.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentPackages.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/EditShipmentRouteSegments.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/QuickShipOrder.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/QuickShipOrder.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -363,13 +363,13 @@ under the License.
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="titleProperty" value="ProductVerifyPick"/>
                 <set field="headerItem" value="shipment"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/VerifyPick.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/VerifyPick.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/VerifyPick.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/VerifyPick.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -382,13 +382,13 @@ under the License.
             <actions>
                 <set field="titleProperty" value="ProductPackOrder"/>
                 <set field="headerItem" value="shipment"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/PackOrder.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/PackOrder.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/PackOrder.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/PackOrder.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -401,13 +401,13 @@ under the License.
             <actions>
                 <set field="titleProperty" value="ProductWeighPackageOnly"/>
                 <set field="headerItem" value="shipment"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/WeightPackage.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/WeightPackage.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/WeightPackage.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/WeightPackage.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -420,12 +420,12 @@ under the License.
             <actions>
                 <!-- base/top/specific map first, then more common map added for shared labels -->
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <set field="shipmentId" from-field="parameters.shipmentId"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/PackingSlip.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/PackingSlip.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="FoReportDecorator" location="component://common/widget/CommonScreens.xml">
@@ -442,7 +442,7 @@ under the License.
                         <section>
                             <widgets>
                                 <platform-specific>
-                                    <xsl-fo><html-template location="component://product/webapp/facility/shipment/PackingSlipShipmentBarCode.fo.ftl"/></xsl-fo>
+                                    <xsl-fo><html-template location="component://clproduct/webapp/clfacility/shipment/PackingSlipShipmentBarCode.fo.ftl"/></xsl-fo>
                                 </platform-specific>
                             </widgets>
                         </section>
@@ -451,7 +451,7 @@ under the License.
                         <section>
                             <widgets>
                                 <platform-specific>
-                                    <xsl-fo><html-template location="component://product/webapp/facility/shipment/PackingSlip.fo.ftl"/></xsl-fo>
+                                    <xsl-fo><html-template location="component://clproduct/webapp/clfacility/shipment/PackingSlip.fo.ftl"/></xsl-fo>
                                 </platform-specific>
                             </widgets>
                         </section>
@@ -465,14 +465,14 @@ under the License.
         <section>
             <actions>
                 <!-- base/top/specific map first, then more common map added for shared labels -->
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <set field="shipmentId" from-field="parameters.shipmentId"/>
             </actions>
             <widgets>
                 <platform-specific>
-                    <xsl-fo><html-template location="component://product/webapp/facility/shipment/ShipmentBarCode.fo.ftl"/></xsl-fo>
+                    <xsl-fo><html-template location="component://clproduct/webapp/clfacility/shipment/ShipmentBarCode.fo.ftl"/></xsl-fo>
                 </platform-specific>
             </widgets>
         </section>
@@ -481,13 +481,13 @@ under the License.
     <screen name="ShipmentManifest.fo">
         <section>
             <actions>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <set field="shipmentId" from-field="parameters.shipmentId"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/ShipmentManifest.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/ViewShipment.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/ShipmentManifest.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="FoReportDecorator" location="component://common/widget/CommonScreens.xml">
@@ -504,7 +504,7 @@ under the License.
                         <section>
                             <widgets>
                                 <platform-specific>
-                                    <xsl-fo><html-template location="component://product/webapp/facility/shipment/PackingSlipShipmentBarCode.fo.ftl"/></xsl-fo>
+                                    <xsl-fo><html-template location="component://clproduct/webapp/clfacility/shipment/PackingSlipShipmentBarCode.fo.ftl"/></xsl-fo>
                                 </platform-specific>
                             </widgets>
                         </section>
@@ -513,7 +513,7 @@ under the License.
                         <section>
                             <widgets>
                                 <platform-specific>
-                                    <xsl-fo><html-template location="component://product/webapp/facility/shipment/ShipmentManifest.fo.ftl"/></xsl-fo>
+                                    <xsl-fo><html-template location="component://clproduct/webapp/clfacility/shipment/ShipmentManifest.fo.ftl"/></xsl-fo>
                                 </platform-specific>
                             </widgets>
                         </section>
@@ -531,13 +531,13 @@ under the License.
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="ProductReceiveInventoryAgainstPO"/>
                 <property-map resource="OrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/ReceiveInventoryAgainstPurchaseOrder.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/ReceiveInventoryAgainstPurchaseOrder.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/ReceiveInventoryAgainstPurchaseOrder.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/ReceiveInventoryAgainstPurchaseOrder.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>
@@ -553,13 +553,13 @@ under the License.
                 <set field="titleProperty" value="ProductAddItemsFromInventory"/>
                 <set field="headerItem" value="shipment"/>
                 <set field="tabButtonItem" value="AddItemsFromInventory"/>
-                <script location="component://product/webapp/facility/WEB-INF/actions/shipment/AddItemsFromInventory.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/shipment/AddItemsFromInventory.groovy"/>
             </actions>
             <widgets>
                 <decorator-screen name="CommonShipmentDecorator">
                     <decorator-section name="body">
                         <platform-specific>
-                            <html><html-template location="component://product/webapp/facility/shipment/AddItemsFromInventory.ftl"/></html>
+                            <html><html-template location="component://clproduct/webapp/clfacility/shipment/AddItemsFromInventory.ftl"/></html>
                         </platform-specific>
                     </decorator-section>
                 </decorator-screen>

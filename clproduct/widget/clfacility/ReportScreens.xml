@@ -44,7 +44,7 @@ under the License.
                 <set field="internalName" from-field="parameters.internalName"/>
                 <set field="productId" from-field="parameters.productId"/>
 
-                <script location="component://product/webapp/facility/WEB-INF/actions/facility/ViewFacilityInventoryByProduct.groovy"/>
+                <script location="component://clproduct/webapp/clfacility/WEB-INF/actions/facility/ViewFacilityInventoryByProduct.groovy"/>
                 <entity-one entity-name="Facility" value-field="facility" use-cache="true"/>
             </actions>
             <widgets>
@@ -58,10 +58,10 @@ under the License.
                             <link target="ViewFacilityInventoryByProductExport?${searchParameterString}" text="${uiLabelMap.CommonExport}" style="buttontext"/>
                         </container>
                         <screenlet title="${uiLabelMap.PageTitleFindFacilityInventoryItemsByProduct}">
-                            <include-form name="FindFacilityInventoryByProduct" location="component://product/widget/facility/FacilityForms.xml"/>
+                            <include-form name="FindFacilityInventoryByProduct" location="component://clproduct/widget/clfacility/FacilityForms.xml"/>
                         </screenlet>
                         <screenlet title="${uiLabelMap.PageTitleFindFacilityInventoryItemsByProduct}">
-                            <include-form name="ListFacilityInventoryByProduct" location="component://product/widget/facility/FacilityForms.xml"/>
+                            <include-form name="ListFacilityInventoryByProduct" location="component://clproduct/widget/clfacility/FacilityForms.xml"/>
                         </screenlet>
                     </decorator-section>
                 </decorator-screen>
