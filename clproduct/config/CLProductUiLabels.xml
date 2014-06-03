@@ -23514,6 +23514,7 @@
     </property>
     <property key="ProductPricesWarning">
         <value xml:lang="en">You need to set a least a Default Price of type Purchase/Initial for the price calculation to work</value>
+        <value xml:lang="es">Necesita al menos un precio por defecto de Compra/Inicial para que el cálculo de precio funcione</value>
         <value xml:lang="fr">Vous devez définir au moins un prix par défault de type Achat/Initial pour que le calcul des prix fonctionne</value>
         <value xml:lang="ja">価格計算を行うには少なくとも購入/初期の種類のデフォルト価格を設定する必要があります</value>
         <value xml:lang="vi">Bạn cần thiết lập ít nhất Giá mặc định của loại Mua bán/Khởi tạo để quá trình tính giá có thể thực hiện</value>

@@ -398,7 +398,7 @@ under the License.
     <!-- ProductPrice -->
     <form name="AddProductPrice" type="single" target="createProductPrice" title=""
         header-row-style="header-row" default-table-style="basic-table">
-        <auto-fields-service service-name="createProductPrice"/>
+<!--         <auto-fields-service service-name="createProductPrice"/> -->
         <field name="productId"><hidden/></field>
         <field name="productPriceTypeId" title="${uiLabelMap.ProductPriceType}">
             <drop-down allow-empty="false" no-current-selected-key="DEFAULT_PRICE">
@@ -429,22 +429,22 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <field name="termUomId">
-            <drop-down allow-empty="true">
-                <entity-options entity-name="UomAndType" key-field-name="uomId" description="${typeDescription}: ${description} (${abbreviation})">
-                    <entity-constraint name="uomTypeId" operator="not-equals" value="CURRENCY_MEASURE"/>
-                    <entity-order-by field-name="typeDescription"/>
-                    <entity-order-by field-name="description"/>
-                </entity-options>
-            </drop-down>
-        </field>
-        <field name="customPriceCalcService">
-            <drop-down allow-empty="true">
-                <entity-options entity-name="CustomMethod" key-field-name="customMethodId" description="${description}">
-                    <entity-constraint name="customMethodTypeId" operator="equals" value="PRICE_FORMULA"/>
-                </entity-options>
-            </drop-down>
-        </field>
+<!--         <field name="termUomId"> -->
+<!--             <drop-down allow-empty="true"> -->
+<!--                 <entity-options entity-name="UomAndType" key-field-name="uomId" description="${typeDescription}: ${description} (${abbreviation})"> -->
+<!--                     <entity-constraint name="uomTypeId" operator="not-equals" value="CURRENCY_MEASURE"/> -->
+<!--                     <entity-order-by field-name="typeDescription"/> -->
+<!--                     <entity-order-by field-name="description"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
+<!--         <field name="customPriceCalcService"> -->
+<!--             <drop-down allow-empty="true"> -->
+<!--                 <entity-options entity-name="CustomMethod" key-field-name="customMethodId" description="${description}"> -->
+<!--                     <entity-constraint name="customMethodTypeId" operator="equals" value="PRICE_FORMULA"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
         <field name="submitButton" title="${uiLabelMap.CommonCreate}" widget-style="smallSubmit"><submit button-type="button"/></field>
     </form>
     <form name="UpdateProductPrice" type="list" target="updateProductPrice" title="" list-name="productPrices"
