@@ -1133,8 +1133,19 @@ under the License.
             <field-map field-name="termTypeId" value="CRD_CUOTA"/>
         </entity-and>
 
-        
+        <!-- Define fechas -->
+        <set field="daysCuo" value="30" type="Integer"/>
+        <now-timestamp field="dateCuo"/>
+
+         
 <iterate list="orderTermList0" entry="orderTerm0">
+
+		<!-- Define fechas -->
+        <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo">
+            <field field="dateCuo" type="java.sql.Timestamp"/>
+            <field field="daysCuo" type="int"/>
+        </call-class-method>
+        <set field="parameters.effectiveDate" from-field="dateCuo"/>
 
  		<clear-field field="parameters.paymentId"/>
         

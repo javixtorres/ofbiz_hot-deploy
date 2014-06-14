@@ -60,7 +60,7 @@ under the License.
             </div>
           </td>
           <td align="center"><div><b>${uiLabelMap.OrderQuantity}</b></div></td>
-          <td align="right"><div><b>${uiLabelMap.CommonUnitPrice}</b></div></td>
+          <td align="center"><div><b>${uiLabelMap.CommonUnitPrice}</b></div></td>
           <td align="right"><div><b>${uiLabelMap.OrderAdjustments}</b></div></td>
           <td align="right"><div><b>${uiLabelMap.OrderItemTotal}</b></div></td>
           <td align="center"><input type="checkbox" name="selectAll" value="0" onclick="javascript:toggleAll(this);" /></td>
@@ -287,7 +287,7 @@ under the License.
                     <#else>
                         <#assign price = cartLine.getBasePrice()>
                     </#if>
-                    <input size="8" type="text" name="price_${cartLineIndex}" value="<@ofbizAmount amount=price/>"/>
+                    <input size="11" type="text" name="price_${cartLineIndex}" value="<@ofbizAmount amount=price/>"/>
                 </#if>
               </div>
             </td>

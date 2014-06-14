@@ -2642,7 +2642,7 @@
     <property key="OrderCartTotal">
         <value xml:lang="de">Warenkorb Gesamtsumme</value>
         <value xml:lang="en">Cart Total</value>
-        <value xml:lang="es">Total del carro</value>
+        <value xml:lang="es">Total de Compra</value>
         <value xml:lang="fr">Total du panier</value>
         <value xml:lang="it">Totale Carrello</value>
         <value xml:lang="ja">買い物かごの合計</value>
@@ -5173,7 +5173,7 @@
     <property key="OrderItemTotal">
         <value xml:lang="de">Element Summe</value>
         <value xml:lang="en">Item Total</value>
-        <value xml:lang="es">Total ítem</value>
+        <value xml:lang="es">Sub Total</value>
         <value xml:lang="fr">Total Article</value>
         <value xml:lang="it">Totale Riga</value>
         <value xml:lang="ja">アイテム合計</value>
