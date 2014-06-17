@@ -1055,7 +1055,7 @@ under the License.
         <security https="true" auth="true"/>
         <event type="java" path="org.ofbiz.order.shoppingcart.ShoppingCartEvents" invoke="addAgreementOrderTerm"/>
         <response name="success" type="view" value="orderTerm"/>
-        <response name="error" type="view" value="orderTerm"/>
+        <response name="error" type="view" value="agreementOrderTerm"/>
     </request-map>
     <request-map uri="removeCartOrderTerm">
         <security https="true" auth="true"/>

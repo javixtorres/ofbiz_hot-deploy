@@ -54,17 +54,17 @@ under the License.
                                     </tr> 
                                      <tr>
                                         <td width="26%" align="right" valign="top">
-                                            Cuotas
+                                            Nro. de Cuotas
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                            <input type="text" size="10" maxlength="60" name="termValueCuotas" value="${termValueCuotas?if_exists}" />
+                                            <input type="text" size="3" maxlength="60" name="termValueCuotas" value="${termValueCuotas?if_exists}" />
                                         </td>
                                     </tr>
                                    
                                     <tr>
                                         <td width="26%" align="right" valign="top">
-                                            Fecha Primer Vencimiento
+                                            Fecha Primer Pago
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
@@ -72,6 +72,16 @@ under the License.
                   						</td>
                                     </tr>
                                     
+                                    <tr>
+                                        <td width="26%" align="right" valign="top">
+                                            Dia de Vencimiento
+                                        </td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+										<input type="text" size="3" maxlength="60" name="termValueVencimiento" value="${termValueVencimiento?if_exists}" />                    
+                  						</td>
+                                    </tr>
+                                                                 
                                     <tr>
                                     <td width="26%" align="right" valign="top">
                                         1. Referencia Personal/Comercial
@@ -120,8 +130,8 @@ under the License.
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
     
-                                            <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor}" />
-                                            <input type="hidden" name="textValueDate" value="${textValueDate}" />
+                                            <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor?if_exists}" />
+                                            <input type="hidden" name="textValueDate" value="${textValueDate?if_exists}" />
                                         
                                             <input type="submit" class="smallSubmit" value="Aceptar" />
                                         </td>

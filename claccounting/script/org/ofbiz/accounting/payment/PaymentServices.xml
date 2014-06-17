@@ -964,22 +964,7 @@ under the License.
             </if-not-empty>
         </if-not-empty>
         
-<!-- Agregado para Cargar Fecha -->
-<!--         <if-empty field="parameters.effectiveDate"> -->
-<!--             <entity-and list="orderTermList" entity-name="OrderTerm"> -->
-<!--                 <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
-<!--                 <field-map field-name="termTypeId" value="CRD_FECHA_INI"/> -->
-<!--             </entity-and> -->
-<!--             <first-from-list entry="orderTerm" list="orderTermList"/> -->
-<!--             <if-not-empty field="orderTerm.textValue"> -->
-<!--                 <set field="dayTXT" from-field="orderTerm.textValue" type="String"/> -->
-<!--                 <now-timestamp field="start"/> -->
-<!--                 <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="toTimestamp" ret-field="parameters.effectiveDate"> -->
-<!--                     <field field="dayTXT" type="String"/> -->
-<!--                 </call-class-method> -->
-<!--             </if-not-empty> -->
-<!--         </if-empty> -->
-            
+                  
         <if-empty field="parameters.effectiveDate">
             <now-timestamp field="parameters.effectiveDate"/>
         </if-empty>
@@ -1097,14 +1082,17 @@ under the License.
 <!--         <if-empty field="parameters.effectiveDate"> -->
 <!--             <now-timestamp field="parameters.effectiveDate"/> -->
 <!--         </if-empty> -->
-        <entity-and list="orderTermList1" entity-name="OrderTerm">
-            <field-map field-name="orderId" from-field="orderHeader.orderId"/>
-            <field-map field-name="termTypeId" value="CRD_ANTICIPO"/>
-        </entity-and>
+    <entity-and list="orderTermList1" entity-name="OrderTerm">
+        <field-map field-name="orderId" from-field="orderHeader.orderId"/>
+        <field-map field-name="termTypeId" value="CRD_ANTICIPO"/>
+    </entity-and>
 
 	<first-from-list list="orderTermList1" entry="orderTerm1"/>
         
 	<if-not-empty field="orderTerm1">
+	
+		<if-not-empty field="orderTerm1.termValue">
+	
 <!-- 	    <set field="parameters.comments"  from-field="orderTerm1.textValue"/> -->
 	    <set field="parameters.comments"  value="${orderHeader.orderName} - Anticipo"/>
         <set field="parameters.amount"  from-field="orderTerm1.termValue"/>
@@ -1126,26 +1114,52 @@ under the License.
         <field-to-result field="parameters.paymentId" result-name="paymentId"/>
         <log level="info" message="payment ${parameters.paymentId} with the not-paid status automatically created from order: ${parameters.orderId} (can be disabled in CLAccountingConfig.properties)"/>
         
+        </if-not-empty>
+        
 	</if-not-empty> 
+
+        <!-- Define fechas -->
+        <set field="daysCuo" value="30" type="Integer"/>
+<!--         <now-timestamp field="dateCuo"/> -->
+        
+        
+<!--         <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo"> -->
+<!--             <field field="dateCuo" type="java.sql.Timestamp"/> -->
+<!--             <field field="daysCuo" type="int"/> -->
+<!--         </call-class-method> -->
+        
+        <!-- Agregado para Cargar Fecha -->
+        <now-timestamp field="dateCuo"/>
+        
+<!--         <entity-and list="orderTermList" entity-name="OrderTerm"> -->
+<!--             <field-map field-name="orderId" from-field="orderHeader.orderId"/> -->
+<!--             <field-map field-name="termTypeId" value="CRD_FECHA_INI"/> -->
+<!--         </entity-and> -->
+<!--         <first-from-list entry="orderTerm" list="orderTermList"/> -->
+<!--         <if-not-empty field="orderTerm.textValue"> -->
+<!--             <set field="dayTXT" from-field="orderTerm.textValue" type="String"/> -->
+<!--             <set field="timeTXT" value="00:00:00" type="String" />     -->
+<!--             <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="toTimestamp" ret-field="dateCuo"> -->
+<!--                 <field field="dayTXT" type="java.lang.String"/> -->
+<!-- 				<field field="timeTXT" type="java.lang.String"/> -->
+<!--             </call-class-method> -->
+<!--         </if-not-empty> -->
+        <set field="parameters.effectiveDate" from-field="dateCuo"/>       
+
 
         <entity-and list="orderTermList0" entity-name="OrderTerm">
             <field-map field-name="orderId" from-field="orderHeader.orderId"/>
             <field-map field-name="termTypeId" value="CRD_CUOTA"/>
         </entity-and>
-
-        <!-- Define fechas -->
-        <set field="daysCuo" value="30" type="Integer"/>
-        <now-timestamp field="dateCuo"/>
-
          
 <iterate list="orderTermList0" entry="orderTerm0">
 
 		<!-- Define fechas -->
-        <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo">
-            <field field="dateCuo" type="java.sql.Timestamp"/>
-            <field field="daysCuo" type="int"/>
-        </call-class-method>
-        <set field="parameters.effectiveDate" from-field="dateCuo"/>
+<!--         <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo"> -->
+<!--             <field field="dateCuo" type="java.sql.Timestamp"/> -->
+<!--             <field field="daysCuo" type="int"/> -->
+<!--         </call-class-method> -->
+
 
  		<clear-field field="parameters.paymentId"/>
         
@@ -1174,7 +1188,14 @@ under the License.
         
         <clear-field field="parameters.paymentId"/>
 		<clear-field field="parameters.comments"/>
-        <clear-field field="parameters.amount"/>        
+        <clear-field field="parameters.amount"/>
+        
+        <!-- Define fechas -->
+        <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo">
+            <field field="dateCuo" type="java.sql.Timestamp"/>
+            <field field="daysCuo" type="int"/>
+        </call-class-method>
+        <set field="parameters.effectiveDate" from-field="dateCuo"/>        
         
 </iterate>
      
