@@ -39,7 +39,13 @@ under the License.
                                 <#list orderTerms as orderTerm>
                                     <tr <#if orderTerm_index % 2 != 0>class="alternate-row"</#if> >
                                         <td nowrap="nowrap">${orderTerm.getRelatedOne('TermType', false).get('description', locale)}</td>
-                                        <td align="center">${orderTerm.termValue?if_exists}</td>
+                                        <td align="center">
+                                        <#-- ${orderTerm.termValue?if_exists}--> 
+                                        <#if orderTerm.termValue?has_content> 
+                                        	<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
+                                        </#if>
+                                        </td>
+                                        
                                         <td align="center">${orderTerm.termDays?if_exists}</td>
                                         <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
                                         <td align="right">
@@ -51,6 +57,7 @@ under the License.
                                 <tr>
                                     <td colspan="5">
                                         <a href="<@ofbizUrl>setOrderTerm?createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonCreateNew}</a>
+                                          <a href="<@ofbizUrl>setAgreementOrderTerm</@ofbizUrl>" class="buttontext">Re-Generar Condiciones</a>
                                     </td>
                                 </tr>
                             </table>
