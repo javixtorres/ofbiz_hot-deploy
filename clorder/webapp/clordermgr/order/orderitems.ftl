@@ -51,6 +51,10 @@ under the License.
                         <tr<#if itemClass == "1"> class="alternate-row"</#if>>
                             <#assign orderItemType = orderItem.getRelatedOne("OrderItemType", false)?if_exists>
                             <#assign productId = orderItem.productId?if_exists>
+                            
+                            <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->
+                            <#assign productList = orderItem.getRelated("Product", null, null, false)>
+                            
                             <#if productId?exists && productId == "shoppingcart.CommentLine">
                                 <td colspan="7" valign="top" class="label"> &gt;&gt; ${orderItem.itemDescription}</td>
                             <#else>
@@ -58,8 +62,24 @@ under the License.
                                     <div class="order-item-description">
                                         <#if orderItem.supplierProductId?has_content>
                                             ${orderItem.supplierProductId} - ${orderItem.itemDescription?if_exists}
+                                            
+                                        <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->	
+                        				<#if productList?has_content>
+						                            <#list productList as productMap>
+						                               (${productMap.internalName}) 
+						                            </#list>
+						                </#if>
+                                            
                                         <#elseif productId?exists>
                                             ${orderItem.productId?default("N/A")} - ${orderItem.itemDescription?if_exists}
+                                    
+                                    	  <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->	
+                        				  <#if productList?has_content>
+						                            <#list productList as productMap>
+						                               (${productMap.internalName}) 
+						                            </#list>
+						                  </#if>
+                                    
                                             <#if (product.salesDiscontinuationDate)?exists && Static["org.ofbiz.base.util.UtilDateTime"].nowTimestamp().after(product.salesDiscontinuationDate)>
                                                 <br />
                                                 <span style="color: red;">${uiLabelMap.OrderItemDiscontinued}: ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(product.salesDiscontinuationDate, "", locale, timeZone)!}</span>

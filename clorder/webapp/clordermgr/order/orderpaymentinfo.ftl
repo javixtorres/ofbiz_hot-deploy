@@ -268,10 +268,19 @@ under the License.
                 <#if paymentMethodType.paymentMethodTypeId != "EXT_OFFLINE" && paymentMethodType.paymentMethodTypeId != "EXT_PAYPAL" && paymentMethodType.paymentMethodTypeId != "EXT_COD">
                   <td width="60%">
                     <div>
+                      <#--CODIGOLINUX Mostrar Descripcion y Fecha de Pago -->
+					  <#if paymentList?has_content>
+	                            <#list paymentList as paymentMap>
+	                               <br />${paymentMap.comments}  - Fecha:  
+	                               ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!} 
+	                            </#list>
+	                  </#if>
+	                  
                       <#if orderPaymentPreference.maxAmount?has_content>
                          <br />${uiLabelMap.OrderPaymentMaximumAmount}: <@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>
                       </#if>
                       <br />&nbsp;[<#if oppStatusItem?exists>${oppStatusItem.get("description",locale)}<#else>${orderPaymentPreference.statusId}</#if>]
+	                  
                     </div>
                     <#--
                     <div><@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>&nbsp;-&nbsp;${(orderPaymentPreference.authDate.toString())?if_exists}</div>
