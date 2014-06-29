@@ -173,7 +173,9 @@ if (orderHeader) {
                                     EntityCondition.makeCondition("orderId", EntityOperator.EQUALS, orderId),
                                     EntityCondition.makeCondition("statusId", EntityOperator.NOT_EQUAL, "PAYMENT_CANCELLED")],
                                 EntityOperator.AND);
-    orderPaymentPreferences = delegator.findList("OrderPaymentPreference", ecl, null, null, null, false);
+    //orderPaymentPreferences = delegator.findList("OrderPaymentPreference", ecl, null, null, null, false);
+	//orden accendente por orderId
+	orderPaymentPreferences = delegator.findList("OrderPaymentPreference", ecl, null, UtilMisc.toList("+orderId"), null, false);
     context.orderPaymentPreferences = orderPaymentPreferences;
 
     // ship groups

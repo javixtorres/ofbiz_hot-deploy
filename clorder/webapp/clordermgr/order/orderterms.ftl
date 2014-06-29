@@ -33,7 +33,7 @@ under the License.
         <td width="15%" align="center">${uiLabelMap.OrderOrderTermDays}</td>
         <td width="35%" align="center">${uiLabelMap.CommonDescription}</td>
       </tr>
-    <#list orderTerms as orderTerm>
+    <#list orderTerms?sort_by("createdStamp") as orderTerm>
       <tr>
         <td width="35%">${orderTerm.getRelatedOne("TermType", false).get("description", locale)}</td>
         <td width="15%" align="center">${orderTerm.termValue?default("")}</td>

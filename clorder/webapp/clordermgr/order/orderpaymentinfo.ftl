@@ -111,7 +111,7 @@ under the License.
      </tr>
      <tr><td colspan="4"><hr /></td></tr>
      <#if orderPaymentPreferences?has_content || billingAccount?has_content || invoices?has_content>
-        <#list orderPaymentPreferences as orderPaymentPreference>
+        <#list orderPaymentPreferences?sort_by("createdStamp") as orderPaymentPreference>
           <#assign paymentList = orderPaymentPreference.getRelated("Payment", null, null, false)>
           <#assign pmBillingAddress = {}>
           <#assign oppStatusItem = orderPaymentPreference.getRelatedOne("StatusItem", false)>
