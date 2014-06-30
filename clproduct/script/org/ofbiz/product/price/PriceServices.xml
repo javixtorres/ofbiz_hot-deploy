@@ -171,6 +171,42 @@ under the License.
                 </if-compare>
             </then>
         </if>
+        
+        
+      <!-- CODIGOLINUX calculo de IVA -->  
+      <log level="info" message="CODIGOLINUX .......... ${parameters.productStoreGroupId} - ${parameters.price}"/>
+
+      <if-compare field="parameters.productStoreGroupId"	operator="equals"	value="IVA10" >      
+	       <calculate field="parameters.price" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
+	               <calcop operator="divide">
+	                   <calcop operator="get" field="parameters.price"/>
+	                   <calcop operator="add">
+	                       <number value="1"/>
+	                       <calcop operator="divide">
+	                           <number value="10"/>
+	                           <number value="100"/>
+	                       </calcop>
+	                   </calcop>
+	               </calcop>
+	       </calculate>
+      </if-compare>
+      <if-compare field="parameters.productStoreGroupId"	operator="equals"	value="IVA05" >      
+	       <calculate field="parameters.price" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
+	               <calcop operator="divide">
+	                   <calcop operator="get" field="parameters.price"/>
+	                   <calcop operator="add">
+	                       <number value="1"/>
+	                       <calcop operator="divide">
+	                           <number value="5"/>
+	                           <number value="100"/>
+	                       </calcop>
+	                   </calcop>
+	               </calcop>
+	       </calculate>
+      </if-compare>
+      <set field="parameters.productStoreGroupId" value="_NA_"/>
+      
+     
     </simple-method>
 
     <simple-method method-name="saveProductPriceChange" short-description="Save History of ProductPrice Change">

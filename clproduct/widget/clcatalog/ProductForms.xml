@@ -422,19 +422,26 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <field name="productStoreGroupId" title="${uiLabelMap.ProductProductStoreGroupId}">
-            <drop-down allow-empty="false" no-current-selected-key="_NA_">
-                <entity-options entity-name="ProductStoreGroup" description="${productStoreGroupName}">
-                    <entity-order-by field-name="productStoreGroupName"/>
-                </entity-options>
-            </drop-down>
-        </field>
+<!--         <field name="productStoreGroupId" title="${uiLabelMap.ProductProductStoreGroupId}"> -->
+<!--             <drop-down allow-empty="false" no-current-selected-key="_NA_"> -->
+<!--                 <entity-options entity-name="ProductStoreGroup" description="${productStoreGroupName}"> -->
+<!--                     <entity-order-by field-name="productStoreGroupName"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
         
-        <field name="fromDate" title="${uiLabelMap.CommonFromDateTime}" required-field="true">><date-time></date-time></field>
+        <field name="fromDate" title="${uiLabelMap.CommonFromDateTime}"><date-time></date-time></field>
         <field name="thruDate" title="${uiLabelMap.CommonThruDateTime}"><date-time></date-time></field>
         <field name="price" title="${uiLabelMap.ProductPrice}" required-field="true"><text></text></field>
-        <field name="price10" title="Precio con Iva 10%"><text></text></field>
-        <field name="price5" title="Precio con Iva 5%"><text></text></field>
+        
+        <!-- CODIGOLINUX Carga con Iva -->
+        <field name="productStoreGroupId" title="Iva">
+	        <drop-down allow-empty="false">
+				<option key="_NA_" description="Sin Iva"/>
+				<option key="IVA05" description="Iva 5%"/>
+				<option key="IVA10" description="Iva 10%"/>
+			</drop-down>
+		</field>
         
 <!--         <field name="termUomId"> -->
 <!--             <drop-down allow-empty="true"> -->
@@ -941,6 +948,15 @@ under the License.
         <field name="lastPrice" title="${uiLabelMap.ProductLastPrice}" use-when="supplierProduct==null">
            <text default-value="0" size="15"/> 
         </field>
+        
+         <!-- CODIGOLINUX Carga con Iva -->
+        <field name="comment" title="Iva">
+	        <drop-down allow-empty="false">
+				<option key="_NA_" description="Sin Iva"/>
+				<option key="IVA05" description="Iva 5%"/>
+				<option key="IVA10" description="Iva 10%"/>
+			</drop-down>
+		</field>       
         
         <field use-when="supplierProduct == null" name="submitButton" title="${uiLabelMap.CommonCreate}"><submit button-type="button"/></field>
         <field use-when="supplierProduct != null" name="submitButton" title="${uiLabelMap.CommonUpdate}"><submit button-type="button"/></field>
