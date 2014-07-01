@@ -176,35 +176,34 @@ under the License.
       <!-- CODIGOLINUX calculo de IVA -->  
       <log level="info" message="CODIGOLINUX .......... ${parameters.productStoreGroupId} - ${parameters.price}"/>
 
-      <if-compare field="parameters.productStoreGroupId"	operator="equals"	value="IVA10" >      
+        <if>
+           <condition>
+               <not><if-empty field="parameters.taxPercentage" ></if-empty></not>   
+           </condition>   
+           <then>
+            <if-compare field="parameters.taxInPrice" operator="equals" value="Y">
+               <!-- the price passed in has tax included, and we want to store it with tax included -->
+               <set field="parameters.price" from-field="parameters.priceWithTax"/>
+               
+               <else>
+                   <!-- the price passed in has tax included, but we want to store it without tax included -->
+                   <set field="parameters.price" from-field="parameters.priceWithoutTax"/>
+               </else>
+           </if-compare>
 	       <calculate field="parameters.price" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
 	               <calcop operator="divide">
 	                   <calcop operator="get" field="parameters.price"/>
 	                   <calcop operator="add">
 	                       <number value="1"/>
 	                       <calcop operator="divide">
-	                           <number value="10"/>
+	                           <calcop operator="get" field="parameters.taxPercentage"/>
 	                           <number value="100"/>
 	                       </calcop>
 	                   </calcop>
 	               </calcop>
 	       </calculate>
-      </if-compare>
-      <if-compare field="parameters.productStoreGroupId"	operator="equals"	value="IVA05" >      
-	       <calculate field="parameters.price" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
-	               <calcop operator="divide">
-	                   <calcop operator="get" field="parameters.price"/>
-	                   <calcop operator="add">
-	                       <number value="1"/>
-	                       <calcop operator="divide">
-	                           <number value="5"/>
-	                           <number value="100"/>
-	                       </calcop>
-	                   </calcop>
-	               </calcop>
-	       </calculate>
-      </if-compare>
-      <set field="parameters.productStoreGroupId" value="_NA_"/>
+	       </then>
+      </if>
       
      
     </simple-method>

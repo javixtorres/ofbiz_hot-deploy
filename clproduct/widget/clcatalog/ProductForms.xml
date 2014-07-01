@@ -422,24 +422,24 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-<!--         <field name="productStoreGroupId" title="${uiLabelMap.ProductProductStoreGroupId}"> -->
-<!--             <drop-down allow-empty="false" no-current-selected-key="_NA_"> -->
-<!--                 <entity-options entity-name="ProductStoreGroup" description="${productStoreGroupName}"> -->
-<!--                     <entity-order-by field-name="productStoreGroupName"/> -->
-<!--                 </entity-options> -->
-<!--             </drop-down> -->
-<!--         </field> -->
+        <field name="productStoreGroupId" title="${uiLabelMap.ProductProductStoreGroupId}">
+            <drop-down allow-empty="false" no-current-selected-key="_NA_">
+                <entity-options entity-name="ProductStoreGroup" description="${productStoreGroupName}">
+                    <entity-order-by field-name="productStoreGroupName"/>
+                </entity-options>
+            </drop-down>
+        </field>
         
         <field name="fromDate" title="${uiLabelMap.CommonFromDateTime}"><date-time></date-time></field>
         <field name="thruDate" title="${uiLabelMap.CommonThruDateTime}"><date-time></date-time></field>
         <field name="price" title="${uiLabelMap.ProductPrice}" required-field="true"><text></text></field>
         
         <!-- CODIGOLINUX Carga con Iva -->
-        <field name="productStoreGroupId" title="Iva">
+        <field name="parameters.taxPercentage" title="Iva">
 	        <drop-down allow-empty="false">
-				<option key="_NA_" description="Sin Iva"/>
-				<option key="IVA05" description="Iva 5%"/>
-				<option key="IVA10" description="Iva 10%"/>
+				<option key="" description="Sin Iva"/>
+				<option key="5" description="Iva 5%"/>
+				<option key="10" description="Iva 10%"/>
 			</drop-down>
 		</field>
         
