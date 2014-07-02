@@ -102,95 +102,89 @@ under the License.
                 value="${groovy:taxAuthCombinedId.substring(taxAuthCombinedId.indexOf('::')+2)}"/>
         </if-not-empty>
         
-        <!-- handle price with tax included related fields (priceWithTax, taxAmount, taxPercentage, taxAuthPartyId, taxAuthGeoId) -->
-        <if>
-            <condition>
-                <and>
-                    <not><if-empty field="parameters.taxAuthPartyId"></if-empty></not>
-                    <not><if-empty field="parameters.taxAuthGeoId"></if-empty></not>
-                </and>
-            </condition>
-            <then>
-                <set field="parameters.priceWithTax" from-field="parameters.price"/>
+<!--         handle price with tax included related fields (priceWithTax, taxAmount, taxPercentage, taxAuthPartyId, taxAuthGeoId) -->
+<!--         <if> -->
+<!--             <condition> -->
+<!--                 <and> -->
+<!--                     <not><if-empty field="parameters.taxAuthPartyId"></if-empty></not> -->
+<!--                     <not><if-empty field="parameters.taxAuthGeoId"></if-empty></not> -->
+<!--                 </and> -->
+<!--             </condition> -->
+<!--             <then> -->
+<!--                 <set field="parameters.priceWithTax" from-field="parameters.price"/> -->
                 
-                <!-- if taxPercentage not passed in look it up based on taxAuthGeoId and taxAuthPartyId -->
-                <if-empty field="parameters.taxPercentage">
-                    <!-- we only have basic data to constrain by here, so assume that if it is a VAT tax setup it should be pretty simple -->
-                    <entity-condition entity-name="TaxAuthorityRateProduct" list="taxAuthorityRateProductList" filter-by-date="true">
-                        <condition-list combine="and">
-                            <condition-expr field-name="taxAuthGeoId" from-field="parameters.taxAuthGeoId"/>
-                            <condition-expr field-name="taxAuthPartyId" from-field="parameters.taxAuthPartyId"/>
-                            <condition-list combine="or">
-                                <condition-expr field-name="taxAuthorityRateTypeId" value="SALES_TAX"/>
-                                <condition-expr field-name="taxAuthorityRateTypeId" value="VAT_TAX"/>
-                            </condition-list>
-                        </condition-list>
-                    </entity-condition>
-                    <set field="parameters.taxPercentage" from-field="taxAuthorityRateProductList[0].taxPercentage" type="BigDecimal"/>
-                </if-empty>
+<!--                 if taxPercentage not passed in look it up based on taxAuthGeoId and taxAuthPartyId -->
+<!--                 <if-empty field="parameters.taxPercentage"> -->
+<!--                     we only have basic data to constrain by here, so assume that if it is a VAT tax setup it should be pretty simple -->
+<!--                     <entity-condition entity-name="TaxAuthorityRateProduct" list="taxAuthorityRateProductList" filter-by-date="true"> -->
+<!--                         <condition-list combine="and"> -->
+<!--                             <condition-expr field-name="taxAuthGeoId" from-field="parameters.taxAuthGeoId"/> -->
+<!--                             <condition-expr field-name="taxAuthPartyId" from-field="parameters.taxAuthPartyId"/> -->
+<!--                             <condition-list combine="or"> -->
+<!--                                 <condition-expr field-name="taxAuthorityRateTypeId" value="SALES_TAX"/> -->
+<!--                                 <condition-expr field-name="taxAuthorityRateTypeId" value="VAT_TAX"/> -->
+<!--                             </condition-list> -->
+<!--                         </condition-list> -->
+<!--                     </entity-condition> -->
+<!--                     <set field="parameters.taxPercentage" from-field="taxAuthorityRateProductList[0].taxPercentage" type="BigDecimal"/> -->
+<!--                 </if-empty> -->
                 
-                <if-empty field="parameters.taxPercentage">
-                    <add-error>
-                        <fail-property resource="ProductUiLabels" property="ProductPriceTaxPercentageNotFound"/>
-                    </add-error>
-                    <check-errors/>
-                </if-empty>
+<!--                 <if-empty field="parameters.taxPercentage"> -->
+<!--                     <add-error> -->
+<!--                         <fail-property resource="ProductUiLabels" property="ProductPriceTaxPercentageNotFound"/> -->
+<!--                     </add-error> -->
+<!--                     <check-errors/> -->
+<!--                 </if-empty> -->
                 
-                <!-- in short the formula is: taxAmount = priceWithTax - (priceWithTax/(1+taxPercentage/100)) -->
-                <calculate field="parameters.taxAmount" type="BigDecimal" decimal-scale="3" rounding-mode="HalfUp">
-                    <calcop operator="subtract">
-                        <calcop operator="get" field="parameters.priceWithTax"/>
-                        <calcop operator="divide">
-                            <calcop operator="get" field="parameters.priceWithTax"/>
-                            <calcop operator="add">
-                                <number value="1"/>
-                                <calcop operator="divide">
-                                    <calcop operator="get" field="parameters.taxPercentage"/>
-                                    <number value="100"/>
-                                </calcop>
-                            </calcop>
-                        </calcop>
-                    </calcop>
-                </calculate>
+<!--                 in short the formula is: taxAmount = priceWithTax - (priceWithTax/(1+taxPercentage/100)) -->
+<!--                 <calculate field="parameters.taxAmount" type="BigDecimal" decimal-scale="3" rounding-mode="HalfUp"> -->
+<!--                     <calcop operator="subtract"> -->
+<!--                         <calcop operator="get" field="parameters.priceWithTax"/> -->
+<!--                         <calcop operator="divide"> -->
+<!--                             <calcop operator="get" field="parameters.priceWithTax"/> -->
+<!--                             <calcop operator="add"> -->
+<!--                                 <number value="1"/> -->
+<!--                                 <calcop operator="divide"> -->
+<!--                                     <calcop operator="get" field="parameters.taxPercentage"/> -->
+<!--                                     <number value="100"/> -->
+<!--                                 </calcop> -->
+<!--                             </calcop> -->
+<!--                         </calcop> -->
+<!--                     </calcop> -->
+<!--                 </calculate> -->
                 
-                <calculate field="parameters.priceWithoutTax" type="BigDecimal" decimal-scale="3" rounding-mode="HalfUp">
-                    <calcop operator="subtract">
-                        <calcop operator="get" field="parameters.priceWithTax"/>
-                        <calcop operator="get" field="parameters.taxAmount"></calcop>
-                    </calcop>
-                </calculate>
+<!--                 <calculate field="parameters.priceWithoutTax" type="BigDecimal" decimal-scale="3" rounding-mode="HalfUp"> -->
+<!--                     <calcop operator="subtract"> -->
+<!--                         <calcop operator="get" field="parameters.priceWithTax"/> -->
+<!--                         <calcop operator="get" field="parameters.taxAmount"></calcop> -->
+<!--                     </calcop> -->
+<!--                 </calculate> -->
                 
-                <if-compare field="parameters.taxInPrice" operator="equals" value="Y">
-                    <!-- the price passed in has tax included, and we want to store it with tax included -->
-                    <set field="parameters.price" from-field="parameters.priceWithTax"/>
+<!--                 <if-compare field="parameters.taxInPrice" operator="equals" value="Y"> -->
+<!--                     the price passed in has tax included, and we want to store it with tax included -->
+<!--                     <set field="parameters.price" from-field="parameters.priceWithTax"/> -->
                     
-                    <else>
-                        <!-- the price passed in has tax included, but we want to store it without tax included -->
-                        <set field="parameters.price" from-field="parameters.priceWithoutTax"/>
-                    </else>
-                </if-compare>
-            </then>
-        </if>
+<!--                     <else> -->
+<!--                         the price passed in has tax included, but we want to store it without tax included -->
+<!--                         <set field="parameters.price" from-field="parameters.priceWithoutTax"/> -->
+<!--                     </else> -->
+<!--                 </if-compare> -->
+<!--             </then> -->
+<!--         </if> -->
         
         
       <!-- CODIGOLINUX calculo de IVA -->  
-      <log level="info" message="CODIGOLINUX .......... ${parameters.productStoreGroupId} - ${parameters.price}"/>
-
+      <log level="info" message="CODIGOLINUX .......... ${parameters.taxPercentage} - ${parameters.price}"/>
+      
+      <set field="parameters.taxInPrice" value="Y"/>
+      
         <if>
            <condition>
                <not><if-empty field="parameters.taxPercentage" ></if-empty></not>   
            </condition>   
            <then>
-            <if-compare field="parameters.taxInPrice" operator="equals" value="Y">
-               <!-- the price passed in has tax included, and we want to store it with tax included -->
-               <set field="parameters.price" from-field="parameters.priceWithTax"/>
-               
-               <else>
-                   <!-- the price passed in has tax included, but we want to store it without tax included -->
-                   <set field="parameters.price" from-field="parameters.priceWithoutTax"/>
-               </else>
-           </if-compare>
-	       <calculate field="parameters.price" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
+      
+	       <calculate field="parameters.priceWithoutTax" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
 	               <calcop operator="divide">
 	                   <calcop operator="get" field="parameters.price"/>
 	                   <calcop operator="add">
@@ -202,6 +196,28 @@ under the License.
 	                   </calcop>
 	               </calcop>
 	       </calculate>
+
+           <set field="parameters.priceWithTax" from-field="parameters.price"/>
+           
+           <set field="parameters.price" from-field="parameters.priceWithoutTax"/>
+           
+			<!--  in short the formula is: taxAmount = priceWithTax - (priceWithTax/(1+taxPercentage/100)) -->
+           <calculate field="parameters.taxAmount" type="BigDecimal" decimal-scale="3" rounding-mode="HalfUp">
+               <calcop operator="subtract">
+                   <calcop operator="get" field="parameters.priceWithTax"/>
+                   <calcop operator="divide">
+                       <calcop operator="get" field="parameters.priceWithTax"/>
+                       <calcop operator="add">
+                           <number value="1"/>
+                           <calcop operator="divide">
+                               <calcop operator="get" field="parameters.taxPercentage"/>
+                               <number value="100"/>
+                           </calcop>
+                       </calcop>
+                   </calcop>
+               </calcop>
+           </calculate>
+         
 	       </then>
       </if>
       

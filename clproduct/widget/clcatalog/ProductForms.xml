@@ -435,9 +435,9 @@ under the License.
         <field name="price" title="${uiLabelMap.ProductPrice}" required-field="true"><text></text></field>
         
         <!-- CODIGOLINUX Carga con Iva -->
-        <field name="parameters.taxPercentage" title="Iva">
+        <field name="taxPercentage" title="Precio con Iva">
 	        <drop-down allow-empty="false">
-				<option key="" description="Sin Iva"/>
+				<option key="" description="No"/>
 				<option key="5" description="Iva 5%"/>
 				<option key="10" description="Iva 10%"/>
 			</drop-down>
