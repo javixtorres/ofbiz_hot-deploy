@@ -23,6 +23,7 @@ under the License.
 </fo:block>
 
 <fo:block font-size="8pt">
+<#--
     <fo:block>${companyName}</fo:block>
     <#if postalAddress?exists>
         <#if postalAddress?has_content>
@@ -33,7 +34,7 @@ under the License.
         <fo:block>${uiLabelMap.CommonNoPostalAddress}</fo:block>
         <fo:block>${uiLabelMap.CommonFor}: ${companyName}</fo:block>
     </#if>
-
+-->
     <#if sendingPartyTaxId?exists || phone?exists || email?exists || website?exists || eftAccount?exists>
     <fo:list-block provisional-distance-between-starts=".5in">
         <#if sendingPartyTaxId?exists>
