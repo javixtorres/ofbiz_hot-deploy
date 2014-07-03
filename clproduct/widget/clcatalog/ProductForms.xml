@@ -430,12 +430,12 @@ under the License.
             </drop-down>
         </field>
         
-        <field name="fromDate" title="${uiLabelMap.CommonFromDateTime}"><date-time></date-time></field>
+        <field name="fromDate" title="${uiLabelMap.CommonFromDateTime}"><date-time default-value="${groovy: org.ofbiz.base.util.UtilDateTime.nowTimestamp()}"/></field>
         <field name="thruDate" title="${uiLabelMap.CommonThruDateTime}"><date-time></date-time></field>
         <field name="price" title="${uiLabelMap.ProductPrice}" required-field="true"><text></text></field>
         
         <!-- CODIGOLINUX Carga con Iva -->
-        <field name="taxPercentage" title="Precio con Iva">
+        <field name="taxPercentage" title="Precio con Iva" tooltip="Calcula el Precio según el Iva Seleccionado">
 	        <drop-down allow-empty="false">
 				<option key="" description="No"/>
 				<option key="5" description="Iva 5%"/>
@@ -941,18 +941,18 @@ under the License.
            <text default-value="" size="30"/> 
         </field>
 -->
-        <field name="supplierProductId" title="${uiLabelMap.ProductSupplierProductId}" use-when="supplierProduct==null">
+        <field name="supplierProductId" title="${uiLabelMap.ProductSupplierProductId}" use-when="supplierProduct==null" required-field="true">
            <text default-value="" size="30"/> 
         </field>
 
-        <field name="lastPrice" title="${uiLabelMap.ProductLastPrice}" use-when="supplierProduct==null">
+        <field name="lastPrice" title="${uiLabelMap.ProductLastPrice}" use-when="supplierProduct==null" required-field="true">
            <text default-value="0" size="15"/> 
         </field>
         
          <!-- CODIGOLINUX Carga con Iva -->
-        <field name="comment" title="Iva">
+        <field name="comments" title="Precio con Iva" tooltip="Calcula el Último Precio según el Iva Seleccionado">
 	        <drop-down allow-empty="false">
-				<option key="_NA_" description="Sin Iva"/>
+				<option key="_NA_" description="No"/>
 				<option key="IVA05" description="Iva 5%"/>
 				<option key="IVA10" description="Iva 10%"/>
 			</drop-down>

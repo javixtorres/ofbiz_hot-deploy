@@ -26,6 +26,39 @@ under the License.
         </check-permission>
         <check-errors/>
 
+	      <!-- CODIGOLINUX calculo de IVA -->  
+	      <log level="info" message="CODIGOLINUX .......... ${parameters.comments} - ${parameters.lastPrice}"/>
+	
+	      <if-compare field="parameters.comments"	operator="equals"	value="IVA10" >      
+		       <calculate field="parameters.lastPrice" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
+		               <calcop operator="divide">
+		                   <calcop operator="get" field="parameters.lastPrice"/>
+		                   <calcop operator="add">
+		                       <number value="1"/>
+		                       <calcop operator="divide">
+		                           <number value="10"/>
+		                           <number value="100"/>
+		                       </calcop>
+		                   </calcop>
+		               </calcop>
+		       </calculate>
+	      </if-compare>
+	      <if-compare field="parameters.comments"	operator="equals"	value="IVA05" >      
+		       <calculate field="parameters.lastPrice" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
+		               <calcop operator="divide">
+		                   <calcop operator="get" field="parameters.lastPrice"/>
+		                   <calcop operator="add">
+		                       <number value="1"/>
+		                       <calcop operator="divide">
+		                           <number value="5"/>
+		                           <number value="100"/>
+		                       </calcop>
+		                   </calcop>
+		               </calcop>
+		       </calculate>
+	      </if-compare>
+	      <set field="parameters.comments" value=""/>
+
         <make-value value-field="newEntity" entity-name="SupplierProduct"/>
         <set-pk-fields map="parameters" value-field="newEntity"/>
         <set-nonpk-fields map="parameters" value-field="newEntity"/>
@@ -38,41 +71,6 @@ under the License.
             <fail-property resource="ProductUiLabels" property="ProductCatalogUpdatePermissionError"/>
         </check-permission>
         <check-errors/>
-
-
-      <!-- CODIGOLINUX calculo de IVA -->  
-      <log level="info" message="CODIGOLINUX .......... ${parameters.comment} - ${parameters.lastPrice}"/>
-
-      <if-compare field="parameters.comment"	operator="equals"	value="IVA10" >      
-	       <calculate field="parameters.lastPrice" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
-	               <calcop operator="divide">
-	                   <calcop operator="get" field="parameters.lastPrice"/>
-	                   <calcop operator="add">
-	                       <number value="1"/>
-	                       <calcop operator="divide">
-	                           <number value="10"/>
-	                           <number value="100"/>
-	                       </calcop>
-	                   </calcop>
-	               </calcop>
-	       </calculate>
-      </if-compare>
-      <if-compare field="parameters.comment"	operator="equals"	value="IVA05" >      
-	       <calculate field="parameters.lastPrice" type="BigDecimal" decimal-scale="1" rounding-mode="HalfUp">
-	               <calcop operator="divide">
-	                   <calcop operator="get" field="parameters.lastPrice"/>
-	                   <calcop operator="add">
-	                       <number value="1"/>
-	                       <calcop operator="divide">
-	                           <number value="5"/>
-	                           <number value="100"/>
-	                       </calcop>
-	                   </calcop>
-	               </calcop>
-	       </calculate>
-      </if-compare>
-      <set field="parameters.comment" value="_NA_"/>
-
 
         <make-value value-field="lookupPKMap" entity-name="SupplierProduct"/>
         <set-pk-fields map="parameters" value-field="lookupPKMap"/>
