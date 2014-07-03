@@ -37,6 +37,7 @@ under the License.
     </#if>
 
     <#-- list of terms -->
+    <#--
     <#if terms?has_content>
     <fo:table table-layout="fixed" width="100%" space-before="0.1in">
         <fo:table-column column-width="6.5in"/>
@@ -61,7 +62,7 @@ under the License.
         </fo:table-body>
     </fo:table>
     </#if>
-
+    -->
     <fo:table table-layout="fixed" width="100%" space-before="0.2in">
     <fo:table-column column-width="20mm"/>
     <fo:table-column column-width="85mm"/>

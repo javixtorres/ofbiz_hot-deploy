@@ -22,32 +22,39 @@ under the License.
 <fo:table-column column-width="2.5in"/>
 <fo:table-body>
 <fo:table-row>
-  <fo:table-cell>
-     <fo:block number-columns-spanned="2" font-weight="bold">${invoice.getRelatedOne("InvoiceType", false).get("description",locale)}</fo:block>
+  <fo:table-cell number-columns-spanned="2">
+     <fo:block font-weight="bold">${invoice.getRelatedOne("InvoiceType", false).get("description",locale)}</fo:block>
   </fo:table-cell>
 </fo:table-row>
 
 <fo:table-row>
-  <fo:table-cell><fo:block>${uiLabelMap.AccountingInvoiceDateAbbr}:</fo:block></fo:table-cell>
+  <#--<fo:table-cell><fo:block>${uiLabelMap.AccountingInvoiceDateAbbr}:</fo:block></fo:table-cell>-->
+  <fo:table-cell><fo:block>Fecha:</fo:block></fo:table-cell>
   <fo:table-cell><fo:block>${invoiceDate?if_exists}</fo:block></fo:table-cell>
 </fo:table-row>
 
+<#--
 <fo:table-row>
   <fo:table-cell><fo:block>${uiLabelMap.AccountingCustNr}:</fo:block></fo:table-cell>
   <fo:table-cell><fo:block><#if billingParty?has_content>${billingParty.partyId}</#if></fo:block></fo:table-cell>
 </fo:table-row>
+-->
 
+<#--
 <#if billingPartyTaxId?has_content>
   <fo:table-row>
     <fo:table-cell><fo:block>${uiLabelMap.PartyTaxId}:</fo:block></fo:table-cell>
     <fo:table-cell><fo:block> ${billingPartyTaxId}</fo:block></fo:table-cell>
   </fo:table-row>
 </#if>
+-->
 
 <fo:table-row>
-  <fo:table-cell><fo:block>${uiLabelMap.AccountingInvNr}:</fo:block></fo:table-cell>
-  <fo:table-cell><fo:block><#if invoice?has_content>${invoice.invoiceId}</#if></fo:block></fo:table-cell>
+  <#--<fo:table-cell><fo:block>${uiLabelMap.AccountingInvNr}:</fo:block></fo:table-cell> -->
+    <fo:table-cell><fo:block>Numero:</fo:block></fo:table-cell>
+  <fo:table-cell><fo:block><#if invoice?has_content>${invoice.invoiceId}<#if invoice.referenceNumber?has_content> (${invoice.referenceNumber})</#if></#if></fo:block></fo:table-cell>
 </fo:table-row>
+
 <#if invoice?has_content && invoice.description?has_content>
   <fo:table-row>
     <fo:table-cell><fo:block>${uiLabelMap.AccountingDescr}:</fo:block></fo:table-cell>

@@ -26,6 +26,7 @@ under the License.
        <#if billingAddress?has_content>
         <#assign billingPartyNameResult = dispatcher.runSync("getPartyNameForDate", Static["org.ofbiz.base.util.UtilMisc"].toMap("partyId", billingParty.partyId, "compareDate", invoice.invoiceDate, "userLogin", userLogin))/>
         <fo:block>${billingPartyNameResult.fullName?default(billingAddress.toName)?default("Billing Name Not Found")}</fo:block>
+        <#-- 
         <#if billingAddress.attnName?exists>
             <fo:block>${billingAddress.attnName}</fo:block>
         </#if>
@@ -34,9 +35,11 @@ under the License.
             <fo:block>${billingAddress.address2}</fo:block>
         </#if>
         <fo:block>${billingAddress.city?if_exists} ${billingAddress.stateProvinceGeoId?if_exists} ${billingAddress.postalCode?if_exists}</fo:block>
+        -->
     <#else>
         <fo:block>${uiLabelMap.AccountingNoGenBilAddressFound}${billingParty.partyId}</fo:block>
     </#if>
+    
         </fo:table-cell>
     </fo:table-row>
   </fo:table-body>
