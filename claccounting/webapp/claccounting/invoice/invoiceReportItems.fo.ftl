@@ -141,7 +141,8 @@ under the License.
                         <fo:block text-align="left">${invoiceItem.productId?if_exists} </fo:block>
                     </fo:table-cell>
                     <fo:table-cell border-top-style="solid" border-top-width="thin" border-top-color="black">
-                        <fo:block text-align="left">${description?if_exists}</fo:block>
+                        <#--<fo:block text-align="left">${description?if_exists}</fo:block>-->
+                        <fo:block text-align="left"><#if invoiceItem.inventoryItemId?exists>${invoiceItem.inventoryItemId}</#if> </fo:block>
                     </fo:table-cell>
                       <fo:table-cell>
                         <fo:block text-align="right"> <#if invoiceItem.quantity?exists>${invoiceItem.quantity?string.number}</#if> </fo:block>

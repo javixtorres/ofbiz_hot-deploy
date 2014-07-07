@@ -2830,6 +2830,18 @@ public class ShoppingCart implements Iterable<ShoppingCartItem>, Serializable {
         return addOrderTerm(orderTerm);
     }
     
+    /** Add an orderTerm to the order CODIGOLINUX*/
+    public int addOrderTerm(String termTypeId, BigDecimal termValue, Long termDays, String textValue, Timestamp termDate, Long termSec) {
+        GenericValue orderTerm = this.getDelegator().makeValue("OrderTerm");
+        orderTerm.put("termTypeId", termTypeId);
+        orderTerm.put("termValue", termValue);
+        orderTerm.put("termDays", termDays);
+        orderTerm.put("textValue", textValue);
+        orderTerm.put("termDate", termDate);
+        orderTerm.put("termSec", termSec);
+        return addOrderTerm(orderTerm);
+    }
+    
     public int addOrderTerm(String termTypeId, String orderItemSeqId,BigDecimal termValue, Long termDays, String textValue, String description) {
         GenericValue orderTerm = this.getDelegator().makeValue("OrderTerm");
         orderTerm.put("termTypeId", termTypeId);

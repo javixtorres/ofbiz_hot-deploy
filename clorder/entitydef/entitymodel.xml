@@ -1239,6 +1239,11 @@ under the License.
       <field name="orderItemSeqId" type="id-ne"></field>
       <field name="termValue" type="currency-amount"></field>
       <field name="termDays" type="numeric"></field>
+      
+<!--       CODIGOLINUX agregar fecha y secuencia -->
+      <field name="termDate" type="date"></field>
+      <field name="termSec" type="numeric"></field>
+      
       <field name="textValue" type="description"></field>
       <field name="description" type="description"></field>
       <field name="uomId" type="id"></field>

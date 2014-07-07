@@ -20,6 +20,7 @@ package org.ofbiz.order.shoppingcart;
 
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -37,6 +38,7 @@ import javax.servlet.http.HttpSession;
 import javolution.util.FastList;
 import javolution.util.FastMap;
 
+import org.apache.commons.net.ntp.TimeStamp;
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.ObjectType;
 import org.ofbiz.base.util.UtilDateTime;
@@ -1289,12 +1291,21 @@ public class ShoppingCartEvents {
         String termValueStr = request.getParameter("termValue");
         String termDaysStr = request.getParameter("termDays");
         String textValue = request.getParameter("textValue");
+        
+        String termDateStr = request.getParameter("termDate");
+        String termSecStr = request.getParameter("termSec");
 
         GenericValue termType = null;
         Delegator delegator = (Delegator) request.getAttribute("delegator");
 
         BigDecimal termValue = null;
         Long termDays = null;
+        Long termSec = null;
+        Timestamp termDate = null;
+        
+        termDateStr=termDateStr+" 00:00:00";
+        
+        Debug.logInfo(".........CODIGOLINUX........      Fecha: "+termDateStr,module);
 
         if (UtilValidate.isEmpty(termTypeId)) {
             request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermTypeIsRequired", locale));
@@ -1330,10 +1341,27 @@ public class ShoppingCartEvents {
                 return "error";
             }
         }
+        
+        if (UtilValidate.isNotEmpty(termSecStr)) {
+            try {
+                termSec = Long.valueOf(termSecStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrdertermSecError", UtilMisc.toMap("termSec", termSec), locale));
+                return "error";
+            }
+        }
 
+        if (UtilValidate.isNotEmpty(termDateStr)) {
+            try {
+                termDate = Timestamp.valueOf(termDateStr);
+            } catch (NumberFormatException e) {
+                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDateError", UtilMisc.toMap("orderTermDate", termDate), locale));
+                return "error";
+            }
+        }
         removeOrderTerm(request, response);
 
-        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+        cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 
         return "success";
     }

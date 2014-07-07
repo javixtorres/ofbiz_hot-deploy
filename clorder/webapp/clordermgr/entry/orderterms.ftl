@@ -34,6 +34,10 @@ under the License.
                                     <td align="center">${uiLabelMap.OrderOrderTermValue}</td>
                                     <td align="center">${uiLabelMap.OrderOrderTermDays}</td>
                                     <td>${uiLabelMap.CommonDescription}</td>
+                                    
+                                    <#--CODIGOLINUX-->
+                                    <td align="center">Fecha</td>
+                                    
                                     <td>&nbsp;</td>
                                 </tr>
                                 <#list orderTerms as orderTerm>
@@ -48,6 +52,10 @@ under the License.
                                         
                                         <td align="center">${orderTerm.termDays?if_exists}</td>
                                         <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
+                                        
+                                        <#--CODIGOLINUX-->
+                                        <td nowrap="nowrap">${orderTerm.termDate?if_exists}</td>
+                                        
                                         <td align="right">
                                             <a href="<@ofbizUrl>setOrderTerm?termIndex=${orderTerm_index}&amp;createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonUpdate}</a>
                                             <a href="<@ofbizUrl>removeCartOrderTerm?termIndex=${orderTerm_index}</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonRemove}</a>
@@ -57,7 +65,7 @@ under the License.
                                 <tr>
                                     <td colspan="5">
                                         <a href="<@ofbizUrl>setOrderTerm?createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonCreateNew}</a>
-                                          <a href="<@ofbizUrl>setAgreementOrderTerm</@ofbizUrl>" class="buttontext">Re-Generar Condiciones</a>
+                                        <a href="<@ofbizUrl>setAgreementOrderTerm</@ofbizUrl>" class="buttontext">Re-Generar Condiciones</a>
                                     </td>
                                 </tr>
                             </table>
@@ -108,11 +116,24 @@ under the License.
                                             <input type="text" size="30" maxlength="255" name="textValue" value="${textValue?if_exists}" />
                                         </td>
                                     </tr>
+                                    
+                                    <#--CODIGOLINUX-->
+                                    <tr>
+                                        <td width="26%" align="right" valign="top">
+                                            Fecha
+                                        </td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+                                            <@htmlTemplate.renderDateTimeField name="termDate" event="" action="" value="" className="" alert="" title="Format: yyyy-MM-dd" size="25" maxlength="30" id="termDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                                        </td>
+                                    </tr>
+                                    
                                     <tr>
                                         <td width="26%" align="right" valign="top">&nbsp;</td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
                                             <input type="submit" class="smallSubmit" value="${uiLabelMap.CommonAdd}" />
+                                            <a href="<@ofbizUrl>setAgreementOrderTerm</@ofbizUrl>" class="buttontext">Re-Generar Condiciones</a>
                                         </td>
                                     </tr>
                                 </table>

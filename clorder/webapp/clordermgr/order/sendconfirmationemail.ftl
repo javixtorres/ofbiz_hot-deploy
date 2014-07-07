@@ -79,7 +79,8 @@ under the License.
             <tr>
                 <td width="26%" align="right" class="label">${uiLabelMap.OrderSendConfirmationEmailBody}&nbsp;</td>
                 <td width="54%">
-                    <textarea name="body" rows="30" cols="80">${screens.render(productStoreEmailSetting.bodyScreenLocation?default(""))}</textarea>
+                    <#--<textarea name="body" rows="30" cols="80">${screens.render(productStoreEmailSetting.bodyScreenLocation?default(""))}</textarea>-->
+                    <textarea name="body" rows="30" cols="80"></textarea>
                 </td>
             </tr>
         </table>
