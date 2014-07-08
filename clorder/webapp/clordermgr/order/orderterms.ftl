@@ -28,17 +28,27 @@ under the License.
     <div class="screenlet-body">
       <table class="basic-table" cellspacing='0'>
       <tr class="header-row">
-        <td width="35%">${uiLabelMap.OrderOrderTermType}</td>
+        <td width="25%">${uiLabelMap.OrderOrderTermType}</td>
         <td width="15%" align="center">${uiLabelMap.OrderOrderTermValue}</td>
         <td width="15%" align="center">${uiLabelMap.OrderOrderTermDays}</td>
         <td width="35%" align="center">${uiLabelMap.CommonDescription}</td>
+        <td width="30%" align="center">Fecha</td>
       </tr>
-    <#list orderTerms?sort_by("createdStamp") as orderTerm>
+    <#list orderTerms?sort_by("termSec") as orderTerm>
       <tr>
-        <td width="35%">${orderTerm.getRelatedOne("TermType", false).get("description", locale)}</td>
-        <td width="15%" align="center">${orderTerm.termValue?default("")}</td>
+        <td width="25%">${orderTerm.getRelatedOne("TermType", false).get("description", locale)}</td>
+        <td width="15%" align="center">
+        <#if orderTerm.termValue?has_content> 
+           	<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
+        </#if>
+        </td>
         <td width="15%" align="center">${orderTerm.termDays?default("")}</td>
         <td width="35%" align="center">${orderTerm.textValue?default("")}</td>
+        <td width="30%" align="center">
+        <#if orderTerm.termDate?has_content>
+        ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(orderTerm.termDate, "dd/MM/yyyy", locale, timeZone)!}
+        </#if>
+        </td>
       </tr>
     </#list>
       </table>

@@ -31,6 +31,9 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
+//CODIGOLINUX
+import java.util.TimeZone;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -48,6 +51,7 @@ import org.ofbiz.base.util.UtilHttp;
 import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.base.util.UtilNumber;
 import org.ofbiz.base.util.UtilProperties;
+import org.ofbiz.base.util.UtilTimer;
 import org.ofbiz.base.util.UtilValidate;
 import org.ofbiz.entity.Delegator;
 import org.ofbiz.entity.GenericEntityException;
@@ -71,6 +75,9 @@ import org.ofbiz.service.LocalDispatcher;
 import org.ofbiz.service.ModelService;
 import org.ofbiz.service.ServiceUtil;
 import org.ofbiz.webapp.control.RequestHandler;
+
+//CODIGOLINUX COMENTADO:
+//import com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException;
 
 /**
  * Shopping cart events.
@@ -210,6 +217,11 @@ public class ShoppingCartEvents {
         // not used right now: Map attributes = null;
         String catalogId = CatalogWorker.getCurrentCatalogId(request);
         Locale locale = UtilHttp.getLocale(request);
+        
+        //CODIGOLINUX
+        TimeZone timeZone = UtilHttp.getTimeZone(request);
+        
+        
        
         // Get the parameters as a MAP, remove the productId and quantity params.
         Map<String, Object> paramMap = UtilHttp.getCombinedMap(request);
@@ -1350,6 +1362,8 @@ public class ShoppingCartEvents {
                 return "error";
             }
         }
+        else
+        	termSec = Long.valueOf(0);
 
         if (UtilValidate.isNotEmpty(termDateStr)) {
             try {
@@ -1401,8 +1415,16 @@ public class ShoppingCartEvents {
 
         BigDecimal termValue = null;
         Long termDays = null;
-
+        Long DiaVencimiento = null;
         
+        Timestamp termDate = null;
+        
+        Timestamp termDateIni = null;
+        
+        Long termSec = Long.valueOf(0);
+
+        termSec++;
+        		
         if (UtilValidate.isNotEmpty(termValueStr))
         {
 	
@@ -1443,7 +1465,7 @@ public class ShoppingCartEvents {
 	
 	        //removeOrderTerm(request, response);
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
         }
         //
         
@@ -1460,6 +1482,8 @@ public class ShoppingCartEvents {
         termType = null;
         termValue = null;
         termDays = null;
+        
+        termSec++;
         
         if (UtilValidate.isNotEmpty(textValueCodeudor))
     		{    	
@@ -1500,7 +1524,7 @@ public class ShoppingCartEvents {
 	
 	        //removeOrderTerm(request, response);
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
     		}
         
        //----------------------------------------------------//
@@ -1517,6 +1541,8 @@ public class ShoppingCartEvents {
         termType = null;
         termValue = null;
         termDays = null;
+        
+        termSec++;
         
         if (UtilValidate.isNotEmpty(textValueRefNom1))
     		{
@@ -1558,7 +1584,7 @@ public class ShoppingCartEvents {
 	
 	        //removeOrderTerm(request, response);
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 	        
     		}
         
@@ -1576,6 +1602,8 @@ public class ShoppingCartEvents {
         termType = null;
         termValue = null;
         termDays = null;
+
+        termSec++;
         
         if (UtilValidate.isNotEmpty(textValueRefNom2))
 
@@ -1617,7 +1645,7 @@ public class ShoppingCartEvents {
 	
 	        //removeOrderTerm(request, response);
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 	        
     		}
         
@@ -1635,6 +1663,7 @@ public class ShoppingCartEvents {
         termValue = null;
         termDays = null;
         
+        termSec++;
         
         if (UtilValidate.isNotEmpty(textValueDate))
         	{
@@ -1644,6 +1673,10 @@ public class ShoppingCartEvents {
 	//            return "error";
 	//        }
 	
+        	textValueDate=textValueDate+" 00:00:00";
+        	termDate=Timestamp.valueOf(textValueDate);
+        	termDateIni=termDate;
+        	
 	        try {
 	            termType = delegator.findOne("TermType", UtilMisc.toMap("termTypeId", termTypeId), false);
 	        } catch (GenericEntityException gee) {
@@ -1676,7 +1709,7 @@ public class ShoppingCartEvents {
 	
 	        //removeOrderTerm(request, response);
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        //cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 	        
         	}
         else
@@ -1700,6 +1733,9 @@ public class ShoppingCartEvents {
         termType = null;
         termValue = null;
         termDays = null;
+        termDate = null;
+        
+        termSec++;
         
         
         if (UtilValidate.isNotEmpty(termValueVencimiento))
@@ -1734,6 +1770,7 @@ public class ShoppingCartEvents {
 	        if (UtilValidate.isNotEmpty(termDaysStr)) {
 	            try {
 	                termDays = Long.valueOf(termDaysStr);
+	                DiaVencimiento = termDays;
 	            } catch (NumberFormatException e) {
 	                request.setAttribute("_ERROR_MESSAGE_", UtilProperties.getMessage(resource_error, "OrderOrderTermDaysError", UtilMisc.toMap("orderTermDays", termDaysStr), locale));
 	                return "error";
@@ -1741,8 +1778,9 @@ public class ShoppingCartEvents {
 	        }
 	
 	        //removeOrderTerm(request, response);
+	       
 	
-	        cart.addOrderTerm(termTypeId, termValue, termDays, textValue);
+	        //cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 	        
         	}
         else
@@ -1819,9 +1857,14 @@ public class ShoppingCartEvents {
 	        
 	        // termValue = BigDecimal.valueOf(x);
 	        
-	        termValue = MtCuota;
-	
+	        //CODIGOLINUX
+	        TimeZone timeZone = UtilHttp.getTimeZone(request);
 	        
+	        
+	        termValue = MtCuota;
+	        
+	        termDate=termDateIni;
+	
 	        for(int x = 1; x <= Cuotas; x++) 
 	        	{
 	            	       
@@ -1831,10 +1874,15 @@ public class ShoppingCartEvents {
 	             
 	             termDays = (long) x;
 	             
-	                      
+	             termSec++;
+	                        
 	             //removeOrderTerm(request, response);
 	
-	             cart.addOrderTerm(termTypeId, termValue, termDays, textValue);        	
+	             cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
+	             
+	             termDate=UtilDateTime.getMonthEnd(termDate, timeZone, locale);
+	             termDate=UtilDateTime.addDaysToTimestamp(termDate, Double.valueOf(DiaVencimiento));
+	        
 	        	
 	         	}
         	 }

@@ -1167,7 +1167,7 @@ under the License.
         <entity-and list="orderTermList0" entity-name="OrderTerm">
             <field-map field-name="orderId" from-field="orderHeader.orderId"/>
             <field-map field-name="termTypeId" value="CRD_CUOTA"/>
-            <order-by field-name="createdStamp"/>
+            <order-by field-name="termSec"/>
         </entity-and>
          
 <iterate list="orderTermList0" entry="orderTerm0">
@@ -1185,6 +1185,7 @@ under the License.
 <!--         <set field="parameters.comments"  from-field="orderTerm0.textValue"/> -->
         <set field="parameters.comments"  value="${orderHeader.orderName} - Cuota ${orderTerm0.textValue}"/>
         <set field="parameters.amount"  from-field="orderTerm0.termValue"/>
+        <set field="parameters.effectiveDate" from-field="orderTerm0.termDate"/>   
                 
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
@@ -1212,7 +1213,6 @@ under the License.
 <!--         <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="getDayEnd" ret-field="dateCuo"> -->
 <!-- 			<field field="dateCuo" type="java.sql.Timestamp"/> -->
 <!-- 		</call-class-method> -->
-		<log level="info" message="...........CODIGOLINUX............. Calculo de Fecha"/>
 
 <!-- 		<log level="info" message="...........CODIGOLINUX 01: dateCuo ${org.ofbiz.base.util.UtilDateTime.timeStampToString(dateCuo,'dd-MM-yyyy HH:mm', TimeZone.getDefault(), context.get(locale))} daysCuo ${daysCuo}"/> -->
 		
@@ -1224,12 +1224,11 @@ under the License.
         
 <!--         <log level="info" message="...........CODIGOLINUX 02: dateCuo ${org.ofbiz.base.util.UtilDateTime.timeStampToString(dateCuo, &quot;dd-MM-yyyy HH:mm&quot;, TimeZone.getDefault(), context.get(&quot;locale&quot;))} daysCuo ${daysCuo}"/> -->
         
-        <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo">
-            <field field="dateCuo" type="java.sql.Timestamp"/>
-            <field field="daysCuo" type="int"/>
-<!--             <field field="diaVencimiento" type="Long"/> -->
-        </call-class-method>
-        <set field="parameters.effectiveDate" from-field="dateCuo"/>        
+<!--         <call-class-method class-name="org.ofbiz.base.util.UtilDateTime" method-name="addDaysToTimestamp" ret-field="dateCuo"> -->
+<!--             <field field="dateCuo" type="java.sql.Timestamp"/> -->
+<!--             <field field="daysCuo" type="int"/> -->
+<!--              <field field="diaVencimiento" type="Long"/>  -->
+<!--         </call-class-method> -->     
         
 </iterate>
      

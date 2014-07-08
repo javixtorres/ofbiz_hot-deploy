@@ -1241,7 +1241,7 @@ under the License.
       <field name="termDays" type="numeric"></field>
       
 <!--       CODIGOLINUX agregar fecha y secuencia -->
-      <field name="termDate" type="date"></field>
+      <field name="termDate" type="date-time"></field>
       <field name="termSec" type="numeric"></field>
       
       <field name="textValue" type="description"></field>

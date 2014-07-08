@@ -48,7 +48,17 @@ under the License.
                 <td valign="top">
                   <div>
                     <#if orderItem.productId?exists>
+                      <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->
+                      <#assign productList = orderItem.getRelated("Product", null, null, false)>
+                            
                       <a href="<@ofbizUrl>product?product_id=${orderItem.productId}</@ofbizUrl>" class="buttontext">${orderItem.productId} - ${orderItem.itemDescription}</a>
+                      
+                      <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->	
+					  <#if productList?has_content>
+		                            <#list productList as productMap>
+		                               (${productMap.internalName}) 
+		                            </#list>
+		              </#if>
                     <#else>
                       <b>${itemType?if_exists.description?if_exists}</b> : ${orderItem.itemDescription?if_exists}
                     </#if>

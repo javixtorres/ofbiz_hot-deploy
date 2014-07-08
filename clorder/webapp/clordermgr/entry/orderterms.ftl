@@ -40,7 +40,7 @@ under the License.
                                     
                                     <td>&nbsp;</td>
                                 </tr>
-                                <#list orderTerms as orderTerm>
+                                <#list orderTerms?sort_by("termSec") as orderTerm>
                                     <tr <#if orderTerm_index % 2 != 0>class="alternate-row"</#if> >
                                         <td nowrap="nowrap">${orderTerm.getRelatedOne('TermType', false).get('description', locale)}</td>
                                         <td align="center">
@@ -54,7 +54,11 @@ under the License.
                                         <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
                                         
                                         <#--CODIGOLINUX-->
-                                        <td nowrap="nowrap">${orderTerm.termDate?if_exists}</td>
+                                        <td nowrap="nowrap">
+                                        <#if orderTerm.termDate?has_content>
+        								${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(orderTerm.termDate, "dd/MM/yyyy", locale, timeZone)!}
+        								</#if>
+                                        </td>
                                         
                                         <td align="right">
                                             <a href="<@ofbizUrl>setOrderTerm?termIndex=${orderTerm_index}&amp;createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonUpdate}</a>
@@ -73,6 +77,15 @@ under the License.
                             <form method="post" action="<@ofbizUrl>addOrderTerm</@ofbizUrl>" name="termform">
                                 <input type="hidden" name="termIndex" value="${termIndex?if_exists}" />
                                 <table class="basic-table">
+                                     <tr>
+                                        <td width="26%" align="right" valign="top">
+                                            Sec
+                                        </td>
+                                        <td width="5">&nbsp;</td>
+                                        <td width="74%">
+                                            <input type="text" size="30" maxlength="60" name="termSec" value="${termSec?if_exists}" />
+                                        </td>
+                                    </tr>
                                     <tr>
                                         <td width="26%" align="right" valign="top">
                                             ${uiLabelMap.OrderOrderTermType}
@@ -124,7 +137,11 @@ under the License.
                                         </td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
+                                        <#if termDate?has_content>
+                                            <@htmlTemplate.renderDateTimeField name="termDate" event="" action="" value="${Static['org.ofbiz.base.util.UtilFormatOut'].formatDateTime(termDate, 'yyyy-MM-dd', locale, timeZone)!}" className="" alert="" title="Format: yyyy-MM-dd" size="25" maxlength="30" id="termDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                                        <#else>
                                             <@htmlTemplate.renderDateTimeField name="termDate" event="" action="" value="" className="" alert="" title="Format: yyyy-MM-dd" size="25" maxlength="30" id="termDate" dateType="date" shortDateInput=true timeDropdownParamName="" defaultDateTimeString="" localizedIconTitle="" timeDropdown="" timeHourName="" classString="" hour1="" hour2="" timeMinutesName="" minutes="" isTwelveHour="" ampmName="" amSelected="" pmSelected="" compositeType="" formName=""/>
+                                        </#if>
                                         </td>
                                     </tr>
                                     

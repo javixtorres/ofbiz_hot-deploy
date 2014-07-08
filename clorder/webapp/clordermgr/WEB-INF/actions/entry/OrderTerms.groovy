@@ -41,6 +41,8 @@ if (request.getParameter('createNew') == 'Y') {
                context.termValue = orderTerm.termValue;
                context.termDays = orderTerm.termDays;
                context.textValue = orderTerm.textValue;
+			   context.termDate = orderTerm.termDate;
+			   context.termSec = orderTerm.termSec;
 
                context.termIndex = termIndexStr;
             }
