@@ -9185,6 +9185,7 @@
     <property key="AccountingNewPaymentIncoming">
         <value xml:lang="de">Neue Eingangszahlung</value>
         <value xml:lang="en">New incoming payment</value>
+        <value xml:lang="es">Nuevo Pago - Ingreso</value>
         <value xml:lang="fr">Nouveau paiement reçu</value>
         <value xml:lang="hi_IN">नई आवक भुगतान</value>
         <value xml:lang="it">Nuovo Pagamento in Ingresso</value>
@@ -9199,6 +9200,7 @@
     <property key="AccountingNewPaymentOutgoing">
         <value xml:lang="de">Neue Ausgangszahlung</value>
         <value xml:lang="en">New outgoing payment</value>
+        <value xml:lang="es">Nuevo Pago - Egreso</value>
         <value xml:lang="fr">Nouveau paiement versé</value>
         <value xml:lang="hi_IN">नई निर्गामी भुगतान</value>
         <value xml:lang="it">Nuovo Pagamento in Uscita</value>

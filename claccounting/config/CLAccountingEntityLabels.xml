@@ -4860,6 +4860,7 @@
     <property key="PaymentType.description.CUSTOMER_DEPOSIT">
         <value xml:lang="de">Vorkasse</value>
         <value xml:lang="en">Customer Deposit</value>
+        <value xml:lang="es">Depósito de Cliente</value>
         <value xml:lang="fr">Dépôt de garantie client</value>
         <value xml:lang="hi_IN">ग्राहक जमा</value>
         <value xml:lang="it">Deposito Cliente</value>
@@ -4876,6 +4877,7 @@
     <property key="PaymentType.description.CUSTOMER_PAYMENT">
         <value xml:lang="de">Kunden-Zahlung</value>
         <value xml:lang="en">Customer Payment</value>
+        <value xml:lang="es">Pago de Cliente</value>
         <value xml:lang="fr">Paiement client</value>
         <value xml:lang="hi_IN">ग्राहक भुगतान</value>
         <value xml:lang="it">Pagamento Cliente</value>
@@ -4970,6 +4972,7 @@
     <property key="PaymentType.description.INTEREST_RECEIPT">
         <value xml:lang="de">Zinsenbeleg</value>
         <value xml:lang="en">Interest Receipt</value>
+        <value xml:lang="es">Intereses Recividos</value>
         <value xml:lang="fr">Reçu d'intérêt</value>
         <value xml:lang="hi_IN">ब्याज रसीद</value>
         <value xml:lang="it">Ricevuta Interessi</value>
@@ -4999,6 +5002,7 @@
     <property key="PaymentType.description.PAYROL_PAYMENT">
         <value xml:lang="de">Lohnzahlung</value>
         <value xml:lang="en">Payrol Payment</value>
+        <value xml:lang="es">Pago de Salario</value>
         <value xml:lang="hi_IN">वेतन भुगतान</value>
         <value xml:lang="it">Pagamento paghe</value>
         <value xml:lang="ja">給与支払</value>
@@ -5102,6 +5106,7 @@
     <property key="PaymentType.description.VENDOR_PAYMENT">
         <value xml:lang="de">Kreditorenzahlung</value>
         <value xml:lang="en">Vendor Payment</value>
+        <value xml:lang="es">Pago a Proveedor</value>
         <value xml:lang="fr">Paiement de fournisseur</value>
         <value xml:lang="hi_IN">विक्रेता भुगतान</value>
         <value xml:lang="it">Fornitore</value>

@@ -468,6 +468,17 @@ under the License.
                 <parameter param-name="statusId" value="PMNT_CONFIRMED"/>
             </link>
         </menu-item>
+        <menu-item name="printPayment" title="Imprimir Comprobante">
+            <condition>
+                <and>
+                    <not><if-empty field="payment.paymentId"/></not>
+                    <if-compare field="payment.statusId" operator="equals" value="PMNT_NOT_PAID"/>
+                </and>
+            </condition>
+            <link target="printPayment.pdf" target-window="_BLANK">
+                <parameter param-name="paymentId" from-field="payment.paymentId"/>
+            </link>
+        </menu-item>
         <menu-item name="printAsCheck" title="${uiLabelMap.AccountingPrintAsCheck}">
             <condition>
                 <and>
@@ -546,6 +557,18 @@ under the License.
                 </and>
             </condition>
             <link target="DepositSlip.pdf" target-window="_BLANK">
+                <parameter param-name="paymentGroupId" from-field="paymentGroup.paymentGroupId"/>
+            </link>
+        </menu-item>
+        <menu-item name="printPayment" title="Imprimir Comprobante">
+            <condition>
+                <and>
+                    <if-compare field="display" operator="equals" value="true"/>
+                    <if-compare field="paymentGroup.paymentGroupTypeId" operator="equals" value="CHECK_RUN"/>
+                    <not><if-empty field="paymentGroupMembers"/></not>
+                </and>
+            </condition>
+            <link target="printPayment.pdf" target-window="_BLANK">
                 <parameter param-name="paymentGroupId" from-field="paymentGroup.paymentGroupId"/>
             </link>
         </menu-item>
