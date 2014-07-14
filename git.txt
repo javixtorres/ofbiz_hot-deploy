@@ -1,0 +1,20 @@
+grabar modificaciones:
+git add .
+
+git commit -m "actualizacion"
+
+git push origin master
+
+para sincronizar actualizaciones:
+
+git pull
+
+---------
+
+(para no tener problemas con los jar generados locales e importar)
+git reset --hard HEAD
+git pull
+
+o bien
+
+git clear  (pero borra los cambios locales)

@@ -133,7 +133,7 @@ under the License.
                                             <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor?if_exists}" />
                                             <input type="hidden" name="textValueDate" value="${textValueDate?if_exists}" />
                                         
-                                            <input type="submit" class="smallSubmit" value="Aceptar" />
+                                            <input type="submit" class="smallSubmit" value="Aceptar y Generar Cuotas" />
                                         </td>
                                     </tr>
                                 </table>

@@ -31,33 +31,40 @@ under the License.
                             <table class="basic-table hover-bar">
                                 <tr class="header-row">
                                     <td>${uiLabelMap.OrderOrderTermType}</td>
-                                    <td align="center">${uiLabelMap.OrderOrderTermValue}</td>
-                                    <td align="center">${uiLabelMap.OrderOrderTermDays}</td>
                                     <td>${uiLabelMap.CommonDescription}</td>
+                                    
+                                    <#--<td align="center">${uiLabelMap.OrderOrderTermDays}</td>-->
+                                    <td align="center">Num.</td>
+                                    
                                     
                                     <#--CODIGOLINUX-->
                                     <td align="center">Fecha</td>
                                     
+                                    <td align="center">${uiLabelMap.OrderOrderTermValue}</td>
+                                    
                                     <td>&nbsp;</td>
                                 </tr>
-                                <#list orderTerms?sort_by("termSec") as orderTerm>
+                                <#--<#list orderTerms?sort_by("termSec") as orderTerm>  No es posible por que luego el ordern es tomado para modificar-->
+                                <#list orderTerms as orderTerm>
                                     <tr <#if orderTerm_index % 2 != 0>class="alternate-row"</#if> >
                                         <td nowrap="nowrap">${orderTerm.getRelatedOne('TermType', false).get('description', locale)}</td>
-                                        <td align="center">
-                                        <#-- ${orderTerm.termValue?if_exists}--> 
-                                        <#if orderTerm.termValue?has_content> 
-                                        	<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
-                                        </#if>
-                                        </td>
+                                        <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
+                                        
                                         
                                         <td align="center">${orderTerm.termDays?if_exists}</td>
-                                        <td nowrap="nowrap">${orderTerm.textValue?if_exists}</td>
                                         
                                         <#--CODIGOLINUX-->
                                         <td nowrap="nowrap">
                                         <#if orderTerm.termDate?has_content>
         								${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(orderTerm.termDate, "dd/MM/yyyy", locale, timeZone)!}
         								</#if>
+                                        </td>
+                                        
+                                        <td align="center">
+                                        <#-- ${orderTerm.termValue?if_exists}--> 
+                                        <#if orderTerm.termValue?has_content> 
+                                        	<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
+                                        </#if>
                                         </td>
                                         
                                         <td align="right">
@@ -149,7 +156,7 @@ under the License.
                                         <td width="26%" align="right" valign="top">&nbsp;</td>
                                         <td width="5">&nbsp;</td>
                                         <td width="74%">
-                                            <input type="submit" class="smallSubmit" value="${uiLabelMap.CommonAdd}" />
+                                            <input type="submit" class="smallSubmit" value="${uiLabelMap.CommonAdd} / Actualizar" />
                                             <a href="<@ofbizUrl>setAgreementOrderTerm</@ofbizUrl>" class="buttontext">Re-Generar Condiciones</a>
                                         </td>
                                     </tr>

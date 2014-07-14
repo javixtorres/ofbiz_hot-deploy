@@ -59,7 +59,7 @@
                                 </or>
                             </condition>
                             <widgets>
-                                <screenlet title="${uiLabelMap.PartyPersonalInformation}" navigation-menu-name="personUpdate" id="PartyPersonalInformationPanel">
+                                <screenlet title="66${uiLabelMap.PartyPersonalInformation}" navigation-menu-name="personUpdate" id="PartyPersonalInformationPanel">
                                            <include-menu name="personUpdate" location="component://clparty/widget/clpartymgr/PartyMenus.xml"/>
                                     <include-form name="ViewPartyPerson" location="component://clparty/widget/clpartymgr/PartyForms.xml"/>
                                     <section>
@@ -73,7 +73,7 @@
                                 </screenlet>
                             </widgets>
                             <fail-widgets>
-                                <screenlet title="${uiLabelMap.PartyPersonalInformation}" id="PartyPersonalInformationPanel">
+                                <screenlet title="77${uiLabelMap.PartyPersonalInformation}" id="PartyPersonalInformationPanel">
                                     <include-form name="ViewPartyPerson" location="component://clparty/widget/clpartymgr/PartyForms.xml"/>
                                     <section>
                                         <condition>

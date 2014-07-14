@@ -24,7 +24,7 @@ under the License.
       <br class="clear" />
     </div>
     <div class="screenlet-body">
-          ${screens.render("component://party/widget/partymgr/ProfileScreens.xml#ContentList")}
+          ${screens.render("component://clparty/widget/clpartymgr/ProfileScreens.xml#ContentList")}
       <hr />
       <div class="label">${uiLabelMap.PartyAttachContent}</div>
       <form id="uploadPartyContent" method="post" enctype="multipart/form-data" action="<@ofbizUrl>uploadPartyContent</@ofbizUrl>">
