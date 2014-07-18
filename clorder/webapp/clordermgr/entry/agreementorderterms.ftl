@@ -34,7 +34,8 @@ under the License.
                                 <input type="hidden" name="termIndex" value="${termIndex?if_exists}" />
                                 <table class="basic-table">
                                 
-                                <tr>
+ 									<#if cart.getOrderType() == "SALES_ORDER">                               
+                                    <tr>
                                         <td width="26%" align="right" valign="top">
                                             Codeudor
                                         </td>
@@ -43,6 +44,7 @@ under the License.
                                         <@htmlTemplate.lookupField value="${textValueCodeudor?if_exists}" formName="agreementtermform" name="textValueCodeudor" id="textValueCodeudor" fieldFormName="${lookupPartyView}"/>                  						</div>                    
                   						</td>
                                     </tr>
+                                    <#--
                                     <tr>
                                         <td width="26%" align="right" valign="top">
                                             Anticipo
@@ -51,7 +53,9 @@ under the License.
                                         <td width="74%">
                                             <input type="text" size="20" maxlength="60"  name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
                                         </td>
-                                    </tr> 
+                                    </tr>
+                                    --> 
+                                    </#if>
                                      <tr>
                                         <td width="26%" align="right" valign="top">
                                             Nro. de Cuotas
@@ -81,7 +85,8 @@ under the License.
 										<input type="text" size="3" maxlength="60" name="termValueVencimiento" value="${termValueVencimiento?if_exists}" />                    
                   						</td>
                                     </tr>
-                                                                 
+                                    
+                                    <#if cart.getOrderType() == "SALES_ORDER">                                
                                     <tr>
                                     <td width="26%" align="right" valign="top">
                                         1. Referencia Personal/Comercial
@@ -122,7 +127,7 @@ under the License.
                                         <input type="text" size="30" maxlength="60" name="termValueRefTel2" value="${termValueRefTel2?if_exists}" />
                                     </td>
                                     </tr>
-                                   
+									</#if>                                   
                                    
                                     
                                      <tr>
@@ -132,6 +137,13 @@ under the License.
     
                                             <input type="hidden" name="textValueCodeudor" value="${textValueCodeudor?if_exists}" />
                                             <input type="hidden" name="textValueDate" value="${textValueDate?if_exists}" />
+                                            
+                                            
+                                            <input type="hidden" name="termValueAnticipo" value="${termValueAnticipo?if_exists}" />
+                                            <input type="hidden" name="textValueRefNom1" value="${textValueRefNom1?if_exists}" />
+                                            <input type="hidden" name="termValueRefTel1" value="${termValueRefTel1?if_exists}" />
+                                            <input type="hidden" name="textValueRefNom2" value="${textValueRefNom2?if_exists}" />
+                                            <input type="hidden" name="termValueRefTel2" value="${termValueRefTel2?if_exists}" />
                                         
                                             <input type="submit" class="smallSubmit" value="Aceptar y Generar Cuotas" />
                                         </td>

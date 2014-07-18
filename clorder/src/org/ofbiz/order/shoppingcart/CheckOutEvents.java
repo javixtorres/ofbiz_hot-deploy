@@ -996,17 +996,25 @@ public class CheckOutEvents {
 
         String customerPartyId = cart.getPartyId();
 
-        String[] processOrder = {"customer", "shipping", "shipGroups", "options", "agreement", "term", "payment",
-                                 "addparty", "paysplit"};
+        
+        //String[] processOrder = {"customer", "shipping", "shipGroups", "options", "agreement", "term", "payment",
+        //                         "addparty", "paysplit"};
+        // CODIGOLINUX
+        String[] processOrder = {"customer", "shipping", "shipGroups", "options", "payment", "agreement", "term", "payment"};
+        
 
         if (cart.getOrderType().equals("PURCHASE_ORDER")) {
             // Force checks for the following
             requireCustomer = true; requireShipping = true; requireOptions = true;
 //            processOrder = new String[] {"customer", "term", "shipping", "shipGroups", "options", "payment",
 //                                         "addparty", "paysplit"};
-            processOrder = new String[] {"customer", "shipping", "shipGroups", "options", "payment","paysplit"};
-        }
+//            processOrder = new String[] {"customer", "shipping", "shipGroups", "options", "payment","paysplit"};
+            // CODIGOLINUX
+            processOrder =  new String[] {"customer", "shipping", "shipGroups", "options", "payment", "agreement", "term", "payment"};
 
+        }
+        
+   
         for (int i = 0; i < processOrder.length; i++) {
             String currProcess = processOrder[i];
             if (currProcess.equals("customer")) {
@@ -1029,6 +1037,14 @@ public class CheckOutEvents {
                 if (requireOptions && !shippingOptionsSet) {
                     return "options";
                 }
+            // CODIGOLINUX cambio de orden    
+            } else if (currProcess.equals("payment")) {
+                List<String> paymentMethodIds = cart.getPaymentMethodIds();
+                List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
+                if (requirePayment && UtilValidate.isEmpty(paymentMethodIds) && UtilValidate.isEmpty(paymentMethodTypeIds)) {
+                    return "payment";
+                }
+                
             } else if (currProcess.equals("agreement")) {
                 if (requireTerm && !cart.isOrderTermSet()) {
                     return "agreement";
@@ -1037,12 +1053,12 @@ public class CheckOutEvents {
                 if (requireTerm && !cart.isOrderTermSet()) {
                     return "term";
                 }
-            } else if (currProcess.equals("payment")) {
-                List<String> paymentMethodIds = cart.getPaymentMethodIds();
-                List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
-                if (requirePayment && UtilValidate.isEmpty(paymentMethodIds) && UtilValidate.isEmpty(paymentMethodTypeIds)) {
-                    return "payment";
-                }
+//            } else if (currProcess.equals("payment")) {
+//                List<String> paymentMethodIds = cart.getPaymentMethodIds();
+//                List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
+//                if (requirePayment && UtilValidate.isEmpty(paymentMethodIds) && UtilValidate.isEmpty(paymentMethodTypeIds)) {
+//                    return "payment";
+//                }
             } else if (currProcess.equals("addparty")) {
                 if (requireAdditionalParty && cart.getAttribute("addpty") == null) {
                     return "addparty";

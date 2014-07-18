@@ -1006,7 +1006,15 @@ under the License.
         <set field="parameters.paymentMethodTypeId" value="COMPANY_ACCOUNT"/>
         <set field="parameters.statusId" value="PMNT_NOT_PAID"/>
         
- <if-empty field="orderHeader.billingAccountId">
+    <entity-and list="orderTermList2" entity-name="OrderTerm">
+        <field-map field-name="orderId" from-field="orderHeader.orderId"/>
+        <field-map field-name="termTypeId" value="CRD_CUOTA"/>
+        <order-by field-name="termSec"/>
+    </entity-and>     
+	<first-from-list list="orderTermList2" entry="orderTerm2"/>
+        
+<if-empty field="orderTerm2">    
+<!--  <if-empty field="orderHeader.billingAccountId"> -->
         
         <set field="parameters.comments"  value="${orderHeader.orderName}"/>
         
