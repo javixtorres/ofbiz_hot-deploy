@@ -80,7 +80,13 @@ under the License.
                   <#if cartLine.getProductId()?exists>
                     <#-- product item -->
                     <a href="<@ofbizUrl>product?product_id=${cartLine.getProductId()}</@ofbizUrl>" class="buttontext">${cartLine.getProductId()}-${cartLine.getDescription()}</a> -
-                    <input size="60" type="text" name="description_${cartLineIndex}" value="${cartLine.getName()?default("")}"/><br />
+                    
+                      <#--CODIGOLINUX Para Mostrar Descripcion de Producto -->
+                      <#assign itemProduct1 = cartLine.getProduct()>
+                      ${itemProduct1.internalName}
+                      -
+                      
+                    <input size="30" type="text" name="description_${cartLineIndex}" value="${cartLine.getName()?default("")}"/><br />
                     <i>${cartLine.getDescription()?if_exists}</i>
                     <#if shoppingCart.getOrderType() != "PURCHASE_ORDER">
                       <#-- only applies to sales orders, not purchase orders -->
@@ -91,6 +97,8 @@ under the License.
                           <b>(${itemProduct.inventoryMessage})</b>
                       </#if>
                     </#if>
+                   
+
                   <#else>
                     <#-- this is a non-product item -->
                     <b>${cartLine.getItemTypeDescription()?if_exists}</b> : ${cartLine.getName()?if_exists}

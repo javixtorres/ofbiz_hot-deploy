@@ -76,8 +76,13 @@ import org.ofbiz.service.ModelService;
 import org.ofbiz.service.ServiceUtil;
 import org.ofbiz.webapp.control.RequestHandler;
 
+//import com.google.checkout.checkout.RoundingMode;
+
 //CODIGOLINUX COMENTADO:
 //import com.sun.corba.se.spi.legacy.connection.GetEndPointInfoAgainException;
+
+//CODIGOLINUX Para redondeo como deseo
+import java.math.RoundingMode;
 
 /**
  * Shopping cart events.
@@ -91,6 +96,9 @@ public class ShoppingCartEvents {
     private static final String NO_ERROR = "noerror";
     private static final String NON_CRITICAL_ERROR = "noncritical";
     private static final String ERROR = "error";
+    
+    // CODIGOLINUX para manejar el mismo redondeo que las facturas
+    private static final int ROUNDING = UtilNumber.getBigDecimalRoundingMode("invoice.rounding");
 
     public static final MathContext generalRounding = new MathContext(10);
 
@@ -1824,7 +1832,9 @@ public class ShoppingCartEvents {
 	        }
 	    
 	        
-	        MtCuota	= MtTotal.divide(CantCuotas);
+	        MtCuota	= MtTotal.divide(CantCuotas, generalRounding).setScale(0, ROUNDING);
+
+	        
 	        
 	        if (UtilValidate.isNotEmpty(termValueCuotas)) {
 	            try {
