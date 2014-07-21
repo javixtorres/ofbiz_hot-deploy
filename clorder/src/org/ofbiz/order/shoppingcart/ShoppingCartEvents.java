@@ -76,6 +76,8 @@ import org.ofbiz.service.ModelService;
 import org.ofbiz.service.ServiceUtil;
 import org.ofbiz.webapp.control.RequestHandler;
 
+import com.ibm.icu.util.Calendar;
+
 //import com.google.checkout.checkout.RoundingMode;
 
 //CODIGOLINUX COMENTADO:
@@ -1831,7 +1833,7 @@ public class ShoppingCartEvents {
 	            MtTotal = MtTotal.subtract(MtAnticipo);
 	        }
 	    
-	        
+	        //CODIGOLINUX Redondea sin decimal
 	        MtCuota	= MtTotal.divide(CantCuotas, generalRounding).setScale(0, ROUNDING);
 
 	        
@@ -1874,6 +1876,13 @@ public class ShoppingCartEvents {
 	        termValue = MtCuota;
 	        
 	        termDate=termDateIni;
+	        
+
+	        int ultimoDiaProximoMes = 0;
+	        int sumar_dias=1;
+	        Timestamp proximoMes = null;
+	        
+	        proximoMes=UtilDateTime.nowTimestamp();
 	
 	        for(int x = 1; x <= Cuotas; x++) 
 	        	{
@@ -1890,10 +1899,27 @@ public class ShoppingCartEvents {
 	
 	             cart.addOrderTerm(termTypeId, termValue, termDays, textValue, termDate, termSec);
 	             
+	             
+	             
 	             termDate=UtilDateTime.getMonthEnd(termDate, timeZone, locale);
-	             termDate=UtilDateTime.addDaysToTimestamp(termDate, Double.valueOf(DiaVencimiento));
-	        
-	        	
+	             
+	             proximoMes=UtilDateTime.addDaysToTimestamp(termDate,  sumar_dias);
+	             
+	             termDate=UtilDateTime.getMonthEnd(proximoMes, timeZone, locale);
+	             
+	             ultimoDiaProximoMes=UtilDateTime.getDayOfMonth(termDate, timeZone, locale);
+	             
+	             if (ultimoDiaProximoMes>DiaVencimiento)
+	             	{
+	            	 //termDate=UtilDateTime.adjustTimestamp(termDate, Calendar.DAY_OF_MONTH, DiaVencimiento.intValue(), timeZone, locale);
+	            	 //termDate=UtilDateTime.adjustTimestamp(termDate, Calendar.DAY_OF_MONTH, DiaVencimiento.intValue());
+	            	 
+	            	 termDate=UtilDateTime.toTimestamp(UtilDateTime.getMonth(proximoMes, timeZone, locale)+1, DiaVencimiento.intValue(), UtilDateTime.getYear(termDate, timeZone, locale), 0, 0, 0);
+	            	}
+	             else
+	             	{
+	            	 termDate=UtilDateTime.toTimestamp(UtilDateTime.getMonth(proximoMes, timeZone, locale)+1, ultimoDiaProximoMes, UtilDateTime.getYear(termDate, timeZone, locale), 0, 0, 0);
+	             	}
 	         	}
         	 }
         else
