@@ -1805,8 +1805,8 @@ public class ShoppingCartEvents {
         
         int Cuotas=0;
         
-        //BigDecimal MtTotal = cart.getGrandTotal();
-        BigDecimal MtTotal = cart.getDisplayGrandTotal();// Para tomar el que tiene IVA
+        BigDecimal MtTotal = cart.getGrandTotal();
+        //BigDecimal MtTotal = cart.getDisplayGrandTotal();// Para tomar el que tiene IVA
         BigDecimal MtAnticipo = null;
         BigDecimal MtCuota  =  null;
         BigDecimal CantCuotas  =  null;
