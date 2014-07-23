@@ -85,7 +85,19 @@ under the License.
            </td>
            <td width="10%">&nbsp;</td>
          </tr>
-       </#if>
+         <#else>
+         <#--CODIGOLINUX crear factura -->
+         
+         <tr><td colspan="4"><hr /></td></tr>
+         <tr>
+           <td align="right" valign="top" width="29%">&nbsp;<span class="label">${uiLabelMap.OrderInvoices}</span></td>
+           <td width="1%">&nbsp;</td>
+           <td valign="top" width="60%">
+              <div><a href="/claccounting/control/autoInvoiceCreate?orderId=${orderId}" class="buttontext">Crear Factura</a>
+           </td>
+           <td width="10%">&nbsp;</td>
+         </tr>
+       </#if>       
      <#else>
 
      <#-- order payment status -->
