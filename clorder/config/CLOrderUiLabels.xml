@@ -3087,6 +3087,7 @@
     <property key="OrderCreateAsNewOrder">
         <value xml:lang="de">Als neuen Auftrag erstellen</value>
         <value xml:lang="en">Create As New Order</value>
+        <value xml:lang="es">Crear como Nueva Orden</value>
         <value xml:lang="fr">Dupliquer cette commande</value>
         <value xml:lang="it">Creare Come Nuovo Ordine</value>
         <value xml:lang="ja">新規注文として作成</value>
@@ -13969,6 +13970,7 @@
     <property key="OrderViewOrderHistory">
         <value xml:lang="de">Verlauf der Bestellung anzeigen</value>
         <value xml:lang="en">View Order History</value>
+        <value xml:lang="es">Ver Historial de la Orden</value>
         <value xml:lang="fr">Voir l'historique de la commande</value>
         <value xml:lang="it">Mostra storia ordine</value>
         <value xml:lang="ja">注文履歴を表示</value>

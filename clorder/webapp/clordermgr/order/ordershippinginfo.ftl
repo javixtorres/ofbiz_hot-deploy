@@ -68,11 +68,14 @@ under the License.
             <span class="label">&nbsp;<#if orderHeader.orderTypeId == "PURCHASE_ORDER">${uiLabelMap.ProductDestinationFacility}</#if></span>
             <#if ownedFacilities?has_content>
               <#if !allShipments?has_content>
+                  <#--
                   <li>
                      <form action="/facility/control/quickShipPurchaseOrder?externalLoginKey=${externalLoginKey}" method="post">
                        <input type="hidden" name="initialSelected" value="Y"/>
                        <input type="hidden" name="orderId" value="${orderId}"/>
+                  -->
                        <#-- destination form (/facility/control/ReceiveInventory) wants purchaseOrderId instead of orderId, so we set it here as a workaround -->
+                  <#--
                        <input type="hidden" name="purchaseOrderId" value="${orderId}"/>
                       <select name="facilityId">
                         <#list ownedFacilities as facility>
@@ -82,6 +85,7 @@ under the License.
                       <input type="submit" class="smallSubmit" value="${uiLabelMap.OrderQuickReceivePurchaseOrder}"/>
                      </form>
                   </li>
+                  -->
                   <li>
                     <form name="receivePurchaseOrderForm" action="/facility/control/quickShipPurchaseOrder?externalLoginKey=${externalLoginKey}" method="post">
                       <input type="hidden" name="initialSelected" value="Y"/>
@@ -97,6 +101,7 @@ under the License.
                       <a href="javascript:document.receivePurchaseOrderForm.submit()" class="buttontext">${uiLabelMap.CommonReceive}</a>
                   </li>
               <#else>
+                  <#--
                   <li>
                     <form name="receiveInventoryForm" action="/facility/control/ReceiveInventory" method="post">
                       <input type="hidden" name="initialSelected" value="Y"/>
@@ -109,6 +114,7 @@ under the License.
                     </form>
                     <a href="javascript:document.receiveInventoryForm.submit()" class="buttontext">${uiLabelMap.OrderQuickReceivePurchaseOrder}</a>
                   </li>
+                  -->
                   <li>
                     <form name="partialReceiveInventoryForm" action="/facility/control/ReceiveInventory" method="post">
                       <input type="hidden" name="initialSelected" value="Y"/>
@@ -123,6 +129,7 @@ under the License.
                     <a href="javascript:document.partialReceiveInventoryForm.submit()" class="buttontext">${uiLabelMap.CommonReceive}</a>
                   </li>
               </#if>
+              <#--
               <#if orderHeader.statusId != "ORDER_COMPLETED">
                   <li>
                     <form action="<@ofbizUrl>completePurchaseOrder?externalLoginKey=${externalLoginKey}</@ofbizUrl>" method="post">
@@ -136,6 +143,7 @@ under the License.
                     </form>
                   </li>
               </#if>
+              -->
             </#if>
           </#if>
         </#if>
@@ -175,7 +183,9 @@ under the License.
             <form name="createOrderItemShipGroup" method="post" action="<@ofbizUrl>createOrderItemShipGroup</@ofbizUrl>">
               <input type="hidden" name="orderId" value="${orderId}"/>
             </form>
+            <#--
             <a href="javascript:document.createOrderItemShipGroup.submit()" class="buttontext">${uiLabelMap.OrderCreateShipGroup}</a>
+            -->
             </li>
           </#if>
           <li><a href="<@ofbizUrl>loadCartFromOrder?${paramString}&amp;finalizeMode=init</@ofbizUrl>" class="buttontext">${uiLabelMap.OrderCreateAsNewOrder}</a></li>
