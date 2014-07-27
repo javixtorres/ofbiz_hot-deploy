@@ -225,6 +225,8 @@ under the License.
       <tr class="header-row-2">
         <td>${uiLabelMap.PartyPartyId}</td>
         <td>${uiLabelMap.PartyUserLogin}</td>
+        <#--CODIGOLINUX CI-->
+        <td>${uiLabelMap.PartyCardId}</td>
         <td>${uiLabelMap.PartyName}</td>
     <#if extInfo?default("") == "P" >
         <td>${uiLabelMap.PartyCity}</td>
@@ -282,6 +284,9 @@ under the License.
         </#if>
       </#if>
         </td>
+        <#-- CODIGOLINUX Visualiza-->
+        <td>
+        ${partyRow.cardId?if_exists}
         <td>
       <#if partyRow.getModelEntity().isField("lastName") && lastName?has_content>
           ${partyRow.lastName}<#if partyRow.firstName?has_content>, ${partyRow.firstName}</#if>
