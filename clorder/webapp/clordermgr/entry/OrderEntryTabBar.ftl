@@ -37,13 +37,25 @@ under the License.
         </#if>
       <#else>
         <#if shoppingCart.size() = 0>
+          <#--
+          
+          CODIGOLINUX Modificado para una sola opcion de carga final, como si fuera por defecto
+          
           <li class="disabled">${uiLabelMap.OrderQuickFinalizeOrder}</li>
           <li class="disabled">${uiLabelMap.OrderFinalizeOrderDefault}</li>
+          -->
+          
           <li class="disabled">${uiLabelMap.OrderFinalizeOrder}</li>
         <#else>
+          <#--
+          
+          CODIGOLINUX Modificado para una sola opcion de carga final, como si fuera por defecto
+          
           <li><a href="<@ofbizUrl>quickcheckout</@ofbizUrl>">${uiLabelMap.OrderQuickFinalizeOrder}</a></li>
           <li><a href="<@ofbizUrl>finalizeOrder?finalizeMode=default</@ofbizUrl>">${uiLabelMap.OrderFinalizeOrderDefault}</a></li>
           <li><a href="<@ofbizUrl>finalizeOrder?finalizeMode=init</@ofbizUrl>">${uiLabelMap.OrderFinalizeOrder}</a></li>
+          -->
+          <li><a href="<@ofbizUrl>finalizeOrder?finalizeMode=default</@ofbizUrl>">${uiLabelMap.OrderFinalizeOrder}</a></li>
         </#if>
       </#if>
 

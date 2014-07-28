@@ -291,8 +291,23 @@ under the License.
                       <#if orderPaymentPreference.maxAmount?has_content>
                          <br />${uiLabelMap.OrderPaymentMaximumAmount}: <@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>
                       </#if>
+                      <#--
                       <br />&nbsp;[<#if oppStatusItem?exists>${oppStatusItem.get("description",locale)}<#else>${orderPaymentPreference.statusId}</#if>]
+                      -->
+                      
+                      <#--CODIGOLINUX Mostrar Estado del Pago - No el orderPaymentPreference -->
+                      <#if paymentList?has_content>
+                      	<#list paymentList as paymentMap>
+                      			<#assign oppStatusItem2 = paymentMap.getRelatedOne("StatusItem", false)>
+                                - Pago: 
+                                <a href="/claccounting/control/paymentOverview?paymentId=${paymentMap.paymentId}${externalKeyParam}" class="buttontext">${paymentMap.paymentId}</a>
+                                [<#if oppStatusItem2?exists>${oppStatusItem2.get("description",locale)}<#else>${paymentMap.statusId}</#if>]                       
+	                    </#list>
+	                  </#if>
 	                  
+	                  <#list paymentList as paymentMap>
+                            
+                            </#list>
                     </div>
                     <#--
                     <div><@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>&nbsp;-&nbsp;${(orderPaymentPreference.authDate.toString())?if_exists}</div>
@@ -320,6 +335,8 @@ under the License.
                    </#if>
                   </td>
                 </tr>
+                
+                <#-- CODIGO LINUX comentado por que ya se resumio en otra linea 
                 <#if paymentList?has_content>
                     <tr>
                     <td align="right" valign="top" width="29%">
@@ -335,6 +352,7 @@ under the License.
                       </td>
                     </tr>
                 </#if>
+                -->
             </#if>
           <#else>
             <#if paymentMethod.paymentMethodTypeId?if_exists == "CREDIT_CARD">

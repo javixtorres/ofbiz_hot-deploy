@@ -590,6 +590,10 @@ document.lookuporder.orderId.focus();
           <td width="5%">${uiLabelMap.OrderOrderType}</td>
           <td width="5%">${uiLabelMap.OrderOrderId}</td>
           <td width="20%">${uiLabelMap.PartyName}</td>
+          
+          <#--CODIGOLINUX Mostrar la descripcion del pedido-->
+          <td width="20%">Descripción</td>
+          
           <td width="5%" align="right">${uiLabelMap.OrderSurvey}</td>
           <td width="5%" align="right">${uiLabelMap.OrderItemsOrdered}</td>
           <td width="5%" align="right">${uiLabelMap.OrderItemsBackOrdered}</td>
@@ -657,6 +661,10 @@ document.lookuporder.orderId.focus();
                 </div>
                 -->
               </td>
+              
+              <#--CODIGOLINUX Mostrar la descripcion del pedido-->
+              <td align="left">${orderHeader.orderName?if_exists}</td>
+              
               <td align="right">${orh.hasSurvey()?string.number}</td>
               <td align="right">${orh.getTotalOrderItemsQuantity()?string.number}</td>
               <td align="right">${orh.getOrderBackorderQuantity()?string.number}</td>

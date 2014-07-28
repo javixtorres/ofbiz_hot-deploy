@@ -347,7 +347,7 @@ under the License.
         <td class="button-col align-float">
           <a href="<@ofbizUrl>viewprofile?partyId=${partyRow.partyId}</@ofbizUrl>">${uiLabelMap.CommonDetails}</a>
       <#if security.hasEntityPermission("ORDERMGR", "_VIEW", session)>
-          <form name= "searchorders_o_${rowCount}" method= "post" action= "/ordermgr/control/searchorders">
+          <form name= "searchorders_o_${rowCount}" method= "post" action= "/clordermgr/control/searchorders">
             <input type= "hidden" name= "lookupFlag" value= "Y" />
             <input type= "hidden" name= "hideFields" value= "Y" />
             <input type= "hidden" name= "partyId" value= "${partyRow.partyId}" />
@@ -355,11 +355,11 @@ under the License.
             <input type= "hidden" name= "viewSize" value= "20" />
             <a href="javascript:document.searchorders_o_${rowCount}.submit()">${uiLabelMap.OrderOrders}</a>
           </form>
-          <a href="/ordermgr/control/FindQuote?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderOrderQuotes}</a>
+          <a href="/clordermgr/control/FindQuote?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderOrderQuotes}</a>
       </#if>
       <#if security.hasEntityPermission("ORDERMGR", "_CREATE", session)>
-          <a href="/ordermgr/control/checkinits?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderNewOrder}</a>
-          <a href="/ordermgr/control/EditQuote?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderNewQuote}</a>
+          <a href="/clordermgr/control/checkinits?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderNewOrder}</a>
+          <a href="/clordermgr/control/EditQuote?partyId=${partyRow.partyId + externalKeyParam}">${uiLabelMap.OrderNewQuote}</a>
       </#if>
         </td>
       </tr>

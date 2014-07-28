@@ -136,13 +136,13 @@
             <actions>
                 <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="partyId" from-field="parameters.partyId" default-value="${userLogin.partyId}"/>
-                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetContactMechs.groovy"/>
-                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetUserLoginPrimaryEmail.groovy"/>
+                <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetContactMechs.groovy"/>
+                <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetUserLoginPrimaryEmail.groovy"/>
             </actions>
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Contact.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Contact.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -169,12 +169,12 @@
             <actions>
                 <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
-                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetPaymentMethods.groovy"/>
+                <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetPaymentMethods.groovy"/>
             </actions>
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/PaymentMethods.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/PaymentMethods.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -194,7 +194,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Attributes.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Attributes.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -214,7 +214,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/AvsSettings.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/AvsSettings.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -224,12 +224,12 @@
     <screen name="Cart">
         <section>
             <actions>
-                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetCurrentCart.groovy"/>
+                <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetCurrentCart.groovy"/>
             </actions>
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Cart.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Cart.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -240,12 +240,12 @@
         <section>
             <actions>
                 <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
-                <script location="component://party/webapp/partymgr/WEB-INF/actions/party/GetLoyaltyPoints.groovy"/>
+                <script location="component://clparty/webapp/clpartymgr/WEB-INF/actions/party/GetLoyaltyPoints.groovy"/>
             </actions>
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/LoyaltyPoints.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/LoyaltyPoints.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -265,7 +265,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/UserLogin.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/UserLogin.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -286,7 +286,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Visits.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Visits.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -338,7 +338,7 @@
                                     <widgets>
                                         <platform-specific>
                                             <html>
-                                                <html-template location="component://party/webapp/partymgr/party/profileblocks/FinAccounts.ftl"/>
+                                                <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/FinAccounts.ftl"/>
                                             </html>
                                         </platform-specific>
                                     </widgets>
@@ -379,7 +379,7 @@
                     <widgets>
                         <platform-specific>
                             <html>
-                                <html-template location="component://party/webapp/partymgr/party/profileblocks/SerializedInventory.ftl"/>
+                                <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/SerializedInventory.ftl"/>
                             </html>
                         </platform-specific>
                     </widgets>
@@ -436,7 +436,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Content.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Content.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -456,7 +456,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/ContentList.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/ContentList.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -476,7 +476,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/Notes.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/Notes.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
@@ -590,7 +590,7 @@
                 <service service-name="getWorkEffortAssignedTasks"/>
             </actions>
             <widgets><!-- can always view your own tasks -->
-                <platform-specific><html><html-template location="component://party/webapp/partymgr/party/profileblocks/mytasks.ftl"/></html></platform-specific>
+                <platform-specific><html><html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/mytasks.ftl"/></html></platform-specific>
             </widgets>
         </section>
     </screen>
@@ -626,7 +626,7 @@
             <widgets>
                 <platform-specific>
                     <html>
-                        <html-template location="component://party/webapp/partymgr/party/profileblocks/ProductStores.ftl"/>
+                        <html-template location="component://clparty/webapp/clpartymgr/party/profileblocks/ProductStores.ftl"/>
                     </html>
                 </platform-specific>
             </widgets>
