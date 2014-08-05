@@ -117,7 +117,9 @@ public class TaxAuthorityServices {
                         priceWithTax = priceWithTax.add(adjAmount.divide(quantity,salestaxCalcDecimals,salestaxRounding));
                         Debug.logInfo("For productId [" + productId + "] added [" + adjAmount.divide(quantity,salestaxCalcDecimals,salestaxRounding) + "] of tax to price for geoId [" + taxAdjustment.getString("taxAuthGeoId") + "], new price is [" + priceWithTax + "]", module);
                     }
+                    Debug.logInfo("taxAdjustment:"+taxAdjustment.getString("orderAdjustmentTypeId"),module);
                 }
+                
             }
         } catch (GenericEntityException e) {
             Debug.logError(e, "Data error getting tax settings: " + e.toString(), module);
@@ -408,18 +410,20 @@ public class TaxAuthorityServices {
                     continue;
                 }
 
+                
                 // taxRate is in percentage, so needs to be divided by 100
-                //BigDecimal taxAmount = (taxable.multiply(taxRate)).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
-                //BigDecimal varAux = new BigDecimal(1);
-                BigDecimal varAux = taxRate.divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
+                BigDecimal taxAmount = (taxable.multiply(taxRate)).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
                 
-                varAux = varAux.add(BigDecimal.ONE);
-                
-                //varAux = varAux.multiply(taxRate).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
-                
-                //BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
-
-                BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, 0, salestaxRounding));
+                // CODIGOLINUX modificacion para calcular el iva en base al iva incluidos
+//                BigDecimal varAux = taxRate.divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
+//                
+//                varAux = varAux.add(BigDecimal.ONE);
+//                
+//                //varAux = varAux.multiply(taxRate).divide(PERCENT_SCALE, salestaxCalcDecimals, salestaxRounding);
+//                
+//                //BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, salestaxCalcDecimals, salestaxRounding));
+//
+//                BigDecimal taxAmount = taxable.subtract(taxable.divide(varAux, 0, salestaxRounding));
 
                 String taxAuthGeoId = taxAuthorityRateProduct.getString("taxAuthGeoId");
                 String taxAuthPartyId = taxAuthorityRateProduct.getString("taxAuthPartyId");
