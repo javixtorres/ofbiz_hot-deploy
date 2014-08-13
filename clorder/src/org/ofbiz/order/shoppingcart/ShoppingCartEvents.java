@@ -1804,12 +1804,19 @@ public class ShoppingCartEvents {
         
         
         int Cuotas=0;
-        
-        BigDecimal MtTotal = cart.getGrandTotal();
-        //BigDecimal MtTotal = cart.getDisplayGrandTotal();// Para tomar el que tiene IVA
+        BigDecimal MtTotal = null;
         BigDecimal MtAnticipo = null;
         BigDecimal MtCuota  =  null;
         BigDecimal CantCuotas  =  null;
+        
+        if (cart.getOrderType().equals("PURCHASE_ORDER"))
+	    	{
+	    	MtTotal = cart.getDisplayGrandTotal();// Para tomar el que tiene IVA
+	    	}
+        else    
+	    	{
+	    	MtTotal = cart.getGrandTotal();
+	    	}
         
         if (UtilValidate.isNotEmpty(termValueCuotas))
         	{     	

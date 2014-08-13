@@ -1179,8 +1179,19 @@ public class ShoppingCartItem implements java.io.Serializable {
                         this.setBasePrice(((BigDecimal) priceResult.get("price")));
                     }
                     
-                    this.setDisplayPrice(this.basePrice);
+                    //this.setDisplayPrice(this.basePrice);
+                    //this.orderItemPriceInfos = UtilGenerics.checkList(priceResult.get("orderItemPriceInfos"));
+                    
+                    //CODIGOLINUX                 
+                    // Se necesita para chequear inventario
+                    String CLproductStoreId = cart.getProductStoreId();
+                    if (CLproductStoreId == null) CLproductStoreId="10000";
+                    
+                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
+                    this.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
                     this.orderItemPriceInfos = UtilGenerics.checkList(priceResult.get("orderItemPriceInfos"));
+                    //
+                    
                 } else {
                     if (productId != null) {
                         String productStoreId = cart.getProductStoreId();

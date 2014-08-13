@@ -736,7 +736,7 @@ public class ShoppingCartHelper {
                                 result = ServiceUtil.returnError(errorMsgs);
                                 return result;
                             }
-                            item.setSelectedAmount(amount);
+                            item.setSelectedAmount(amount); // CODIGO LINUX
                         }
                     } else if (parameterName.startsWith("itemType")) {
                         if (UtilValidate.isNotEmpty(quantString)) {

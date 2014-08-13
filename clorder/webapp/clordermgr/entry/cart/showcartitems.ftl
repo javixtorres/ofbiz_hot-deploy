@@ -61,6 +61,8 @@ under the License.
           </td>
           <td align="center"><div><b>${uiLabelMap.OrderQuantity}</b></div></td>
           <td align="center"><div><b>${uiLabelMap.CommonUnitPrice}</b></div></td>
+          <#--CODIGOLINUX	carga de nuevo precio con descuento-->
+          <td align="center"><div><b>Precio Con Descuento</b></div></td>
           <td align="right"><div><b>${uiLabelMap.OrderAdjustments}</b></div></td>
           <td align="right"><div><b>${uiLabelMap.OrderItemTotal}</b></div></td>
           <td align="center"><input type="checkbox" name="selectAll" value="0" onclick="javascript:toggleAll(this);" /></td>
@@ -299,6 +301,23 @@ under the License.
                 </#if>
               </div>
             </td>
+            
+            <#--CODIGOLINUX	carga de nuevo precio con descuento-->
+            <td nowrap="nowrap" align="right">
+              <div>
+                <#if cartLine.getIsPromo() || (shoppingCart.getOrderType() == "SALES_ORDER" && !security.hasEntityPermission("ORDERMGR", "_SALES_PRICEMOD", session))>
+                  <@ofbizCurrency amount=cartLine.getDisplayPrice() isoCode=currencyUomId/>
+                <#else>
+                    <#if (cartLine.getSelectedAmount() > 0) >
+                        <#assign price2 = cartLine.getBasePrice() / cartLine.getSelectedAmount()>
+                    <#else>
+                        <#assign price2 = cartLine.getBasePrice()>
+                    </#if>
+                    <input size="11" type="text" name="price2_${cartLineIndex}" value="<@ofbizAmount amount=price2/>"/>
+                </#if>
+              </div>
+            </td>
+            
             <td nowrap="nowrap" align="right"><div><@ofbizCurrency amount=cartLine.getOtherAdjustments() isoCode=currencyUomId/></div></td>
             <td nowrap="nowrap" align="right"><div><@ofbizCurrency amount=cartLine.getDisplayItemSubTotal() isoCode=currencyUomId/></div></td>
             <td nowrap="nowrap" align="center"><div><#if !cartLine.getIsPromo()><input type="checkbox" name="selectedItem" value="${cartLineIndex}" onclick="javascript:checkToggle(this);"/><#else>&nbsp;</#if></div></td>
@@ -333,7 +352,9 @@ under the License.
           </td>
           <td align="right" valign="bottom">
             <hr />
-            <div><b><@ofbizCurrency amount=shoppingCart.getGrandTotal() isoCode=currencyUomId/></b></div>
+            <#-- CODIGOLINUX TOTAL correcto -->
+            <#--<div><b><@ofbizCurrency amount=shoppingCart.getGrandTotal() isoCode=currencyUomId/></b></div>-->
+            <div><b><@ofbizCurrency amount=shoppingCart.getDisplaySubTotal() isoCode=currencyUomId/></b></div>
           </td>
         </tr>
         <tr>
