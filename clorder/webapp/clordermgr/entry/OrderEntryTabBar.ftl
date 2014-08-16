@@ -27,7 +27,7 @@ under the License.
         <#else>
             ${uiLabelMap.OrderSalesOrder}
         </#if>
-      </li>
+      </li>o
       <#if shoppingCart.getOrderType() == "PURCHASE_ORDER">
         <#if shoppingCart.getOrderPartyId() == "_NA_" || (shoppingCart.size() = 0)>
           <li class="disabled">${uiLabelMap.OrderFinalizeOrder}</li>

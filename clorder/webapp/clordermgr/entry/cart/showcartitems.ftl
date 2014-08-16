@@ -308,12 +308,14 @@ under the License.
                 <#if cartLine.getIsPromo() || (shoppingCart.getOrderType() == "SALES_ORDER" && !security.hasEntityPermission("ORDERMGR", "_SALES_PRICEMOD", session))>
                   <@ofbizCurrency amount=cartLine.getDisplayPrice() isoCode=currencyUomId/>
                 <#else>
+                    <#--
                     <#if (cartLine.getSelectedAmount() > 0) >
-                        <#assign price2 = cartLine.getBasePrice() / cartLine.getSelectedAmount()>
+                        <#assign clprice = cartLine.getBasePrice() / cartLine.getSelectedAmount()>
                     <#else>
-                        <#assign price2 = cartLine.getBasePrice()>
+                        <#assign clprice = cartLine.getBasePrice()>
                     </#if>
-                    <input size="11" type="text" name="price2_${cartLineIndex}" value="<@ofbizAmount amount=price2/>"/>
+                    -->
+                    <input size="11" type="text" name="clprice_${cartLineIndex}" value="<@ofbizAmount amount=clprice/>"/>
                 </#if>
               </div>
             </td>

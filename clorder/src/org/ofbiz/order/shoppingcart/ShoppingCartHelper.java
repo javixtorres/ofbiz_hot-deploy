@@ -47,6 +47,7 @@ import org.ofbiz.entity.GenericValue;
 import org.ofbiz.entity.util.EntityTypeUtil;
 import org.ofbiz.entity.util.EntityUtil;
 import org.ofbiz.order.order.OrderReadHelper;
+import org.ofbiz.order.shoppingcart.ShoppingCartItem;
 import org.ofbiz.order.shoppingcart.product.ProductPromoWorker;
 import org.ofbiz.product.config.ProductConfigWorker;
 import org.ofbiz.product.config.ProductConfigWrapper;
@@ -831,13 +832,55 @@ public class ShoppingCartHelper {
                         if (!tmpOldPrice.equals(tmpQuantity)) {
                             if (security.hasEntityPermission("ORDERMGR", "_CREATE", userLogin)) {
                                 if (item != null) {
+                                    
+                                    // CODIGOLINUX
+                                    // Se necesita para chequear inventario
+                                    String CLproductStoreId = cart.getProductStoreId();
+                                    if (CLproductStoreId == null) CLproductStoreId="10000";
+                                    
+                                    //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
+                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity, "productId", item.getProductId(), "productStoreId", CLproductStoreId));
+                                    
+                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java", module);
+                                    //
+                                    
                                     item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
-                                    item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
+                                    //item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
+                                    item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax")); // CODIGOLINUX Agrega el IVA
                                     item.setIsModifiedPrice(true); // flag as a modified price
                                 }
                             }
                         }
                     }
+                    //CODIGOLINUX Precio con Descuento!!!
+                    if (parameterName.toUpperCase().startsWith("CLPRICE")) {
+                        NumberFormat pf = NumberFormat.getCurrencyInstance(locale);
+                        String tmpQuantity = pf.format(quantity);
+                        String tmpOldPrice = pf.format(oldPrice);
+                        if (!tmpOldPrice.equals(tmpQuantity)) {
+                            if (security.hasEntityPermission("ORDERMGR", "_CREATE", userLogin)) {
+                                if (item != null) {
+                                    
+                                    // CODIGOLINUX
+                                    // Se necesita para chequear inventario
+                                    String CLproductStoreId = cart.getProductStoreId();
+                                    if (CLproductStoreId == null) CLproductStoreId="10000";
+                                    
+                                    //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
+                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity, "productId", item.getProductId(), "productStoreId", CLproductStoreId));
+                                    
+                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java Descuento", module);
+                                    //
+                                    
+                                    item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
+                                    //item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
+                                    item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
+                                    item.setIsModifiedPrice(true); // flag as a modified price
+                                }
+                            }
+                        }
+                    }
+                    //
 
                     if (parameterName.toUpperCase().startsWith("DELETE")) {
                         deleteList.add(this.cart.findCartItem(index));

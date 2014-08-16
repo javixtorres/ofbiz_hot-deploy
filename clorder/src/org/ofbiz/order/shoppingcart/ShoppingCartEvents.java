@@ -909,6 +909,7 @@ public class ShoppingCartEvents {
         String removeSelectedFlag = request.getParameter("removeSelected");
         String selectedItems[] = request.getParameterValues("selectedItem");
         boolean removeSelected = ("true".equals(removeSelectedFlag) && selectedItems != null && selectedItems.length > 0);
+        Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...", module);
         result = cartHelper.modifyCart(security, userLogin, paramMap, removeSelected, selectedItems, locale);
         controlDirective = processResult(result, request);
 
