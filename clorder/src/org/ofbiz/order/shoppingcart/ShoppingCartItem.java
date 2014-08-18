@@ -1187,8 +1187,25 @@ public class ShoppingCartItem implements java.io.Serializable {
                     String CLproductStoreId = cart.getProductStoreId();
                     if (CLproductStoreId == null) CLproductStoreId="10000";
                     
-                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
-                    this.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
+                    BigDecimal precio=null;
+                    BigDecimal precioConIva=null;
+                    
+                    precio=this.basePrice.add(this.getOtherAdjustments());
+                    
+                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", precio , "productId", this.productId, "productStoreId", CLproductStoreId));
+                    
+                    precioConIva=(BigDecimal) totalPriceWithTaxMap.get("priceWithTax");
+                    
+                    if (precio!=this.basePrice)
+                    	{
+                    	this.setDisplayPrice(precioConIva.subtract(this.getOtherAdjustments()));
+                    	}
+                    else
+                    	{
+                    	this.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
+                    	}
+                    		
+                    	
                     this.orderItemPriceInfos = UtilGenerics.checkList(priceResult.get("orderItemPriceInfos"));
                     //
                     

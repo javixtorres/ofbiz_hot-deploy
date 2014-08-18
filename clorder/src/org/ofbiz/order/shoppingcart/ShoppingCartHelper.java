@@ -837,16 +837,34 @@ public class ShoppingCartHelper {
                                     // Se necesita para chequear inventario
                                     String CLproductStoreId = cart.getProductStoreId();
                                     if (CLproductStoreId == null) CLproductStoreId="10000";
+                                    BigDecimal precio= BigDecimal.ONE.negate();
+                                    BigDecimal precioConIva=null;
                                     
+                                    
+                                    //BigDecimal precio=quantity;
+                                    
+                                    precio=quantity;
+                                    precio=precio.add(item.getOtherAdjustments());
                                     //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
-                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity, "productId", item.getProductId(), "productStoreId", CLproductStoreId));
+                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", precio, "productId", item.getProductId(), "productStoreId", CLproductStoreId));
                                     
-                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java", module);
+                                    precioConIva=(BigDecimal) totalPriceWithTaxMap.get("priceWithTax");
+                                    
+                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java . . . "+item.getOtherAdjustments().toString()+" quantity:"+quantity.toString()+" precio:"+precio.toString()+" precioConIva:"+precioConIva.toString(), module);
                                     //
                                     
+                                    
                                     item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
+                                    
                                     //item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
-                                    item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax")); // CODIGOLINUX Agrega el IVA
+                                    
+                                    if (precio!=quantity)
+                                    	{
+                                    	precioConIva=precioConIva.subtract(item.getOtherAdjustments()); // para sumar el ajuste ya que luego lo resta en setDisplayPrice
+                                    	}
+                                    
+                                	item.setDisplayPrice(precioConIva); // CODIGOLINUX Agrega el IVA
+
                                     item.setIsModifiedPrice(true); // flag as a modified price
                                 }
                             }
@@ -866,14 +884,17 @@ public class ShoppingCartHelper {
                                     String CLproductStoreId = cart.getProductStoreId();
                                     if (CLproductStoreId == null) CLproductStoreId="10000";
                                     
+                         
                                     //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
-                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity, "productId", item.getProductId(), "productStoreId", CLproductStoreId));
+                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity.subtract(item.getOtherAdjustments()), "productId", item.getProductId(), "productStoreId", CLproductStoreId));
                                     
-                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java Descuento", module);
+                                    Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java Descuento ", module);
                                     //
                                     
                                     item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
                                     //item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
+                                    //item.getOtherAdjustments()
+                                    
                                     item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
                                     item.setIsModifiedPrice(true); // flag as a modified price
                                 }
