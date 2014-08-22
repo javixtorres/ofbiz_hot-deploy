@@ -36,6 +36,7 @@ import javolution.util.FastMap;
 import org.ofbiz.base.util.Debug;
 import org.ofbiz.base.util.GeneralException;
 import org.ofbiz.base.util.ObjectType;
+import org.ofbiz.base.util.UtilDateTime;
 import org.ofbiz.base.util.UtilHttp;
 import org.ofbiz.base.util.UtilMisc;
 import org.ofbiz.base.util.UtilNumber;
@@ -68,6 +69,10 @@ public class ShoppingCartHelper {
     public static final String resource = "OrderUiLabels";
     public static String module = ShoppingCartHelper.class.getName();
     public static final String resource_error = "OrderErrorUiLabels";
+    
+    //CODIGOLINUX PARA REDONDEO
+    private static final int ROUNDING = UtilNumber.getBigDecimalRoundingMode("invoice.rounding");
+    
 
     // The shopping cart to manipulate
     private ShoppingCart cart = null;
@@ -881,22 +886,53 @@ public class ShoppingCartHelper {
                                     
                                     // CODIGOLINUX
                                     // Se necesita para chequear inventario
-                                    String CLproductStoreId = cart.getProductStoreId();
-                                    if (CLproductStoreId == null) CLproductStoreId="10000";
+                                    //String CLproductStoreId = cart.getProductStoreId();
+                                    //if (CLproductStoreId == null) CLproductStoreId="10000";
                                     
                          
                                     //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", this.basePrice, "productId", this.productId, "productStoreId", CLproductStoreId));
-                                    Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity.subtract(item.getOtherAdjustments()), "productId", item.getProductId(), "productStoreId", CLproductStoreId));
+                                    //Map<String, Object> totalPriceWithTaxMap = dispatcher.runSync("calcTaxForDisplay", UtilMisc.toMap("basePrice", quantity.subtract(item.getOtherAdjustments()), "productId", item.getProductId(), "productStoreId", CLproductStoreId));
                                     
                                     Debug.logInfo("CODIGOLINUX.... TEST DE SEGUIMIENTO...ShoppingCartHelper.Java Descuento ", module);
                                     //
                                     
-                                    item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
+                                    //item.setBasePrice(quantity); // this is quantity because the parsed number variable is the same as quantity
                                     //item.setDisplayPrice(quantity); // or the amount shown the cart items page won't be right
                                     //item.getOtherAdjustments()
                                     
-                                    item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
-                                    item.setIsModifiedPrice(true); // flag as a modified price
+                                    if (quantity.compareTo(BigDecimal.ZERO)!=0)
+                                    {
+                                    BigDecimal descuento=(BigDecimal) quantity.divide((BigDecimal) item.getDisplayPrice(),5, ROUNDING);
+                                    
+                                    Debug.logInfo("CODIGOLINUX.... "+descuento.toString(), module);
+                                    		
+                               		descuento = descuento.add(BigDecimal.ONE.negate());
+                               		
+                               		Debug.logInfo("CODIGOLINUX.... "+descuento.toString(), module);
+
+                               		descuento = descuento.multiply(item.getBasePrice());
+                               		
+                               		Debug.logInfo("CODIGOLINUX.... "+descuento.toString(), module);
+                               		
+                               		descuento = descuento.multiply(item.getQuantity());
+                               		
+                               		Debug.logInfo("CODIGOLINUX.... "+descuento.toString(), module);
+                                    
+                               		//item.removeAdjustment(adjustment)
+                                    
+                                    GenericValue adjustment = delegator.makeValue("OrderAdjustment");
+                                    
+                                    adjustment.set("orderAdjustmentTypeId", "DISCOUNT_ADJUSTMENT");
+                                    //adjustment.set("amount", quantity.negate());
+                                    adjustment.set("amount", descuento);
+                                    adjustment.set("comments", "Descuento Especial" );
+                                    adjustment.set("createdDate", UtilDateTime.nowTimestamp());
+                                    adjustment.set("createdByUserLogin", userLogin.getString("userLoginId"));
+                                    
+                                    item.addAdjustment(adjustment);
+                                    //item.setDisplayPrice((BigDecimal) totalPriceWithTaxMap.get("priceWithTax"));
+                                    //item.setIsModifiedPrice(true); // flag as a modified price
+                                    }
                                 }
                             }
                         }
