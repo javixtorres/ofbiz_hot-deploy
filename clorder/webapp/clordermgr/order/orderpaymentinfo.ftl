@@ -89,14 +89,41 @@ under the License.
          <#--CODIGOLINUX crear factura -->
          
          <tr><td colspan="4"><hr /></td></tr>
+         <#--
          <tr>
            <td align="right" valign="top" width="29%">&nbsp;<span class="label">${uiLabelMap.OrderInvoices}</span></td>
            <td width="1%">&nbsp;</td>
            <td valign="top" width="60%">
-              <div><a href="/claccounting/control/autoInvoiceCreate?orderId=${orderId}" class="buttontext">Crear Factura</a>
+              <div><a href="/claccounting/control/autoInvoiceCreate?orderId=${orderId}" class="buttontext">Crear Factura</a> </div>
            </td>
            <td width="10%">&nbsp;</td>
          </tr>
+         -->
+         <tr>
+          <td align="right" valign="top" width="29%">&nbsp;<span class="label">${uiLabelMap.OrderInvoices}</span></td>
+           <td width="1%">&nbsp;</td>
+           <td valign="top" width="60%">
+           
+           
+                    <form name="crearFacturaForm" action="/claccounting/control/autoInvoiceCreate?externalLoginKey=${externalLoginKey}" method="post">
+                      <input type="hidden" name="orderId" value="${orderId}"/>
+                    <!--
+                      <input type="hidden" name="initialSelected" value="Y"/>
+                      <input type="hidden" name="orderId" value="${orderId}"/>
+                      <input type="hidden" name="purchaseOrderId" value="${orderId}"/>
+                      <input type="hidden" name="partialReceive" value="Y"/>
+                      <select name="facilityId">
+                        <#list ownedFacilities as facility>
+                          <option value="${facility.facilityId}">${facility.facilityName}</option>
+                        </#list>
+                      </select>
+                      -->
+                      </form>
+                      <a href="javascript:document.crearFacturaForm.submit()" class="buttontext">Crear Factura</a>
+                      
+            </td>
+           <td width="10%">&nbsp;</td>
+          </tr>
        </#if>       
      <#else>
 
