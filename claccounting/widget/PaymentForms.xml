@@ -44,6 +44,11 @@ under the License.
         <field position="1" name="partyIdFrom"><lookup target-form-name="LookupPartyName"/></field>
         <field position="2" name="partyIdTo"><lookup target-form-name="LookupPartyName"/></field>
         <field position="1" name="amount"><text/></field>
+        
+        <field name="effectiveDate" position="1"><date-find type="date"/></field>
+        
+        <field name="dueDate" position="1"><date-find type="date"/></field>
+        
         <field name="paymentRefNum"><text-find ignore-case="true"/></field>
         <field name="paymentGatewayResponseId"><text/></field>
         <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button"/></field>
@@ -54,7 +59,8 @@ under the License.
             <service service-name="performFind" result-map="result" result-map-list="listIt">
                 <field-map field-name="inputFields" from-field="parameters"/>
                 <field-map field-name="entityName" value="PaymentAndTypeAndCreditCard"/>
-                <field-map field-name="orderBy" value="effectiveDate DESC"/>
+<!--                 <field-map field-name="orderBy" value="effectiveDate DESC"/> -->
+                <field-map field-name="orderBy" value="effectiveDate"/>
                 <field-map field-name="viewIndex" from-field="viewIndex"/>
                 <field-map field-name="viewSize" from-field="viewSize"/>
             </service>
@@ -84,7 +90,8 @@ under the License.
                 </sub-hyperlink>
             </display-entity>
         </field>
-        <field name="effectiveDate"><display/></field>
+        <field name="effectiveDate"><display type="date"/></field>
+        <field name="dueDate"><display type="date"/></field>
         <field name="currencyUomId"><hidden/></field>
         <field name="amount"><display also-hidden="false" type="currency" currency="${currencyUomId}"/></field>
         <field name="amountToApply"><display also-hidden="false" type="currency" currency="${currencyUomId}"/></field>
@@ -253,7 +260,8 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <field name="effectiveDate" position="2"><date-time/></field>
+        <field name="effectiveDate" position="1"><date-time/></field>
+        <field name="dueDate" position="2"><date-time/></field>
         <field name="paymentRefNum" position="1"><text/></field>
         <field name="comments" position="2"><text/></field>
         <field name="paymentPreferenceId"><ignored/></field>
@@ -335,6 +343,7 @@ under the License.
             </hyperlink>
         </field>
         <field name="effectiveDate"><display/></field>
+        <field name="dueDate"><display/></field>
         <field name="amount"><display  type="currency" currency="${currencyUomId}"/></field>
         <field name="amountApplied" parameter-name="dummy"><display  type="currency" currency="${currencyUomId}"/></field>
         <field name="amountToApply" parameter-name="amountApplied"><text size="10"/></field>
@@ -373,7 +382,11 @@ under the License.
                 <field-map field-name="lastNameFirst" value="Y"/>
             </service>
         </actions>
+        
         <field name="paymentId"><hidden/></field>
+        
+        <field name="comments" position="1"><display/></field>
+        
         <field name="paymentTypeId" position="1"><display-entity entity-name="PaymentType"/></field>
         <field name="paymentMethodTypeId" position="2"><display-entity entity-name="PaymentMethodType"/></field>
         <field name="statusId" title="${uiLabelMap.CommonStatus}" position="1"><display-entity entity-name="StatusItem"/></field>
@@ -393,13 +406,15 @@ under the License.
         <field name="amount" position="1"><display type="currency" currency="${payment.currencyUomId}"/></field>
         <field name="actualCurrencyAmount" title="${uiLabelMap.AccountingActualCurrencyAmount}" position="2"><display type="currency" currency="${payment.actualCurrencyUomId}"/></field>
         <field name="effectiveDate" position="1"><display type="date"/></field>
-        <field name="comments" position="2"><display/></field>
+        <field name="dueDate" position="2"><display type="date"/></field>
+<!--         <field name="comments" position="2"><display/></field> -->
         <field name="overrideGlAccountId" position="1"><display/></field>
         <field name="paymentGatewayResponseId" position="2">
             <hyperlink description="${payment.paymentGatewayResponseId}" target="ViewGatewayResponse">
                 <parameter param-name="paymentGatewayResponseId" from-field="payment.paymentGatewayResponseId"/>
             </hyperlink>
         </field>
+        
     </form>
 
     <form name="paymentApplications" type="list" list-name="paymentApplications"

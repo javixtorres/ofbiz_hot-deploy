@@ -4749,7 +4749,7 @@
         <value xml:lang="ar">تاريخ الفعالية</value>
         <value xml:lang="de">Anwendungszeitpunkt</value>
         <value xml:lang="en">Effective Date</value>
-        <value xml:lang="es">Fecha Efectivo</value>
+        <value xml:lang="es">Fecha de Vigencia</value>
         <value xml:lang="fr">Date d'effet</value>
         <value xml:lang="hi_IN">प्रभावी दिनांक</value>
         <value xml:lang="it">Data Effettiva</value>
@@ -4762,6 +4762,11 @@
         <value xml:lang="vi">Ngày hiệu lực</value>
         <value xml:lang="zh">生效日期</value>
         <value xml:lang="zh_TW">生效日期</value>
+    </property>
+<!--     CODIGOLINUX Fecha de Vencimiento -->
+    <property key="AccountingDueDate">
+        <value xml:lang="en">Due Date</value>
+        <value xml:lang="es">Fecha de Vencimiento</value>
     </property>
     <property key="AccountingEmailScheduledToSend">
         <value xml:lang="ar">رسالة البريد الإلكتروني مع الفاتورة المعلقة: ${parameters.invoiceId} مبرمجة للإرسال ...</value>
@@ -16561,7 +16566,7 @@
         <value xml:lang="ar">تاريخ الإنتهاء</value>
         <value xml:lang="de">Fälligkeit</value>
         <value xml:lang="en">Due Date</value>
-        <value xml:lang="es">Fecha de adeudo</value>
+        <value xml:lang="es">Vencimiento</value>
         <value xml:lang="fr">Date d'échéance</value>
         <value xml:lang="hi_IN">अन्तिम दिनांक</value>
         <value xml:lang="it">Data Scadenza</value>

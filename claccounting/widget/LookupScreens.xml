@@ -37,10 +37,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupPayment" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupPayment" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listPayment" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listPayment" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -63,10 +63,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupInvoice" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupInvoice" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listInvoice" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listInvoice" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -89,10 +89,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupFixedAsset" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupFixedAsset" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listLookupFixedAsset" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listLookupFixedAsset" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -116,10 +116,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupBillingAccount" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupBillingAccount" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listBillingAccount" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listBillingAccount" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -143,10 +143,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupGlAccount" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupGlAccount" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listLookupGlAccount" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listLookupGlAccount" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -170,10 +170,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupAgreement" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupAgreement" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listAgreements" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listAgreements" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -197,10 +197,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupAgreementItem" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupAgreementItem" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listAgreementItems" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listAgreementItems" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -224,10 +224,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="lookupPaymentGroupMember" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="lookupPaymentGroupMember" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="listPaymentGroupMember" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="listPaymentGroupMember" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
@@ -250,10 +250,10 @@ under the License.
             <widgets>
                 <decorator-screen name="LookupDecorator" location="component://common/widget/CommonScreens.xml">
                     <decorator-section name="search-options">
-                        <include-form name="LookupGlReconciliation" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="LookupGlReconciliation" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                     <decorator-section name="search-results">
-                        <include-form name="ListLookupReconciliation" location="component://accounting/widget/FieldLookupForms.xml"/>
+                        <include-form name="ListLookupReconciliation" location="component://claccounting/widget/FieldLookupForms.xml"/>
                     </decorator-section>
                 </decorator-screen>
             </widgets>

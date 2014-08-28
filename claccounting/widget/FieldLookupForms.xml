@@ -122,9 +122,17 @@ under the License.
     <form name="lookupPayment" target="LookupPayment" title="" type="single"
         header-row-style="header-row" default-table-style="basic-table">
         <auto-fields-entity entity-name="Payment" default-field-type="hidden"/>
-        <field name="paymentId" title="${uiLabelMap.AccountingPaymentID}"><text-find/></field>
-        <field name="partyIdFrom"><lookup  target-form-name="LookupPartyName"/></field>
-        <field name="partyIdTo"><lookup  target-form-name="LookupPartyName"/></field>
+        <field name="paymentId" title="${uiLabelMap.AccountingPaymentID}" position="1"> <text-find/></field>
+        <field name="statusId" title="${uiLabelMap.CommonStatus}" position="2">
+            <drop-down allow-empty="true">
+                <entity-options description="${description}" entity-name="StatusItem">
+                    <entity-constraint name="statusTypeId" operator="equals" value="PMNT_STATUS"/>
+                    <entity-order-by field-name="description"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="partyIdFrom" position="1"><lookup  target-form-name="LookupPartyName"/></field>
+        <field name="partyIdTo" position="2"><lookup  target-form-name="LookupPartyName"/></field>
         <field name="amountApplied"><text-find default-value=""></text-find> </field>
 
         <field name="noConditionFind"><hidden value="Y"/><!-- if this isn't there then with all fields empty no query will be done --></field>
@@ -138,16 +146,19 @@ under the License.
                 <field-map field-name="entityName" value="Payment"/>
                 <field-map field-name="viewIndex" from-field="viewIndex"/>
                 <field-map field-name="viewSize" from-field="viewSize"/>
+                <field-map field-name="orderBy" value="effectiveDate"/>
             </service>
         </actions>
         <field name="paymentId" widget-style="buttontext">
             <hyperlink also-hidden="false" target-type="plain" description="${paymentId}" target="javascript:set_value('${paymentId}')"/>
         </field>
+        <field name="comments"><display/></field>
         <field name="partyIdFrom"><display-entity entity-name="PartyNameView" key-field-name="partyId" description="${groupName}${lastName}[${partyId}]"/></field>
         <field name="partyIdTo"><display-entity entity-name="PartyNameView" key-field-name="partyId" description="${groupName}${lastName}[${partyId}]"/></field>
-        <field name="effectiveDate"><display/></field>
+        <field name="effectiveDate"><display type="date"/></field>        
+        <field name="dueDate"><display type="date"/></field>
         <field name="amount"><display/></field>
-        <field name="currencyUomId"><display/></field>
+<!--         <field name="currencyUomId"><display/></field> -->
     </form>
 
     <form name="lookupInvoice" target="LookupInvoice" title="" type="single"

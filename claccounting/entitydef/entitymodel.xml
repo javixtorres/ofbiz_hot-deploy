@@ -2827,6 +2827,8 @@ under the License.
       <field name="roleTypeIdTo" type="id-ne"></field>
       <field name="statusId" type="id"></field>
       <field name="effectiveDate" type="date-time"></field>
+      <!-- 	CODIGOLINUX Dia de Vencimiento -->
+      <field name="dueDate" type="date-time"></field>
       <field name="paymentRefNum" type="short-varchar"></field>
       <field name="amount" type="currency-amount"></field>
       <field name="currencyUomId" type="id"></field>

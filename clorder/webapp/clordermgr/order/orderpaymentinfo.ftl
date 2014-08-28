@@ -311,7 +311,8 @@ under the License.
 					  <#if paymentList?has_content>
 	                            <#list paymentList as paymentMap>
 	                               <br />${paymentMap.comments}  - Fecha:  
-	                               ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!} 
+	                               <#--${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!}--> 
+	                               ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.dueDate, "dd/MM/yyyy", locale, timeZone)!}
 	                            </#list>
 	                  </#if>
 	                  
