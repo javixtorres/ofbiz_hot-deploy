@@ -18959,7 +18959,7 @@
     </property>
     <property key="FormFieldTitle_referenceNum">
         <value xml:lang="en">Reference Num</value>
-        <value xml:lang="es">Número de Factura</value>
+        <value xml:lang="es">Número de Referencia</value>
         <value xml:lang="fr">N° de référence</value>
         <value xml:lang="hi_IN">संदर्भ संख्या</value>
         <value xml:lang="it">Numero Riferimento</value>

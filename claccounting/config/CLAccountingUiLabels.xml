@@ -12839,6 +12839,30 @@
         <value xml:lang="zh">优先方法编号</value>
         <value xml:lang="zh_TW">優先方法編號</value>
     </property>
+    
+    
+    <property key="AccountingEntInvoice">
+        <value xml:lang="en">Entidad</value>
+        <value xml:lang="es">Entidad</value>
+    </property>
+    <property key="AccountingEmiInvoice">
+        <value xml:lang="en">Emisor</value>
+        <value xml:lang="es">Emisor</value>
+    </property>
+    <property key="AccountingNroInvoice">
+        <value xml:lang="en">Nro</value>
+        <value xml:lang="es">Nro</value>
+    </property>
+    <property key="AccountingTimbradoInvoice">
+        <value xml:lang="en">Timbrado</value>
+        <value xml:lang="es">Timbrado</value>
+    </property>
+    <property key="AccountingCondicionInvoice">
+        <value xml:lang="en">Contado/Credito</value>
+        <value xml:lang="es">Contado/Credito</value>
+    </property>
+    
+    
     <property key="AccountingRemoveFromGlReconciliation">
         <value xml:lang="de">Von der Kontenabstimmung entfernen</value>
         <value xml:lang="fr">Retirer du rapprochement comptable</value>
@@ -19059,7 +19083,7 @@
     </property>
     <property key="FormFieldTitle_referenceNum">
         <value xml:lang="en">Reference Num</value>
-        <value xml:lang="es">Número de Factura</value>
+        <value xml:lang="es">Número de Referencia</value>
         <value xml:lang="fr">N° de référence</value>
         <value xml:lang="hi_IN">संदर्भ संख्या</value>
         <value xml:lang="it">Numero Riferimento</value>

@@ -2964,7 +2964,7 @@
     <property key="InvoiceItemType.description.INV_FDPROD_ITEM">
         <value xml:lang="de">Artikel/Digitales Produkt</value>
         <value xml:lang="en">Invoice Finished/Digital Good Item (Sales)</value>
-        <value xml:lang="es">Item de Factura Producto Terminado/Digital (Ventas)</value>
+        <value xml:lang="es">Item de Producto Terminado/Digital (Ventas)</value>
         <value xml:lang="fr">Facturation produit fini/ digital (ventes)</value>
         <value xml:lang="hi_IN">चालान तैयार/डिजिटल सामग्री मद</value>
         <value xml:lang="it">Fattura Riga Bene Finito/Digitale</value>
@@ -2980,7 +2980,7 @@
     <property key="InvoiceItemType.description.INV_FPROD_ITEM">
         <value xml:lang="de">Artikel</value>
         <value xml:lang="en">Invoice Finished Good Item (Sales)</value>
-        <value xml:lang="es">Item de Factura Producto Terminado (Ventas)</value>
+        <value xml:lang="es">Item de Producto Terminado (Ventas)</value>
         <value xml:lang="fr">Facturation produit fini (ventes)</value>
         <value xml:lang="hi_IN">चालान संपूर्ण सामग्री मद</value>
         <value xml:lang="it">Fattura Riga Bene Finito</value>
@@ -3072,7 +3072,7 @@
     <property key="InvoiceItemType.description.INV_SALES_TAX">
         <value xml:lang="de">MwSt.</value>
         <value xml:lang="en">Invoice Sales Tax (Sales)</value>
-        <value xml:lang="es">Factura Impuesto de Ventas (Ventas)</value>
+        <value xml:lang="es">Impuesto de Ventas (Ventas)</value>
         <value xml:lang="fr">Taxes sur vente facturées (ventes)</value>
         <value xml:lang="hi_IN">चालान बिक्री टैक्स</value>
         <value xml:lang="it">Fattura Tasse Vendita</value>
@@ -3104,7 +3104,7 @@
     <property key="InvoiceItemType.description.INV_SPROD_ITEM">
         <value xml:lang="de">Dienstleistung</value>
         <value xml:lang="en">Invoice Service Product Item (Sales)</value>
-        <value xml:lang="es">Item de Factura Producto Servicio (Ventas)</value>
+        <value xml:lang="es">Item por Servicio (Ventas)</value>
         <value xml:lang="fr">Facturation de service/ produit (ventes)</value>
         <value xml:lang="hi_IN">चालान सेवा उत्पाद मद</value>
         <value xml:lang="it">Fattura Riga Prodotto Servizio</value>
@@ -3184,7 +3184,7 @@
     <property key="InvoiceItemType.description.ITM_ADD_FEATURE">
         <value xml:lang="de">Sonderanpassung</value>
         <value xml:lang="en">Invoice Item Additional Feature (Sales)</value>
-        <value xml:lang="es">Item de Factura por Caracteristica Adicional (Ventas)</value>
+        <value xml:lang="es">Item por Caracteristica Adicional (Ventas)</value>
         <value xml:lang="fr">Facturation d'options additionnelles (ventes)</value>
         <value xml:lang="hi_IN">चालान मद अतिरिक्त फ़ीचर</value>
         <value xml:lang="it">Invoice Riga Caratteristica Addizionale</value>
@@ -3280,7 +3280,7 @@
     <property key="InvoiceItemType.description.ITM_SALES_TAX">
         <value xml:lang="de">Rechnungsposten MwSt.</value>
         <value xml:lang="en">Invoice Item Sales Tax (Sales)</value>
-        <value xml:lang="es">Item de Factura Impuesto de Venta (Ventas)</value>
+        <value xml:lang="es">Item de Impuesto de Venta (Ventas)</value>
         <value xml:lang="fr">Ligne de TVA (ventes)</value>
         <value xml:lang="hi_IN">चालान मद बिक्री टैक्स</value>
         <value xml:lang="it">Fattura Riga Tasse Vendita</value>
@@ -3709,6 +3709,7 @@
     <property key="InvoiceItemType.description.PINVOICE_ADJ">
         <value xml:lang="de">Rechnungskorrektur</value>
         <value xml:lang="en">Invoice Adjustment</value>
+        <value xml:lang="es">Ajuste de Factura</value>
         <value xml:lang="fr">Régularisation de facture</value>
         <value xml:lang="hi_IN">चालान समायोजन</value>
         <value xml:lang="it">Fattura Aggiustamento</value>
@@ -3724,6 +3725,7 @@
     <property key="InvoiceItemType.description.PINVOICE_ITM_ADJ">
         <value xml:lang="de">Korrekturbuchung</value>
         <value xml:lang="en">Invoice Item Adjustment</value>
+        <value xml:lang="es">Item de Ajuste</value>
         <value xml:lang="fr">Régularisation de ligne de facturation</value>
         <value xml:lang="hi_IN">चालान मद समायोजन</value>
         <value xml:lang="it">Fattura Riga Aggiustamento</value>
@@ -3784,6 +3786,7 @@
     <property key="InvoiceItemType.description.PINV_FDPROD_ITEM">
         <value xml:lang="de">Fertigprodukt/Digitales Produkt</value>
         <value xml:lang="en">Invoice Finished/Digital Good Item (Purchase)</value>
+        <value xml:lang="es">Item de Producto Terminado/Digital (Compras)</value>
         <value xml:lang="fr">Facturation de service digital (achat)</value>
         <value xml:lang="hi_IN">चालान तैयार/डिजिटल सामग्री मद</value>
         <value xml:lang="it">Fattura Riga Bene Finito/Digitale</value>
@@ -3799,6 +3802,7 @@
     <property key="InvoiceItemType.description.PINV_FPROD_ITEM">
         <value xml:lang="de">Rechnung Fertigprodukt</value>
         <value xml:lang="en">Invoice Finished Good Item (Purchase)</value>
+        <value xml:lang="es">Item de Producto Terminado (Compras)</value>
         <value xml:lang="fr">Facturation produit fini (achat)</value>
         <value xml:lang="hi_IN">चालान संपूर्ण सामग्री मद</value>
         <value xml:lang="it">Fattura Riga Bene Finito</value>
@@ -3904,6 +3908,7 @@
     <property key="InvoiceItemType.description.PINV_SALES_TAX">
         <value xml:lang="de">MwSt.</value>
         <value xml:lang="en">Invoice Sales Tax (Purchase)</value>
+        <value xml:lang="es">Impuesto de Ventas (Compras)</value>
         <value xml:lang="fr">Taxes sur vente facturées (achat)</value>
         <value xml:lang="hi_IN">चालान बिक्री टैक्स</value>
         <value xml:lang="it">Fattura Tasse Vendita</value>
@@ -3934,6 +3939,7 @@
     <property key="InvoiceItemType.description.PINV_SPROD_ITEM">
         <value xml:lang="de">Dienstleistung</value>
         <value xml:lang="en">Invoice Service Product Item (Purchase)</value>
+        <value xml:lang="es">Item por Servicios (Compras)</value>
         <value xml:lang="fr">Facturation de service/ produit (achat)</value>
         <value xml:lang="hi_IN">चालान सेवा उत्पाद मद</value>
         <value xml:lang="it">Fattura Riga Prodotto Servizio</value>
@@ -4024,6 +4030,7 @@
     <property key="InvoiceItemType.description.PITM_ADD_FEATURE">
         <value xml:lang="de">Sonderanpassung</value>
         <value xml:lang="en">Invoice Item Additional Feature (Purchase)</value>
+        <value xml:lang="es">Item por Caracteristica Adicional (Compras)</value>      
         <value xml:lang="fr">Facturation d'options additionnelles (achat)</value>
         <value xml:lang="hi_IN">चालान मद अतिरिक्त फ़ीचर</value>
         <value xml:lang="it">Fattura Riga Caratteristica Addizionale</value>
@@ -4114,6 +4121,7 @@
     <property key="InvoiceItemType.description.PITM_SALES_TAX">
         <value xml:lang="de">Rechnungsposten MwSt.</value>
         <value xml:lang="en">Invoice Item Sales Tax (Purchase)</value>
+        <value xml:lang="es">Item de Impuesto de Venta (Compra)</value>
         <value xml:lang="fr">ligne de TVA (achat)</value>
         <value xml:lang="hi_IN">चालान मद बिक्री टैक्स</value>
         <value xml:lang="it">Fattura Riga Tasse Vendita</value>

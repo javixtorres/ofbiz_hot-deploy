@@ -1155,6 +1155,14 @@ under the License.
       <field name="paidDate" type="date-time"></field>
       <field name="invoiceMessage" type="long-varchar"></field>
       <field name="referenceNumber" type="short-varchar"></field> <!-- used to record things like the vendor's invoice number -->
+
+<!--       CODIGOLINUX Campos para contado/efectivo, timbrado, nro factura -->
+      <field name="entInvoice" type="numeric"></field>
+      <field name="emiInvoice" type="numeric"></field>
+      <field name="nroInvoice" type="numeric"></field>
+      <field name="condicionInvoice" type="short-varchar"></field>
+      <field name="timbradoInvoice" type="numeric"></field> 
+      
       <field name="description" type="description"></field>
       <field name="currencyUomId" type="id"></field>
       <field name="recurrenceInfoId" type="id"></field>
