@@ -8158,7 +8158,8 @@
         <value xml:lang="ar">الوضعية إلى 'مرسل'</value>
         <value xml:lang="de">Status auf 'Sent'</value>
         <value xml:lang="en">Status to 'Sent'</value>
-        <value xml:lang="es">Enviar</value>
+<!--          <value xml:lang="es">Enviar</value> -->
+        <value xml:lang="es">Pagar (Enviar)</value>
         <value xml:lang="fr">Statut à 'Envoyée'</value>
         <value xml:lang="hi_IN">'भेजा गया ' की स्थिति</value>
         <value xml:lang="it">Stato a 'Inviato'</value>
@@ -11717,7 +11718,8 @@
         <value xml:lang="ar">الوضعية إلى 'مرسل'</value>
         <value xml:lang="de">Status auf 'Übermittelt'</value>
         <value xml:lang="en">Status to 'Sent'</value>
-        <value xml:lang="es">Enviar</value>
+<!--         <value xml:lang="es">Enviar</value> -->
+        <value xml:lang="es">Pagar (Enviar)</value>
         <value xml:lang="fr">Statut à 'Envoyé'</value>
         <value xml:lang="hi_IN">स्थिति 'भेज दिया' करने के लिए</value>
         <value xml:lang="it">Stato a 'Inviato'</value>
@@ -12019,7 +12021,7 @@
         <value xml:lang="ar">التسديدات المستلمة</value>
         <value xml:lang="de">Zahlungen erhalten</value>
         <value xml:lang="en">Payments Received</value>
-        <value xml:lang="es">Pagos recibidos</value>
+        <value xml:lang="es">Pagos Recibidos</value>
         <value xml:lang="fr">Paiements reçus</value>
         <value xml:lang="hi_IN">भुगतान प्राप्त</value>
         <value xml:lang="it">Pagamenti ricevuti</value>
@@ -12037,7 +12039,7 @@
         <value xml:lang="ar">التسديدات المرسلة</value>
         <value xml:lang="de">Zahlungen übermitteln</value>
         <value xml:lang="en">Payments send</value>
-        <value xml:lang="es">Pagos enviados</value>
+        <value xml:lang="es">Pagos (Enviados)</value>
         <value xml:lang="fr">Paiements effectués</value>
         <value xml:lang="hi_IN">भुगतान भेजे</value>
         <value xml:lang="it">Pagamenti effettuati</value>
@@ -12054,7 +12056,7 @@
     <property key="AccountingPaymentsSent">
         <value xml:lang="de">Zahlungen übermittelt</value>
         <value xml:lang="en">Payments Sent</value>
-        <value xml:lang="es">Pagos emitidos</value>
+        <value xml:lang="es">Pagos (Enviados)</value>
         <value xml:lang="fr">Règlements envoyés</value>
         <value xml:lang="hi_IN">भुगतान भेज दिया</value>
         <value xml:lang="it">Pagamenti inviati</value>
@@ -12348,6 +12350,7 @@
     <property key="AccountingPostedTransactionTotals">
         <value xml:lang="de">Gebuchte Geamtsumme</value>
         <value xml:lang="en">Posted Totals</value>
+        <value xml:lang="es">Total Enviado</value>
         <value xml:lang="fr">Totaux comptabilisés</value>
         <value xml:lang="hi_IN">कुल पोस्टेड</value>
         <value xml:lang="it">Totali Contabilizzati</value>
@@ -17637,7 +17640,7 @@
         <value xml:lang="ar">مرسل</value>
         <value xml:lang="de">Verbucht</value>
         <value xml:lang="en">Is Posted</value>
-        <value xml:lang="es">Esta Enviado</value>
+        <value xml:lang="es">Enviado</value>
         <value xml:lang="fr">Postée</value>
         <value xml:lang="it">E' Contabilizzato</value>
         <value xml:lang="ja">転記済</value>

@@ -472,10 +472,11 @@ under the License.
         </menu-item>
         <menu-item name="printPayment" title="Imprimir Comprobante">
             <condition>
-                <and>
+<!--                 <and> -->
                     <not><if-empty field="payment.paymentId"/></not>
-                    <if-compare field="payment.statusId" operator="equals" value="PMNT_NOT_PAID"/>
-                </and>
+                    
+<!--                     <if-compare field="payment.statusId" operator="equals" value="PMNT_NOT_PAID"/> -->
+<!--                 </and> -->
             </condition>
             <link target="printPayment.pdf" target-window="_BLANK">
                 <parameter param-name="paymentId" from-field="payment.paymentId"/>

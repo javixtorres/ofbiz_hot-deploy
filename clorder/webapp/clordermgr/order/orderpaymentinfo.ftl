@@ -333,9 +333,6 @@ under the License.
 	                    </#list>
 	                  </#if>
 	                  
-	                  <#list paymentList as paymentMap>
-                            
-                            </#list>
                     </div>
                     <#--
                     <div><@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>&nbsp;-&nbsp;${(orderPaymentPreference.authDate.toString())?if_exists}</div>
