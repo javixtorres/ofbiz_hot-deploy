@@ -206,6 +206,15 @@ under the License.
         <auto-attributes entity-name="FinAccountTrans" include="pk" mode="INOUT" optional="true"/>
         <attribute name="invoiceIds" type="List" mode="IN" optional="true"/>
     </service>
+    
+     <!-- CODIGOLINUX - Pago de cliente, asociar con cuenta financiera CAJA_CHICA -->
+    <service name="createFinAccoutnTransFromPaymentCL" engine="simple"
+            location="component://claccounting/script/org/ofbiz/accounting/payment/PaymentServices.xml" invoke="createFinAccoutnTransFromPaymentCL" auth="true">
+        <auto-attributes entity-name="FinAccountTrans" include="nonpk" mode="IN" optional="true"/>
+        <auto-attributes entity-name="FinAccountTrans" include="pk" mode="INOUT" optional="true"/>
+        <attribute name="invoiceIds" type="List" mode="IN" optional="true"/>
+    </service>
+    
     <service name="getPayments" engine="simple"
             location="component://claccounting/script/org/ofbiz/accounting/payment/PaymentServices.xml" invoke="getPayments" auth="true">
         <description>Get list of payment</description>
