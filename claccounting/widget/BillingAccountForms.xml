@@ -150,11 +150,11 @@ under the License.
                 </entity-options>
             </drop-down>
         </field>
-        <!--
+       
         <field name="netBalance" title="${uiLabelMap.AccountingBillingNetBalance}" tooltip="${uiLabelMap.AccountingBillingNetBalanceMessage}">
             <display description="${bsh:org.ofbiz.accounting.payment.BillingAccountWorker.getBillingAccountNetBalance(delegator, billingAccountId)}" type="currency" currency="${billingAccount.accountCurrencyUomId}"/>
         </field>
-        -->
+       
         <field name="availableBalance" title="${uiLabelMap.AccountingBillingAvailableBalance}" tooltip="${uiLabelMap.AccountingBillingAvailableBalanceMessage}">
             <display type="currency" currency="${billingAccount.accountCurrencyUomId}"/>
         </field>

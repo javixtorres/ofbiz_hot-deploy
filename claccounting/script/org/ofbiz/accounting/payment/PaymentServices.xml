@@ -1145,6 +1145,14 @@ under the License.
 	    <set field="parameters.comments"  value="${orderHeader.orderName} - Anticipo"/>
         <set field="parameters.amount"  from-field="orderTerm1.termValue"/>
         
+        <!-- Define el Modo de Pago -->
+        <set field="parameters.paymentMethodTypeId"  value="CASH"/>
+<!--         <entity-one entity-name="PaymentMethod" value-field="paymentMethod"> -->
+<!--             <field-map field-name="paymentMethodTypeId" from-field="parameters.paymentMethodTypeId"/> -->
+<!--         </entity-one> -->
+        <set field="parameters.paymentMethodId" value="PETTY_CASH"/>
+        <!--  -->
+        
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">
             <result-to-field result-name="paymentId" field="parameters.paymentId"/>
@@ -1238,6 +1246,14 @@ under the License.
         
         <set field="parameters.effectiveDate" from-field="orderTerm0.termDate"/> 
         <set field="parameters.dueDate" from-field="orderTerm0.termDate"/>
+
+        <!-- Define el Modo de Pago -->
+        <set field="parameters.paymentMethodTypeId"  value="CASH"/>
+<!--         <entity-one entity-name="PaymentMethod" value-field="paymentMethod"> -->
+<!--             <field-map field-name="paymentMethodTypeId" from-field="parameters.paymentMethodTypeId"/> -->
+<!--         </entity-one> -->
+        <set field="parameters.paymentMethodId" value="PETTY_CASH"/>
+        <!--  -->
                 
         <set-service-fields service-name="createPayment" to-map="createPayment" map="parameters"/>
         <call-service service-name="createPayment" in-map-name="createPayment">

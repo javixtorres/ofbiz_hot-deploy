@@ -943,6 +943,45 @@ under the License.
         <key-map field-name="paymentMethodTypeId"/>
       </view-link>
     </view-entity>
+    
+    <!-- CODIGOLINUX -->
+    <view-entity entity-name="CLOrderPurchasePaymentSummary"
+            package-name="org.ofbiz.order.order"
+            never-cache="true"
+            title="CL Order Purchase Payment Summary View Entity">
+      <member-entity entity-alias="OH" entity-name="OrderHeader"/>
+      <member-entity entity-alias="OPP" entity-name="OrderPaymentPreference"/>
+      <member-entity entity-alias="PMT" entity-name="PaymentMethodType"/>
+      <member-entity entity-alias="PA" entity-name="Payment"/>
+      
+      <!-- only the fields desired should be included in fields-to-select, and can otherwise be used as select critera (or both too) -->
+      <alias entity-alias="OH" name="webSiteId" group-by="true"/>
+      <alias entity-alias="OH" name="productStoreId" group-by="true"/>
+      <alias entity-alias="OH" name="originFacilityId" group-by="true"/>
+      <alias entity-alias="OH" name="terminalId" group-by="true"/>
+      <alias entity-alias="OH" name="statusId" group-by="true"/>
+      <alias entity-alias="OPP" name="paymentMethodTypeId" group-by="true"/>
+      <alias entity-alias="PMT" name="description" group-by="true"/>
+      <alias entity-alias="OPP" name="maxAmount" function="sum"/>
+      <alias entity-alias="OH" name="orderId" group-by="true"/>
+      <alias entity-alias="OH" name="orderTypeId" group-by="true"/>
+      <alias entity-alias="OH" name="orderDate" group-by="true"/>
+      <alias entity-alias="OH" name="billingAccountId" group-by="true"/>
+      <alias entity-alias="OPP" name="preferenceStatusId" field="statusId" group-by="true"/>
+      <alias entity-alias="PA" name="paymentStatusId" field="statusId" group-by="true"/>
+      <alias entity-alias="PA" name="paymentAmount" field="amount" group-by="true"/>
+      <view-link entity-alias="OH" rel-entity-alias="OPP">
+        <key-map field-name="orderId"/>
+      </view-link>
+      <view-link entity-alias="OPP" rel-entity-alias="PA">
+        <key-map field-name="orderPaymentPreferenceId" rel-field-name="paymentPreferenceId"/>
+      </view-link>
+      <view-link entity-alias="OPP" rel-entity-alias="PMT">
+        <key-map field-name="paymentMethodTypeId"/>
+      </view-link>
+    </view-entity>
+    
+    
     <view-entity entity-name="OrderPurchaseProductSummary"
             package-name="org.ofbiz.order.order"
             never-cache="true"
