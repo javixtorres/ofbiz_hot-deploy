@@ -160,7 +160,13 @@ under the License.
           <#assign outputted = "true">
           <#-- try the paymentMethod first; if paymentMethodId is specified it overrides paymentMethodTypeId -->
           <#assign paymentMethod = orderPaymentPreference.getRelatedOne("PaymentMethod", false)?if_exists>
-          <#if !paymentMethod?has_content>
+          <!--
+          Prubas para ver que tome PRETTY_CASH
+          ${paymentMethod.paymentMethodId?if_exists}
+          paymentMethod.paymentMethodId == "PRETTY_CASH"
+          -->
+          <#if !paymentMethod?has_content || paymentMethod?has_content > <!-- Se ingresa siempre a este if, quitar en algun momento -->
+          
             <#assign paymentMethodType = orderPaymentPreference.getRelatedOne("PaymentMethodType", false)>
             <#if paymentMethodType.paymentMethodTypeId == "EXT_BILLACT">
                 <#assign outputted = "false">
@@ -185,11 +191,14 @@ under the License.
                                 <td valign="top">
                                     ${uiLabelMap.CommonNbr}<a href="/claccounting/control/EditBillingAccount?billingAccountId=${billingAccount.billingAccountId}${externalKeyParam}" class="buttontext">${billingAccount.billingAccountId}</a>  - ${billingAccount.description?if_exists}
                                 </td>
+                                <!-- 
+                                Se anula el boton RECIBIR PAGO
                                 <td valign="top" align="right">
                                     <#if orderPaymentPreference.statusId != "PAYMENT_SETTLED" && orderPaymentPreference.statusId != "PAYMENT_RECEIVED">
                                         <a href="<@ofbizUrl>receivepayment?${paramString}</@ofbizUrl>" class="buttontext">${uiLabelMap.AccountingReceivePayment}</a>
                                     </#if>
                                 </td>
+                                -->
                             </tr>
                         </table>
                     </td>
@@ -310,7 +319,7 @@ under the License.
                       <#--CODIGOLINUX Mostrar Descripcion y Fecha de Pago -->
 					  <#if paymentList?has_content>
 	                            <#list paymentList as paymentMap>
-	                               <br />${paymentMap.comments}  - Fecha:  
+	                               <br />${paymentMap.comments} - Fecha:  
 	                               <#--${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!}--> 
 	                               ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.dueDate, "dd/MM/yyyy", locale, timeZone)!}
 	                            </#list>
@@ -319,7 +328,7 @@ under the License.
                       <#if orderPaymentPreference.maxAmount?has_content>
                          <br />${uiLabelMap.OrderPaymentMaximumAmount}: <@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>
                       </#if>
-                      <#--
+                      <!--
                       <br />&nbsp;[<#if oppStatusItem?exists>${oppStatusItem.get("description",locale)}<#else>${orderPaymentPreference.statusId}</#if>]
                       -->
                       
@@ -334,7 +343,7 @@ under the License.
 	                  </#if>
 	                  
                     </div>
-                    <#--
+                    <!--
                     <div><@ofbizCurrency amount=orderPaymentPreference.maxAmount?default(0.00) isoCode=currencyUomId/>&nbsp;-&nbsp;${(orderPaymentPreference.authDate.toString())?if_exists}</div>
                     <div>&nbsp;<#if orderPaymentPreference.authRefNum?exists>(${uiLabelMap.OrderReference}: ${orderPaymentPreference.authRefNum})</#if></div>
                     -->
