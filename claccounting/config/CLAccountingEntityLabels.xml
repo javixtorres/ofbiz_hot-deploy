@@ -493,7 +493,7 @@
         <value xml:lang="it">Deposito</value>
         <value xml:lang="ja">前払金</value>
         <value xml:lang="nl">Storting</value>
-        <value xml:lang="pt_BR">Depósito</value>
+        <value xml:lang="pt_BR">Depósito</value>	
         <value xml:lang="ru">Взнос</value>
         <value xml:lang="th">เงินมัดจำ</value>
         <value xml:lang="vi">Ký quỹ</value>
@@ -503,7 +503,7 @@
     <property key="FinAccountTransType.description.WITHDRAWAL">
         <value xml:lang="de">Auszahlung</value>
         <value xml:lang="en">Withdraw</value>
-        <value xml:lang="es">Retirar</value>
+        <value xml:lang="es">Extracción</value>
         <value xml:lang="fr">Retrait</value>
         <value xml:lang="hi_IN">निकालना</value>
         <value xml:lang="it">Prelievo</value>

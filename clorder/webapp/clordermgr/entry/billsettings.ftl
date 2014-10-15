@@ -41,11 +41,13 @@ function makeExpDate() {
           <form method="post" action="<@ofbizUrl>finalizeOrder</@ofbizUrl>" name="checkoutsetupform">
             <input type="hidden" name="finalizeMode" value="payment"/>
             <table width="100%" cellpadding="1" cellspacing="0" border="0">
+              <#-- Anular el crear otro pago
               <tr>
                 <td colspan="2">
                   <a href="<@ofbizUrl>setBilling?createNew=Y</@ofbizUrl>" class="buttontext">${uiLabelMap.CommonCreateNew}</a>
                 </td>
               </tr>
+              -->
               <tr><td colspan="3"><hr /></td></tr>
               <#if billingAccountList?has_content>
                 <tr>
@@ -59,7 +61,7 @@ function makeExpDate() {
                           <#else>
                               <#assign accountLimit = 0.00 />
                           </#if> 
-                          <option value="${billingAccount.billingAccountId}" <#if billingAccount.billingAccountId == selectedBillingAccountId?default("")>selected="selected"</#if>>${billingAccount.description?default("")} [${billingAccount.billingAccountId}] Available: <@ofbizCurrency amount=availableAmount isoCode=billingAccount.accountCurrencyUomId/> Limit: <@ofbizCurrency amount=accountLimit isoCode=billingAccount.accountCurrencyUomId/></option>
+                          <option value="${billingAccount.billingAccountId}" <#if billingAccount.billingAccountId == selectedBillingAccountId?default("")>selected="selected"</#if>>${billingAccount.description?default("")} [${billingAccount.billingAccountId}] Disponible: <@ofbizCurrency amount=availableAmount isoCode=billingAccount.accountCurrencyUomId/> De: <@ofbizCurrency amount=accountLimit isoCode=billingAccount.accountCurrencyUomId/></option>
                         </#list>
                     </select>
                   </td>
@@ -68,6 +70,7 @@ function makeExpDate() {
                   </td>
                   <td>&nbsp;</td>
                 </tr>
+                <#-- se saca el limitar el monto por credito
                 <tr>
                   <td width="1%" align="right">
                     <input type="text" size="5" name="billingAccountAmount" value=""/>
@@ -77,8 +80,10 @@ function makeExpDate() {
                   </td>
                   <td>&nbsp;</td>
                 </tr>
+                -->
                 <tr><td colspan="3"><hr /></td></tr>
               </#if>
+              <#-- anulado el pago offline y contra rebolso
               <tr>
                 <td width="1%">
                   <input type="radio" id="checkOutPaymentId_EXT_OFFLINE" name="checkOutPaymentId" value="EXT_OFFLINE" <#if checkOutPaymentId?exists && checkOutPaymentId == "EXT_OFFLINE">checked="checked"</#if>/>
@@ -96,7 +101,9 @@ function makeExpDate() {
                   <label for="checkOutPaymentId_EXT_COD">${uiLabelMap.OrderCOD}</label>
                 </td>
               </tr>
+              
               <tr><td colspan="3"><hr /></td></tr>
+              -->
               <tr>
                 <td width="1%">
                   <input type="radio" id="checkOutPaymentId_CASH" name="checkOutPaymentId" value="CASH" <#if checkOutPaymentId?exists && checkOutPaymentId == "CASH">checked="checked"</#if>/>
@@ -501,11 +508,13 @@ function makeExpDate() {
             <input type="hidden" name="createNew" value="Y"/>
             <table width="100%" border="0" cellpadding="1" cellspacing="0">
               <#if !requestParameters.createNew?exists>
+              <#--
               <tr>
                 <td width='1%' nowrap="nowrap"><input type="radio" name="paymentMethodTypeAndId" value="EXT_OFFLINE" <#if checkOutPaymentId?exists && checkOutPaymentId == "EXT_OFFLINE">checked="checked"</#if> onchange="setCheckoutPaymentId(this.value)" onclick="setCheckoutPaymentId(this.value)"/></td>
                 <td width='50%' nowrap="nowrap"><div>${uiLabelMap.OrderPaymentOfflineCheckMoney}</div></td>
               </tr>
               <tr><td colspan="2"><hr /></td></tr>
+              -->
               <#--
               <tr>
                 <td width="1%" nowrap="nowrap"><input type="radio" name="paymentMethodTypeAndId" value="EXT_COD" <#if checkOutPaymentId?exists && checkOutPaymentId == "EXT_COD">checked="checked"</#if> onchange="setCheckoutPaymentId(this.value)" onclick="setCheckoutPaymentId(this.value)"/></td>

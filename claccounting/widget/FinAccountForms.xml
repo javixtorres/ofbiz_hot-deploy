@@ -187,7 +187,7 @@ under the License.
         <auto-fields-service service-name="createFinAccountTrans"/>
         <field name="finAccountId"><hidden/></field>
         <field name="finAccountTransId"><hidden/></field>
-        <field name="finAccountTransTypeId">
+        <field name="finAccountTransTypeId" title="Transacción Tipo">
             <drop-down no-current-selected-key="ADJUSTMENT">
                 <entity-options description="${description}" entity-name="FinAccountTransType">
                     <entity-order-by field-name="description"/>
@@ -318,7 +318,7 @@ under the License.
         </actions>
         <field name="noConditionFind"><hidden value="Y"/><!-- if this isn't there then with all fields empty no query will be done --></field>
         <field name="finAccountId"><hidden value="${finAccountId}"/></field>
-        <field name="finAccountTransTypeId">
+        <field name="finAccountTransTypeId" title="Transaccion Tipo">
             <drop-down allow-empty="true">
                 <entity-options description="${description}" entity-name="FinAccountTransType">
                     <entity-order-by field-name="description"/>
@@ -339,10 +339,10 @@ under the License.
                     description="${glReconciliationName}[[${glReconciliationId}] [${reconciledDate}] [${reconciledBalance}]]"/>
             </drop-down>
         </field>
-        <field name="fromTransactionDate" position="1"><date-time/></field>
-        <field name="thruTransactionDate" position="2"><date-time/></field>
-        <field name="fromEntryDate" position="1"><date-time/></field>
-        <field name="thruEntryDate" position="2"><date-time/></field>
+        <field name="fromTransactionDate" title="Transaccion desde" position="1"><date-time/></field>
+        <field name="thruTransactionDate" title="Hasta" position="2"><date-time/></field>
+        <field name="fromEntryDate" title="Registro desde" position="1"><date-time/></field>
+        <field name="thruEntryDate" title="Hasta" position="2"><date-time/></field>
         <field name="searchButton" widget-style="smallSubmit"><submit button-type="button"/></field>
     </form>
     <form name="FindBankReconciliationFinAcctTrans" target="BankReconciliation" 

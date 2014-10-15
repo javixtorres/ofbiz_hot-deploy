@@ -2503,6 +2503,7 @@
     <property key="AccountingCancelTransactionStatus">
         <value xml:lang="de">Transaktions-Status abbrechen</value>
         <value xml:lang="en">Cancel Transaction Status</value>
+        <value xml:lang="es">Cancelar Transacción	</value>
         <value xml:lang="fr">Annuler le statut de la transaction</value>
         <value xml:lang="hi_IN">लेन-देन की स्थिति रद्द करे</value>
         <value xml:lang="ja">取消トランザクションステータス</value>
@@ -16856,6 +16857,7 @@
     </property>
     <property key="FormFieldTitle_finAccountTransTypeId">
         <value xml:lang="en">Fin Account Trans Type Id</value>
+        <value xml:lang="es">Transacción Tipo</value>        
         <value xml:lang="fr">Réf. type de tranfert de compte financier</value>
         <value xml:lang="hi_IN">वित्तीय गतिविधि खाता प्रकार क्रमांक</value>
         <value xml:lang="it">Tipo Transazione Conto Finanziario</value>
@@ -16870,6 +16872,7 @@
     </property>
     <property key="FormFieldTitle_finAccountType">
         <value xml:lang="en">Fin Account Type</value>
+        <value xml:lang="es">Cuenta Tipo</value>
         <value xml:lang="fr">Type de compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाते का प्रकार </value>
         <value xml:lang="ja">金融アカウント種類</value>
@@ -16879,6 +16882,7 @@
     </property>
     <property key="FormFieldTitle_finAccountTypeId">
         <value xml:lang="en">Fin Account Type Id</value>
+        <value xml:lang="es">Cuenta Tipo Id</value>
         <value xml:lang="fr">Réf. type de compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता प्रकार क्रमांक</value>
         <value xml:lang="it">Tipo Conto Finanziario</value>

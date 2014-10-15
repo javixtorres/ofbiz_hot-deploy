@@ -233,14 +233,18 @@ function getFinAccountTransRunningTotalAndBalances() {
                 <a href="<@ofbizUrl>DepositSlip.pdf?finAccountTransId=${finAccountTrans.finAccountTransId}</@ofbizUrl>" target="_BLANK" class="buttontext">${uiLabelMap.AccountingDepositSlip}</a>
               <#else>
                 ${finAccountTrans.finAccountTransId}
-              </#if>
+              </#if>	
             </td>
             <td>${finAccountTransType.description?if_exists}</td>
             <td><#if partyName?has_content>${(partyName.firstName)!} ${(partyName.lastName)!} ${(partyName.groupName)!}<a href="/partymgr/control/viewprofile?partyId=${partyName.partyId}">[${(partyName.partyId)!}]</a></#if></td>
             <td><#if glReconciliation?has_content>${glReconciliation.glReconciliationName?if_exists}<a href="ViewGlReconciliationWithTransaction?glReconciliationId=${glReconciliation.glReconciliationId?if_exists}&amp;finAccountId=${parameters.finAccountId?if_exists}">[${glReconciliation.glReconciliationId?if_exists}]</a></#if></td>
             <td>${finAccountTrans.transactionDate?if_exists}</td>
             <td>${finAccountTrans.entryDate?if_exists}</td>
-            <td>${finAccountTrans.amount?if_exists}</td>
+            <td>
+            <!-- forma de mostrar sin formato anulada 
+            ${finAccountTrans.amount?if_exists} 
+            -->
+            <@ofbizCurrency amount=finAccountTrans.amount?if_exists/> </td>
             <td>
               <#if finAccountTrans.paymentId?has_content>
                 <a href="<@ofbizUrl>paymentOverview?paymentId=${finAccountTrans.paymentId}</@ofbizUrl>">${finAccountTrans.paymentId}</a>
@@ -305,10 +309,10 @@ function getFinAccountTransRunningTotalAndBalances() {
           <th>${uiLabelMap.AccountingCreatedApprovedGrandTotal} / ${uiLabelMap.AccountingNumberOfTransaction}</th>
         </tr>
         <tr>
-          <td>${grandTotal} / ${searchedNumberOfRecords}</td>
-          <td>${createdGrandTotal} / ${totalCreatedTransactions}</td>
-          <td>${approvedGrandTotal} / ${totalApprovedTransactions}</td>
-          <td>${createdApprovedGrandTotal} / ${totalCreatedApprovedTransactions}</td>
+          <td><!--${grandTotal}--> <@ofbizCurrency amount=grandTotal/>/ ${searchedNumberOfRecords}</td>
+          <td><!--${createdGrandTotal}--> <@ofbizCurrency amount=createdGrandTotal/>/ ${totalCreatedTransactions}</td>
+          <td><!--${approvedGrandTotal}--> <@ofbizCurrency amount=approvedGrandTotal/>/ ${totalApprovedTransactions}</td>
+          <td><!--${createdApprovedGrandTotal}--> <@ofbizCurrency amount=createdApprovedGrandTotal/>/ ${totalCreatedApprovedTransactions}</td>
         </tr>
       </table>
     <#else>
