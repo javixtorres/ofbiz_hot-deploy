@@ -763,40 +763,115 @@ under the License.
     <!-- CODIGOLINUX crear una transaccion para cuenta finanaciera CAJA_CHICA -->
     <simple-method method-name="createFinAccoutnTransFromPaymentCL" short-description="CODIGOLINUX crear una transaccion para cuenta finanaciera CAJA_CHICA">
         <set-service-fields service-name="createFinAccountTrans" map="parameters" to-map="createFinAccountTransMap"/>
-        <set field="createFinAccountTransMap.finAccountId" value="CAJA_CHICA"/>
+<!--         <set field="createFinAccountTransMap.finAccountId" value="CAJA_CHICA"/> -->
         <set field="createFinAccountTransMap.finAccountTransTypeId" value="DEPOSIT"/>
+      
+        <entity-one entity-name="Payment" value-field="payment">
+           <field-map field-name="paymentId" from-field="parameters.paymentId"/>
+       </entity-one>
+          
+       <if-compare field="payment.paymentTypeId" operator="equals" value="CUSTOMER_PAYMENT">
+       	   <entity-and entity-name="FinAccount" list="finAccountList">
+		            <field-map field-name="ownerPartyId" from-field="userLogin.partyId" />
+		   </entity-and>
+		       
+	       <if-not-empty field="finAccountList">
+	       
+	           <first-from-list list="finAccountList" entry="finAccount"/>
+	           <set field="createFinAccountTransMap.finAccountId" from-field="finAccount.finAccountId"/> 
+	
+			   <entity-one entity-name="Payment" value-field="payment">
+		           <field-map field-name="paymentId" from-field="parameters.paymentId"/>
+		       </entity-one>
+		       <set field="createFinAccountTransMap.partyId" from-field="payment.partyIdFrom"/>
+		       <set field="createFinAccountTransMap.amount" from-field="payment.amount"/>
+			   <set field="createFinAccountTransMap.comments" from-field="payment.comments"/> 
+	           
+		        <now-timestamp field="createFinAccountTransMap.transactionDate"/>
+		        <now-timestamp field="createFinAccountTransMap.entryDate"/>
+		        
+		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/>
+<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> -->
+		        
+		        <!-- set field="createFinAccountTransMap.statusId" value="CREATE"/>  --> <!-- TODO: It will uncomment when status Id field will add in FinAccountTrans Entity. -->
+	<!-- 	        <set field="createFinAccountTransMap.comments" value="Pay to ${parameters.partyId} for invoice Ids - ${parameters.invoiceIds}"/> -->
+		        
+		        <call-service service-name="createFinAccountTrans" in-map-name="createFinAccountTransMap">
+		            <result-to-field result-name="finAccountTransId"/>
+		        </call-service>
+		        <set field="updatePaymentMap.finAccountTransId" from-field="finAccountTransId"/>
+		        <set field="updatePaymentMap.paymentId" from-field="parameters.paymentId"/>
+		        <call-service service-name="updatePayment" in-map-name="updatePaymentMap"/>
+	        
+	<!-- 		        <else> -->
+	<!-- 		            <add-error> -->
+	<!-- 		                <fail-property resource="AccountingUiLabels" property="AccountingCheckIsAlreadyIssued"/> -->
+	<!-- 		            </add-error> -->
+	<!-- 		            <check-errors/> -->
+	<!-- 		        </else> -->
+		  <else>
+		        <log level="info" message="No encontro Cuenta Fianciera de Caja para el usuario ${userLogin.userLoginId} !!!!"/>
+		  </else>
+	      </if-not-empty>
+
+      </if-compare>
+            
+            
+<!--       CODIGOLINUX Pago a Proveedores a Tesoreria y Cheques -->
+
+	  <if-compare field="payment.paymentTypeId" operator="equals" value="VENDOR_PAYMENT">
+       	   <entity-and entity-name="FinAccount" list="finAccountList">
+<!-- 		            <field-map field-name="finAccountCode" value="TESORERIA"/> -->
+                        <field-map field-name="finAccountId" value="10020"/>
+		   </entity-and>
+		   
+		   
+	       <if-not-empty field="finAccountList">
+	       
+	           <first-from-list list="finAccountList" entry="finAccount"/>
+	           <set field="createFinAccountTransMap.finAccountId" from-field="finAccount.finAccountId"/> 
+	
+			   <entity-one entity-name="Payment" value-field="payment">
+		           <field-map field-name="paymentId" from-field="parameters.paymentId"/>
+		       </entity-one>
+		       <set field="createFinAccountTransMap.partyId" from-field="payment.partyIdFrom"/>
+		       <set field="createFinAccountTransMap.amount" from-field="payment.amount"/>
+			   <set field="createFinAccountTransMap.comments" from-field="payment.comments"/> 
+	           
+		        <now-timestamp field="createFinAccountTransMap.transactionDate"/>
+		        <now-timestamp field="createFinAccountTransMap.entryDate"/>
+		        
+		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/>
+<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> -->
+		    
+		        <set field="createFinAccountTransMap.finAccountTransTypeId" value="WITHDRAWAL"/>
+		        
+		        <call-service service-name="createFinAccountTrans" in-map-name="createFinAccountTransMap">
+		            <result-to-field result-name="finAccountTransId"/>
+		        </call-service>
+		        <set field="updatePaymentMap.finAccountTransId" from-field="finAccountTransId"/>
+		        <set field="updatePaymentMap.paymentId" from-field="parameters.paymentId"/>
+		        <call-service service-name="updatePayment" in-map-name="updatePaymentMap"/>
+		        
+		   <else>
+		        <log level="info" message="No encontró Cuenta Financiera con Codigo TESORERIA Id 10020!!!!"/>
+		  </else>
+	       
+	      </if-not-empty>
+
+      </if-compare>
+
+               
+<!--        <entity-one entity-name="FinAccount" value-field="finAccount"> -->
+<!--            <field-map field-name="ownerPartyId" from-field="userLogin.partyId"/> -->
+<!--        </entity-one> -->
+
+		
+<!--        <set field="createFinAccountTransMap.finAccountId" field="finAccount.finAccountId"/>  -->
         
         <!-- Obtener los datos del pago -->
         
-       <entity-one entity-name="Payment" value-field="payment">
-           <field-map field-name="paymentId" from-field="parameters.paymentId"/>
-       </entity-one>
-       <set field="createFinAccountTransMap.partyId" from-field="payment.partyIdFrom"/>
-       <set field="createFinAccountTransMap.amount" from-field="payment.amount"/>
-	   <set field="createFinAccountTransMap.comments" from-field="payment.comments"/> 
-       
-       <if-compare field="payment.paymentTypeId" operator="equals" value="CUSTOMER_PAYMENT">
-           
-	        <now-timestamp field="createFinAccountTransMap.transactionDate"/>
-	        <now-timestamp field="createFinAccountTransMap.entryDate"/>
-	        <!-- set field="createFinAccountTransMap.statusId" value="CREATE"/>  --> <!-- TODO: It will uncomment when status Id field will add in FinAccountTrans Entity. -->
-<!-- 	        <set field="createFinAccountTransMap.comments" value="Pay to ${parameters.partyId} for invoice Ids - ${parameters.invoiceIds}"/> -->
-	        
-	        <call-service service-name="createFinAccountTrans" in-map-name="createFinAccountTransMap">
-	            <result-to-field result-name="finAccountTransId"/>
-	        </call-service>
-	        <set field="updatePaymentMap.finAccountTransId" from-field="finAccountTransId"/>
-	        <set field="updatePaymentMap.paymentId" from-field="parameters.paymentId"/>
-	        <call-service service-name="updatePayment" in-map-name="updatePaymentMap"/>
-        
-<!-- 		        <else> -->
-<!-- 		            <add-error> -->
-<!-- 		                <fail-property resource="AccountingUiLabels" property="AccountingCheckIsAlreadyIssued"/> -->
-<!-- 		            </add-error> -->
-<!-- 		            <check-errors/> -->
-<!-- 		        </else> -->
-      </if-compare>        
-        
+               
     </simple-method>
 
 
