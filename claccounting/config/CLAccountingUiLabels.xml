@@ -1436,6 +1436,7 @@
     <property key="AccountingApprovedGrandTotal">
         <value xml:lang="de">Genehmigte Gesamtsumme</value>
         <value xml:lang="en">Approved Grand Total</value>
+        <value xml:lang="es">Total Aprobado</value>
         <value xml:lang="fr">Montant total approuvé</value>
         <value xml:lang="hi_IN">स्वीकृत कुल योग</value>
         <value xml:lang="ja">総合計を承認</value>
@@ -3612,6 +3613,7 @@
     <property key="AccountingCreatedApprovedGrandTotal">
         <value xml:lang="de">Gesamtsumme erstellt/genehmigt</value>
         <value xml:lang="en">Created/Approved Grand Total</value>
+        <value xml:lang="es">Total Creado/Aprobado</value>
         <value xml:lang="fr">Créer/Approuver montant total</value>
         <value xml:lang="hi_IN">निर्मित/स्वीकृत कुल योग</value>
         <value xml:lang="ja">作成/承認済総合計</value>
@@ -3622,6 +3624,7 @@
     <property key="AccountingCreatedGrandTotal">
         <value xml:lang="de">Gesamtsumme erstellt</value>
         <value xml:lang="en">Created Grand Total</value>
+        <value xml:lang="es">Total Creado</value>
         <value xml:lang="fr">Créer le montant total</value>
         <value xml:lang="hi_IN">निर्मित कुल योग</value>
         <value xml:lang="ja">作成済総合計</value>
@@ -4367,6 +4370,7 @@
     <property key="AccountingDepositSlips">
         <value xml:lang="de">Einzahlungsscheine</value>
         <value xml:lang="en">Deposit Slips</value>
+        <value xml:lang="es">Comprobante de Deposito</value>
         <value xml:lang="fr">Récépissés de dépôt</value>
         <value xml:lang="hi_IN">जमा पर्चीयां</value>
         <value xml:lang="ja">預入伝票</value>
@@ -5382,6 +5386,7 @@
     <property key="AccountingFindDepositSlip">
         <value xml:lang="de">Finde Einzahlungsscheine für Finanzkonto : ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="en">Find Deposit Slips for Financial Account : ${finAccount.finAccountName} [${finAccountId}]</value>
+        <value xml:lang="es">Buscar Comprobante de Deposito para Cuenta Financiera : ${finAccount.finAccountName} [${finAccountId}]</value>
         <value xml:lang="fr">Recherche de bordereaux de dépôt</value>
         <value xml:lang="hi_IN">वित्तीय खाता ${finAccount.finAccountName} [${finAccountId}] के लिए जमा पर्चीयां ढूँढें</value>
         <value xml:lang="ja">金融アカウント: ${finAccount.finAccountName} [${finAccountId}] に対して預入伝票を検索</value>
@@ -15754,6 +15759,7 @@
     </property>
     <property key="FormFieldTitle_actualBalance">
         <value xml:lang="en">Actual Balance</value>
+        <value xml:lang="es">Balance Actual</value>
         <value xml:lang="fr">Balance réelle</value>
         <value xml:lang="hi_IN">वास्तविक शेष</value>
         <value xml:lang="it">Bilancio Corrente</value>
@@ -16058,6 +16064,7 @@
     <property key="FormFieldTitle_availableBalance">
         <value xml:lang="de">verfügbares Guthaben</value>
         <value xml:lang="en">Available Balance</value>
+        <value xml:lang="es">Balance Disponible</value>
         <value xml:lang="fr">Balance disponible</value>
         <value xml:lang="hi_IN">उपलब्ध शेष</value>
         <value xml:lang="it">Bilancio Disponibile</value>

@@ -1,0 +1,1 @@
+http://localhost:8080/clbirt/frameset?__report=clreports/ContratoVenta.rptdesign&__format=pdf&__svg=false&__locale=es_PY&__timezone=America%2FAsuncion&__masterpage=true&__rtl=false&orderId=PDCO10973

@@ -1,0 +1,1149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.0.v20120611 Build &lt;4.2.0.v20120612-1721></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Payment.Payments.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Payment.Payments.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Payment.Payments.x">135</property>
+    <property name="Payment.Payments.y">80</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">313</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">313</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">313</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <method name="initialize"><![CDATA[importPackage(Packages.org.ofbiz.base.util)
+importPackage(Packages.javolution.util)
+importPackage(Packages.org.ofbiz.entity.util)
+module = "PaymentReport.rptdesign";]]></method>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <parameters>
+        <scalar-parameter name="orderId" id="77">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">PDCO10973</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="OFBIZ-CUSTOM" id="312">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://127.0.0.1/ofbizdb</property>
+            <property name="odaUser">ofbizusr</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">b2ZiaXo=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Agreement" id="313">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">card_id</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">card_id</text-property>
+                    <text-property name="heading">card_id</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">first_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">first_name</text-property>
+                    <text-property name="heading">first_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">last_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">last_name</text-property>
+                    <text-property name="heading">last_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">birth_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">birth_date</text-property>
+                    <text-property name="heading">birth_date</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">marital_status</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">marital_status</text-property>
+                    <text-property name="heading">marital_status</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">occupation</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">occupation</text-property>
+                    <text-property name="heading">occupation</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">card_id</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">first_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">last_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">birth_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">marital_status</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">occupation</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">card_id</property>
+                    <property name="nativeName">card_id</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">first_name</property>
+                    <property name="nativeName">first_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">last_name</property>
+                    <property name="nativeName">last_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">birth_date</property>
+                    <property name="nativeName">birth_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">marital_status</property>
+                    <property name="nativeName">marital_status</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">occupation</property>
+                    <property name="nativeName">occupation</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+public.person.card_id,
+public.person.first_name,
+public.person.last_name,
+public.person.birth_date,
+public.person.marital_status,
+public.person.occupation  
+from public.person  where public.person.party_id in 
+(select public.order_role.party_id from public.order_role where public.order_role.order_id=? and role_type_id='END_USER_CUSTOMER');]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Conyuge" id="502">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">cygcardid</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cygcardid</text-property>
+                    <text-property name="heading">cygcardid</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cygfirstname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cygfirstname</text-property>
+                    <text-property name="heading">cygfirstname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cyglastname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cyglastname</text-property>
+                    <text-property name="heading">cyglastname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cygbirthdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cygbirthdate</text-property>
+                    <text-property name="heading">cygbirthdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">cygocupation</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">cygocupation</text-property>
+                    <text-property name="heading">cygocupation</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">cygcardid</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">cygfirstname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">cyglastname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">cygbirthdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">cygocupation</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">cygcardid</property>
+                    <property name="nativeName">cygcardid</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">cygfirstname</property>
+                    <property name="nativeName">cygfirstname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">cyglastname</property>
+                    <property name="nativeName">cyglastname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">cygbirthdate</property>
+                    <property name="nativeName">cygbirthdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">cygocupation</property>
+                    <property name="nativeName">cygocupation</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+public.person.card_id CygCardId,
+public.person.first_name CygFirstName,
+public.person.last_name CygLastName,
+public.person.birth_date CygBirthDate,
+public.person.occupation CygOcupation  
+from public.person  where public.person.party_id in 
+
+(
+select
+public.party_relationship.party_id_from
+from public.party_relationship
+where public.party_relationship.party_relationship_type_id='Conyuge' and 
+public.party_relationship.party_id_to in 
+(select public.agreement.party_id_from
+from public.agreement where public.agreement.agreement_id=?)
+
+union
+
+select
+public.party_relationship.party_id_to
+from public.party_relationship
+where public.party_relationship.party_relationship_type_id='Conyuge' and 
+public.party_relationship.party_id_from in 
+(select public.agreement.party_id_from
+from public.agreement where public.agreement.agreement_id=?)
+)
+
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>card_id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>card_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>card_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>first_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>first_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>first_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>last_name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>last_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>last_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>birth_date</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>birth_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>birth_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>marital_status</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>marital_status</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>marital_status</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>occupation</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>occupation</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>occupation</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="370">
+            <column id="371"/>
+            <column id="372"/>
+            <column id="373"/>
+            <row id="374">
+                <cell id="375">
+                    <image id="343">
+                        <property name="height">50px</property>
+                        <property name="width">220px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">electrohogar_logo.png</property>
+                    </image>
+                </cell>
+                <cell id="376">
+                    <text id="345">
+                        <property name="fontSize">smaller</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Venta de Electrodomésticos - Electronónicos, etc.
+Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
+                    </text>
+                </cell>
+                <cell id="377">
+                    <text-data id="336">
+                        <property name="fontSize">smaller</property>
+                        <expression name="valueExpr">"Nro.: " +params["orderId"].value+
+" - Fecha: "+new Date()+
+" - Vendedor: "</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+        </grid>
+        <text id="71">
+            <property name="backgroundColor">silver</property>
+            <property name="fontSize">larger</property>
+            <property name="fontWeight">bolder</property>
+            <property name="textAlign">center</property>
+            <property name="textTransform">none</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[SOLICITUD DE CREDITO
+]]></text-property>
+        </text>
+        <grid id="412">
+            <column id="413"/>
+            <row id="414">
+                <cell id="415">
+                    <grid id="420">
+                        <property name="width">7.875in</property>
+                        <column id="421">
+                            <property name="width">0.9791666666666666in</property>
+                        </column>
+                        <column id="422">
+                            <property name="width">2.9583333333333335in</property>
+                        </column>
+                        <column id="423">
+                            <property name="width">0.65625in</property>
+                        </column>
+                        <column id="424">
+                            <property name="width">3.28125in</property>
+                        </column>
+                        <row id="425">
+                            <cell id="426">
+                                <text id="430">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Razón Social:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="427"/>
+                            <cell id="428">
+                                <text id="431">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[RUC:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="429"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="416">
+                <cell id="417">
+                    <grid id="433">
+                        <property name="width">7.875in</property>
+                        <column id="434">
+                            <property name="width">0.75in</property>
+                        </column>
+                        <column id="435">
+                            <property name="width">7.125in</property>
+                        </column>
+                        <row id="436">
+                            <cell id="437">
+                                <text id="432">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Dirección:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="438"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+            <row id="418">
+                <cell id="419">
+                    <grid id="439">
+                        <column id="440"/>
+                        <column id="441"/>
+                        <column id="442"/>
+                        <column id="443"/>
+                        <column id="444"/>
+                        <column id="445"/>
+                        <row id="446">
+                            <cell id="447">
+                                <text id="453">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Ciudad:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="448"/>
+                            <cell id="449">
+                                <text id="454">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Barrio:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="450"/>
+                            <cell id="451">
+                                <text id="455">
+                                    <property name="contentType">auto</property>
+                                    <text-property name="content"><![CDATA[Tel./Fax:]]></text-property>
+                                </text>
+                            </cell>
+                            <cell id="452"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+        <text id="456">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[DATOS PERSONALES DEL SOLICITANTE]]></text-property>
+        </text>
+        <grid id="458">
+            <property name="width">7.947916666666667in</property>
+            <column id="459">
+                <property name="width">0.71875in</property>
+            </column>
+            <column id="460">
+                <property name="width">3.2604166666666665in</property>
+            </column>
+            <column id="461">
+                <property name="width">0.7083333333333334in</property>
+            </column>
+            <column id="462">
+                <property name="width">3.2604166666666665in</property>
+            </column>
+            <row id="463">
+                <cell id="464">
+                    <text id="468">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Nombres:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="465">
+                    <data id="470">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">first_name</property>
+                                <text-property name="displayName">first_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["first_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">first_name</property>
+                    </data>
+                </cell>
+                <cell id="466">
+                    <text id="469">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Apellidos:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="467">
+                    <data id="471">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">last_name</property>
+                                <text-property name="displayName">last_name</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["last_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">last_name</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="473">
+            <column id="474"/>
+            <column id="475"/>
+            <column id="476"/>
+            <column id="477"/>
+            <row id="478">
+                <cell id="479">
+                    <text id="483">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cédula de Identidad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="480">
+                    <data id="485">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">card_id</property>
+                                <text-property name="displayName">card_id</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["card_id"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">card_id</property>
+                    </data>
+                </cell>
+                <cell id="481">
+                    <text id="484">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Fecha de Nacimiento:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="482">
+                    <data id="486">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">birth_date</property>
+                                <text-property name="displayName">birth_date</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["birth_date"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">birth_date</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <text id="487">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[DATOS DEL CONYUGE]]></text-property>
+        </text>
+        <grid id="488">
+            <property name="width">7.947916666666667in</property>
+            <column id="489">
+                <property name="width">0.71875in</property>
+            </column>
+            <column id="490">
+                <property name="width">3.2604166666666665in</property>
+            </column>
+            <column id="491">
+                <property name="width">0.7083333333333334in</property>
+            </column>
+            <column id="492">
+                <property name="width">3.2604166666666665in</property>
+            </column>
+            <row id="493">
+                <cell id="494">
+                    <text id="495">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Nombres:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="496">
+                    <data id="505">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Conyuge</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cygfirstname</property>
+                                <text-property name="displayName">cygfirstname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cygfirstname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cygfirstname</property>
+                    </data>
+                </cell>
+                <cell id="498">
+                    <text id="499">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Apellidos:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="500">
+                    <data id="506">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Conyuge</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cyglastname</property>
+                                <text-property name="displayName">cyglastname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cyglastname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cyglastname</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+        <grid id="507">
+            <column id="508"/>
+            <column id="509"/>
+            <column id="510"/>
+            <column id="511"/>
+            <row id="512">
+                <cell id="513">
+                    <text id="514">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cédula de Identidad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="515">
+                    <data id="521">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Conyuge</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cygcardid</property>
+                                <text-property name="displayName">cygcardid</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cygcardid"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cygcardid</property>
+                    </data>
+                </cell>
+                <cell id="517">
+                    <text id="518">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Fecha de Nacimiento:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="519">
+                    <data id="522">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Conyuge</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">cygbirthdate</property>
+                                <text-property name="displayName">cygbirthdate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["cygbirthdate"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">cygbirthdate</property>
+                    </data>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">electrohogar_logo.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAANwAAAAyCAYAAAA3FLVzAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAF
+                SQAABUkBt3pUAAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAB+WSURBVHic7Z15
+                eBRV1vB/t3rvTjrd2QmSIYAgBhNEhDCgRNQRXNBxXhdAUBZlPuDVUVwAR8EFXAbldWXEdRhHdPwUX2AA
+                RyWA7EsUMAxECIsBstAJJN2dTrqr7vdHdTIhdhYiin7Tv+fp5+lUnVP3VHWdu5x77o2QUvJzYN68ebnD
+                hw+na9euq8+2LVGi/FgoP8ZFT/rKHmqL3IHir3Prv2/Z9uXQy6+8NLe8vPqi8uNHc5vXihLll4v4MVo4
+                z/GSEU8+PW1hzsWXbR961U2XxbnsNZHkyo9XXDRp8n9tu/aq0fj8VaRnuNi1s5C8tWt55cXXJ5977nmv
+                nnHjokQ5i/woLdz0B++86+k5k43ndFT6L/3HB/5jJUemRpJLSozfPuw3Q1i67Dkuu9xEgsvDprw1XHFF
+                LiaT6ZUjR44M/THsixLlbGGYNWvWGb3gk09MlU88cVdnQZAOHWLQtBq+XL3tNympXZOdTsfyerk/PTo7
+                98OPXnr/k79/cc5rb/yejAwnHToa8PrL2bmrioMHvwWUC5zOuD2xsbEHz6iRUaKcJc5oC/fg/ePlAw/c
+                htWqYDGbsFpsnN+9Axf2SWXd2n9MKjl2/ON62bET7uT4ieqakzUnMZvMGBUVRVER2AgFNSory3HHubJV
+                Vc09kzZGiXI2OWMt3GMzJ8uZM/8PZnMAgWg4bjLb6NDRTG1tHWtXb+jpcid8545P+Moe5zj460uH3FZT
+                5++ybPFKevTI4NAhH+8t3ERcfBrXX3cryckpWG22NU6nc/UZMTJKlLPMGWnhZjz8oHxo2gQMRh9CilPO
+                SUBoMVyQmUbWhUlsWL/mzaOlpX8/ESi/yGZwTFyy+IPN3btexazHv2DRonK6ZV3MsbK91NWpqOqZsC5K
+                lJ8PPzhK+fisKfLRWRNADbQqWxuoZfOm/ewrChRecdXwRXa7fXtNje/uCk/FFWvXrWJv4S6G5F6L3WEm
+                JsZBRkZGqGNaZ9MPMjBKlJ8RP8jh/jjjLjnrsXFoKpjb4BahoAbGAFs2HaJov8blv7n6MqPBOjpQ679u
+                /Ya1SampSThj4zEYBG63G5vN9mpSUsrkdhsYJcrPjHY5XLW3Iu2JJ/9w5Ok5UxGyDiHqQBraoKn3YP2+
+                ANt3HCzff8CX9Jsrriu3O2wjawPqmFAoNFRRqJaS7TabbaLb7a48beOiRPkZc9oO56uqyJzz1PRvZs26
+                A5NRtK7QDFJqbNqwj/Ubvls9ZuzEF5NTEhcD+AOeLnZrQlG7Lxwlys+Y03a4hx4aLZ944r8xGxWQoXYX
+                LDVBbcjHhvX7KC+3cUlu7jNpHTpNa/cFo0T5BdDmKOWJk6W5M2bcJZ+a8xAmowqy7gcVLBSBxWLn0kEX
+                EOusYdOmtQ8dPfbduB900ShRfua0yeGOlxwf8ciMSXlPPD4WBW849N+aqoKkpbi+hpBgNAmGDs3Eaipn
+                1crP3zx2+OjHLShFifKLpk1dynvv/Z186qn7sVpMoLXejZSKiho0YzCotGWUp2pQE/Cybdu3VJbHM2Dw
+                oPtTUzo+1wbVH5MUYHr4+1RosfaIEqVNtOhwNYETtvvvG+1/4cXHMCgBhDSgT2U3j5SS2pCd2269h67d
+                zuGpp6cAEkW05HoKEEQKwT+WbiKgJjFo4OXjU1PS3mrPTTXiD8AdbZT9EvjvRn/3BHaHv1uAH9aH/uF0
+                A4zAd4DvLNvSEp8DicB84LVWZN8A+gIrgf+I8Xuz/cJvvv4q9/77J/hffuURhBZCSCOgtXApgUQlqJoY
+                NWoqw64exXk9BzPz0efRNCO02NZJwIQWgmHX9MNirmLjutVvFhcfjLjK4DRIA7Lb+OnS3EVSUlIu/YF2
+                nAnWAf8CBp1tQ1qhF/rzTG2DbLew7K9+VIt+RhgjHSw+VJi78G9z8+Y9Pw2hhTA0TLE17zRSBAkG7dwx
+                5mGuve4WUlM64HS6SUtN5JE/zuOJ2fdhUIKn5Fk20gYkBoMCKFx1ZV++XPsV2zZtmWsYaK7s0KF9LZ3H
+                43EkJCRQVlYWvPXWWw+2Ittl586dHaWUR5qeq6mpuRC95j5raJqmKIrCpk2bEnNycs6mKS3i9/ttdrud
+                F1988Y677777sZZky8vL3UlJSSxdunTo8OHDXVLKEz+VnWeL7zncnr27cl956bG8F16ahpBBkG2bawuG
+                rNwx5o9cddUtJCa7SE9Px+l0LxPnpHeKdcZmz3zkJWbOmoIQtZiMEf28AbNRcvkVvclb9S/efe+10aNu
+                vfNoWsdzVp7uzamqqgB4vV5TXl7euW1QsZxuGT8Vfr/fFhMTw0svvXR3Tk7O3862Pc2haZoCUF1dndya
+                bCgUMgL4fD4XzVT+/79xyk1+9dXG3L9/9GreSy9OQ1NVhJA036oJQAMFQiEzI0dM4/rht5GUkkinTp1I
+                Sk7+Y3JS6mwARRF/H3b1mJsenfkKc+bcjap5QRowGFrITpEKAwd1QRNq7oaNa3IHXHrFhx2TU27+Afc6
+                FdjQisz3Wrc20A0YiN41ige+ATYC69ugm4HeRcxE71aVAYXA/wLFYZks4HyTyWQEGDJkSDxwa6NrVAKf
+                hr93BnKAKmA5EBu2LQc4D3gd+KKRrgu4MlxGRrjsHehjqto22P9TYAOuQrexO3AA3cZ/ot9nS2SEdfsC
+                5ejd8rVANTAcsIePFTfRE8CFwGXov0tSWKYQWAYca6a8ZGAIEAL+b9j2AejP/wJgcYPDffHPpblr1i7J
+                m/nwJKQWQggBtJyuJQWEQjZGj5zK1deMQEPDarVRWxvaUbT/oOnwoeJZQghUVd3tTkhdfc2w0bmPPPw8
+                jz1xD0aDoNnAnwSkxGywkjsomxX/3MzmdV/cNHDQ0KkpyfHtjV7ukVJuaqduJAzAw8AjRK6d30EPwngj
+                nDMCD4V1I7WqL6H/cKuBkcBDFosuNn78+G7AokayX/NvhxscLndv+PhqoHHLvo1/O9wlwN+AThHK3xUu
+                95sI535KstDv9fwI5w4Ct9F8xfZf6M/C0eR4IbojvQp0DMs1djgTcAjo0Mx1q9ADPPMjnMsM21uDXiH8
+                E+jf6Hx5w4vy8IxH80bdNpg3Xv0YVdQ1jLWajWIKFU3Cxo17uWbYGBKS3axfv37H7bePbRyIaGDGjBnc
+                Pvp2hgy5hYkTniQ7uxtCaBEbUNG4SAFBtY7tWw8QqlXmXnpZ7vbU1NTVzTyMn5KP0WvJmi1btixevHhx
+                YN++fSlDhgxRxo0b199isdyBHjgYFkF3MXAtQFFR0dolS5aUrF27NrZTp07mgQMHGoYPH97TYDDYTCYT
+                +/fv/2jVqlX2UaNG/d5ut5tefvnlUovF8vf6C3k8Hu/06dMTpZTH64/V1NSkmEymtUaj0b5nz54Fy5Yt
+                E1VVVT09Hk//V155BeBSYBVgqKqqKly0aNFXeXl5sf369bOPHz8+My4u7gJgK/pvWPjjPL5W6Q5sBqyB
+                QOC7Dz/8cOOKFStsvXr1co4fP75LSkpKZ2ANuvN82UT3GuBDgOLi4q/nz59/YOfOnYYbbrihYvTo0ZeZ
+                zeY8VVWdBoOBRYsWXTBixIiPGukqQFJNTc2KpUuXlm3cuNFWVFQU261bN/PYsWNTe/XqlYnurHvRn+H3
+                0DTNFAgE8ux2e7dDhw69sXTpUrWkpORcv99/QcO0QMUJzxXVlTWfHSs+TGWFh9pavUfRnMMJJCgCg8mA
+                I85OUmIHFi1atH3OnKcviiQ/depUxo4bjclgQK1VqfBUUF7uQY2w6C3UKHYq0TCKWOLjzSQkxhHnSvlr
+                RkbGmIhGNaGsrGx+cnLy7ysrK9mzZ897AwYM+LYF8Y+BnY3+bpgWcDqdD1ZVVf2p0bnfAh+rqlrTu3fv
+                sm+++eaUKFvHjh0pKCjQ4uLiFHSnXNro9O/QuxuMGzeu+O233z6nqSEGg4HY2NhPKisrfyuE6AgUl5SU
+                kJKSwtChQ/n000+bqlwipVwH3I5eq1NdXX2ob9++SwoLCxtPdRySUmagv8gX79y5s3TAgAEpfr+/QSAh
+                IYE1a9bIzMxMEX4mv2vhmX0Pr9dbHRMTE7Nu3brgoEGD5rQk6/P5JjkcjqT333+fESNGJDWuNMJl/7a4
+                uPh47969Ez0eT8MJu93O8uXLGTx4MFLKrUKIfo30BJAP9F65cuXxa665JlHT/h1dj4+Pl/v37y9zuVwp
+                AHfeeefu119/PbORvpKZmfmn3bt3/4EIUfynnnqKadOmUVdXt9NsNmc3OX0ZYSf0+/0nr7/++nmff/75
+                rEbnZUMLp2BYbzBBbHwclhhb8y1b/V0JgZQSk8lETEwMMTExNx85cuw64KK9e/cyd+5cAIxGBSEEPXr0
+                wO+rJTW1A2aXeb3RZhlod8egqm2YSJcSo9GEI8aJ1WptVb4pbrebAQMGjGxFbD+nOlxLPAvwyCOPWMLO
+                tgr9RS8C0o4cOTLu6aefHvrUU09x4sSJ+10uV2OHmwPw4YcfyrCzFaHXmDvQO9NdVFW98cSJE/W/TQUw
+                wmKxvA1YHQ7HfuCPTezZ09TA++67zxt2tr+htwQeoCtwBXAxwNixY1P8fn9t+H6+BGI9Hs9vH3/88ds+
+                +OADgBvRx37fu35rDBo0yATMbEnG4Wja22ugJ3qlxuTJkxM9Ho8GvIgeKRZ+v3/o9OnTJ23YsEEIIS4O
+                31N9FDkX6C2l5J577knUNK0CmIXeYidWVFTc+OCDD96xYMGC5srWdu/e7QT2Ae+h3/th9PFwv2efffa+
+                adOmuc1mcxb6GNAf6SLPP//88c8//3wmemX7KXp8ILvB4VwuV42UMt5kMk0CTG1wuGrAKoTwJicnvxA+
+                fF39eZ/Ph9lsxmi0UFdXR3Z2Ni6XC5vN9sekpKTZVqs5zRmIu6tx7dMcUsqwc5sPm82Wxa0qNOHkyZMs
+                Xbp0t9PpbHa5z+LFi7u//fbbbbmcCz1QwrJlyxTgaSnl9CYyH44ZM2Y5MMzv9/d1uVz1x+2Ex1Svv/66
+                QA9s3CKlbDzO+wJ4XQjhBJBS1gDve73e1wGsVqtHSvl+SwZKKXn33XczgRERZO8F2L17N/n5+UHgcill
+                43HQxxaLpbC2tvZxi8XCli1bLuvXr99pO9yGDRu048ePb2xJ5te//vWFiYmJ9ginekHD7wZwk5Syccrf
+                MiHEloMHD/6lc+fObN68+Zr+/fvXO9z5AHv27KGwsNAL5EgpG/dslmVmZlagB9Ga41Ep5TH037kLeqXj
+                BLy7d+/+s9/vn26325kxY8YNc+bMeS/SBRYuXNgVeEhK+Wyjw580vMxn4jNmzJiFMgILF/5FbtiwThYV
+                7ZcVFRXuM1lmS5/S0tL5Ukq5f/9+faKv5c+WJvo96+2PjY19oNHxfvXHi4uLg5qmHZJSHmz6UVX1mJRS
+                hkIh2aVLl3PDutn1up07d64F0tt6L9XV1dVSSjly5MjNLcjdLqWUx44dk0BeMzIvSynl8uXLJfBWJBnA
+                dODAgaCUUr722msbTueZ19s5c+bMVp/56tWrpZRSLlq0SAKJja4zTUopd+7cKYF/NlfW5s2bq6SU8oMP
+                PihqdPw5KaVcsWKFBF5o5v4cgUBAk1LKCRMmFESQ+bWUMk+2wr333vt6E73LpJRS0zRptVq/BQxNr/2j
+                zH0cP36chQsXIqVEU0Ps2rWLzPPvQRGCs7io9EP07ltzfNfG6zRErxRF8QohIm5yqyhKoKioKD4YDJqF
+                EJnAt+jhZQAqKio+k1IebmOZp8XJkydBD19/j1AolGI0GqmsrAR4N5KMlDJ48OBBD5BiNBq/N8ZsC4qi
+                BIHnW5JxuVzj0dPAmpIItGgjgN1uPwT0MpvNDc9V0zSHoijU1NSAPr3yPaSUPp/PF7JYLJH2KchE7wLG
+                qKq6+5tvvtlUUFBQW1RUZPT5fBrAww8/PD4mJsbo8/kiRjIDgQCBQGC5lPJ7AQrjCb/f5rJH3hm5vVRU
+                VOBwOPSxncNGr16ZGI1GDK1MeP/IvCOlXN66WKs0OG3fvn3F0aNHWxpU1veX05vq9u/fv/wM2NISByMd
+                PHr06Mn09HTS0tKalQFITEy0AhQUFMS2p3CDwRCUUraYH3ns2LHriOBwJ0+ePBYXF0fHjh1BD9FHJCUl
+                xQpQWFhoF0IYpZShQ4cOncjIyCA9PR30sVckYhwOR3ObgswGYrZs2VI4YMCAdE3TTpmSMJlMPPnkkwD4
+                /f5IlUU9ByMdNH705p8fctd6B5sQJrPF6jZZLG6tLcklRmuMM/1X28+9uP8Ut9NV0PiUEIKCggJiY2Ox
+                Wc2YTCaEEKSkpm5vLDf1xmtm5Q4ccIXBZnabTVZ3a0WaDOYYg4nYmOSOq9O69nkmuVvH084+OQPsVVUV
+                g8FATk6O/Pjjj1vaPan+ZamfRD5YV1cnzWazGDp0aKSxS7PI+r6eydTWZfYnIx389ttvPenp6Zx33nn0
+                6NGjuYnjeIfD4QTYs2fPadl5Jti5c6fnkksuoVOnTgwcOLC5pHFTfaTx22+/VdDH1scPHDhQkpGRQY8e
+                Pbj55pubm0i+uIXiLwSYOXNmd03TqoC/AJvQg1dVd911V7rBYHgNQMoW07AiPn/jmiWfcLHbniu101t9
+                ElQMdLh8aG6n87KXV6qVvd1ud2WsK94NkNH5V0x/6IFTJs/nzZtHdvaF3RtfwyrVmUWb8gDl1Lm3FpAC
+                Ol1yZW7cub0yS0pKbj4Lc3J1W7ZsqRwwYID7ueee83300Ufn03JWd2O0zZs3l11yySUpt95665XoD6dN
+                D97r9fpiY2Njs7Oz29Xi1FNcXLxCVdUHU1NTWbBgwTjCEdcmTBJCCK/Xy7Zt236Ubm9LJCUlrfT5fDgc
+                DmbPnj0BPXOnKaNMJlOsqqqsW7euRoanFHbv3v1ednb2vISEBB544IEpnLoCpJ77mys7GAy6TSYTXbt2
+                DQD9pZRNA0ZvtPe+ABSLzWaVsq3vy6l4KiqorKhMD4aC4wCcDnsnAKPJTIeOnUhNO4fUtA6kpnVAFRrV
+                Pm9sSUlJw6puRWnftpg+rw+P53hSXV1dm1aICyFIS0szA9YWPm3Oo7zvvvtWBAIBOnfu3BF9CYorgpgZ
+                uAU4JR1t6tSp/wgEAqSlpbnRQ/ZxEXT70mT1gsfjqQQYPHhwMpGzQ9rEHXfcseavf/2rCnDxxRdPJ1yj
+                N+Jq9CwY5s6dS1lZ2d72ltVezjvvvJJXX321EiAnJ2ckcHkTkRzgGYB33nmHPXv2NEzOT5kypeyFF16o
+                BujTp88kYDL67wt66t2bwOW1tbURq/jDhw+XAUydOjUopTzY5PRE2r7cKyKK1Wq1tTID0AwCn9eLz+dD
+                1bRcgIT4uOyHZ0xj8sTxTLjjNu4cO5oJt9/G+DGjSEuIx1d1Ek3TGlJd2utwtbW1VFVVoWnaiLbIZ2Rk
+                cOTIkcXoKTfNfY62tfxNmza9P2XKFAKBAMAE9DmbJcCf0B2wft7lfaB3Y92tW7cumjx5cn1iwS3omRyL
+                0VuavwBfoc8ZndIbePfdd5cD9OnTJx59bHIYfY7otKZJpJRy9uzZ6/bt24fNZnOhp0YtQw9wrA7fR0x+
+                fr587rnnAPJO5/pnimeeeWZJfn4+FovFip7b+VnYxk/DdiYXFRWpjz76KOG/G5g3b95b7777Lor+gr2M
+                njt5BH0uctT8+fPneDweARAIBE5pbZ599tn1UkoyMjJigePAR8ArwBbgz/v37/9baWlpu++r3TsvKwIC
+                pUf418Yv2Lrif69d8c6fg65ANdqRgyhl32EoL0Yp/Q5zRSlO/0n8RXv5auVStq1YctecsTfNmnr9ZbMU
+                LYSQhu/t1twaqqo2DvGeEaSUQgjRpuchpVz65ptvfpKVlcWaNWv8UkoX+hzk/cBdwG8Ac1lZ2fKbbrop
+                rYnu52+99dZHffv2JT8/vw49cnkD8AAwBsgKBoPrJ06ceEoE7Jlnnvn06quv5rPPPqOmpqYUPVraAz1h
+                +bTYt2/ffRdeeKF88803CYVCZvRUqHuBwVLK2vnz5x/OyckRXq+3GP1l+8nxeDyPDBgwIPDss89SV1cH
+                +uT2vejPlsWLFxdlZWUZjh49Wk04maAer9c7e/To0b6JEyeycePGCk3TqoEqVVXfevLJJx+bMmXKfUlJ
+                emCzsLDwlDH4ggULPhk5ciRlZWWg52HeCEwCuh48ePB/unXr1ueHvHdiyk3DX+im1dwtWlnJ3RRFEYTQ
+                0IQBU0ghZAghpO7BqiE8WY3EoOmRSUUIpIBgKIjRZAIMiJBEkSqaIhFtvAkpwNw9ix5DriGjS0YgIyPD
+                1uzNCdGJ5iNVkRglpWyYyBRCfIGeRDxVSnlKiDuccrUS6GUymWR2dvaOnJycMp/Pd6KgoMC1Y8eOtNra
+                2l5AtZTS2Zyuw+HQ+vXrtzMrK+vo4cOHfZs2bXIdO3ZsELBKSnltIx0FvfXLCh/y8u/VDSOllPlhuWog
+                BrhSStnsGj4hxLPAA0ajkezs7MKcnJx9W7du1bZt29ZP07Rk9AyKkVLKiKH1Fq77MPAk4JFSthTFQwjR
+                kOYGNE3tQgjxB+A5RVGUnj17Hrr00kv37t69279hw4aLgsFgJ/Ss/MlSyu+ljQghrkOfUqh/9qXo3Xdr
+                VlbWih07dgyTUuJ0Oj+vrq6+spGeEdhss9n69OzZk+7duxcdOHBgzebNm+PR34US9MyiicA/Gv9GYf0C
+                9Mn38VLK763jbH+cXtP0fEqh6mleGqiKwGA0oIRkw04M0mikrq4ORREoQmI0GhGqCkgEAqloSCFPu5U7
+                20gpjwgh+gD3B4PB+7dt29Z727Ztp4ig5yx+0IxuX+AJn883KS8vr3deXl7jrud36F2oxjqaEGIoMAM9
+                fSkdvYUDPYPldO1/UAixMRQKvbR9+/bu27dvr+/CSvRlTOOklD/5+K0xUsr/EUJ8pWnagoKCgu4FBQWN
+                c1Z3ob/UW5vRXSqE6I++L00/9KUzXwCr8/PzzwXIz8/H6/Xua6IXEkL8tqamZkF+fv5V+fn5XdDH0yH0
+                aOXNQLt3l2t3CycVybGgQkpGBsJiRpFWpABVSmpqa8MRSjAa9GRck9EIUsMAhGrr8FWdwFR5HBNBQKCc
+                RpTS2qM33XKH0qVrlxZbuJ8SIUQqes1mQ18vdbhpjd2MnkBft9UTfSz5HbBP/pB+y2kStv0C9L1SdspT
+                U81+FgghEtBbdw3dxpYSKAzo3czXODXZwQI8ir68Rhk2bBgrV658QEo5t5kyM9ArtRPA11LK1v+BRiu0
+                u4VThYL73Cw69DofY0wMVsWC2WxGUfRk5aYBEU3TQGgEQ3VomoZJqmx4YwFxFhCaQtsj6/qelj/h+9gm
+                pJQl6N2N09WT6C/FWdttur22/5RIKT20PYAjgAfRx8VH0Ceh49BzI22AfOWVV+TKlSsFLSwUllIeQF/w
+                esYwpp7TqQuHT7/nIDVByGDC5o4nMTGV+DgnimJAUUR4JbdoaOVA39pckxqqpqJpEq02QDC8alwI0dpm
+                YKcQCoWob0BP2/Ao/wmoq1atWpKVldUjMTGxI/qqegkcLi0tLR07dmynFStWdEAfg7WYYH2mMXqrqipj
+                aGnrEoGQINCQKAgEQkoMiiA21oLbnUB6WnK5PSbuRoPBUOByuVrMlTxZeSJNStmhNuDPlcIwV6IQEgoK
+                +jhOIJDi33PBESfEJWhSQ9O0qMNFiYS8/PLLj6KvRax2OBy7FEXxVldXd0Efz4G+gPS+n9ow48nKyspU
+                IdCaSfXQtzWRSAQSDSnCu5koRhxmMzaTHbPdtiMhIWFdWwqMc7uOAkfBvd0g5FyjlGj13clwOY1TywzN
+                tXxS47SaxSj/aXwEJACDfD5fJnoAvQp9Pu1TYM6ZGJOdLsZAjb9GOJrfu0QhhIaCphhR0Fd6BxCUVPg5
+                32jGIDSkYmhX4KI8UIfNZcamSlQ1hMEImhZCtNJTFEKEtz2JOlyUyISnRM7q1oaRMPp9vgCOOJprLQQq
+                Uij46oJo9ljMKR1QY5z0yTgXZ1oKdocVgyaeaU/hj81/o3DDls3dS77OJ3iinKP795DqikVrJdVMKAKi
+                zhblF4hRATQFFA30zqJAEERoBvxIikNWkjO6kZSegSs5FavFgs1mw+qw405IJNYVX5iUlLS05WIiIxyO
+                +zMv7LMk9Zxz8Hqr6Vjh4dvtXxE6uh+TWotVBsNjS33SXN+0T6LIUwMyUaL8Umjou0kEiqYizQo10kow
+                1kmdI47M7P644pzEOB3YrFacsU5sdhtWq63QaLYsstvt7WrdAJKSkpaqqjrMYrZMDgbrrvV37EBiehpq
+                dYj9O7dSUXwAcfQwBgQGBEg1vMuXjLZwUX6RNDicQEOxOjluMSMS0kjveR4upxuXO564uDicMU4sVsuH
+                Jqt5t8ViWeh2n5n/UpqamroSPc2JsrLSETHuuFwtoI1L7Zhm9JQfZ9+uHRzesRVLdRlWJepnUX7ZGHOH
+                DLvB+806vEoMIqMLv+raE6fTjdutf5xOZ7nJZHrV4XAsTEj4cf8VcHJyyiL0jTQnlpSUPGyx266ITXHk
+                du/dk8KvdlG65xvMnqOYgGiPMsovEWPh8ZLCnn37ZV/QvT8VdV4S4t3EJ6TgdrvLLRbLq2lpabPOhmGp
+                qamzgdmlpbZJJ43OmxyXJedWZfVmx5pVVApJV6s5Oo6L8otDHD50aGowWDe31FOBkJLExPiQ3eaYlZaW
+                NvtsG9eYo2Xlk2q81XdVnTyZHayrw2oz43YnFHXqlN71bNsWJUpbEScqTrprArULa0Pe84UU622OmBeS
+                EhK3t6760+OtLL+oqiZ4ndS4G9RKg9EwOTU17WzsaxIlSrv4f2jHbfM+vDyrAAAAAElFTkSuQmCC
+            </property>
+        </structure>
+    </list-property>
+</report>

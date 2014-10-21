@@ -24,7 +24,17 @@ under the License.
                <#assign externalOrder = "(" + orderHeader.externalId + ")"/>
             </#if>
             <#assign orderType = orderHeader.getRelatedOne("OrderType", false)/>
-            <li class="h3">&nbsp;${orderType?if_exists.get("description", locale)?default(uiLabelMap.OrderOrder)}&nbsp;${uiLabelMap.CommonNbr}&nbsp;<a href="<@ofbizUrl>orderview?orderId=${orderId}</@ofbizUrl>">${orderId}</a> ${externalOrder?if_exists} [&nbsp;<a href="<@ofbizUrl>order.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PDF</a>&nbsp;][&nbsp;<a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">CREDITO</a>&nbsp;][&nbsp;<a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PAGARES</a>&nbsp;]</li>
+            <li class="h3">&nbsp;${orderType?if_exists.get("description", locale)?default(uiLabelMap.OrderOrder)}&nbsp;${uiLabelMap.CommonNbr}&nbsp;
+            <a href="<@ofbizUrl>orderview?orderId=${orderId}</@ofbizUrl>">${orderId}</a> ${externalOrder?if_exists} [&nbsp;
+            <a href="<@ofbizUrl>order.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PDF</a>&nbsp;][&nbsp;
+            <a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">CREDITO</a>&nbsp;][&nbsp;
+            <a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PAGARES</a>&nbsp;][&nbsp;
+            <a href="javascript:document.Creditos.submit()">SOLICITUD CREDITO</a>&nbsp;]
+            <form name="Creditos" method="post" action="<@ofbizUrl>Agreement.pdf</@ofbizUrl>" target="_BLANK">
+                <input type="hidden" name="orderId" value="${orderId?if_exists}"/>
+            </form>
+            </li>
+            
             <#if currentStatus.statusId == "ORDER_APPROVED" && orderHeader.orderTypeId == "SALES_ORDER">
               <li class="h3"><a href="javascript:document.PrintOrderPickSheet.submit()">${uiLabelMap.FormFieldTitle_printPickSheet}</a>
               <form name="PrintOrderPickSheet" method="post" action="<@ofbizUrl>orderPickSheet.pdf</@ofbizUrl>" target="_BLANK">

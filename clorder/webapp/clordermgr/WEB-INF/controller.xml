@@ -23,6 +23,9 @@ under the License.
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
     <include location="component://commonext/webapp/WEB-INF/controller.xml"/>
     <include location="component://content/webapp/content/WEB-INF/controller.xml"/>
+    <!-- CODIGOLINUX agregar los reportes -->
+    <include location="component://clbirt/webapp/ordermgr/WEB-INF/controller.xml"/>
+    
     <description>Order Manager Module Site Configuration File</description>
     
     <!-- event handlers -->
@@ -1774,8 +1777,6 @@ under the License.
 
     <!-- PDFs -->
     <request-map uri="order.pdf"><security https="true" auth="true"/><response name="success" type="view" value="OrderPDF"/></request-map>
-    <!-- Contrato CodigoLinux 01/2014-->
-    <request-map uri="agreement.pdf"><security https="true" auth="true"/><response name="success" type="view" value="AgreementPDF"/></request-map>
     <request-map uri="return.pdf"><security https="true" auth="true"/><response name="success" type="view" value="ReturnPDF"/></request-map>
     <request-map uri="shipGroups.pdf"><security https="true" auth="true"/><response name="success" type="view" value="ShipGroupsPDF"/></request-map>
     <request-map uri="orderPickSheet.pdf">
@@ -2060,5 +2061,6 @@ under the License.
     <view-map name="ListQuoteTerms" type="screen" page="component://clorder//widget/clordermgr/QuoteScreens.xml#ListQuoteTerms"/>
 
     <view-map name="splitship" type="screen" page="component://clorder//widget/clordermgr/OrderEntryOrderScreens.xml#splitship"/>
+        
     <!-- end of view mappings -->
 </site-conf>

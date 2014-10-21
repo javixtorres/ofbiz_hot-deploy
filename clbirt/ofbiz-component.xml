@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<ofbiz-component name="clbirt"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/ofbiz-component.xsd">
+<resource-loader name="main" type="component" />
+    <!--
+    <classpath type="dir" location="config" />
+    <classpath location="WEB_INF/lib/*" type="jar"/>
+    <classpath type="jar" location="WEB_INF/lib/*"/>
+    <classpath type="dir" location="src/*" />
+    -->
+    <classpath type="jar" location="webapp/birt/WEB-INF/lib/*"/>
+ 
+    <webapp name="clbirt"
+       title="CL Birt"
+       server="default-server"
+       location="webapp/birt"
+       mount-point="/clbirt"
+       app-bar-display="false" />
+
+ 
+</ofbiz-component>
+

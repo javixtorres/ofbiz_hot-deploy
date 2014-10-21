@@ -790,8 +790,8 @@ under the License.
 		        <now-timestamp field="createFinAccountTransMap.transactionDate"/>
 		        <now-timestamp field="createFinAccountTransMap.entryDate"/>
 		        
-		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/>
-<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> -->
+<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/> -->
+		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> 
 		        
 		        <!-- set field="createFinAccountTransMap.statusId" value="CREATE"/>  --> <!-- TODO: It will uncomment when status Id field will add in FinAccountTrans Entity. -->
 	<!-- 	        <set field="createFinAccountTransMap.comments" value="Pay to ${parameters.partyId} for invoice Ids - ${parameters.invoiceIds}"/> -->
@@ -841,8 +841,8 @@ under the License.
 		        <now-timestamp field="createFinAccountTransMap.transactionDate"/>
 		        <now-timestamp field="createFinAccountTransMap.entryDate"/>
 		        
-		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/>
-<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> -->
+<!-- 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_CREATED"/> -->
+ 		        <set field="createFinAccountTransMap.statusId" value="FINACT_TRNS_APPROVED"/> 
 		    
 		        <set field="createFinAccountTransMap.finAccountTransTypeId" value="WITHDRAWAL"/>
 		        
