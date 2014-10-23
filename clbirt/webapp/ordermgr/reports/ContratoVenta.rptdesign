@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
-    <property name="createdBy">Eclipse BIRT Designer Version 4.2.0.v20120611 Build &lt;4.2.0.v20120612-1721></property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.2.2.v201301221637 Build &lt;4.2.2.v20130206-1509></property>
     <list-property name="userProperties">
         <structure>
             <property name="name">Payment.Payments.x</property>
@@ -378,8 +378,7 @@ public.party_relationship.party_id_from
 from public.party_relationship
 where public.party_relationship.party_relationship_type_id='Conyuge' and 
 public.party_relationship.party_id_to in 
-(select public.agreement.party_id_from
-from public.agreement where public.agreement.agreement_id=?)
+(select public.order_role.party_id from public.order_role where public.order_role.order_id=? and role_type_id='END_USER_CUSTOMER')
 
 union
 
@@ -388,8 +387,7 @@ public.party_relationship.party_id_to
 from public.party_relationship
 where public.party_relationship.party_relationship_type_id='Conyuge' and 
 public.party_relationship.party_id_from in 
-(select public.agreement.party_id_from
-from public.agreement where public.agreement.agreement_id=?)
+(select public.order_role.party_id from public.order_role where public.order_role.order_id=? and role_type_id='END_USER_CUSTOMER')
 )
 
 ]]></xml-property>
@@ -563,6 +561,639 @@ from public.agreement where public.agreement.agreement_id=?)
   </design:ResultSets>
 </model:DesignValues>]]></xml-property>
         </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Productos" id="743">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">internal_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">internal_name</text-property>
+                    <text-property name="heading">internal_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">item_description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">item_description</text-property>
+                    <text-property name="heading">item_description</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">quantity</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">quantity</text-property>
+                    <text-property name="heading">quantity</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">internal_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">item_description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">quantity</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">internal_name</property>
+                    <property name="nativeName">internal_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">item_description</property>
+                    <property name="nativeName">item_description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">quantity</property>
+                    <property name="nativeName">quantity</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select a.internal_name,b.item_description,b.quantity from product a, order_item b where a.product_id = b.product_id and
+b.order_id=?;]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Pagos" id="767">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">term_value</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">term_value</text-property>
+                    <text-property name="heading">term_value</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">text_value</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">text_value</text-property>
+                    <text-property name="heading">text_value</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">term_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">term_date</text-property>
+                    <text-property name="heading">term_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">term_value</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">text_value</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">term_date</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">term_value</property>
+                    <property name="nativeName">term_value</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">text_value</property>
+                    <property name="nativeName">text_value</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">term_date</property>
+                    <property name="nativeName">term_date</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select term_value,text_value,term_date
+from order_term where order_id=? and term_type_id='CRD_CUOTA' order by term_sec]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Codeudor" id="791">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">codcardid</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codcardid</text-property>
+                    <text-property name="heading">codcardid</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codfirstname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codfirstname</text-property>
+                    <text-property name="heading">codfirstname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codlastname</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codlastname</text-property>
+                    <text-property name="heading">codlastname</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codbirthdate</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codbirthdate</text-property>
+                    <text-property name="heading">codbirthdate</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">codocupation</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">codocupation</text-property>
+                    <text-property name="heading">codocupation</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">codcardid</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">codfirstname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">codlastname</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">codbirthdate</property>
+                        <property name="dataType">date</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">codocupation</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">codcardid</property>
+                    <property name="nativeName">codcardid</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">codfirstname</property>
+                    <property name="nativeName">codfirstname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">codlastname</property>
+                    <property name="nativeName">codlastname</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">codbirthdate</property>
+                    <property name="nativeName">codbirthdate</property>
+                    <property name="dataType">date</property>
+                    <property name="nativeDataType">91</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">codocupation</property>
+                    <property name="nativeName">codocupation</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select 
+public.person.card_id CodCardId,
+public.person.first_name CodFirstName,
+public.person.last_name CodLastName,
+public.person.birth_date CodBirthDate,
+public.person.occupation CodOcupation  
+from public.person  where public.person.party_id in 
+
+(
+select
+public.order_term.text_value
+from public.order_term
+where public.order_term.term_type_id='CRD_CODEUDOR' and public.order_term.order_id=?)
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codcardid</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codcardid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codcardid</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codfirstname</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codfirstname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codfirstname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codlastname</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codlastname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codlastname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codbirthdate</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codbirthdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codbirthdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codocupation</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codocupation</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codocupation</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Referencias" id="797">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">text_value</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">text_value</text-property>
+                    <text-property name="heading">text_value</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">term_value</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">term_value</text-property>
+                    <text-property name="heading">term_value</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">description</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">description</text-property>
+                    <text-property name="heading">description</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">orderId</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">text_value</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">term_value</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">description</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">OFBIZ-CUSTOM</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">text_value</property>
+                    <property name="nativeName">text_value</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">term_value</property>
+                    <property name="nativeName">term_value</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">description</property>
+                    <property name="nativeName">description</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select
+public.order_term.text_value, public.order_term.term_value, public.order_term.description
+from public.order_term
+where public.order_term.term_type_id='CRD_REFERENCIA' and public.order_term.order_id=?
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codcardid</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codcardid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codcardid</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codfirstname</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codfirstname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codfirstname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codlastname</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codlastname</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codlastname</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codbirthdate</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codbirthdate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codbirthdate</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>codocupation</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>codocupation</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>codocupation</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
     </data-sets>
     <styles>
         <style name="report" id="4">
@@ -626,7 +1257,7 @@ from public.agreement where public.agreement.agreement_id=?)
                     <text id="345">
                         <property name="fontSize">smaller</property>
                         <property name="contentType">auto</property>
-                        <text-property name="content"><![CDATA[Venta de Electrodomésticos - Electronónicos, etc.
+                        <text-property name="content"><![CDATA[Venta de Electrodomésticos - Electrónicos, etc.
 Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                     </text>
                 </cell>
@@ -648,13 +1279,18 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
             <property name="textAlign">center</property>
             <property name="textTransform">none</property>
             <property name="contentType">auto</property>
-            <text-property name="content"><![CDATA[SOLICITUD DE CREDITO
-]]></text-property>
+            <text-property name="content"><![CDATA[SOLICITUD DE CREDITO]]></text-property>
         </text>
         <grid id="412">
             <column id="413"/>
             <row id="414">
                 <cell id="415">
+                    <property name="fontSize">9pt</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="verticalAlign">middle</property>
                     <grid id="420">
                         <property name="width">7.875in</property>
                         <column id="421">
@@ -690,6 +1326,12 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
             </row>
             <row id="416">
                 <cell id="417">
+                    <property name="fontSize">9pt</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="verticalAlign">middle</property>
                     <grid id="433">
                         <property name="width">7.875in</property>
                         <column id="434">
@@ -712,6 +1354,12 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
             </row>
             <row id="418">
                 <cell id="419">
+                    <property name="fontSize">9pt</property>
+                    <property name="paddingTop">0pt</property>
+                    <property name="paddingLeft">0pt</property>
+                    <property name="paddingBottom">0pt</property>
+                    <property name="paddingRight">0pt</property>
+                    <property name="verticalAlign">middle</property>
                     <grid id="439">
                         <column id="440"/>
                         <column id="441"/>
@@ -764,28 +1412,32 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
             <property name="contentType">auto</property>
             <text-property name="content"><![CDATA[DATOS PERSONALES DEL SOLICITANTE]]></text-property>
         </text>
-        <grid id="458">
+        <grid id="473">
             <property name="width">7.947916666666667in</property>
-            <column id="459">
-                <property name="width">0.71875in</property>
+            <column id="474">
+                <property name="width">1.3229166666666667in</property>
+                <property name="textAlign">right</property>
             </column>
-            <column id="460">
-                <property name="width">3.2604166666666665in</property>
+            <column id="475">
+                <property name="width">2.65625in</property>
             </column>
-            <column id="461">
-                <property name="width">0.7083333333333334in</property>
+            <column id="476">
+                <property name="width">1.4166666666666667in</property>
+                <property name="textAlign">right</property>
             </column>
-            <column id="462">
-                <property name="width">3.2604166666666665in</property>
+            <column id="477">
+                <property name="width">2.5520833333333335in</property>
             </column>
-            <row id="463">
-                <cell id="464">
+            <row id="823">
+                <cell id="824">
+                    <property name="fontSize">9pt</property>
                     <text id="468">
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Nombres:]]></text-property>
                     </text>
                 </cell>
-                <cell id="465">
+                <cell id="825">
+                    <property name="fontSize">9pt</property>
                     <data id="470">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Agreement</property>
@@ -800,13 +1452,15 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                         <property name="resultSetColumn">first_name</property>
                     </data>
                 </cell>
-                <cell id="466">
+                <cell id="826">
+                    <property name="fontSize">9pt</property>
                     <text id="469">
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Apellidos:]]></text-property>
                     </text>
                 </cell>
-                <cell id="467">
+                <cell id="827">
+                    <property name="fontSize">9pt</property>
                     <data id="471">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Agreement</property>
@@ -822,20 +1476,16 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                     </data>
                 </cell>
             </row>
-        </grid>
-        <grid id="473">
-            <column id="474"/>
-            <column id="475"/>
-            <column id="476"/>
-            <column id="477"/>
             <row id="478">
                 <cell id="479">
+                    <property name="fontSize">9pt</property>
                     <text id="483">
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Cédula de Identidad:]]></text-property>
                     </text>
                 </cell>
                 <cell id="480">
+                    <property name="fontSize">9pt</property>
                     <data id="485">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Agreement</property>
@@ -851,12 +1501,14 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                     </data>
                 </cell>
                 <cell id="481">
+                    <property name="fontSize">9pt</property>
                     <text id="484">
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Fecha de Nacimiento:]]></text-property>
                     </text>
                 </cell>
                 <cell id="482">
+                    <property name="fontSize">9pt</property>
                     <data id="486">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Agreement</property>
@@ -870,6 +1522,152 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                         </list-property>
                         <property name="resultSetColumn">birth_date</property>
                     </data>
+                </cell>
+            </row>
+            <row id="532">
+                <cell id="533">
+                    <property name="fontSize">9pt</property>
+                    <text id="537">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Estado Civil:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="534">
+                    <property name="fontSize">9pt</property>
+                    <data id="573">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">marital_status</property>
+                                <text-property name="displayName">marital_status</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["marital_status"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">marital_status</property>
+                    </data>
+                </cell>
+                <cell id="535">
+                    <property name="fontSize">9pt</property>
+                    <text id="538">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Ocupación:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="536">
+                    <property name="fontSize">9pt</property>
+                    <data id="572">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Agreement</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">occupation</property>
+                                <text-property name="displayName">occupation</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["occupation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">occupation</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="539">
+                <cell id="540">
+                    <property name="fontSize">9pt</property>
+                    <text id="554">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Telefono Particular:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="541">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="542">
+                    <property name="fontSize">9pt</property>
+                    <text id="555">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Celular:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="543">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="544">
+                <cell id="545">
+                    <property name="fontSize">9pt</property>
+                    <text id="556">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Dirección:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="546">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="549">
+                <cell id="550">
+                    <property name="fontSize">9pt</property>
+                    <text id="557">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Ciudad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="551">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="552">
+                    <property name="fontSize">9pt</property>
+                    <text id="558">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Barrio:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="553">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="559">
+                <cell id="560">
+                    <property name="fontSize">9pt</property>
+                    <text id="569">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Lugar de Empleo:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="561">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="562">
+                    <property name="fontSize">9pt</property>
+                    <text id="570">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Tel:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="563">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="564">
+                <cell id="565">
+                    <property name="fontSize">9pt</property>
+                    <text id="571">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Antigüedad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="566">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="567">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="568">
+                    <property name="fontSize">9pt</property>
                 </cell>
             </row>
         </grid>
@@ -891,28 +1689,32 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
             <property name="contentType">auto</property>
             <text-property name="content"><![CDATA[DATOS DEL CONYUGE]]></text-property>
         </text>
-        <grid id="488">
+        <grid id="507">
+            <property name="fontSize">9pt</property>
             <property name="width">7.947916666666667in</property>
-            <column id="489">
-                <property name="width">0.71875in</property>
+            <column id="508">
+                <property name="width">1.3229166666666667in</property>
             </column>
-            <column id="490">
-                <property name="width">3.2604166666666665in</property>
+            <column id="509">
+                <property name="width">2.65625in</property>
             </column>
-            <column id="491">
-                <property name="width">0.7083333333333334in</property>
+            <column id="510">
+                <property name="width">1.4583333333333333in</property>
             </column>
-            <column id="492">
-                <property name="width">3.2604166666666665in</property>
+            <column id="511">
+                <property name="width">2.5104166666666665in</property>
             </column>
-            <row id="493">
-                <cell id="494">
+            <row id="818">
+                <cell id="819">
+                    <property name="fontSize">9pt</property>
                     <text id="495">
+                        <property name="textAlign">right</property>
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Nombres:]]></text-property>
                     </text>
                 </cell>
-                <cell id="496">
+                <cell id="820">
+                    <property name="fontSize">9pt</property>
                     <data id="505">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Conyuge</property>
@@ -927,13 +1729,16 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                         <property name="resultSetColumn">cygfirstname</property>
                     </data>
                 </cell>
-                <cell id="498">
+                <cell id="821">
+                    <property name="fontSize">9pt</property>
                     <text id="499">
+                        <property name="textAlign">right</property>
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Apellidos:]]></text-property>
                     </text>
                 </cell>
-                <cell id="500">
+                <cell id="822">
+                    <property name="fontSize">9pt</property>
                     <data id="506">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Conyuge</property>
@@ -949,20 +1754,17 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                     </data>
                 </cell>
             </row>
-        </grid>
-        <grid id="507">
-            <column id="508"/>
-            <column id="509"/>
-            <column id="510"/>
-            <column id="511"/>
             <row id="512">
                 <cell id="513">
+                    <property name="fontSize">9pt</property>
                     <text id="514">
+                        <property name="textAlign">right</property>
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Cédula de Identidad:]]></text-property>
                     </text>
                 </cell>
                 <cell id="515">
+                    <property name="fontSize">9pt</property>
                     <data id="521">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Conyuge</property>
@@ -978,12 +1780,15 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                     </data>
                 </cell>
                 <cell id="517">
+                    <property name="fontSize">9pt</property>
+                    <property name="textAlign">right</property>
                     <text id="518">
                         <property name="contentType">auto</property>
                         <text-property name="content"><![CDATA[Fecha de Nacimiento:]]></text-property>
                     </text>
                 </cell>
                 <cell id="519">
+                    <property name="fontSize">9pt</property>
                     <data id="522">
                         <property name="fontWeight">bold</property>
                         <property name="dataSet">Conyuge</property>
@@ -997,6 +1802,746 @@ Tel. y Fax: 0225 952 045 - Villeta -Paraguay]]></text-property>
                         </list-property>
                         <property name="resultSetColumn">cygbirthdate</property>
                     </data>
+                </cell>
+            </row>
+            <row id="574">
+                <cell id="575">
+                    <property name="fontSize">9pt</property>
+                    <text id="579">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Ocupación:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="576">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="577">
+                    <property name="fontSize">9pt</property>
+                    <text id="580">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Antigüedad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="578">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+        </grid>
+        <text id="581">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[REFERENCIAS COMERCIALES O PERSONALES]]></text-property>
+        </text>
+        <table id="798">
+            <property name="fontSize">9pt</property>
+            <property name="width">7.96875in</property>
+            <property name="dataSet">Referencias</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">term_value</property>
+                    <text-property name="displayName">term_value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["term_value"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">text_value</property>
+                    <text-property name="displayName">text_value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["text_value"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="811">
+                <property name="width">3.5833333333333335in</property>
+            </column>
+            <column id="840">
+                <property name="width">0.375in</property>
+            </column>
+            <column id="812">
+                <property name="width">4.010416666666667in</property>
+            </column>
+            <header>
+                <row id="799">
+                    <cell id="800">
+                        <text id="814">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">right</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Referencia]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="837"/>
+                    <cell id="801">
+                        <text id="815">
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Telefono]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="803">
+                    <cell id="804">
+                        <data id="817">
+                            <property name="fontSize">9pt</property>
+                            <property name="textAlign">right</property>
+                            <property name="resultSetColumn">text_value</property>
+                        </data>
+                    </cell>
+                    <cell id="838"/>
+                    <cell id="805">
+                        <data id="816">
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">term_value</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="807">
+                    <cell id="808"/>
+                    <cell id="839"/>
+                    <cell id="809"/>
+                </row>
+            </footer>
+        </table>
+        <text id="622">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[DATOS PERSONALES DEL CODEUDOR SOLIDARIO]]></text-property>
+        </text>
+        <grid id="637">
+            <property name="width">7.947916666666667in</property>
+            <column id="638">
+                <property name="width">1.3229166666666667in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="639">
+                <property name="width">2.65625in</property>
+            </column>
+            <column id="640">
+                <property name="width">1.4166666666666667in</property>
+                <property name="textAlign">right</property>
+            </column>
+            <column id="641">
+                <property name="width">2.5520833333333335in</property>
+            </column>
+            <row id="828">
+                <cell id="829">
+                    <property name="fontSize">9pt</property>
+                    <text id="630">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Nombres:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="830">
+                    <property name="fontSize">9pt</property>
+                    <data id="792">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Codeudor</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">codfirstname</property>
+                                <text-property name="displayName">codfirstname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codfirstname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">codfirstname</property>
+                    </data>
+                </cell>
+                <cell id="831">
+                    <property name="fontSize">9pt</property>
+                    <text id="634">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Apellidos:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="832">
+                    <property name="fontSize">9pt</property>
+                    <data id="793">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Codeudor</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">codlastname</property>
+                                <text-property name="displayName">codlastname</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codlastname"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">codlastname</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="642">
+                <cell id="643">
+                    <property name="fontSize">9pt</property>
+                    <text id="644">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Cédula de Identidad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="645">
+                    <property name="fontSize">9pt</property>
+                    <data id="794">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Codeudor</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">codcardid</property>
+                                <text-property name="displayName">codcardid</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codcardid"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">codcardid</property>
+                    </data>
+                </cell>
+                <cell id="647">
+                    <property name="fontSize">9pt</property>
+                    <text id="648">
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Fecha de Nacimiento:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="649">
+                    <property name="fontSize">9pt</property>
+                    <data id="795">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Codeudor</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">codbirthdate</property>
+                                <text-property name="displayName">codbirthdate</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codbirthdate"]</expression>
+                                <property name="dataType">date</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">codbirthdate</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="651">
+                <cell id="652">
+                    <property name="fontSize">9pt</property>
+                    <text id="653">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Estado Civil:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="654">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="656">
+                    <property name="fontSize">9pt</property>
+                    <text id="657">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Ocupación:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="658">
+                    <property name="fontSize">9pt</property>
+                    <data id="796">
+                        <property name="fontWeight">bold</property>
+                        <property name="dataSet">Codeudor</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">codocupation</property>
+                                <text-property name="displayName">codocupation</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["codocupation"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">codocupation</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="660">
+                <cell id="661">
+                    <property name="fontSize">9pt</property>
+                    <text id="662">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Telefono Particular:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="663">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="664">
+                    <property name="fontSize">9pt</property>
+                    <text id="665">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Celular:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="666">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="667">
+                <cell id="668">
+                    <property name="fontSize">9pt</property>
+                    <text id="669">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Dirección:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="670">
+                    <property name="colSpan">3</property>
+                    <property name="rowSpan">1</property>
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="671">
+                <cell id="672">
+                    <property name="fontSize">9pt</property>
+                    <text id="673">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Ciudad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="674">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="675">
+                    <property name="fontSize">9pt</property>
+                    <text id="676">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Barrio:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="677">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="678">
+                <cell id="679">
+                    <property name="fontSize">9pt</property>
+                    <text id="680">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Lugar de Empleo:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="681">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="682">
+                    <property name="fontSize">9pt</property>
+                    <text id="683">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Tel:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="684">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+            <row id="685">
+                <cell id="686">
+                    <property name="fontSize">9pt</property>
+                    <text id="687">
+                        <property name="textAlign">right</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Antigüedad:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="688">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="689">
+                    <property name="fontSize">9pt</property>
+                </cell>
+                <cell id="690">
+                    <property name="fontSize">9pt</property>
+                </cell>
+            </row>
+        </grid>
+        <text id="691">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[DESCRIPCIÓN DE LA MERCADERIA]]></text-property>
+        </text>
+        <table id="744">
+            <property name="fontSize">9pt</property>
+            <property name="width">7.947916666666667in</property>
+            <property name="dataSet">Productos</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">internal_name</property>
+                    <text-property name="displayName">internal_name</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["internal_name"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">quantity</property>
+                    <text-property name="displayName">quantity</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["quantity"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">item_description</property>
+                    <text-property name="displayName">item_description</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["item_description"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="757">
+                <property name="width">6.885416666666667in</property>
+            </column>
+            <column id="759">
+                <property name="width">1.0625in</property>
+            </column>
+            <header>
+                <row id="745">
+                    <cell id="746">
+                        <text id="760">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Producto]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="748">
+                        <text id="762">
+                            <property name="fontSize">9pt</property>
+                            <property name="fontWeight">bold</property>
+                            <property name="textAlign">left</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Cantidad]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="749">
+                    <cell id="750">
+                        <data id="763">
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">internal_name</property>
+                        </data>
+                        <data id="765">
+                            <property name="resultSetColumn">item_description</property>
+                        </data>
+                    </cell>
+                    <cell id="752">
+                        <data id="764">
+                            <property name="fontSize">9pt</property>
+                            <property name="resultSetColumn">quantity</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="753">
+                    <cell id="754"/>
+                    <cell id="756"/>
+                </row>
+            </footer>
+        </table>
+        <text id="766">
+            <property name="fontWeight">bold</property>
+            <property name="borderBottomColor">#000000</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">#000000</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">#000000</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">#000000</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="textAlign">center</property>
+            <property name="contentType">auto</property>
+            <text-property name="content"><![CDATA[FORMA DE PAGO]]></text-property>
+        </text>
+        <table id="768">
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <property name="dataSet">Pagos</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">text_value</property>
+                    <text-property name="displayName">text_value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["text_value"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">term_date</property>
+                    <text-property name="displayName">term_date</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["term_date"]</expression>
+                    <property name="dataType">date</property>
+                </structure>
+                <structure>
+                    <property name="name">term_value</property>
+                    <text-property name="displayName">term_value</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["term_value"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="781"/>
+            <column id="782"/>
+            <column id="783"/>
+            <header>
+                <row id="769">
+                    <cell id="770">
+                        <property name="fontSize">9pt</property>
+                        <text id="784">
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Cuota]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="771">
+                        <property name="fontSize">9pt</property>
+                        <text id="786">
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Vencimiento]]></text-property>
+                        </text>
+                    </cell>
+                    <cell id="772">
+                        <property name="fontSize">9pt</property>
+                        <text id="787">
+                            <property name="fontWeight">bold</property>
+                            <property name="contentType">auto</property>
+                            <text-property name="content"><![CDATA[Monto]]></text-property>
+                        </text>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="773">
+                    <property name="borderBottomStyle">none</property>
+                    <property name="borderLeftStyle">none</property>
+                    <property name="borderRightStyle">none</property>
+                    <property name="borderTopStyle">none</property>
+                    <cell id="774">
+                        <property name="fontSize">9pt</property>
+                        <data id="788">
+                            <property name="fontSize">9pt</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">text_value</property>
+                        </data>
+                    </cell>
+                    <cell id="775">
+                        <property name="fontSize">9pt</property>
+                        <data id="789">
+                            <property name="fontSize">9pt</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">term_date</property>
+                        </data>
+                    </cell>
+                    <cell id="776">
+                        <property name="fontSize">9pt</property>
+                        <data id="790">
+                            <property name="fontSize">9pt</property>
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="textAlign">center</property>
+                            <property name="resultSetColumn">term_value</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="777">
+                    <cell id="778">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                    <cell id="779">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                    <cell id="780">
+                        <property name="fontSize">9pt</property>
+                    </cell>
+                </row>
+            </footer>
+        </table>
+        <grid id="694">
+            <column id="695"/>
+            <column id="696"/>
+            <row id="699">
+                <cell id="700">
+                    <text id="710">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[......................................................................]]></text-property>
+                    </text>
+                </cell>
+                <cell id="701">
+                    <text id="711">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[......................................................................]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="704">
+                <cell id="705">
+                    <text id="692">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Firma del Solicitante]]></text-property>
+                    </text>
+                </cell>
+                <cell id="706">
+                    <text id="709">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Firma del Codeudor]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <label id="693"/>
+        <grid id="527">
+            <column id="528"/>
+            <row id="529">
+                <cell id="530">
+                    <text id="531">
+                        <property name="fontSize">x-small</property>
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">1px</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">1px</property>
+                        <property name="textAlign">justify</property>
+                        <property name="contentType">plain</property>
+                        <text-property name="content"><![CDATA[CONTRATO DE GARANTÍA PRENDARIA
+La falta de pagos de sus vencimientos de dos cuotas (pagarés) consecutivas producirá la caducidad de todos los plazos y volverá exigible el total de las obligaciones, produciéndose la mora de pleno derecho por el socio vencimiento de los plazos acordados y autorizará el secuestro extrajudicial así como judicial de la mercaderia vendida. Produciendo el secuestro de la misma y si ella resultare notoriamente deterio-rada por su uso, derivando en su perdida de calidad o cantidad y/o esencia, el acreedor quedará facultado a demandar el pago integro de la deuda utilizando como título ejecutivo de la misma los presentes pagarés debidadmente consentidos y suscritos voluntariamente por el deudor/es y/o codeudor/es. La totalidad de la obligación quedará devengará durante de la mora del interes de .......% mensual por el simple retardo sin que esto impleque prorroga del plazo de la obligación. Ademas el comprador abonará una comision de cobranza del .......% si el vendedor se vale de la gestión de su cobrador para hacer efectivas las cuotas por falta de pago en la ciudad de Villeta (Juzgado de Paz) y Asunción (Juzgado de Justicia Letrada y Juzgado de Primera Instancia), para entender en los asuntos judiciales que pudiera surgir en lo sucesivo. Asimismo quedará ingresado el nombre personal o razón social en el Registro General de Morosos de Informconf.------------------------]]></text-property>
+                    </text>
+                </cell>
+            </row>
+        </grid>
+        <grid id="713">
+            <column id="714"/>
+            <column id="715"/>
+            <row id="726">
+                <cell id="727">
+                    <text id="742">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">left</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Autorizado por:]]></text-property>
+                    </text>
+                </cell>
+                <cell id="728"/>
+            </row>
+            <row id="716">
+                <cell id="717">
+                    <text id="718">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[......................................................................]]></text-property>
+                    </text>
+                </cell>
+                <cell id="719">
+                    <text id="720">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[......................................................................]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="721">
+                <cell id="722">
+                    <text id="723">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Gustavo Espínola Colmán]]></text-property>
+                    </text>
+                </cell>
+                <cell id="724">
+                    <text id="725">
+                        <property name="fontSize">x-small</property>
+                        <property name="fontWeight">normal</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Maria Liz Molinas de Herbert]]></text-property>
+                    </text>
                 </cell>
             </row>
         </grid>
