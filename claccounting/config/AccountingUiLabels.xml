@@ -11619,7 +11619,7 @@
         <value xml:lang="ar">الوضعية إلى 'مستلم'</value>
         <value xml:lang="de">Status auf 'Erhalten'</value>
         <value xml:lang="en">Status to 'Received'</value>
-        <value xml:lang="es">Recibir</value>
+        <value xml:lang="es">Cobrar(Recibir)</value>
         <value xml:lang="fr">Statut à 'Reçu'</value>
         <value xml:lang="hi_IN">स्थिति 'प्राप्त' करने के लिए</value>
         <value xml:lang="it">Stato a 'Ricevuto'</value>
@@ -11637,7 +11637,7 @@
         <value xml:lang="ar">الوضعية إلى 'مرسل'</value>
         <value xml:lang="de">Status auf 'Übermittelt'</value>
         <value xml:lang="en">Status to 'Sent'</value>
-        <value xml:lang="es">Enviar</value>
+        <value xml:lang="es">Pagar(Enviar)</value>
         <value xml:lang="fr">Statut à 'Envoyé'</value>
         <value xml:lang="hi_IN">स्थिति 'भेज दिया' करने के लिए</value>
         <value xml:lang="it">Stato a 'Inviato'</value>
