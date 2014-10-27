@@ -1169,7 +1169,7 @@
     <property key="FormFieldTitle_partyIdFrom">
         <value xml:lang="de">Akteur ID von</value>
         <value xml:lang="en">From Party ID</value>
-        <value xml:lang="es">Id Grupo Origen</value>
+        <value xml:lang="es">De</value>
         <value xml:lang="fr">De l'acteur</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक से</value>
         <value xml:lang="it">Soggetto Da</value>
@@ -1186,7 +1186,7 @@
     <property key="FormFieldTitle_partyIdTo">
         <value xml:lang="de">Akteur ID zu</value>
         <value xml:lang="en">To Party ID</value>
-        <value xml:lang="es">Id Grupo Destino</value>
+        <value xml:lang="es">Para</value>
         <value xml:lang="fr">Vers l'acteur</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक को</value>
         <value xml:lang="it">Soggetto a</value>

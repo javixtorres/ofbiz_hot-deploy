@@ -10100,7 +10100,7 @@
         <value xml:lang="ar">تعريف طرف المؤسسة</value>
         <value xml:lang="de">Akteur ID (Org.)</value>
         <value xml:lang="en">Organization Party Id</value>
-        <value xml:lang="es">Id Grupo de Organización</value>
+        <value xml:lang="es">Organización</value>
         <value xml:lang="fr">Réf. acteur de type Organisation</value>
         <value xml:lang="hi_IN">संगठन पार्टी क्रमांक</value>
         <value xml:lang="it">Soggeto Organizzazione</value>
@@ -10350,7 +10350,7 @@
         <value xml:lang="ar">تعريف الطرف المرسل</value>
         <value xml:lang="de">Akteur-Nr von</value>
         <value xml:lang="en">Party Id From</value>
-        <value xml:lang="es">Id Grupo Origen</value>
+        <value xml:lang="es">De</value>
         <value xml:lang="fr">Réf. acteur (de)</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक से</value>
         <value xml:lang="it">Codice Soggetto Da</value>
@@ -10367,7 +10367,7 @@
     <property key="AccountingPartyIdTo">
         <value xml:lang="de">Akteurs-Nr-zu</value>
         <value xml:lang="en">Party Id To</value>
-        <value xml:lang="es">Id Grupo destino</value>
+        <value xml:lang="es">Para</value>
         <value xml:lang="fr">Réf. acteur (à)</value>
         <value xml:lang="hi_IN">पार्टी क्रमांक को</value>
         <value xml:lang="it">Codice Soggetto A</value>
@@ -11314,7 +11314,7 @@
     <property key="AccountingPaymentMethodId">
         <value xml:lang="de">Zahlungsmethode</value>
         <value xml:lang="en">Payment Method Id</value>
-        <value xml:lang="es">Id Metodo de Pago</value>
+        <value xml:lang="es">Metodo de Pago</value>
         <value xml:lang="fr">Méthode de paiement</value>
         <value xml:lang="hi_IN">भुगतान तरीका क्रमांक</value>
         <value xml:lang="it">Codice Metodo Pagamento</value>
@@ -16797,6 +16797,7 @@
     </property>
     <property key="FormFieldTitle_finAccountId">
         <value xml:lang="en">Fin Account Id</value>
+        <value xml:lang="es">Cuenta Financiera</value>
         <value xml:lang="fr">Réf. du compte financier</value>
         <value xml:lang="hi_IN">वित्तीय खाता क्रमांक</value>
         <value xml:lang="it">Conto Finanziario</value>
@@ -18103,7 +18104,7 @@
     <property key="FormFieldTitle_organizationPartyId">
         <value xml:lang="de">Firmen-ID</value>
         <value xml:lang="en">Organization Party Id</value>
-        <value xml:lang="es">Id Grupo de Organización</value>
+        <value xml:lang="es">Organización</value>
         <value xml:lang="fr">Réf. acteur organisation</value>
         <value xml:lang="hi_IN">संगठन पार्टी क्रमांक</value>
         <value xml:lang="it">Soggetto organizzazione</value>
@@ -18168,7 +18169,7 @@
     </property>
     <property key="FormFieldTitle_overrideGlAccountId">
         <value xml:lang="en">Override Gl Account Id</value>
-        <value xml:lang="es">Id Sobrecarga Cuenta de LM</value>
+        <value xml:lang="es">Sustituir Cuenta Contable</value>
         <value xml:lang="fr">Remplacer le compte comptable</value>
         <value xml:lang="hi_IN">जीएल(Gl) खाता क्रमांक को अधिरोहणकरे</value>
         <value xml:lang="it">Sostituisci Codice Conto Gl</value>
