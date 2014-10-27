@@ -18488,7 +18488,7 @@
     </property>
     <property key="FormFieldTitle_paymentRefNum">
         <value xml:lang="en">Reference No </value>
-        <value xml:lang="es">No Referencia</value>
+        <value xml:lang="es">N° Recibo</value>
         <value xml:lang="fr">N° de référence</value>
         <value xml:lang="hi_IN">संदर्भ संख्या</value>
         <value xml:lang="it">Numero Riferimento</value>
