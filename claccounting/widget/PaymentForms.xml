@@ -562,7 +562,11 @@ under the License.
         <field name="outstandingAmount"><display/></field>
     </form>
     <form name="FinAccountTransAssociatedWithPayment" type="single" default-map-name="finAccountTrans" odd-row-style="alternate-row" default-table-style="basic-table hover-bar">
-        <field name="finAccountId" title="Cuenta Finaciera"><display/></field>
+       <!-- CODIGOLINUX visualizar cuenta financiera -->
+        <field name="finAccountId" title="Cuenta Financiera">
+          <display-entity description="${finAccountName} (${finAccountId})" entity-name="FinAccount" key-field-name="finAccountId"/>
+        </field>
+
         <field name="finAccountTransId" position="1"><display/></field>
         <field name="finAccountTransTypeId" title="${uiLabelMap.FormFieldTitle_finAccountTransType}" position="2"><display-entity entity-name="FinAccountTransType" description="${description}"/></field>
         <field name="amount" position="1"><display type="currency" currency="${payment.currencyUomId}"/></field>

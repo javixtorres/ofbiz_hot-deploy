@@ -16855,7 +16855,7 @@
     </property>
     <property key="FormFieldTitle_finAccountTransType">
         <value xml:lang="en">Fin Account Trans Type</value>
-        <value xml:lang="es">Typo de transaccion financiera</value>
+        <value xml:lang="es">Tipo de Transaccion</value>
         <value xml:lang="fr">Type de transaction financière</value>
         <value xml:lang="hi_IN">वित्तीय गतिविधि खाता प्रकार</value>
         <value xml:lang="ja">金融アカウントトランザクション種類</value>
