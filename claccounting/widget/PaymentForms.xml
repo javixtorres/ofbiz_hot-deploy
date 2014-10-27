@@ -145,13 +145,23 @@ under the License.
             </drop-down>
         </field>
         <field name="partyIdTo" position="2"><lookup target-form-name="LookupPartyName"/></field>
-        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1">
-            <drop-down allow-empty="false">
-                <list-options list-name="paymentTypes" key-name="paymentTypeId" description="${description}"/>
+<!--         <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1"> -->
+<!--             <drop-down allow-empty="false"> -->
+<!--                 <list-options list-name="paymentTypes" key-name="paymentTypeId" description="${description}"/> -->
+<!--             </drop-down> -->
+<!--         </field> -->
+        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1">	
+		<!-- CODIGOLINUX por defecto pago a proveedor -->
+            <drop-down allow-empty="false" no-current-selected-key="VENDOR_PAYMENT">
+                <entity-options description="${description}" entity-name="PaymentType" >
+                    <entity-constraint name="parentTypeId" value="DISBURSEMENT"/>
+                    <entity-order-by field-name="description"/>
+                </entity-options>
             </drop-down>
         </field>
         <field name="paymentMethodId" title="${uiLabelMap.AccountingPaymentMethodId}" position="2">
-            <drop-down allow-empty="false">
+        <!-- CODIGOLINUX por defecto pago en efectivo -->
+            <drop-down allow-empty="false" no-current-selected-key="PETTY_CASH">
                 <entity-options entity-name="PaymentMethod" description="${description}">
                     <entity-constraint name="partyId" operator="equals" env-name="defaultOrganizationPartyId"/>
                     <entity-order-by field-name="description"/>
@@ -180,17 +190,18 @@ under the License.
             </drop-down>
         </field>
         <field name="partyIdFrom" position="2"><lookup target-form-name="LookupPartyName"/></field>
-        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1">
-<!--         <text default-value="CUSTOMER_PAYMENT"/> -->
-            <drop-down allow-empty="false">
-                <entity-options description="${description}" entity-name="PaymentType">
+        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1">	
+		<!-- CODIGOLINUX por defecto pago de cliente -->
+            <drop-down allow-empty="false" no-current-selected-key="CUSTOMER_PAYMENT">
+                <entity-options description="${description}" entity-name="PaymentType" >
                     <entity-constraint name="parentTypeId" value="RECEIPT"/>
                     <entity-order-by field-name="description"/>
                 </entity-options>
             </drop-down>
         </field>
         <field name="paymentMethodId" title="${uiLabelMap.AccountingPaymentMethodId}" position="2">
-            <drop-down allow-empty="false">
+        <!-- CODIGOLINUX por defecto pago en efectivo -->
+            <drop-down allow-empty="false" no-current-selected-key="PETTY_CASH">
                 <entity-options entity-name="PaymentMethod" description="${description}">
                     <entity-constraint name="partyId" operator="equals" env-name="defaultOrganizationPartyId"/>
                     <entity-order-by field-name="description"/>

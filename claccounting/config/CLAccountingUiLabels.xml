@@ -15095,6 +15095,7 @@
     </property>
     <property key="AccountingVendorPaymentMethod">
         <value xml:lang="en">Vendor Payment Method</value>
+        <value xml:lang="en">Metodo de Pago a Proveedor</value>
         <value xml:lang="fr">Méthode de paiement du vendeur</value>
         <value xml:lang="hi_IN">विक्रेता भुगतान पद्धति</value>
         <value xml:lang="ja">ベンダ支払方法</value>
