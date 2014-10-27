@@ -16839,7 +16839,7 @@
     </property>
     <property key="FormFieldTitle_finAccountTransId">
         <value xml:lang="en">Fin Account Trans Id</value>
-        <value xml:lang="es">Id Trans Cuenta Fin</value>
+        <value xml:lang="es">Transaccion Financiera Id</value>
         <value xml:lang="fr">Réf. de transaction financière</value>
         <value xml:lang="hi_IN">वित्तीय गतिविधि खाता क्रमांक</value>
         <value xml:lang="it">Codice Transazione Conto Finanziario</value>
