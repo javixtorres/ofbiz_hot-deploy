@@ -180,8 +180,8 @@ under the License.
             </drop-down>
         </field>
         <field name="partyIdFrom" position="2"><lookup target-form-name="LookupPartyName"/></field>
-        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1">
-            <drop-down allow-empty="false">
+        <field name="paymentTypeId" title="${uiLabelMap.AccountingPaymentType}" position="1" value="CUSTOMER_PAYMENT">
+            <drop-down allow-empty="false" >
                 <entity-options description="${description}" entity-name="PaymentType">
                     <entity-constraint name="parentTypeId" value="RECEIPT"/>
                     <entity-order-by field-name="description"/>

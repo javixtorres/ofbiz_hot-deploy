@@ -39,7 +39,11 @@ under the License.
         <td width="25%">${orderTerm.getRelatedOne("TermType", false).get("description", locale)}</td>
         <td width="15%" align="center">
         <#if orderTerm.termValue?has_content> 
-           	<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
+        	<#if orderTerm.termTypeId=="CRD_CUOTA">
+           		<@ofbizCurrency amount=orderTerm.termValue isoCode=currencyUomId/>
+           	<#else>
+           		${orderTerm.termValue?default("")}
+           	</#if>
         </#if>
         </td>
         <td width="15%" align="center">${orderTerm.termDays?default("")}</td>
