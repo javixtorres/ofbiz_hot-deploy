@@ -114,8 +114,8 @@ under the License.
                 <set field="titleProperty" value="OrderReportPurchasesByPaymentMethod"/>
                 <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition entity-name="OrderPurchasePaymentSummary" list="orderPurchasePaymentSummaryList">
                     <condition-list combine="and">
@@ -151,8 +151,8 @@ under the License.
             <actions>
                 <set field="titleProperty" value="OrderReportPurchasesByProduct"/>
                 <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition entity-name="OrderPurchaseProductSummary" list="orderPurchaseProductSummaryList">
                     <condition-list combine="and">
@@ -193,8 +193,8 @@ under the License.
                 <set field="titleProperty" value="OrderReportSalesByStore"/>
                 <set field="toPartyId" from-field="parameters.toPartyId"/>
                 <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition entity-name="OrderReportSalesGroupByProduct" list="productReportList">
                     <condition-list combine="and">
@@ -262,8 +262,8 @@ under the License.
                 <set field="toPartyId" from-field="parameters.toPartyId"/>
                 <set field="fromPartyId" from-field="parameters.fromPartyId"/>
                 <property-map resource="CLOrderUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
                 <entity-condition entity-name="OrderReportPurchasesGroupByProduct" list="productReportList">
                     <condition-list combine="and">

@@ -684,8 +684,8 @@ under the License.
             <actions>
                 <set field="titleProperty" value="AccountingPageTitleAgreementPriceList"/>
                 <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
-                <property-map resource="ProductUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLProductUiLabels" map-name="uiLabelMap" global="true"/>
 
                 <entity-one entity-name="Agreement" value-field="agreement" auto-field-map="true"/>
                 <entity-one entity-name="AgreementItem" value-field="agreementItem"/>
@@ -912,7 +912,7 @@ under the License.
             <actions>
                 <set field="titleProperty" value="PageTitleFindAgreementRoles"/>
                 <set field="tabButtonItem" value="AgreementRoles"/>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="agreementId" from-field="parameters.agreementId"/>
                 <entity-one entity-name="Agreement" value-field="agreement" auto-field-map="true"/>
             </actions>

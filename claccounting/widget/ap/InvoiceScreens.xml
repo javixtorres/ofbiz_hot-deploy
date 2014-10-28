@@ -174,7 +174,7 @@ under the License.
                 <set field="asm_formSize" value="700"/>
                 <set field="asm_listItemPercentOfForm" value="95"/>
                 <set field="asm_sortable" value="false"/>
-                <property-map resource="AccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="asm_title" value="${uiLabelMap.AccountingSelectPartiesForCommissionInvoice}"/>
             </actions>
             <widgets>

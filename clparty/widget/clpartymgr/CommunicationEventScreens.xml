@@ -569,7 +569,7 @@ under the License.
     <screen name="UpdateCommPurposes">
         <section>
             <actions>
-                <property-map map-name="uiLabelMap" resource="PartyUiLabels"/>
+                <property-map map-name="uiLabelMap" resource="CLPartyUiLabels"/>
                 <set field="titleProperty" value="PageTitleViewCommPurposes"/>
                 <set field="tabButtonItem" value="UpdateCommPurposes"/>
 
@@ -833,7 +833,7 @@ under the License.
     <screen name="MyCommunicationEvents">
         <section>
             <actions>
-                <property-map resource="PartyUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CLPartyUiLabels" map-name="uiLabelMap" global="true"/>
                 <set field="internalNotesOnly" from-field="internalNotesOnly" default-value="false"/>
                 <set field="partyId" from-field="communicationPartyId" default-value="${userLogin.partyId}"/>
                 <entity-one entity-name="CommunicationEvent" value-field="communicationEvent"/>
