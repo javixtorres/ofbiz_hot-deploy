@@ -221,12 +221,20 @@ under the License.
     <!-- CODIGOLINUX crear transferencia -->
     <simple-method method-name="transferFinAccountService" short-description="Create una Transferencia Financiera">
 
+<!--        <if-compare field="parameters.finAccountIdFrom" operator="equals" value="">
+            <add-error>
+                <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountStatusNotValidError"/>
+            </add-error>
+        </if-compare>
+        <check-errors/> -->
 
+	<!--
         <entity-one entity-name="FinAccount" value-field="finAccountIn">
 		<field-map 
                         env-name="parameters.finAccountIdFrom" 
 			field-name="finAccountId" />
 	</entity-one>
+
         <if-compare field="finAccountIn.statusId" operator="equals" value="FNACT_MANFROZEN">
             <add-error>
                 <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountInactiveStatusError"/>
@@ -240,18 +248,121 @@ under the License.
         <check-errors/>
 
         <make-value value-field="transferFinAccountService" entity-name="FinAccountTrans"/>
+-->
+
+
+        <!-- CUENTA ORIGEN -->
 
         <set field="parameters.finAccountTransTypeId" value="WITHDRAWAL"/>
         <set field="parameters.statusId" value="FINACT_TRNS_APPROVED"/>
         <set field="parameters.finAccountId" from-field="parameters.finAccountIdFrom"/>
-        <set field="parameters.finAccountTransId" value=""/>
-        
+        <set field="parameters.comments" value="TRANSFERENCIA A CUENTA ${parameters.finAccountIdTo}"/>
+<!--        
         <set-nonpk-fields value-field="transferFinAccountService" map="parameters"/>
 
         <log level="info" message="CODIGOLINUX parametro y cuenta: ${parameters.finAccountIdFrom} - ${finAccountIn.finAccountName}"/>
+-->
+ <!--       <entity-one entity-name="FinAccount" value-field="finAccount"/>
+ 
+      <if-compare field="finAccount.statusId" operator="equals" value="FNACT_MANFROZEN">
+            <add-error>
+                <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountInactiveStatusError"/>
+            </add-error>
+        </if-compare>
+        <if-compare field="finAccount.statusId" operator="equals" value="FNACT_CANCELLED">
+            <add-error>
+                <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountStatusNotValidError"/>
+            </add-error>
+        </if-compare>
+        <check-errors/>
+-->
+        <call-simple-method method-name="getArithmeticSettingsInline"/>
 
-        <call-simple-method method-name="createFinAccountTrans"/>
+        <make-value value-field="newEntity" entity-name="FinAccountTrans"/>
+        <set-nonpk-fields value-field="newEntity" map="parameters"/>
+        <sequenced-id sequence-name="FinAccountTrans" field="newEntity.finAccountTransId"/>
+
+        <now-timestamp field="nowTimestamp"/>
+        <if-empty field="newEntity.transactionDate">
+            <set from-field="nowTimestamp" field="newEntity.transactionDate"/>
+        </if-empty>
+        <if-empty field="newEntity.entryDate">
+            <set from-field="nowTimestamp" field="newEntity.entryDate"/>
+        </if-empty>
+        <if-empty field="newEntity.statusId">
+            <set field="newEntity.statusId" value="FINACT_TRNS_APPROVED"/>
+        </if-empty>
+        <set field="newEntity.performedByPartyId" from-field="userLogin.partyId"/>
+
+        <!-- make sure the amount is a sane number -->
+        <set field="originalAmount" from-field="newEntity.amount"/>
+        <calculate field="newEntity.amount" decimal-scale="${roundingDecimals}" rounding-mode="${roundingMode}">
+            <calcop operator="get" field="newEntity.amount"/>
+        </calculate>
+        <if-compare-field field="newEntity.amount" to-field="originalAmount" operator="not-equals" type="BigDecimal">
+            <log level="warning" message="In createFinAccountTrans had to round the amount from [${originalAmount}] to [${newEntity.amount}]"></log>
+        </if-compare-field>
+
+        <create-value value-field="newEntity"/>
+<!--        <field-to-result field="newEntity.finAccountTransId" result-name="finAccountTransId"/>-->
+
+        <!-- CUENTA DESTINO -->
+        <set field="parameters.finAccountTransTypeId" value="DEPOSIT"/>
+        <set field="parameters.statusId" value="FINACT_TRNS_APPROVED"/>
+        <set field="parameters.finAccountId" from-field="parameters.finAccountIdTo"/>
+        <set field="parameters.comments" value="TRANSFERENCIA DESDE CUENTA ${parameters.finAccountIdFrom}"/>
 <!--
+        <set-nonpk-fields value-field="transferFinAccountService" map="parameters"/>
+
+        <log level="info" message="CODIGOLINUX parametro y cuenta: ${parameters.finAccountIdFrom} - ${finAccountIn.finAccountName}"/>
+-->
+ <!--       <entity-one entity-name="FinAccount" value-field="finAccount"/>
+
+      <if-compare field="finAccount.statusId" operator="equals" value="FNACT_MANFROZEN">
+            <add-error>
+                <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountInactiveStatusError"/>
+            </add-error>
+        </if-compare>
+        <if-compare field="finAccount.statusId" operator="equals" value="FNACT_CANCELLED">
+            <add-error>
+                <fail-property resource="AccountingErrorUiLabels" property="AccountingFinAccountStatusNotValidError"/>
+            </add-error>
+        </if-compare>
+        <check-errors/>
+-->
+        <call-simple-method method-name="getArithmeticSettingsInline"/>
+
+        <make-value value-field="newEntity" entity-name="FinAccountTrans"/>
+        <set-nonpk-fields value-field="newEntity" map="parameters"/>
+        <sequenced-id sequence-name="FinAccountTrans" field="newEntity.finAccountTransId"/>
+
+        <now-timestamp field="nowTimestamp"/>
+        <if-empty field="newEntity.transactionDate">
+            <set from-field="nowTimestamp" field="newEntity.transactionDate"/>
+        </if-empty>
+        <if-empty field="newEntity.entryDate">
+            <set from-field="nowTimestamp" field="newEntity.entryDate"/>
+        </if-empty>
+        <if-empty field="newEntity.statusId">
+            <set field="newEntity.statusId" value="FINACT_TRNS_APPROVED"/>
+        </if-empty>
+        <set field="newEntity.performedByPartyId" from-field="userLogin.partyId"/>
+
+        <!-- make sure the amount is a sane number -->
+        <set field="originalAmount" from-field="newEntity.amount"/>
+        <calculate field="newEntity.amount" decimal-scale="${roundingDecimals}" rounding-mode="${roundingMode}">
+            <calcop operator="get" field="newEntity.amount"/>
+        </calculate>
+        <if-compare-field field="newEntity.amount" to-field="originalAmount" operator="not-equals" type="BigDecimal">
+            <log level="warning" message="In createFinAccountTrans had to round the amount from [${originalAmount}] to [${newEntity.amount}]"></log>
+        </if-compare-field>
+
+        <create-value value-field="newEntity"/>
+
+<!--        <field-to-result field="newEntity.finAccountTransId" result-name="finAccountTransId"/>-->
+<!--
+<call-simple-method method-name="createFinAccountTrans"/>
+
         <make-value value-field="newEntity" entity-name="FinAccountTrans"/>
         <set-nonpk-fields value-field="newEntity" map="parameters"/>
         <sequenced-id sequence-name="FinAccountTrans" field="newEntity.finAccountTransId"/>
