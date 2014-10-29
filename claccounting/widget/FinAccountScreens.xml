@@ -195,6 +195,28 @@ under the License.
         </section>
     </screen>
 
+    <screen name="transferFinAccount">
+        <section>
+<!--             <actions> -->
+<!--                 <set field="titleProperty" value="PageTitleEditFinAccountTrans"/> -->
+<!--                 <set field="tabButtonItem" value="FinAccountTrans"/> -->
+<!--                 <set field="finAccountId" from-field="parameters.finAccountId"/> -->
+<!--                 <entity-one entity-name="FinAccount" value-field="finAccount"/> -->
+<!--                 <set field="finAccountTransId" from-field="parameters.finAccountTransId"/> -->
+<!--             </actions> -->
+            <widgets>
+                <decorator-screen name="CommonFinAccountDecorator" location="${parameters.finAccountDecoratorLocation}">
+                    <decorator-section name="body">
+<!--                         <label style="h1" text="${uiLabelMap.AccountingEditFinAccountTransactionFor}"/> -->
+                        <screenlet id="FinAccountTransPanel" collapsible="true">
+                            <include-form name="transferFinAccount" location="component://claccounting/widget/FinAccountForms.xml"/>
+                        </screenlet>
+                    </decorator-section>
+                </decorator-screen>
+            </widgets>
+        </section>
+    </screen>
+
     <screen name="EditFinAccountAuths">
         <section>
             <actions>

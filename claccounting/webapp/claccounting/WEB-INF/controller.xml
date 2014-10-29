@@ -1993,6 +1993,21 @@ under the License.
         <response name="success" type="view" value="EditFinAccountTrans"/>
         <response name="error" type="view" value="EditFinAccountTrans"/>
     </request-map>
+    
+    <!-- CODIGOLINUX transerencia -->
+    <request-map uri="transferFinAccount">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="transferFinAccount"/>
+        <response name="error" type="view" value="transferFinAccount"/>
+    </request-map>    
+    
+    <request-map uri="transferFinAccountService">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="transferFinAccountService"/>
+        <response name="success" type="view" value="transferFinAccount"/>
+        <response name="error" type="view" value="transferFinAccount"/>
+    </request-map>
+    
     <request-map uri="createFinAccountTrans">
         <security https="true" auth="true"/>
         <event type="service" invoke="createFinAccountTrans"/>
@@ -2710,6 +2725,7 @@ under the License.
     <view-map name="EditFinAccount" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#EditFinAccount"/>
     <view-map name="EditFinAccountRoles" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#EditFinAccountRoles"/>
     <view-map name="EditFinAccountTrans" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#EditFinAccountTrans"/>
+    <view-map name="transferFinAccount" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#transferFinAccount"/>    
     <view-map name="EditFinAccountAuths" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#EditFinAccountAuths"/>
     <view-map name="EditFinAccountTypeGlAccounts" type="screen" page="component://claccounting/widget/GlSetupScreens.xml#EditFinAccountTypeGlAccounts"/>
     <view-map name="FindFinAccountTrans" type="screen" page="component://claccounting/widget/FinAccountScreens.xml#FindFinAccountTrans"/>

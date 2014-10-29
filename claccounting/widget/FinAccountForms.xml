@@ -217,6 +217,63 @@ under the License.
         <field name="submitButton" title="${uiLabelMap.CommonAdd}" widget-style="smallSubmit"><submit button-type="button"/></field>
     </form>
 
+	<form name="transferFinAccount" type="single" target="transferFinAccountService"
+        header-row-style="header-row" default-table-style="basic-table" >
+<!--         <actions> -->
+<!--             <set field="statusId" value="FINACT_TRNS_CREATED"/> -->
+<!--         </actions> -->
+<!--         <auto-fields-service service-name="createFinAccountTrans"/> -->
+        <field name="finAccountIdFrom" title="Origen">
+            <drop-down allow-empty="true">
+                <entity-options key-field-name="finAccountId" entity-name="FinAccount" description="${finAccountName} [${finAccountId}]" filter-by-date="true">
+                    <entity-constraint name="finAccountTypeId" value="CAJA_ACCOUNT"/>
+                    <entity-constraint name="statusId" operator="not-equals" value="FNACT_MANFROZEN"/>
+                    <entity-constraint name="statusId" operator="not-equals" value="FNACT_CANCELLED"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="finAccountIdTo" title="Destino">
+            <drop-down allow-empty="true">
+                <entity-options key-field-name="finAccountId" entity-name="FinAccount" description="${finAccountName} [${finAccountId}]" filter-by-date="true">
+                    <entity-constraint name="finAccountTypeId" value="CAJA_ACCOUNT"/>
+                    <entity-constraint name="statusId" operator="not-equals" value="FNACT_MANFROZEN"/>
+                    <entity-constraint name="statusId" operator="not-equals" value="FNACT_CANCELLED"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        
+<!--         <field name="finAccountIdTo"><hidden/></field> -->
+<!--         <field name="finAccountTransTypeId" title="Transacción Tipo"> -->
+<!--             <drop-down no-current-selected-key="ADJUSTMENT"> -->
+<!--                 <entity-options description="${description}" entity-name="FinAccountTransType"> -->
+<!--                     <entity-order-by field-name="description"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
+<!--         <field name="partyId"><lookup target-form-name="LookupPartyName"/></field> -->
+<!--         <field name="transactionDate"> <date-time/> </field> -->
+<!--         <field name="entryDate"><date-time/></field> -->
+<!--         <field name="paymentId"><lookup target-form-name="LookupPayment"/></field> -->
+<!--         <field name="orderId"><lookup target-form-name="LookupOrderHeader"/></field> -->
+<!--         <field name="statusId" title="${uiLabelMap.CommonStatus}"> -->
+<!--             <drop-down> -->
+<!--                 <entity-options entity-name="StatusItem" description="${description}"> -->
+<!--                     <entity-constraint name="statusTypeId" value="FINACT_TRNS_STATUS"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
+<!--         <field name="glAccountId" title="${uiLabelMap.AccountingGlAccount}"> -->
+<!--             <drop-down> -->
+<!--                 <entity-options entity-name="GlAccountOrganizationAndClass" description="${accountCode} - ${accountName} [${glAccountId}]" key-field-name="glAccountId"> -->
+<!--                     <entity-constraint name="organizationPartyId" operator="equals" env-name="defaultOrganizationPartyId"/> -->
+<!--                     <entity-order-by field-name="glAccountId"/> -->
+<!--                 </entity-options> -->
+<!--             </drop-down> -->
+<!--         </field> -->
+		<field name="amount" title="Monto"><text/></field>
+        <field name="submitButton" title="Transferir" widget-style="smallSubmit"><submit button-type="button"/></field>
+    </form>
+
     <form name="ListFinAccountAuths" type="list"  list-name="finAccountauths"  target="expireFinAccountAuth" separate-columns="true"
         odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
         <actions>
