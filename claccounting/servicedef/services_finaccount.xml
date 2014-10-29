@@ -86,11 +86,10 @@ under the License.
     <service name="transferFinAccountService" engine="simple" default-entity-name="FinAccountTrans"
             location="component://claccounting/script/org/ofbiz/accounting/finaccount/FinAccountServices.xml" invoke="transferFinAccountService">
         <description>Crear Tranferencia Financiera</description>
-        <auto-attributes mode="OUT" optional="false" include="pk"/>
-        <auto-attributes mode="IN" optional="true" include="nonpk">
-            <exclude field-name="performedByPartyId"/>
-        </auto-attributes>
-        <attribute name="glAccountId" type="String" mode="IN" optional="true"/>
+
+        <attribute name="finAccountIdFrom" type="String" mode="IN" optional="true"/>
+        <attribute name="finAccountIdTo" type="String" mode="IN" optional="true"/>
+        <attribute name="amount" type="String" mode="IN" optional="true"/>
     </service>
     
     <service name="postFinAccountTransToGl" engine="simple"
