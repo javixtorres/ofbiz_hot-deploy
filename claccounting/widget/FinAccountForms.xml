@@ -73,11 +73,13 @@ under the License.
                 <parameter param-name="partyId" from-field="ownerPartyId"/>
             </hyperlink>
         </field>
+<!--
         <field name="deleteLink" title=" " widget-style="buttontext">
             <hyperlink target="deleteFinAccount" description="${uiLabelMap.CommonDelete}" also-hidden="false">
                 <parameter param-name="finAccountId"/>
             </hyperlink>
         </field>
+-->
     </form>
 
     <form name="EditFinAccount" type="single" target="updateFinAccount" default-map-name="finAccount"
