@@ -2004,7 +2004,7 @@ under the License.
     <request-map uri="transferFinAccountService">
         <security https="true" auth="true"/>
         <event type="service" invoke="transferFinAccountService"/>
-        <response name="success" type="view" value="transferFinAccount"/>
+        <response name="success" type="view" value="FinAccountMain"/>
         <response name="error" type="view" value="transferFinAccount"/>
     </request-map>
     
