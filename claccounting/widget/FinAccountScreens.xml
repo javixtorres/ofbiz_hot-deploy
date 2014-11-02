@@ -311,6 +311,19 @@ under the License.
             </widgets>
         </section>
     </screen>
+    <screen name="CLListBankAccount">
+        <section>
+            <actions>
+                <property-map resource="CLAccountingUiLabels" map-name="uiLabelMap" global="true"/>
+                <set field="parameters.finAccountTypeId" value="CAJA_ACCOUNT"/>
+            </actions>
+            <widgets>
+                <screenlet title="${uiLabelMap.CommonList} ${uiLabelMap.AccountingBankAccount} CAJA">
+                    <include-screen name="FinAccountPortlets"/>
+                </screenlet>
+            </widgets>
+        </section>
+    </screen>
     <screen name="FindDepositSlips">
         <section>
             <actions>

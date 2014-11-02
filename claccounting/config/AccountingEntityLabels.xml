@@ -1881,6 +1881,15 @@
         <value xml:lang="zh">利息收入</value>
         <value xml:lang="zh_TW">利息收入</value>
     </property>
+    
+    <property key="GlAccountType.description.ACCPAYABLE_UNAPPLIED">
+        <value xml:lang="es">Cuenta a Pagar - Sin Aplicar</value>
+    </property>
+    
+    <property key="GlAccountType.description.ACCREC_UNAPPLIED">
+        <value xml:lang="es">Cuenta a Cobrar - Sin Aplicar</value>
+    </property>
+    
     <property key="GlAccountType.description.INTRSTINC_RECEIVABLE">
         <value xml:lang="de">Zinsertragsforderungen</value>
         <value xml:lang="en">Interest Income Receivables</value>

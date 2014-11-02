@@ -34,7 +34,7 @@ under the License.
         <action service="checkPaymentInvoices" mode="sync"/>
      </eca>
      
-     <!-- CODIGOLINUX - Pago de cliente, asociar con cuenta financiera CAJA_CHICA -->
+     <!-- CODIGOLINUX - Pago de cliente, asociar con cuenta financiera CAJA_CHICA -->h
      <eca service="setPaymentStatus" event="commit">
         <condition field-name="statusId" operator="equals" value="PMNT_RECEIVED"/>
         <condition field-name="oldStatusId" operator="not-equals" value="PMNT_RECEIVED"/>
