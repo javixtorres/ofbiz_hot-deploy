@@ -1046,8 +1046,14 @@ public class CheckOutEvents {
                 }
                 
             } else if (currProcess.equals("agreement")) {
-                if (requireTerm && !cart.isOrderTermSet()) {
-                    return "agreement";
+            	
+            	List<String> getPaymentMethodIds = cart.getPaymentMethodIds();
+            	
+            	if (!UtilValidate.isEmpty(getPaymentMethodIds))
+            		{
+	                if (requireTerm && !cart.isOrderTermSet() && getPaymentMethodIds.get(0)!="PETTY_CASH") {
+	                    return "agreement";
+	                }
                 }
             } else if (currProcess.equals("term")) {
                 if (requireTerm && !cart.isOrderTermSet()) {
