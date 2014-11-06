@@ -1066,9 +1066,21 @@ public class CheckOutEvents {
             } else if (currProcess.equals("term")) {
             	List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
             	
-                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) {
-                    return "term";
-                }
+            	if (!UtilValidate.isEmpty(paymentMethodTypeIds))
+	            	{	
+	                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) 
+	                	{
+	                    return "term";
+	                    }
+	            	}
+                else
+	                {	
+	                if (requireTerm && !cart.isOrderTermSet()) 
+		                {
+		                        return "term";	
+		            	}
+	                }
+            	
 //            } else if (currProcess.equals("payment")) {
 //                List<String> paymentMethodIds = cart.getPaymentMethodIds();
 //                List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
