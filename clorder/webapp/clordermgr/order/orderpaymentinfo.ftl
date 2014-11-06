@@ -322,8 +322,9 @@ under the License.
                       <#--CODIGOLINUX Mostrar Descripcion y Fecha de Pago -->
 					  <#if paymentList?has_content>
 	                            <#list paymentList as paymentMap>
-	                               <br />${paymentMap.comments} - Fecha:  
-	                               <#--${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!}--> 
+	                               <br />
+					${paymentMap.comments?if_exists} - Fecha:  
+	                               <!--${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!}--> 
 	                               <#if paymentMap.dueDate?has_content>
 	                                ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.dueDate, "dd/MM/yyyy", locale, timeZone)!}
 	                                <#else>
