@@ -26,13 +26,22 @@ under the License.
             <#assign orderType = orderHeader.getRelatedOne("OrderType", false)/>
             <li class="h3">&nbsp;${orderType?if_exists.get("description", locale)?default(uiLabelMap.OrderOrder)}&nbsp;${uiLabelMap.CommonNbr}&nbsp;
             <a href="<@ofbizUrl>orderview?orderId=${orderId}</@ofbizUrl>">${orderId}</a> ${externalOrder?if_exists} [&nbsp;
-            <a href="<@ofbizUrl>order.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PDF</a>&nbsp;][&nbsp;
+            <a href="<@ofbizUrl>order.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PDF</a>&nbsp;]
             <!--<a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">CREDITO</a>&nbsp;][&nbsp;-->
-            <a href="javascript:document.Creditos.submit()">SOLICITUD CREDITO</a>&nbsp;]
-            <form name="Creditos" method="post" action="<@ofbizUrl>Agreement.pdf</@ofbizUrl>" target="_BLANK">
-                <input type="hidden" name="orderId" value="${orderId?if_exists}"/>
-            </form>
-            <a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PAGARES</a>&nbsp;][&nbsp;
+            
+            <#list orderPaymentPreferences as orderPaymentPreference>
+	            <#assign paymentMethod = orderPaymentPreference.getRelatedOne("PaymentMethod", false)?if_exists>
+	            <#assign paymentMethodType = orderPaymentPreference.getRelatedOne("PaymentMethodType", false)>
+		            <#if paymentMethodType.paymentMethodTypeId == "EXT_BILLACT">
+		                [&nbsp;
+			            <a href="javascript:document.Creditos.submit()">SOLICITUD CREDITO</a>&nbsp;]
+			            <form name="Creditos" method="post" action="<@ofbizUrl>Agreement.pdf</@ofbizUrl>" target="_BLANK">
+			                <input type="hidden" name="orderId" value="${orderId?if_exists}"/>
+			            </form>
+			            [&nbsp;
+			            <a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PAGARES</a>&nbsp;]
+		            </#if>
+            </#list>
             </li>
             
             <#if currentStatus.statusId == "ORDER_APPROVED" && orderHeader.orderTypeId == "SALES_ORDER">

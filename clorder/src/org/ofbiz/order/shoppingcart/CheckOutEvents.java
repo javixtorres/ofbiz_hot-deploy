@@ -951,7 +951,9 @@ public class CheckOutEvents {
         boolean requireShipping = true;
         boolean requireOptions = true;
         boolean requireShipGroups = false;
+        //CODIGO LINUX - Requerir pago cuando es un compra tambien
         boolean requirePayment = !cart.getOrderType().equals("PURCHASE_ORDER");
+        //boolean requirePayment = true;
         boolean requireTerm = true;
         boolean requireAdditionalParty = isAnonymousCheckout;
         boolean isSingleUsePayment = true;
@@ -1005,6 +1007,7 @@ public class CheckOutEvents {
 
         if (cart.getOrderType().equals("PURCHASE_ORDER")) {
             // Force checks for the following
+        	// CODIGOLINUX . . .
             requireCustomer = true; requireShipping = true; requireOptions = true;
 //            processOrder = new String[] {"customer", "term", "shipping", "shipGroups", "options", "payment",
 //                                         "addparty", "paysplit"};
@@ -1048,15 +1051,22 @@ public class CheckOutEvents {
             } else if (currProcess.equals("agreement")) {
             	
             	List<String> getPaymentMethodIds = cart.getPaymentMethodIds();
+            	List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
             	
-            	if (!UtilValidate.isEmpty(getPaymentMethodIds))
+            	//Debug.logInfo("CODIGOLINUX: paymentMethodTypeIds = "+ paymentMethodTypeIds.get(0), module);
+            	//Debug.logInfo("CODIGOLINUX: getPaymentMethodIds = "+ getPaymentMethodIds.get(0), module);
+            	
+            	if (!UtilValidate.isEmpty(paymentMethodTypeIds))
             		{
-	                if (requireTerm && !cart.isOrderTermSet() && getPaymentMethodIds.get(0)!="PETTY_CASH") {
+            		Debug.logInfo("CODIGOLINUX: paymentMethodTypeIds = "+ paymentMethodTypeIds.get(0), module);
+	                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) {
 	                    return "agreement";
 	                }
                 }
             } else if (currProcess.equals("term")) {
-                if (requireTerm && !cart.isOrderTermSet()) {
+            	List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
+            	
+                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) {
                     return "term";
                 }
 //            } else if (currProcess.equals("payment")) {

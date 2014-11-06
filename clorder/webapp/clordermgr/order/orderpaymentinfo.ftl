@@ -178,7 +178,10 @@ under the License.
                   <tr>
                     <td align="right" valign="top" width="29%">
                       <#-- billing accounts require a special OrderPaymentPreference because it is skipped from above section of OPPs -->
-                      <div>&nbsp;<span class="label">${uiLabelMap.AccountingBillingAccount}</span>&nbsp;
+                      <div>&nbsp;<span class="label">${uiLabelMap.AccountingBillingAccount}
+                      </span>&nbsp;<br />
+                      <span class="label">
+                      (Linea de Credito)</span>&nbsp;
                           <#if billingAccountMaxAmount?has_content>
                           <br />${uiLabelMap.OrderPaymentMaximumAmount}: <@ofbizCurrency amount=billingAccountMaxAmount?default(0.00) isoCode=currencyUomId/>
                           </#if>
@@ -321,7 +324,11 @@ under the License.
 	                            <#list paymentList as paymentMap>
 	                               <br />${paymentMap.comments} - Fecha:  
 	                               <#--${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.effectiveDate, "dd/MM/yyyy", locale, timeZone)!}--> 
-	                               ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.dueDate, "dd/MM/yyyy", locale, timeZone)!}
+	                               <#if paymentMap.dueDate?has_content>
+	                                ${Static["org.ofbiz.base.util.UtilFormatOut"].formatDateTime(paymentMap.dueDate, "dd/MM/yyyy", locale, timeZone)!}
+	                                <#else>
+	                                - Sin Fecha de Vencimiento
+	                               </#if>
 	                            </#list>
 	                  </#if>
 	                  
