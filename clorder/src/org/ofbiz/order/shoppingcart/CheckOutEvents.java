@@ -1059,10 +1059,16 @@ public class CheckOutEvents {
             	if (!UtilValidate.isEmpty(paymentMethodTypeIds))
             		{
             		Debug.logInfo("CODIGOLINUX: paymentMethodTypeIds = "+ paymentMethodTypeIds.get(0), module);
-	                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) {
-	                    return "agreement";
+	                if (requireTerm && !cart.isOrderTermSet() && !paymentMethodTypeIds.get(0).equals("CASH")) 
+	                	{ return "agreement";
+	                	}
 	                }
-                }
+            	else
+            		{
+	                if (requireTerm && !cart.isOrderTermSet()) 
+	                	{ return "agreement";
+	                	}
+            		}
             } else if (currProcess.equals("term")) {
             	List<String> paymentMethodTypeIds = cart.getPaymentMethodTypeIds();
             	
