@@ -40,6 +40,8 @@ under the License.
 			            </form>
 			            [&nbsp;
 			            <a href="<@ofbizUrl>agreement.pdf?orderId=${orderId}</@ofbizUrl>" target="_blank">PAGARES</a>&nbsp;]
+			            
+			            <#break>
 		            </#if>
             </#list>
             </li>

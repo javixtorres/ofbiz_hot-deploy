@@ -1013,7 +1013,7 @@ public class CheckOutEvents {
 //                                         "addparty", "paysplit"};
 //            processOrder = new String[] {"customer", "shipping", "shipGroups", "options", "payment","paysplit"};
             // CODIGOLINUX
-            processOrder =  new String[] {"customer", "shipping", "shipGroups", "options", "payment", "agreement", "term", "payment"};
+            processOrder =  new String[] {"customer", "shipping", "options", "payment", "agreement", "term", "payment"};
 
         }
         
