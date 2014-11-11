@@ -79,8 +79,24 @@ under the License.
            <td width="1%">&nbsp;</td>
            <td valign="top" width="60%">
              <#list invoices as invoice>
-               <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
+               <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice} ${invoice.statusId}</a>
                (<a target="_BLANK" href="/claccounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
+               <!--
+                   <li>
+                    <form name="receivePurchaseOrderForm" action="/facility/control/quickShipPurchaseOrder?externalLoginKey=${externalLoginKey}" method="post">
+                      <input type="hidden" name="initialSelected" value="Y"/>
+                      <input type="hidden" name="orderId" value="${orderId}"/>
+                      <input type="hidden" name="purchaseOrderId" value="${orderId}"/>
+                      <input type="hidden" name="partialReceive" value="Y"/>
+                      <select name="facilityId">
+                        <#list ownedFacilities as facility>
+                          <option value="${facility.facilityId}">${facility.facilityName}</option>
+                        </#list>
+                      </select>
+                      </form>
+                      <a href="javascript:document.receivePurchaseOrderForm.submit()" class="buttontext">${uiLabelMap.CommonReceive}</a>
+                  </li>
+                  -->
              </#list>
            </td>
            <td width="10%">&nbsp;</td>
@@ -648,8 +664,50 @@ under the License.
             <td width="1%">&nbsp;</td>
             <td valign="top" width="60%">
               <#list invoices as invoice>
-                <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice}</a>
+                <div>${uiLabelMap.CommonNbr}<a href="/claccounting/control/invoiceOverview?invoiceId=${invoice}${externalKeyParam}" class="buttontext">${invoice} 
+                 <#if invoice.statusId?has_content>
+                ${invoice.statusId}
+                </#if>
+                </a>
                 (<a target="_BLANK" href="/claccounting/control/invoice.pdf?invoiceId=${invoice}${externalKeyParam}" class="buttontext">PDF</a>)</div>
+              </#list>
+            </td>
+            <td width="10%">&nbsp;</td>
+          </tr>
+        </#if>
+        
+        <#-- ------------------------------------------------ invoices List---------------------------------------------- -->
+        <#list paymentList as paymentMap>
+	        <#assign paymentAplicationList = paymentMap.getRelated("PaymentApplication", null, null, false)>
+	        <#break>
+        </#list>
+
+        <#list paymentAplicationList as paymentAplication>
+        <#assign invoicesList = paymentAplication.getRelated("Invoice", null, null, false)>
+        </#list>
+        <#if invoicesList?has_content>
+          <tr><td colspan="4"><hr /></td></tr>
+          <tr>
+            <td align="right" valign="top" width="29%">&nbsp;<span class="label">${uiLabelMap.OrderInvoices}</span></td>
+            <td width="1%">&nbsp;</td>
+            <td valign="top" width="60%">
+              <#list invoicesList as invoiceMap>
+                <#assign statusItem = invoiceMap.getRelatedOne("StatusItem", false)>
+                <#if invoiceMap.statusId?has_content> 
+	                ${statusItem.get("description",locale)} <!-- ${statusItem.statusId}-->
+	                <#if invoiceMap.statusId=="INVOICE_IN_PROCESS">
+	                <div>
+	                Timbrado <input type="text" size="12" maxlength="12" name="timbrado" value="12345678"/>
+	                </div>
+	                <div>
+	                NroFactura <input type="text" size="2" maxlength="3" name="ent" value="0"/><input type="text" size="2" maxlength="3" name="emi" value="0"/><input type="text"size="8" maxlength="12" name="nro" value="0"/>
+	                </div>
+	                </#if>
+                </#if>
+                <div>${uiLabelMap.CommonNbr}<a target="_BLANK" href="/claccounting/control/invoiceOverview?invoiceId=${invoiceMap.invoiceId}${externalKeyParam}" class="buttontext">${invoiceMap.invoiceId} 
+                </a>                  
+
+                (<a target="_BLANK" href="/claccounting/control/invoice.pdf?invoiceId=${invoiceMap.invoiceId}${externalKeyParam}" class="buttontext">PDF</a>)</div>
               </#list>
             </td>
             <td width="10%">&nbsp;</td>
