@@ -25,6 +25,8 @@ under the License.
     <include location="component://content/webapp/content/WEB-INF/controller.xml"/>
     <!-- CODIGOLINUX agregar los reportes -->
     <include location="component://clbirt/webapp/ordermgr/WEB-INF/controller.xml"/>
+    <!-- CODIGOLINUX para actualizar factura desde la orden -->
+    <include location="component://claccounting/webapp/claccounting/WEB-INF/controller.xml"/>
     
     <description>Order Manager Module Site Configuration File</description>
     

@@ -657,6 +657,7 @@ under the License.
         </#if>
 
         <#-- invoices -->
+        <!--
         <#if invoices?has_content>
           <tr><td colspan="4"><hr /></td></tr>
           <tr>
@@ -675,6 +676,7 @@ under the License.
             <td width="10%">&nbsp;</td>
           </tr>
         </#if>
+        -->
         
         <#-- ------------------------------------------------ invoices List---------------------------------------------- -->
         <#list paymentList as paymentMap>
@@ -694,16 +696,36 @@ under the License.
               <#list invoicesList as invoiceMap>
                 <#assign statusItem = invoiceMap.getRelatedOne("StatusItem", false)>
                 <#if invoiceMap.statusId?has_content> 
-	                ${statusItem.get("description",locale)} <!-- ${statusItem.statusId}-->
+	                Estado: ${statusItem.get("description",locale)} <!-- ${statusItem.statusId}-->
 	                <#if invoiceMap.statusId=="INVOICE_IN_PROCESS">
-	                <div>
-	                Timbrado <input type="text" size="12" maxlength="12" name="timbrado" value="12345678"/>
-	                </div>
-	                <div>
-	                NroFactura <input type="text" size="2" maxlength="3" name="ent" value="0"/><input type="text" size="2" maxlength="3" name="emi" value="0"/><input type="text"size="8" maxlength="12" name="nro" value="0"/>
-	                </div>
+              		<form name="setInvoice" method="post" action="<@ofbizUrl>updateInvoiceFromOrder</@ofbizUrl>">
+              	 		<input type="hidden" name="invoiceId" value="${invoiceMap.invoiceId}" />
+              	 
+		                <div>
+		                Condición
+		                <select name="condicionInvoice">
+	                        <option value="CONTADO" <#if (invoiceMap.condicionInvoice)?if_exists == "CONTADO">selected="selected" </#if>>CONTADO</option>
+	             			<option value="CREDITO" <#if (invoiceMap.condicionInvoice)?if_exists == "CREDITO">selected="selected" </#if>>CREDITO</option>
+	             		</select>
+	             		</div>
+		                <div>
+		                Timbrado: <input type="text" size="12" maxlength="12" name="timbradoInvoice" value="12345678"/>
+		                </div>
+		                <div>
+		                Nro.Factura: <input type="text" size="2" maxlength="3" name="entInvoice" value="${invoiceMap.entInvoice}"/><input type="text" size="2" maxlength="3" name="emiInvoice" value="${invoiceMap.emiInvoice}"/><input type="text"size="8" maxlength="12" name="nroInvoice" value="${invoiceMap.nroInvoice}"/>
+		                </div>
+		                
+	                    <input type="submit" class="smallSubmit" value="${uiLabelMap.CommonUpdate}"/>
+                	</form>
+                	<#else>
+                	<div> Condición: ${invoiceMap.condicionInvoice} </div>
+		            <div> Timbrado: ${invoiceMap.timbradoInvoice} </div>
+		            <div> Nro.Factura: ${invoiceMap.entInvoice}-${invoiceMap.emiInvoice}-${invoiceMap.nroInvoice}</div>
 	                </#if>
                 </#if>
+
+                <!-- <div><a href="/claccounting/control/updateInvoice?invoiceId=${invoiceMap.invoiceId}${externalKeyParam}" class="buttontext">Actualizar -->
+                </a> </div>
                 <div>${uiLabelMap.CommonNbr}<a target="_BLANK" href="/claccounting/control/invoiceOverview?invoiceId=${invoiceMap.invoiceId}${externalKeyParam}" class="buttontext">${invoiceMap.invoiceId} 
                 </a>                  
 

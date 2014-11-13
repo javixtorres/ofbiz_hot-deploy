@@ -23,6 +23,8 @@ under the License.
     <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
     <include location="component://commonext/webapp/WEB-INF/controller.xml"/>
     <description>Accounting Manager Module Site Configuration File</description>
+<!--     CODIGOLINUX para volver a la visualizacion de la orden -->
+<!--     <include location="component://clorder/webapp/clorder/WEB-INF/controller.xml"/> -->
     
     <!-- Events to run on every request before security (chains exempt) -->
     <!--
@@ -168,6 +170,13 @@ under the License.
         <event type="service" invoke="updateInvoice"/>
         <response name="success" type="view" value="editInvoice"/>
         <response name="error" type="view" value="editInvoice"/>
+    </request-map>
+<!--     CODIGOLINUX Actualiza Factura desde la oreden -->   
+    <request-map uri="updateInvoiceFromOrder">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateInvoice"/>
+        <response name="success" type="view" value="invoiceOverview"/>
+        <response name="error" type="view" value="invoiceOverview"/>
     </request-map>
     <request-map uri="listInvoiceItems">
         <security https="true" auth="true"/>
