@@ -217,20 +217,34 @@ under the License.
 
     <form name="ListInvoiceApplications" type="list"  list-name="invoiceApplications" default-entity-name="InvoiceItem" use-row-submit="true"
         odd-row-style="alternate-row" default-table-style="basic-table hover-bar"
-        target="updatePaymentApplication" title="Apply payments to invoices" separate-columns="false">
+        target="updatePaymentApplication" title="Apply payments to invoices" separate-columns="false" >
+        <row-actions>
+         <entity-one entity-name="Payment" value-field="payment">
+                <field-map field-name="paymentId" from-field="paymentId"/>
+         </entity-one>
+        </row-actions>
+        
         <field name="invoiceItemSeqId"><display/></field>
         <field name="productId"><display/></field>
         <field name="description" encode-output="false"><display/></field>
         <field name="total" widget-area-style="align-text"><display type="currency" currency="${invoice.currencyUomId}"/></field>
         <field name="invoiceId"><hidden/></field>
+<!--         CODIGOLINUX Visualizar comentario de pago -->
+
+        
         <field name="paymentId" widget-style="linktext">
-            <hyperlink target="paymentOverview" description="${paymentId}">
+            <hyperlink target="paymentOverview" description="${paymentId} - ${payment.comments}">
                 <parameter param-name="paymentId"/>
             </hyperlink>
         </field>
         <field name="billingAccountId"><hidden/></field>
         <field name="paymentApplicationId"><hidden/></field>
         <field name="amountApplied" widget-area-style="align-text"><display type="currency" currency="${invoice.currencyUomId}"/></field>
+ <!--         CODIGOLINUX Orden de columnas -->
+        <sort-order>
+            <sort-field name="paymentId"/>
+            <sort-field name="amountApplied"/>
+        </sort-order>
     </form>
     <form name="AcctgTransAndEntries" type="list" title="Accounting Transactions" list-name="AcctgTransAndEntries"
         odd-row-style="alternate-row" default-table-style="basic-table hover-bar">

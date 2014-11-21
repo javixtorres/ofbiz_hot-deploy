@@ -684,6 +684,7 @@ under the License.
 	        <#break>
         </#list>
 
+		<#if paymentAplicationList?has_content>
         <#list paymentAplicationList as paymentAplication>
         <#assign invoicesList = paymentAplication.getRelated("Invoice", null, null, false)>
         </#list>
@@ -712,7 +713,7 @@ under the License.
 		                Timbrado: <input type="text" size="12" maxlength="12" name="timbradoInvoice" value="12345678"/>
 		                </div>
 		                <div>
-		                Nro.Factura: <input type="text" size="2" maxlength="3" name="entInvoice" value="${invoiceMap.entInvoice}"/><input type="text" size="2" maxlength="3" name="emiInvoice" value="${invoiceMap.emiInvoice}"/><input type="text"size="8" maxlength="12" name="nroInvoice" value="${invoiceMap.nroInvoice}"/>
+		                Nro.Factura: <input type="text" size="2" maxlength="3" name="entInvoice" value="${invoiceMap.entInvoice?if_exists}"/><input type="text" size="2" maxlength="3" name="emiInvoice" value="${invoiceMap.emiInvoice?if_exists}"/><input type="text"size="8" maxlength="12" name="nroInvoice" value="${invoiceMap.nroInvoice?if_exists}"/>
 		                </div>
 		                
 	                    <input type="submit" class="smallSubmit" value="${uiLabelMap.CommonUpdate}"/>
@@ -734,6 +735,7 @@ under the License.
             </td>
             <td width="10%">&nbsp;</td>
           </tr>
+        </#if>
         </#if>
    <#else>
     <tr>
