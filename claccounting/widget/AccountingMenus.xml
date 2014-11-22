@@ -519,7 +519,14 @@ under the License.
             </condition>
             <link target="PaymentAcctgTransEntriesPdf">
                 <parameter param-name="paymentId" from-field="payment.paymentId"/>
-            </link>
+            </link>	            
+			            
+<!-- 			<a href="javascript:document.PaymentAcctgTransEntriesReport.submit()">Transacciones</a> -->
+<!--             <form name="PaymentAcctgTransEntriesReport" type="single" target="PaymentAcctgTransEntriesPdf" title="h" -->
+<!-- 		        header-row-style="header-row" default-table-style="basic-table" target-window="_BLANK"> -->
+<!-- 		        <field name="paymentId"><hidden/></field> -->
+<!-- 		        <field name="submitButton" title="${uiLabelMap.CommonRun}" widget-style="smallSubmit"><submit button-type="button"/></field> -->
+<!-- 		    </form> -->
         </menu-item>
     </menu>
 
