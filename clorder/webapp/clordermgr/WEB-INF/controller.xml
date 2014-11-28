@@ -1707,6 +1707,14 @@ under the License.
         <response name="success" type="view" value="orderview"/>
         <response name="error" type="view" value="orderview"/>
     </request-map>
+    
+    <!--     CODIGOLINUX Actualiza Factura desde la orden -->   
+    <request-map uri="updateInvoiceFromOrder">
+        <security https="true" auth="true"/>
+        <event type="service" invoke="updateInvoiceFromOrder"/>
+        <response name="success" type="view" value="orderview"/>
+        <response name="error" type="view" value="orderview"/>
+    </request-map>
 
     <request-map uri="addShippingAddress">
         <security https="true" auth="true"/>

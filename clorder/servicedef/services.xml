@@ -666,6 +666,18 @@ under the License.
         <auto-attributes include="nonpk" mode="IN" optional="true"/>
     </service>
 
+    <!-- CODIGOLINUX Actualiza Factura desde Orden -->
+    <service name="updateInvoiceFromOrder" engine="simple" default-entity-name="Invoice"
+        location="component://claccounting/script/org/ofbiz/accounting/invoice/InvoiceServices.xml" invoke="updateInvoice">
+        <description>Update an existing Invoice Record</description>
+        <permission-service service-name="acctgInvoicePermissionCheck" main-action="UPDATE"/>
+        <auto-attributes mode="IN" include="pk" optional="false"/>
+        <auto-attributes mode="IN" include="nonpk" optional="true"/>
+        <override name="description" allow-html="safe"/>
+        <override name="invoiceMessage" allow-html="safe"/>
+        <attribute name="orderId" type="String" mode="IN" optional="false"/>
+    </service>
+    
     <!-- CommunicationEvents related to orders -->
     <service name="createCommunicationEventOrder" engine="simple"
             location="component://clorder/script/org/ofbiz/order/communication/CommunicationEventServices.xml" invoke="createCommunicationEventOrder" auth="true">

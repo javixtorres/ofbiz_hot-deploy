@@ -700,6 +700,7 @@ under the License.
 	                Estado: ${statusItem.get("description",locale)} <!-- ${statusItem.statusId}-->
 	                <#if invoiceMap.statusId=="INVOICE_IN_PROCESS">
               		<form name="setInvoice" method="post" action="<@ofbizUrl>updateInvoiceFromOrder</@ofbizUrl>">
+              		    <input type="hidden" name="orderId" value="${orderId?if_exists}"/>
               	 		<input type="hidden" name="invoiceId" value="${invoiceMap.invoiceId}" />
               	 
 		                <div>
