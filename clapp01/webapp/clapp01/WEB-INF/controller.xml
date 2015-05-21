@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<site-conf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/site-conf.xsd">
+    <!-- The controller elements that are common to all OFBiz components
+         can be found in the following xml file. A component can override the
+         elements found in the common-controller.xml file. -->
+    <include location="component://common/webcommon/WEB-INF/common-controller.xml"/>
+    <include location="component://common/webcommon/WEB-INF/portal-controller.xml"/>
+    
+    <!-- CODIGOLINUX agregar los reportes -->
+    <include location="component://clbirt/webapp/ordermgr/WEB-INF/controller.xml"/>
+
+    <description>Example Component Site Configuration File</description>
+
+    <!--
+      These can be used to return the reports as views; make sure the classes are compiled and available
+        <handler name="datavision" type="view" class="org.ofbiz.webapp.view.DataVisionViewHandler"/>
+        <handler name="jasperreportspdf" type="view" class="org.ofbiz.webapp.view.JasperReportsPdfViewHandler"/>
+        <handler name="jasperreportsxml" type="view" class="org.ofbiz.webapp.view.JasperReportsXmlViewHandler"/>
+    -->
+
+    <!-- Events to run on every request before security (chains exempt) -->
+    <!--
+    <preprocessor>
+    </preprocessor>
+    -->
+    <!-- Events to run on every request after all other processing (chains exempt) -->
+    <!--
+    <postprocessor>
+        <event name="test" type="java" path="org.ofbiz.webapp.event.TestEvent" invoke="test"/>
+    </postprocessor>
+    -->
+
+    <!-- Request Mappings -->
+    <request-map uri="main"><security https="false" auth="false"/><response name="success" type="view" value="main"/></request-map>
+
+    <!-- Example Requests -->
+    <request-map uri="FindExample"><security https="false" auth="false"/><response name="success" type="view" value="FindExample"/></request-map>
+    <request-map uri="EditExample"><security https="false" auth="false"/><response name="success" type="view" value="EditExample"/></request-map>
+    <request-map uri="EditExampleLayer"><security https="false" auth="false"/><response name="success" type="view" value="EditExampleLayer"/></request-map>
+    <request-map uri="ExampleReportHtml"><security https="false" auth="false"/><response name="success" type="view" value="ExampleReportHtml"/></request-map>
+    <request-map uri="ExampleReportPdf"><security https="false" auth="false"/><response name="success" type="view" value="ExampleReportPdf"/></request-map>
+    
+    <request-map uri="FlisolSNPP2015"><security https="false" auth="false"/><response name="success" type="view" value="FlisolSNPP2015"/></request-map>
+    <request-map uri="FlisolUNINORTE2015"><security https="false" auth="false"/><response name="success" type="view" value="FlisolUNINORTE2015"/></request-map>
+    
+    
+    <request-map uri="createExample">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExample"/>
+        <response name="success" type="request-redirect" value="EditExample">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="FindExample"/>
+    </request-map>
+    <request-map uri="updateExample">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExample"/>
+        <response name="success" type="request-redirect" value="EditExample">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExample"/>
+    </request-map>
+    <request-map uri="createExampleAjax">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExample"/>
+        <response name="success" type="request" value="json"/>
+        <response name="error" type="request" value="json"/>
+    </request-map>
+    <request-map uri="updateExampleAjax">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExample"/>
+        <response name="success" type="view" value="findExampleAjax"/>
+        <response name="error" type="view" value="findExampleAjax"/>
+    </request-map>
+
+    <request-map uri="EditExampleItems"><security https="false" auth="false"/><response name="success" type="view" value="EditExampleItems"/></request-map>
+    <request-map uri="createExampleItem">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExampleItem"/>
+        <response name="success" type="request-redirect" value="EditExampleItems">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleItems"/>
+    </request-map>
+    <request-map uri="updateExampleItem">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExampleItem"/>
+        <response name="success" type="request-redirect" value="EditExampleItems">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleItems"/>
+    </request-map>
+    <request-map uri="deleteExampleItem">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="deleteExampleItem"/>
+        <response name="success" type="request-redirect" value="EditExampleItems">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleItems"/>
+    </request-map>
+
+    <request-map uri="EditExampleFeatureAppls"><security https="false" auth="false"/><response name="success" type="view" value="EditExampleFeatureAppls"/></request-map>
+    <request-map uri="example_createExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureAppls"/>
+    </request-map>
+    <request-map uri="example_updateExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureAppls"/>
+    </request-map>
+    <request-map uri="example_deleteExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="deleteExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureAppls"/>
+    </request-map>
+
+    <!-- ExampleFeature Requests -->
+    <request-map uri="FindExampleFeature"><security https="false" auth="false"/><response name="success" type="view" value="FindExampleFeature"/></request-map>
+    <request-map uri="EditExampleFeature"><security https="false" auth="false"/><response name="success" type="view" value="EditExampleFeature"/></request-map>
+    <request-map uri="createExampleFeature">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExampleFeature"/>
+        <response name="success" type="request-redirect" value="EditExampleFeature">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeature"/>
+    </request-map>
+    <request-map uri="updateExampleFeature">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExampleFeature"/>
+        <response name="success" type="request-redirect" value="EditExampleFeature">
+            <redirect-parameter name="exampleFeatureId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeature"/>
+    </request-map>
+
+    <request-map uri="EditExampleFeatureExampleAppls"><security https="false" auth="false"/><response name="success" type="view" value="EditExampleFeatureExampleAppls"/></request-map>
+    <request-map uri="feature_createExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="createExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureExampleAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureExampleAppls"/>
+    </request-map>
+    <request-map uri="feature_updateExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="updateExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureExampleAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureExampleAppls"/>
+    </request-map>
+    <request-map uri="feature_deleteExampleFeatureAppl">
+        <security https="false" auth="false"/>
+        <event type="service" invoke="deleteExampleFeatureAppl"/>
+        <response name="success" type="request-redirect" value="EditExampleFeatureExampleAppls">
+            <redirect-parameter name="exampleId"/>
+        </response>
+        <response name="error" type="view" value="EditExampleFeatureExampleAppls"/>
+    </request-map>
+    <request-map uri="findExampleFeatures">
+        <security https="false" auth="false"/>
+        <event type="groovy" path="component://clapp01/webapp/clapp01/WEB-INF/actions/includes/FindExampleFeatures.groovy"/>
+        <response name="success" type="view" value="ajaxAutocompleteOptions"/>
+        <response name="error" type="view" value="ajaxAutocompleteOptions"/>
+    </request-map>
+
+    <request-map uri="FormWidgetExamples"><security https="false" auth="false"/><response name="success" type="view" value="FormWidgetExamples"/></request-map>
+
+    <request-map uri="LookupExampleFeature"><security https="false" auth="false"/><response name="success" type="view" value="LookupExampleFeature"/></request-map>
+    <request-map uri="LookupPartyGroupByName"><security https="false" auth="false"/><response name="success" type="view" value="LookupPartyGroupByName"/></request-map>
+
+    <request-map uri="ListExampleFormOnly"><security https="false" auth="false"/><response name="success" type="view" value="ListExampleFormOnly"/></request-map>
+    <request-map uri="CreateExampleFormOnly"><security https="false" auth="false"/><response name="success" type="view" value="CreateExampleFormOnly"/></request-map>
+
+    <request-map uri="printExampleFOPFonts">
+      <security https="false" auth="false"/>
+      <response name="success" type="view" value="printExampleFOPFonts"/>
+    </request-map>
+
+    <request-map uri="views">
+        <security https="false" auth="false"/>
+        <response name="success" type="request" value="main"/>
+    </request-map>
+
+    <request-map uri="ExampleGeoLocationPointSet1"><security https="false" auth="false"/><response name="success" type="view" value="ExampleGeoLocationPointSet1"/></request-map>
+    <request-map uri="ExampleGeoLocationPointSet2"><security https="false" auth="false"/><response name="success" type="view" value="ExampleGeoLocationPointSet2"/></request-map>
+    <request-map uri="ExampleGeoLocationPointSet3"><security https="false" auth="false"/><response name="success" type="view" value="ExampleGeoLocationPointSet3"/></request-map>
+    <request-map uri="ExampleGeoLocationPointSet4"><security https="false" auth="false"/><response name="success" type="view" value="ExampleGeoLocationPointSet4"/></request-map>
+    <request-map uri="ExampleGeoLocationAddress"><security https="false" auth="false"/><response name="success" type="view" value="ExampleGeoLocationAddress"/></request-map>
+    <request-map uri="ExampleOsmGeoLocationPointSet1"><security https="false" auth="false"/><response name="success" type="view" value="ExampleOsmGeoLocationPointSet1"/></request-map>
+    <request-map uri="ExampleOsmGeoLocationPointSet2"><security https="false" auth="false"/><response name="success" type="view" value="ExampleOsmGeoLocationPointSet2"/></request-map>
+    <request-map uri="ExampleOsmGeoLocationPointSet3"><security https="false" auth="false"/><response name="success" type="view" value="ExampleOsmGeoLocationPointSet3"/></request-map>
+    <request-map uri="ExampleOsmGeoLocationPointSet4"><security https="false" auth="false"/><response name="success" type="view" value="ExampleOsmGeoLocationPointSet4"/></request-map>
+    <!-- end of request mappings -->
+
+    <!-- View Mappings -->
+    <view-map name="main" type="screen" page="component://clapp01/widget/clapp01/CommonScreens.xml#main"/>
+
+    <view-map name="FindExample" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#FindExample"/>
+    <view-map name="EditExample" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#EditExample"/>
+    
+    <view-map name="FlisolSNPP2015" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#FlisolSNPP2015"/>
+    <view-map name="FlisolUNINORTE2015" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#FlisolUNINORTE2015"/>
+    
+    
+    <view-map name="EditExampleLayer" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#EditExampleLayer"/>
+    <view-map name="EditExampleItems" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#EditExampleItems"/>
+    <view-map name="EditExampleFeatureAppls" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#EditExampleFeatureAppls"/>
+    <view-map name="ExampleReportHtml" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleReport"/>
+    <view-map name="ExampleReportPdf" type="screenfop" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleReport" content-type="application/pdf" encoding="none"/>
+
+    <view-map name="FindExampleFeature" type="screen" page="component://clapp01/widget/clapp01/ExampleFeatureScreens.xml#FindExampleFeature"/>
+    <view-map name="EditExampleFeature" type="screen" page="component://clapp01/widget/clapp01/ExampleFeatureScreens.xml#EditExampleFeature"/>
+    <view-map name="EditExampleFeatureExampleAppls" type="screen" page="component://clapp01/widget/clapp01/ExampleFeatureScreens.xml#EditExampleFeatureExampleAppls"/>
+
+    <view-map name="FormWidgetExamples" type="screen" page="component://clapp01/widget/clapp01/FormWidgetExampleScreens.xml#FormWidgetExamples"/>
+
+    <view-map name="LookupExampleFeature" type="screen" page="component://clapp01/widget/clapp01/ExampleFeatureScreens.xml#LookupExampleFeature"/>
+    <view-map name="LookupPartyGroupByName" type="screen" page="component://clapp01/widget/clapp01/FormWidgetExampleLookupScreens.xml#LookupPartyGroupByName"/>
+
+    <!-- ajax view mappings -->
+    <view-map name="findExampleAjax" type="screen" page="component://clapp01/widget/clapp01/ExampleAjaxScreens.xml#AjaxExample"/>
+    <view-map name="ListExampleFormOnly" type="screen" page="component://clapp01/widget/clapp01/ExampleAjaxScreens.xml#ListExampleFormOnly"/>
+    <view-map name="CreateExampleFormOnly" type="screen" page="component://clapp01/widget/clapp01/ExampleAjaxScreens.xml#CreateExampleFormOnly"/>
+    <view-map name="printExampleFOPFonts" type="screenfop" page="component://clapp01/widget/clapp01/FormWidgetExampleScreens.xml#printExampleFOPFonts" content-type="application/pdf"  encoding="none"/>
+
+    <view-map name="ExampleGeoLocationPointSet1" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleGeoLocationPointSet1"/>
+    <view-map name="ExampleGeoLocationPointSet2" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleGeoLocationPointSet2"/>
+    <view-map name="ExampleGeoLocationPointSet3" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleGeoLocationPointSet3"/>
+    <view-map name="ExampleGeoLocationPointSet4" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleGeoLocationPointSet4"/>
+    <view-map name="ExampleGeoLocationAddress" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleGeoLocationAddress"/>
+    <view-map name="ExampleOsmGeoLocationPointSet1" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleOsmGeoLocationPointSet1"/>
+    <view-map name="ExampleOsmGeoLocationPointSet2" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleOsmGeoLocationPointSet2"/>
+    <view-map name="ExampleOsmGeoLocationPointSet3" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleOsmGeoLocationPointSet3"/>
+    <view-map name="ExampleOsmGeoLocationPointSet4" type="screen" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleOsmGeoLocationPointSet4"/>
+
+    <!-- Flot view mapping -->
+    <view-map name="ExampleBarChart" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExampleBarChart" type="screen"/>
+    <view-map name="ExamplePieChart" page="component://clapp01/widget/clapp01/ExampleScreens.xml#ExamplePieChart" type="screen"/>
+
+    <!-- Supported Content Types -->
+    <!--
+        text/html
+        application/pdf
+        application/postscript
+        application/vnd.ms-excel
+        application/vnd.ms-word
+        application/vnd.ms-powerpoint
+        application/vnd.oasis.opendocument.text
+        application/vnd.oasis.opendocument.spreadsheet
+        application/vnd.oasis.opendocument.presentation
+     -->
+
+    <!-- end of view mappings -->
+</site-conf>

@@ -118,6 +118,17 @@ under the License.
         <response name="success" type="view" value="AgreementPdf"/>
     </request-map>
 
+    <request-map uri="FlisolSNPP2015.pdf">
+        <security https="false" auth="false"/>
+        <event type="groovy" path="component://clbirt/webapp/ordermgr/WEB-INF/actions/reports/FlisolParameters.groovy"/>
+        <response name="success" type="view" value="FlisolSNPP2015Pdf"/>
+    </request-map>
+    <request-map uri="FlisolUNINORTE2015.pdf">
+        <security https="false" auth="false"/>
+        <event type="groovy" path="component://clbirt/webapp/ordermgr/WEB-INF/actions/reports/FlisolParameters.groovy"/>
+        <response name="success" type="view" value="FlisolUNINORTE2015Pdf"/>
+    </request-map>    
+
     <view-map name="SalesOrderReportPDF" type="birt" page="component://clbirt/webapp/ordermgr/reports/SalesReport.rptdesign" content-type="application/pdf"/>
     <view-map name="SalesOrderReportWeekPDF" type="birt" page="component://clbirt/webapp/ordermgr/reports/SalesReportWeek.rptdesign" content-type="application/pdf"/>
     <view-map name="SalesOrderReportMonthPDF" type="birt" page="component://clbirt/webapp/ordermgr/reports/SalesReportMonth.rptdesign" content-type="application/pdf"/>
@@ -136,5 +147,8 @@ under the License.
     <view-map name="CouponSalesReport" type="birt" page="component://clbirt/webapp/ordermgr/reports/CouponSalesReport.rptdesign" content-type="application/pdf"/>
     
     <view-map name="AgreementPdf" type="birt" page="component://clbirt/webapp/ordermgr/reports/ContratoVenta.rptdesign" content-type="application/pdf" encoding="none"/>
+    <view-map name="FlisolSNPP2015Pdf" type="birt" page="component://clbirt/webapp/ordermgr/reports/CertificadoSNPP.rptdesign" content-type="application/pdf" encoding="none"/>
+    <view-map name="FlisolUNINORTE2015Pdf" type="birt" page="component://clbirt/webapp/ordermgr/reports/CertificadoUNINORTE.rptdesign" content-type="application/pdf" encoding="none"/>
+
 
 </site-conf>
