@@ -100,7 +100,7 @@ under the License.
                     <decorator-section name="body">
 <!--                 <include-form name="FlisolSNPP2015" location="component://clapp01/widget/clapp01/ExampleForms.xml"/>  -->
                 <platform-specific>
-                    <html><html-template location="component://clapp01/webapp/clapp01/flisol/flisol.ftl"/></html>
+                    <html><html-template location="component://clapp01/webapp/clapp01/flisol/flisolsnpp.ftl"/></html>
                 </platform-specific>
                     </decorator-section>
                 </decorator-screen>
